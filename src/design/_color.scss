@@ -1,0 +1,83 @@
+/**
+ * COLORS SETTINGS
+ */
+:root {
+  // brand
+  --color-brand-darker: #036b7f;
+  --color-brand-dark: #0592ac;
+  --color-brand: #28a2b8;
+  --color-brand-light: #49b4c8;
+  --color-brand-lighter: #74cbdb;
+  --color-brand-a20: rgba(15.7%, 63.5%, 72.2%, 0.2);
+
+  // accent
+  --color-accent-darker: #cf8f00;
+  --color-accent-dark: #ffb001;
+  --color-accent: #ffc033;
+  --color-accent-light: #ffcb59;
+  --color-accent-lighter: #ffd985;
+  --color-accent-a20: rgba(100%, 75.3%, 20%, 0.2);
+
+  // feedback success
+  --color-success-darker: #44890f;
+  --color-success-dark: #5fae23;
+  --color-success: #7cc444;
+  --color-success-light: #9fe16d;
+  --color-success-lighter: #beed9a;
+  --color-success-a20: rgba(48.6%, 76.9%, 26.7%, 0.2);
+
+  // feedback error
+  --color-error-darker: #cf1400;
+  --color-error-dark: #ff1901;
+  --color-error: #ff4633;
+  --color-error-light: #ff6959;
+  --color-error-lighter: #ff9185;
+  --color-error-a20: rgba(100%, 27.5%, 20%, 0.2);
+
+  // feedback warning
+  --color-warning-darker: #cfb000;
+  --color-warning-dark: #ffd901;
+  --color-warning: #ffe033;
+  --color-warning-light: #ffe659;
+  --color-warning-lighter: #ffed85;
+  --color-warning-a20: rgba(100%, 87.8%, 20%, 0.2);
+
+  // semantic
+  --color-content: var(--color-gray2);
+  --color-heading: var(--color-gray1);
+  --color-background: var(--color-gray8);
+  --color-link: var(--color-brand);
+  --color-link-hover: var(--color-brand-darker);
+  --color-border: var(--color-gray6);
+}
+
+/**
+ * LIGHT THEME
+ */
+:root,
+[data-theme='light'] {
+  // gray scale
+  --color-gray1: #172226;
+  --color-gray2: #3b4c53;
+  --color-gray3: #6f777b;
+  --color-gray4: #9da6aa;
+  --color-gray5: #cfd6da;
+  --color-gray6: #e7ebee;
+  --color-gray7: #f5f6f8;
+  --color-gray8: #ffffff;
+}
+
+/**
+ * DARK THEME
+ */
+[data-theme='dark'] {
+  // gray scale
+  --color-gray1: #f5f6f8;
+  --color-gray2: #e7ebee;
+  --color-gray3: #cfd6da;
+  --color-gray4: #9da6aa;
+  --color-gray5: #6f777b;
+  --color-gray6: #3b4c53;
+  --color-gray7: #172226;
+  --color-gray8: #000000;
+}

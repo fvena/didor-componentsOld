@@ -1,0 +1,24 @@
+/**
+ * FONTS
+ */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+
+$content-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
+$content-font-weight: 400;
+$content-font-bold: 600;
+
+$heading-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
+$heading-font-weight: 600;
+
+$code-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
+$code-font-weight: 400;
+
+$base-line-height: 1.6;
+$modular-scale: 1.175;
+
+$root-sizes: (
+  palm: 18,
+  lap: 18,
+  desk: 18,
+  large: 18,
+) !default;

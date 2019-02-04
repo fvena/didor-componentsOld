@@ -1,0 +1,104 @@
+{
+  "_from": "azcomponents@0.2.0",
+  "_id": "azcomponents@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-+3CnYxWo5C8vABiIqiMCBSOvVHqgfQ+8pKoQQN8Zw5WRiEuUerru6ybZzjZDOZ/AADutMzlxBFhpNkf3y0vvfw==",
+  "_location": "/azcomponents",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "azcomponents@0.2.0",
+    "name": "azcomponents",
+    "escapedName": "azcomponents",
+    "rawSpec": "0.2.0",
+    "saveSpec": null,
+    "fetchSpec": "0.2.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/azcomponents/-/azcomponents-0.2.0.tgz",
+  "_shasum": "a1b76d330af1b8ca3dcc2d8b928363f3d7e335a5",
+  "_spec": "azcomponents@0.2.0",
+  "_where": "/Users/francisco/Sites/didor/temp",
+  "author": {
+    "name": "Francisco Vena",
+    "email": "fvena32@gmail.com",
+    "url": "http://www.fvena.com/"
+  },
+  "bundleDependencies": false,
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "init": "0.1.2",
+    "lodash": "4.17.11",
+    "vue": "^2.5.21",
+    "vue-i18n": "8.7.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "deprecated": false,
+  "description": "## Project setup ``` yarn install ```",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.3.0",
+    "@vue/cli-plugin-eslint": "^3.3.0",
+    "@vue/cli-plugin-unit-jest": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "commitizen": "3.0.5",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.0",
+    "markdownlint-cli": "0.13.0",
+    "node-sass": "^4.9.0",
+    "prettier": "1.16.1",
+    "sass-loader": "^7.0.1",
+    "standard-version": "4.4.0",
+    "stylelint": "9.10.1",
+    "stylelint-config-css-modules": "1.3.0",
+    "stylelint-config-prettier": "4.0.0",
+    "stylelint-config-recess-order": "2.0.1",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-scss": "3.5.1",
+    "vue-cli-plugin-pug": "1.0.7",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "main": "./dist/az.common.js",
+  "name": "azcomponents",
+  "scripts": {
+    "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib --name az ./src/components/index.js",
+    "commit": "git-cz",
+    "lint": "vue-cli-service lint",
+    "lint:markdownlint": "markdownlint -i CHANGELOG.md",
+    "lint:prettier": "prettier --write --loglevel warn",
+    "lint:stylelint": "stylelint --fix",
+    "release": "standard-version",
+    "serve": "vue-cli-service serve",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "version": "0.2.0"
+}
