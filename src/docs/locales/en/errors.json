@@ -1,0 +1,10 @@
+{
+  "default": {
+    "title": "Ooops!",
+    "message": "Sorry, an error occurred, try again later."
+  },
+  "offline": {
+    "title": "There isn`t internet connection!",
+    "message": "Your device must be connected to the internet to use the application."
+  }
+}

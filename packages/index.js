@@ -18,13 +18,10 @@ const requireComponent = require.context('.', true, /[\w-]+\.vue$/);
  * - Get the PascalCase version of the component name and Remove the file extension
  * - Globally register the component
  */
-requireComponent.keys().forEach((fileName) => {
+requireComponent.keys().forEach(fileName => {
   if (!path.dirname(fileName).includes('demo')) {
     const componentConfig = requireComponent(fileName);
     const componentName = `Az${upperFirst(camelCase(path.basename(fileName, '.vue')))}`;
-
-    console.log(componentName);
-    console.log(componentConfig);
 
     Vue.component(componentName, componentConfig.default || componentConfig);
   }

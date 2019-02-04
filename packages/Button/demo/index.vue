@@ -1,25 +1,12 @@
 <template lang="pug">
-  demo-section.demo-button
-    demo-block(:title="$t('type')")
-      az-button(type="primary") {{ $t('primary') }}
-      az-button(type="danger") {{ $t('danger') }}
+  div
+    Demo(title="Tipo")
+      az-button(type="primary") Primary
+      az-button(type="danger") Danger
 </template>
 
 <script>
-export default {
-  i18n: {
-    es: {
-      type: 'Tipo',
-      primary: 'Primary',
-      danger: 'Danger',
-    },
-    en: {
-      type: 'Type',
-      primary: 'Primary',
-      danger: 'Danger',
-    },
-  },
-};
+export default {};
 </script>
 
 <style lang="scss">

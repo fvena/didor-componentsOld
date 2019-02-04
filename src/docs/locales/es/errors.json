@@ -1,0 +1,10 @@
+{
+  "default": {
+    "title": "¡Ooops!",
+    "message": "Lo sentimos, algo ha fallado, inténtalo de nuevo más tarde."
+  },
+  "offline": {
+    "title": "No hay conexión a internet",
+    "message": "Su dispositivo debe estar conectado a internet para utilizar la aplicación"
+  }
+}

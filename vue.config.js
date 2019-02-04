@@ -1,12 +1,28 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   devServer: {
     port: 3001,
   },
   pages: {
     index: {
-      entry: './src/main.js',
-      template: './src/index.pug',
+      entry: './src/docs/main.js',
+      template: './src/docs/index.pug',
+      filename: 'index.html',
     },
+    demo: {
+      entry: './src/demo/main.js',
+      template: './src/demo/index.pug',
+      filename: 'demo.html',
+    },
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': `${__dirname}/src/docs`,
+      },
+    },
+    plugins: [new CopyWebpackPlugin([{ from: 'packages/**/*.md', to: 'packages' }])],
   },
   css: {
     loaderOptions: {

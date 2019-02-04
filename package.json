@@ -57,6 +57,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "commitizen": "3.0.5",
+    "copy-webpack-plugin": "4.6.0",
     "cz-conventional-changelog": "2.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -77,7 +78,7 @@
   },
   "files": [
     "dist/*",
-    "src/*",
+    "docs/*",
     "public/*",
     "*.json",
     "*.js"
@@ -89,7 +90,7 @@
   "name": "azcomponents",
   "scripts": {
     "build": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name az ./src/components/index.js",
+    "build-lib": "vue-cli-service build --target lib --name az ./docs/components/index.js",
     "commit": "git-cz",
     "lint": "vue-cli-service lint",
     "lint:markdownlint": "markdownlint -i CHANGELOG.md",
