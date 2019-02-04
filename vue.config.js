@@ -1,4 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+
+const publicDir = 'packages';
 
 module.exports = {
   devServer: {
@@ -33,5 +36,11 @@ module.exports = {
         data: '@import "@/design/index.scss";',
       },
     },
+  },
+  chainWebpack: config => {
+    config.plugin('copy').tap(([pathConfigs]) => {
+      pathConfigs[0].from = path.resolve(publicDir);
+      return [pathConfigs];
+    });
   },
 };

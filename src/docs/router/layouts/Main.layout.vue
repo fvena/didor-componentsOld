@@ -1,8 +1,10 @@
 <template lang="pug">
-.main(:class="{'main--sidebar': sidebarShow, 'main--device': device}")
+.main(:class="{'main--sidebar': showSidebar, 'main--device': showDevice}")
   .sidebar(ref="sidebarRef")
     Logo(:animate="animateLogo")
-    Sidebar
+    Sidebar(
+      :articles="articles"
+      @setArticle="setArticle")
   .content
     .main__header
       button.sidebar-toggle(@click="toggleSidebar()")
@@ -10,7 +12,11 @@
           span
           span
           span
-      Header(:class="{'header-padding-right': github}")
+      Header(
+        :class="{'header-padding-right': github}"
+        :sections="sections"
+        :showLanguages="showLanguages"
+        @setSection="setSection")
       Github-Octo(v-if="github" :githubUrl="github")
     .main__section
       .wrapper
@@ -20,12 +26,18 @@
 </template>
 
 <script>
+// import axios from 'axios';
+
 import Logo from '@/components/Logo.component.vue';
 import Sidebar from '@/components/Sidebar.component.vue';
 import Header from '@/components/Header.component.vue';
 import GithubOcto from '@/components/GithubOcto.component.vue';
 import Footer from '@/components/Footer.component.vue';
 import Device from '@/components/Device.component.vue';
+
+import DataLinks from '../../../../packages/data';
+
+// const instance = axios.create({ baseURL: 'packages/' });
 
 export default {
   components: {
@@ -39,18 +51,35 @@ export default {
   data() {
     return {
       github: 'https://github.com/fvena/didor-docs',
-      sidebarShow: false,
-      device: true,
+      showSidebar: false,
+      showDevice: true,
+      showLanguages: false,
+      sections: DataLinks.sections,
+      articles: DataLinks.menus[DataLinks.sections[0].menu],
     };
   },
   computed: {
     animateLogo() {
-      return this.sidebarShow;
+      return this.showSidebar;
     },
   },
   methods: {
     toggleSidebar() {
-      this.sidebarShow = !this.sidebarShow;
+      this.showSidebar = !this.showSidebar;
+    },
+    setSection(section) {
+      this.articles = DataLinks.menus[section];
+    },
+    setArticle(articlePath) {
+      console.log(articlePath);
+      // instance
+      //   .get(articlePath)
+      //   .then((response) => {
+      //     console.log(response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     },
   },
 };

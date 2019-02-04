@@ -1,13 +1,10 @@
 <template lang="pug">
   nav.app-nav
     ul
-      li
+      li(v-for="section in sections")
         p
-          router-link(to="/") {{ $t("messages.homeLink") }}
-      li
-        p
-          router-link(to="/about") {{ $t("messages.aboutLink") }}
-      li
+          a(@click="$emit('setSection', section.menu)") {{ section.title }}
+      li(v-if="showLanguages")
         p {{ $t("messages.language") }}
         ul
           li(v-for="languageItem in languages")
@@ -20,6 +17,16 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+  props: {
+    sections: {
+      type: Array,
+      default: () => [],
+    },
+    showLanguages: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     ...mapGetters({
       language: 'globalModule/getLanguage',

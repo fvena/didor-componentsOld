@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router/router';
 import store from './store/store';
 import i18n from './locales/i18n';
-import '../../packages';
+import '../../packages/packages';
 import '../didor/_didor.scss';
 
 Vue.config.productionTip = false;
