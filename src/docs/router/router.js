@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import NProgress from 'nprogress';
+import MarkdownService from '@/services/markdown.service';
 
 // Publics views
-
-// Privates views
 import MainLayout from '@/router/layouts/Main.layout.vue';
-import HomeView from '@/router/views/privates/Home.view.vue';
-import AboutView from '@/router/views/privates/About.view.vue';
+import DocsView from '@/router/layouts/Docs.layout.vue';
+import HomeView from '@/router/views/publics/Home.view.vue';
+import AboutView from '@/router/views/publics/About.view.vue';
+import ArticlesView from '@/router/views/publics/Articles.view.vue';
 
 // Not found route - 404
 import NotFoundView from '@/router/views/NotFound.view.vue';
@@ -23,7 +25,7 @@ const router = new Router({
         name: 'home',
       },
     },
-    // Privates routes
+    // Public routes
     {
       path: '/main',
       component: MainLayout,
@@ -40,6 +42,33 @@ const router = new Router({
           path: '/about',
           name: 'about',
           component: AboutView,
+        },
+      ],
+    },
+    {
+      path: '/docs/:section?',
+      name: 'docs',
+      component: DocsView,
+      props: true,
+      async beforeEnter(routeTo, routeFrom, next) {
+        console.log('DOCS before enter ===============================>');
+        const sectionPath = `_${routeTo.params.section}.md`;
+        routeTo.params.sectionLinks = await MarkdownService.getMarkdown(sectionPath);
+        next();
+      },
+      children: [
+        {
+          path: ':article',
+          name: 'article',
+          component: ArticlesView,
+          props: true,
+          async beforeEnter(routeTo, routeFrom, next) {
+            console.log('ARTICLE before enter ==========================>');
+            const articlePath = `_${routeTo.params.article}.md`;
+            // routeTo.params.article = await MarkdownService.getMarkdown(sectionPath);
+            routeTo.params.article = articlePath;
+            next();
+          },
         },
       ],
     },
@@ -62,6 +91,17 @@ const router = new Router({
       },
     },
   ],
+});
+
+router.beforeEach((routeTo, routeFrom, next) => {
+  // Start the route progress bar
+  NProgress.start();
+  next();
+});
+
+router.afterEach(() => {
+  // Complete the animation of the route progress bar
+  NProgress.done();
 });
 
 export default router;

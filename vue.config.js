@@ -20,6 +20,7 @@ module.exports = {
     resolve: {
       alias: {
         '@': `${__dirname}/src/docs`,
+        vue$: 'vue/dist/vue.common',
       },
     },
     plugins: [new CopyWebpackPlugin([{ from: 'packages/**/*.md', to: 'packages' }])],

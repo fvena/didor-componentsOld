@@ -18,7 +18,8 @@ const requireComponent = require.context('.', true, /[\w-]+\.vue$/);
  * - Get the PascalCase version of the component name and Remove the file extension
  * - Globally register the component
  */
-requireComponent.keys().forEach(fileName => {
+// prettier-ignore
+requireComponent.keys().forEach((fileName) => {
   const componentConfig = requireComponent(fileName);
   let componentName = '';
 

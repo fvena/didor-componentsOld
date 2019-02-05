@@ -1,12 +1,11 @@
 <template lang="pug">
   nav.app-nav
     ul
-      li
-        p
-          router-link(to="/") {{ $t("messages.homeLink") }}
-      li
-        p
-          router-link(to="/about") {{ $t("messages.aboutLink") }}
+      //- li(v-for="section in docsNav")
+      //-   p
+      //-     router-link(v-if="!section.href" :to="{name: 'docs', params: getPath(section)}")
+      //-       | {{ section.name }}
+      //-     a(v-if="section.href" :href="section.href" target="_blank") {{ section.name }}
       li
         p {{ $t("messages.language") }}
         ul
@@ -30,6 +29,23 @@ export default {
     ...mapActions({
       setLanguage: 'globalModule/setLanguage',
     }),
+    getPath(section) {
+      let path = '';
+
+      if (section.path) {
+        path = section.path; // eslint-disable-line
+      } else if (section.children) {
+        path = section.children[0].path; // eslint-disable-line
+      } else if (section.groups) {
+        path = section.groups[0].items[0].path; // eslint-disable-line
+      }
+
+      if (path.charAt(0) === '/') {
+        path = path.substr(1);
+      }
+
+      return { section: path };
+    },
   },
 };
 </script>
