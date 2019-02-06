@@ -119,7 +119,7 @@ export default {
     this.articleSelected = this.getArticleSelected(
       this.listArticles,
       this.sectionSelected,
-      this.$route.params.article
+      this.$route.params.article,
     );
   },
 
@@ -135,7 +135,7 @@ export default {
     this.articleSelected = this.getArticleSelected(
       this.listArticles,
       this.sectionSelected,
-      routeTo.params.article
+      routeTo.params.article,
     );
     next();
   },
