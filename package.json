@@ -60,7 +60,6 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "commitizen": "3.0.5",
-    "copy-webpack-plugin": "4.6.0",
     "cz-conventional-changelog": "2.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",

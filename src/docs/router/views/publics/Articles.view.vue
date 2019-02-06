@@ -21,7 +21,7 @@ export default {
   methods: {
     async getArticle(article) {
       console.log('GET ARTICLE ===============>');
-      const articlePath = `${article}.md`;
+      const articlePath = `packages/${article}.md`;
       this.article = await MarkdownService.getMarkdown(articlePath);
     },
   },

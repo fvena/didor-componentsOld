@@ -40,7 +40,7 @@ export default {
      * Replace '<a>' tags by '<router-link>' and remove extension file
      */
     async getMainNav() {
-      const navbarPath = '_navbar.md';
+      const navbarPath = 'docs/_navbar.md';
       const navbarLinks = await MarkdownService.getMarkdown(navbarPath);
       // prettier-ignore
       const navbarRouterLinks = navbarLinks.replace(

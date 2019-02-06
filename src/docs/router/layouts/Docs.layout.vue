@@ -71,7 +71,7 @@ export default {
     },
 
     async getSectionNav(section) {
-      const sectionPath = `_${section}.md`;
+      const sectionPath = `docs/_${section}.md`;
       const regex = /<\s*a href="(.*?)\.md">(.*?)<\s*\/\s*a>/gi;
       const listArticlesLinks = await MarkdownService.getMarkdown(sectionPath);
 
