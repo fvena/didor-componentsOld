@@ -3,11 +3,15 @@ import ApiService from './api.service';
 
 const MarkdownService = {
   async getMarkdown(file) {
-    // Request
-    const response = await ApiService.get(file);
-    const md = new MarkdownIt();
+    try {
+      // Request
+      const response = await ApiService.get(file);
+      const md = new MarkdownIt();
 
-    return md.render(response.data);
+      return md.render(response.data);
+    } catch (error) {
+      return '';
+    }
   },
 };
 

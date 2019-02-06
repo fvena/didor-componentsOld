@@ -1,24 +1,35 @@
 <template lang="pug">
   .footer
     .pagination-item.pagination-item--previous
-      a(href="#/README")
+      router-link(:to="prev.link" v-if="prev")
         .pagination-item-label
           svg.icon(width="10" height="16" viewBox="0 0 10 16")
             polyline(fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14")
           span Anterior
-        .pagination-item-title Introducción
+        .pagination-item-title {{ prev.name }}
 
     .pagination-item.pagination-item--next
-      a(href="#/templateIcon")
+      router-link(:to="next.link" v-if="next")
         .pagination-item-label
           span Siguiente
           svg(width="10" height="16" viewBox="0 0 10 16")
             polyline(fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14")
-        .pagination-item-title Iconos
+        .pagination-item-title {{ next.name }}
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    next: {
+      type: Object,
+      default: null,
+    },
+    prev: {
+      type: Object,
+      default: null,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

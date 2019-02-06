@@ -4,7 +4,7 @@ import NProgress from 'nprogress';
 
 // Publics views
 import MainLayout from '@/router/layouts/Main.layout.vue';
-import DocsView from '@/router/layouts/Docs.layout.vue';
+import DocsLayout from '@/router/layouts/Docs.layout.vue';
 import HomeView from '@/router/views/publics/Home.view.vue';
 import AboutView from '@/router/views/publics/About.view.vue';
 import ArticlesView from '@/router/views/publics/Articles.view.vue';
@@ -33,7 +33,7 @@ const router = new Router({
       },
       children: [
         {
-          path: '/',
+          path: '/home',
           name: 'home',
           component: HomeView,
         },
@@ -47,7 +47,7 @@ const router = new Router({
     {
       path: '/docs/:section',
       name: 'docs',
-      component: DocsView,
+      component: DocsLayout,
       children: [
         {
           path: ':article',

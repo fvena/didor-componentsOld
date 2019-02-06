@@ -1,6 +1,8 @@
 <template lang="pug">
   div
-    v-runtime-template(:template="article")
+    v-runtime-template(:template="article" v-if="article")
+    div(v-else)
+      h1 No se ha encontrado el árticulo
 </template>
 
 <script>
@@ -18,6 +20,7 @@ export default {
   },
   methods: {
     async getArticle(article) {
+      console.log('GET ARTICLE ===============>');
       const articlePath = `${article}.md`;
       this.article = await MarkdownService.getMarkdown(articlePath);
     },

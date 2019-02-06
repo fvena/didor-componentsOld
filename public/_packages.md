@@ -70,5 +70,4 @@
     - [Card](card.md)
     - [Carousel](carousel.md)
     - [Collapse](collapse.md)
-    - [Timeline](steps.md)
-    - [Steps](timeline.md)
+    - [Timeline](timeline.md)

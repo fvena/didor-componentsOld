@@ -38,6 +38,14 @@ export default {};
     &:hover {
       color: var(--color-brand);
     }
+
+    &.router-link-active {
+      color: var(--color-brand);
+
+      &:hover {
+        color: var(--color-brand-darker);
+      }
+    }
   }
 
   li > p > a,

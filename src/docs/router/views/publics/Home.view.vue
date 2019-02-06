@@ -1,58 +1,62 @@
 <template lang="pug">
 div
-  h1 Hola Mundo
-  h2 Hola Mundo
-  h3 Hola Mundo
-  h4 Hola Mundo
-  h5 Hola Mundo
-  h6 Hola Mundo
-  p Hola Mundo
 
-  h1
-    a(href="#creating-the-first-website")
-      span.icon.icon-link
-    | {{ $t("messages.homeTitle") }}
+  h1 Didor Components
 
-  p
-    | In this guide, we will use Dimer to publish Markdown files to a fully functional
-    | documentation website.
+  router-link(:to="{name: 'docs', params: { section: 'packages' }}") Docs
+  //- h1 Hola Mundo
+  //- h2 Hola Mundo
+  //- h3 Hola Mundo
+  //- h4 Hola Mundo
+  //- h5 Hola Mundo
+  //- h6 Hola Mundo
+  //- p Hola Mundo
 
-  az-button Botón
+  //- h1
+  //-   a(href="#creating-the-first-website")
+  //-     span.icon.icon-link
+  //-   | {{ $t("messages.homeTitle") }}
 
-  .toc
-    h2 Table of contents
-    ul
-      li
-        a(href="#prerequisites") Prerequisites
-      li
-        a(href="#creating-a-new-project") Creating a new project
-      li
-        p
-          a(href="#publishing") Publishing
-          ul
-            li
-              a(href="#compiler-error") Compiler error
-            li
-              a(href="#compiler-warnings") Compiler warnings
-      li
-        a(href="#next-steps") Next next-steps
+  //- p
+  //-   | In this guide, we will use Dimer to publish Markdown files to a fully functional
+  //-   | documentation website.
 
-  h2#prerequisites
-    a(href="#prerequisites")
-      span.icon.icon-link
-    | Prerequisites
+  //- az-button Botón
 
-  p Before getting started, make sure
+  //- .toc
+  //-   h2 Table of contents
+  //-   ul
+  //-     li
+  //-       a(href="#prerequisites") Prerequisites
+  //-     li
+  //-       a(href="#creating-a-new-project") Creating a new project
+  //-     li
+  //-       p
+  //-         a(href="#publishing") Publishing
+  //-         ul
+  //-           li
+  //-             a(href="#compiler-error") Compiler error
+  //-           li
+  //-             a(href="#compiler-warnings") Compiler warnings
+  //-     li
+  //-       a(href="#next-steps") Next next-steps
 
-  ol
-    li
-      | You have a Dimer account or
-      a(href="https://dimerapp.com/signup") create one.
-    li
-      | You are familiar with command line. We will be using
-      code Dimer CLI
-      | to publish documentation.
-    li Download Dimer CLI for your platform.
+  //- h2#prerequisites
+  //-   a(href="#prerequisites")
+  //-     span.icon.icon-link
+  //-   | Prerequisites
+
+  //- p Before getting started, make sure
+
+  //- ol
+  //-   li
+  //-     | You have a Dimer account or
+  //-     a(href="https://dimerapp.com/signup") create one.
+  //-   li
+  //-     | You are familiar with command line. We will be using
+  //-     code Dimer CLI
+  //-     | to publish documentation.
+  //-   li Download Dimer CLI for your platform.
 </template>
 
 <style lang="scss" scoped>

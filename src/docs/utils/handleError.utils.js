@@ -17,7 +17,7 @@ const HandleError = {
      * I throw a specific error to be able to communicate it to the user.
      */
     if (error.code === 'ECONNABORTED') {
-      return Promise.reject(new AppError('timeout', 'The connection is too slow'));
+      throw new AppError('timeout', 'The connection is too slow');
     }
 
     /*
@@ -26,7 +26,7 @@ const HandleError = {
      */
     if (!error.response) {
       store.dispatch('globalModule/setError', 'backendDown', { root: true });
-      return Promise.reject(new AppError());
+      throw new AppError();
     }
 
     /*
@@ -38,7 +38,7 @@ const HandleError = {
     const errorCode = error.response.data._id ? error.response.data._id : 'default';
     const parseError = BackendErrors[errorCode] ? BackendErrors[errorCode] : BackendErrors.default;
 
-    return Promise.reject(new AppError(parseError[0], parseError[1]));
+    throw new AppError(parseError[0], parseError[1]);
   },
 
   /**
@@ -54,7 +54,7 @@ const HandleError = {
      */
     if (!error.status) {
       store.dispatch('globalModule/setError', 'backendDown', { root: true });
-      return Promise.reject(new AppError());
+      throw new AppError();
     }
 
     /*
@@ -66,7 +66,7 @@ const HandleError = {
     const errorCode = error.response.data._id ? error.response.data._id : 'default';
     const parseError = BackendErrors[errorCode] ? BackendErrors[errorCode] : BackendErrors.default;
 
-    return Promise.reject(new AppError(parseError[0], parseError[1]));
+    throw new AppError(parseError[0], parseError[1]);
   },
 };
 

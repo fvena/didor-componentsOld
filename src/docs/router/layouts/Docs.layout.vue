@@ -1,9 +1,10 @@
 <template lang="pug">
 .docs(:class="{'docs--toggle-sidebar': sidebarShow, 'docs--show-device': deviceShow}")
   .sidebar(ref="sidebarRef")
-    Logo(:animate="animateLogo")
+    router-link(:to="{name: 'home'}")
+      Logo(:animate="animateLogo")
     Sidebar
-      v-runtime-template(:template="sectionLinks")
+      v-runtime-template(:template="listArticlesLinks")
   .content
     .docs__header
       button.sidebar-toggle(@click="toggleSidebar()")
@@ -16,9 +17,8 @@
 
     .docs__section
       .wrapper
-        h1 Title
         router-view
-        Footer
+        Footer(:next="nextArticle" :prev="prevArticle")
         Device
 </template>
 
@@ -32,6 +32,8 @@ import Device from '@/components/Device.component.vue';
 import MarkdownService from '@/services/markdown.service';
 import VRuntimeTemplate from 'v-runtime-template';
 
+const gitRepoLink = process.env.VUE_APP_GIT_REPO;
+
 export default {
   components: {
     Logo,
@@ -42,39 +44,99 @@ export default {
     Device,
     VRuntimeTemplate,
   },
+
   data() {
     return {
-      github: 'https://github.com/fvena/didor-docs',
+      github: gitRepoLink,
       sidebarShow: false,
       deviceShow: true,
-      sectionLinks: '',
+      sectionSelected: '',
+      articleSelected: '',
+      listArticlesLinks: '',
+      listArticles: '',
+      nextArticle: null,
+      prevArticle: null,
     };
   },
+
   computed: {
     animateLogo() {
       return this.sidebarShow;
     },
   },
+
   methods: {
-    async getSectionNav(section) {
-      const sectionPath = `_${section}.md`;
-      const sectionLinks = await MarkdownService.getMarkdown(sectionPath);
-      // prettier-ignore
-      const sectionRouterLinks = sectionLinks.replace(
-        /<\s*a href="(.*?).md">(.*?)<\s*\/\s*a>/gi,
-        '<router-link to="$1">$2</router-link>',
-      );
-      this.sectionLinks = sectionRouterLinks;
-    },
     toggleSidebar() {
       this.sidebarShow = !this.sidebarShow;
     },
+
+    async getSectionNav(section) {
+      const sectionPath = `_${section}.md`;
+      const regex = /<\s*a href="(.*?)\.md">(.*?)<\s*\/\s*a>/gi;
+      const listArticlesLinks = await MarkdownService.getMarkdown(sectionPath);
+
+      return listArticlesLinks.replace(regex, '<router-link to="$1">$2</router-link>');
+    },
+
+    getListArticles(section) {
+      const links = [];
+      const regex = /<\s*router-link to="(.*?)">(.*?)<\s*\/\s*router-link>/gi;
+
+      let matches = regex.exec(section);
+
+      while (matches) {
+        links.push({ name: matches[2], link: matches[1] });
+        matches = regex.exec(section);
+      }
+
+      return links;
+    },
+
+    getArticleSelected(articles, section, article) {
+      if (article) {
+        const index = articles.findIndex(item => item.link === article);
+        console.log(articles.length);
+        console.log(index);
+
+        if (index >= 0) {
+          this.nextArticle = index < articles.length ? articles[index + 1] : null;
+          this.prevArticle = index > 0 ? articles[index - 1] : null;
+          return index;
+        }
+      }
+
+      this.$router.push(`/docs/${section}/${this.listArticles[0].link}`);
+      return 0;
+    },
   },
-  created() {
-    this.getSectionNav(this.$route.params.section);
+  /**
+   * Get links the first time that component is loaded
+   */
+  async created() {
+    this.sectionSelected = this.$route.params.section;
+    this.listArticlesLinks = await this.getSectionNav(this.sectionSelected);
+    this.listArticles = await this.getListArticles(this.listArticlesLinks);
+    this.articleSelected = this.getArticleSelected(
+      this.listArticles,
+      this.sectionSelected,
+      this.$route.params.article
+    );
   },
-  beforeRouteUpdate(routeTo, routeFrom, next) {
-    this.getSectionNav(routeTo.params.section);
+
+  /**
+   * Get links only when route update and the section is different
+   */
+  async beforeRouteUpdate(routeTo, routeFrom, next) {
+    if (this.sectionSelected !== routeTo.params.section) {
+      this.sectionSelected = routeTo.params.section;
+      this.listArticlesLinks = await this.getSectionNav(this.sectionSelected);
+      this.listArticles = await this.getListArticles(this.listArticlesLinks);
+    }
+    this.articleSelected = this.getArticleSelected(
+      this.listArticles,
+      this.sectionSelected,
+      routeTo.params.article
+    );
     next();
   },
 };

@@ -1,8 +1,6 @@
 <template lang="pug">
 .main
-  | Didor Components
-
-  router-link(:to="{name: 'docs', params: { section: 'packages' }}") Docs
+  router-view
 </template>
 
 <script>
