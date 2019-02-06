@@ -6,6 +6,7 @@
   // Disable line length restrictions, because editor soft-wrapping is being
   // used instead.
   "line-length": false,
+  "first-line-h1": false,
   // ===
   // Prettier overrides
   // ===

@@ -28,6 +28,7 @@ module.exports = {
     'selector-max-universal': 1,
     'selector-max-type': null,
     'no-descending-specificity': null,
+    'no-empty-source': null,
     'color-hex-length': 'long',
     // ===
     // PRETTIER

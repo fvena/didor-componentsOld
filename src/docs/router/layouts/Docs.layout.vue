@@ -2,8 +2,8 @@
 .docs(:class="{'docs--toggle-sidebar': sidebarShow, 'docs--show-device': deviceShow}")
   .sidebar(ref="sidebarRef")
     Logo(:animate="animateLogo")
-    Sidebar(:sidebarData="sectionLinks")
-
+    Sidebar
+      v-runtime-template(:template="sectionLinks")
   .content
     .docs__header
       button.sidebar-toggle(@click="toggleSidebar()")
@@ -29,6 +29,8 @@ import Header from '@/components/Header.component.vue';
 import GithubOcto from '@/components/GithubOcto.component.vue';
 import Footer from '@/components/Footer.component.vue';
 import Device from '@/components/Device.component.vue';
+import MarkdownService from '@/services/markdown.service';
+import VRuntimeTemplate from 'v-runtime-template';
 
 export default {
   components: {
@@ -38,18 +40,14 @@ export default {
     GithubOcto,
     Footer,
     Device,
-  },
-  props: {
-    sectionLinks: {
-      type: String,
-      default: '',
-    },
+    VRuntimeTemplate,
   },
   data() {
     return {
       github: 'https://github.com/fvena/didor-docs',
       sidebarShow: false,
       deviceShow: true,
+      sectionLinks: '',
     };
   },
   computed: {
@@ -58,9 +56,26 @@ export default {
     },
   },
   methods: {
+    async getSectionNav(section) {
+      const sectionPath = `_${section}.md`;
+      const sectionLinks = await MarkdownService.getMarkdown(sectionPath);
+      // prettier-ignore
+      const sectionRouterLinks = sectionLinks.replace(
+        /<\s*a href="(.*?).md">(.*?)<\s*\/\s*a>/gi,
+        '<router-link to="$1">$2</router-link>',
+      );
+      this.sectionLinks = sectionRouterLinks;
+    },
     toggleSidebar() {
       this.sidebarShow = !this.sidebarShow;
     },
+  },
+  created() {
+    this.getSectionNav(this.$route.params.section);
+  },
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    this.getSectionNav(routeTo.params.section);
+    next();
   },
 };
 </script>

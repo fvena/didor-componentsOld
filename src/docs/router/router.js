@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import NProgress from 'nprogress';
-import MarkdownService from '@/services/markdown.service';
 
 // Publics views
 import MainLayout from '@/router/layouts/Main.layout.vue';
@@ -46,29 +45,14 @@ const router = new Router({
       ],
     },
     {
-      path: '/docs/:section?',
+      path: '/docs/:section',
       name: 'docs',
       component: DocsView,
-      props: true,
-      async beforeEnter(routeTo, routeFrom, next) {
-        console.log('DOCS before enter ===============================>');
-        const sectionPath = `_${routeTo.params.section}.md`;
-        routeTo.params.sectionLinks = await MarkdownService.getMarkdown(sectionPath);
-        next();
-      },
       children: [
         {
           path: ':article',
           name: 'article',
           component: ArticlesView,
-          props: true,
-          async beforeEnter(routeTo, routeFrom, next) {
-            console.log('ARTICLE before enter ==========================>');
-            const articlePath = `_${routeTo.params.article}.md`;
-            // routeTo.params.article = await MarkdownService.getMarkdown(sectionPath);
-            routeTo.params.article = articlePath;
-            next();
-          },
         },
       ],
     },

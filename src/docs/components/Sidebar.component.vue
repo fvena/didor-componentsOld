@@ -1,33 +1,10 @@
 <template lang="pug">
   nav.sidebar-nav
-    v-runtime-template(:template="computed")
+    slot
 </template>
 
 <script>
-import VRuntimeTemplate from 'v-runtime-template';
-
-export default {
-  components: {
-    VRuntimeTemplate,
-  },
-  props: {
-    sidebarData: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      computed: '',
-    };
-  },
-  created() {
-    const routerLinkStart = this.sidebarData.replace(/<a href/g, '<router-link to');
-    const routerLinkEnd = routerLinkStart.replace(/<\/a>/g, '</router-link>');
-    const routerLinkExt = routerLinkEnd.replace(/\.md/g, '');
-    this.computed = routerLinkExt;
-  },
-};
+export default {};
 </script>
 
 <style lang="scss">

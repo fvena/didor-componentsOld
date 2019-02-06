@@ -4,9 +4,9 @@
 
 - Development
 
-  - [Installation](installation.md)
-  - [Quick Start](quickstart.md)
-  - [Internationalization](i18n.md)
+  - [Component1](component1.md)
+  - [Component2](component2.md)
+  - [Component3](component3.md)
   - [Custom Theme](custom-theme.md)
   - [Built-in transition](transition.md)
 
