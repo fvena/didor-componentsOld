@@ -5,6 +5,7 @@ const MarkdownService = {
   async getMarkdown(file) {
     try {
       // Request
+      console.log('file: ', file);
       const response = await ApiService.get(file);
       const md = new MarkdownIt();
 

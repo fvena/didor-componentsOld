@@ -7,6 +7,7 @@ const state = {
   isOnline: true,
   isPause: false,
   errorCode: '',
+  sidebarState: false,
 };
 
 export default state;

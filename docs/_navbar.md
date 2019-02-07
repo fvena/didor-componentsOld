@@ -1,4 +1,8 @@
 - [Home](/home)
-- [about](/about)
-- [Element React](https://elemefe.github.io/element-react/)
-- [Packages](/docs/packages/)
+- [Components](/docs/packages/home.md)
+- [Framework](/docs/framework/home.md)
+
+- Templates
+
+  - [Web App](/docs/templates/web/home.md)
+  - [Mobile App](/docs/templates/mobile/home.md)

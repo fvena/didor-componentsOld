@@ -4,6 +4,7 @@ const getError = state => state.errorCode;
 const isCordovaApp = state => state.isCordovaApp;
 const isOnline = state => state.isOnline;
 const isPause = state => state.isPause;
+const getSidebarState = state => state.sidebarState;
 
 export default {
   getLanguage,
@@ -12,4 +13,5 @@ export default {
   isCordovaApp,
   isOnline,
   isPause,
+  getSidebarState,
 };

@@ -7,7 +7,6 @@ import MainLayout from '@/router/layouts/Main.layout.vue';
 import DocsLayout from '@/router/layouts/Docs.layout.vue';
 import HomeView from '@/router/views/publics/Home.view.vue';
 import AboutView from '@/router/views/publics/About.view.vue';
-import ArticlesView from '@/router/views/publics/Articles.view.vue';
 
 // Not found route - 404
 import NotFoundView from '@/router/views/NotFound.view.vue';
@@ -45,16 +44,9 @@ const router = new Router({
       ],
     },
     {
-      path: '/docs/:section',
+      path: '/docs/:section*',
       name: 'docs',
       component: DocsLayout,
-      children: [
-        {
-          path: ':article',
-          name: 'article',
-          component: ArticlesView,
-        },
-      ],
     },
 
     // Routes demo

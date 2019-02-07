@@ -105,6 +105,13 @@ const setError = ({ commit }, error) => {
   commit('SET_ERROR', error.errorId);
 };
 
+/**
+ *
+ */
+const toggleSidebar = ({ commit }) => {
+  commit('SET_SIDEBAR_STATUS');
+};
+
 export default {
   setLanguage,
   init,
@@ -114,4 +121,5 @@ export default {
   onPause,
   onResume,
   setError,
+  toggleSidebar,
 };

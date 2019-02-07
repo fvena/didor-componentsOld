@@ -1,0 +1,3 @@
+- [Templates Mobile 1](/docs/templates/mobile/home.md)
+- [Templates Mobile 2](/docs/templates/mobile/home.md)
+- [Templates Mobile 3](/docs/templates/mobile/home.md)

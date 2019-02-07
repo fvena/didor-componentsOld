@@ -18,10 +18,15 @@ const SET_ERROR = (state, errorCode) => {
   state.errorCode = errorCode;
 };
 
+const SET_SIDEBAR_STATUS = state => {
+  state.sidebarState = !state.sidebarState;
+};
+
 export default {
   SET_LANGUAGE,
   SET_CORDOVA_APP,
   SET_ONLINE,
   SET_PAUSE,
   SET_ERROR,
+  SET_SIDEBAR_STATUS,
 };

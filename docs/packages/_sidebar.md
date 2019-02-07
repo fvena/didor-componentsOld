@@ -1,25 +1,23 @@
-- [Changelog](changelog.md)
-- [Element React](https://elemefe.github.io/element-react/)
-- [Element Angular](https://element-angular.faas.ele.me/)
+- [Home](/docs/packages/home.md)
 
 - Development
 
-  - [Component1](component1.md)
-  - [Component2](component2.md)
-  - [Component3](component3.md)
-  - [Custom Theme](custom-theme.md)
-  - [Built-in transition](transition.md)
+  - [Component1](/docs/packages/component1.md)
+  - [Component2](/docs/packages/component2.md)
+  - [Component3](/docs/packages/component3.md)
+  - [Custom Theme](/docs/packages/custom-theme.md)
+  - [Built-in transition](/docs/packages/transition.md)
 
 - Components
 
   - Basic
 
-    - [Layout](layout.md)
-    - [Layout Container](container.md)
-    - [Color](color.md)
-    - [Typography](typography.md)
-    - [Icon](icon.md)
-    - [Button](button.md)
+    - [Layout](/docs/packages/layout.md)
+    - [Layout Container](/docs/packages/container.md)
+    - [Color](/docs/packages/color.md)
+    - [Typography](/docs/packages/typography.md)
+    - [Icon](/docs/packages/icon.md)
+    - [Button](/docs/packages/button.md)
 
   - Form
 

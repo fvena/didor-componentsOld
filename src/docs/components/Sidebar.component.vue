@@ -1,14 +1,26 @@
 <template lang="pug">
-  nav.sidebar-nav
-    slot
+  .sidebar
+    //- Logo
+    router-link(:to="{name: 'home'}")
+      Logo
+
+    //- Menu
+    nav.sidebar__nav
+      slot
 </template>
 
 <script>
-export default {};
+import Logo from '@/components/Logo.component.vue';
+
+export default {
+  components: {
+    Logo,
+  },
+};
 </script>
 
 <style lang="scss">
-.sidebar-nav {
+.sidebar__nav {
   li {
     margin: 0;
     list-style: none;
@@ -23,6 +35,14 @@ export default {};
     font-weight: $content-font-bold;
     color: var(--color-gray2);
     text-transform: uppercase;
+
+    &.router-link-active {
+      color: var(--color-brand);
+
+      &:hover {
+        color: var(--color-brand-darker);
+      }
+    }
   }
 
   li > p > a:hover {

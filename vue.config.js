@@ -1,4 +1,5 @@
 const path = require('path');
+const docsConfig = require('./docs/docs.config');
 
 module.exports = {
   devServer: {
@@ -17,6 +18,10 @@ module.exports = {
     },
   },
   configureWebpack: {
+    // We provide the app's title in Webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: docsConfig.title,
+    // Set up all the aliases we use in our app.
     resolve: {
       alias: {
         '@': `${__dirname}/src/docs`,
@@ -39,7 +44,7 @@ module.exports = {
       const fromPackages = path.resolve('packages');
       const fromDocs = path.resolve('docs');
       const toPackages = `${pathConfigs[0].to}/packages`;
-      const toDocs = `${pathConfigs[0].to}/docs`;
+      const toDocs = `${pathConfigs[0].to}/${docsConfig.basePath}`;
 
       const configPackages = {
         from: fromPackages,

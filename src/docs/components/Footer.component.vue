@@ -1,33 +1,31 @@
 <template lang="pug">
   .footer
     .pagination-item.pagination-item--previous
-      router-link(:to="prev.link" v-if="prev")
+      router-link(:to="prevArticle.path" v-if="prevArticle")
         .pagination-item-label
           svg.icon(width="10" height="16" viewBox="0 0 10 16")
             polyline(fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14")
           span Anterior
-        .pagination-item-title {{ prev.name }}
+        .pagination-item-title {{ prevArticle.name }}
 
     .pagination-item.pagination-item--next
-      router-link(:to="next.link" v-if="next")
+      router-link(:to="nextArticle.path" v-if="nextArticle")
         .pagination-item-label
           span Siguiente
           svg(width="10" height="16" viewBox="0 0 10 16")
             polyline(fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14")
-        .pagination-item-title {{ next.name }}
+        .pagination-item-title {{ nextArticle.name }}
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  props: {
-    next: {
-      type: Object,
-      default: null,
-    },
-    prev: {
-      type: Object,
-      default: null,
-    },
+  computed: {
+    ...mapGetters({
+      nextArticle: 'docsModule/getNextArticle',
+      prevArticle: 'docsModule/getPrevArticle',
+    }),
   },
 };
 </script>

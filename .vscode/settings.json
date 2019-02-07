@@ -84,5 +84,11 @@
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100
+  },
+  "markdownlint.config": {
+    "line-length": false,
+    "first-line-h1": false,
+    "no-multiple-blanks": false,
+    "list-marker-space": false
   }
 }
