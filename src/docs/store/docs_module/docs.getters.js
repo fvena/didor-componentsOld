@@ -2,6 +2,7 @@ const getHeaderLinks = state => state.headerLinks;
 const getSidebarLinks = state => state.sidebarLinks;
 const getArticle = state => state.article;
 const getComponent = state => state.component;
+const getParams = state => state.params;
 const getActualArticle = state => state.articleList[state.articleIndex];
 const getNextArticle = (state) => {
   const { articleIndex } = state;
@@ -20,6 +21,7 @@ export default {
   getSidebarLinks,
   getArticle,
   getComponent,
+  getParams,
   getActualArticle,
   getNextArticle,
   getPrevArticle,

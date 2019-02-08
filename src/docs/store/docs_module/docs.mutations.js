@@ -22,6 +22,10 @@ const SET_COMPONENT = (state, component) => {
   state.component = component;
 };
 
+const SET_PARAMS = (state, params) => {
+  state.params = params;
+};
+
 export default {
   SET_HEADER_LINKS,
   SET_SIDEBAR_LINKS,
@@ -29,4 +33,5 @@ export default {
   SET_ARTICLE_INDEX,
   SET_ARTICLE,
   SET_COMPONENT,
+  SET_PARAMS,
 };

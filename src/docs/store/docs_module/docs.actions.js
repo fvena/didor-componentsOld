@@ -62,6 +62,7 @@ const getArticle = async ({ commit, state }, params) => {
     commit('SET_ARTICLE', articleParse);
     commit('SET_ARTICLE_INDEX', index);
     commit('SET_COMPONENT', component);
+    commit('SET_PARAMS', params);
   }
 };
 

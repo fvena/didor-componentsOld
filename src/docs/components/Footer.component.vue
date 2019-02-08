@@ -1,7 +1,7 @@
 <template lang="pug">
   .footer
     .pagination-item.pagination-item--previous
-      router-link(:to="prevArticle.path" v-if="prevArticle")
+      router-link(:to="prevLink" v-if="prevArticle")
         .pagination-item-label
           svg.icon(width="10" height="16" viewBox="0 0 10 16")
             polyline(fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14")
@@ -9,7 +9,7 @@
         .pagination-item-title {{ prevArticle.name }}
 
     .pagination-item.pagination-item--next
-      router-link(:to="nextArticle.path" v-if="nextArticle")
+      router-link(:to="nextLink" v-if="nextArticle")
         .pagination-item-label
           span Siguiente
           svg(width="10" height="16" viewBox="0 0 10 16")
@@ -25,7 +25,22 @@ export default {
     ...mapGetters({
       nextArticle: 'docsModule/getNextArticle',
       prevArticle: 'docsModule/getPrevArticle',
+      params: 'docsModule/getParams',
     }),
+    nextLink() {
+      const basePath = this.params.section
+        ? `/${this.params.type}/${this.params.section}`
+        : `/${this.params.type}`;
+
+      return `${basePath}${this.nextArticle.path}`;
+    },
+    prevLink() {
+      const basePath = this.params.section
+        ? `/${this.params.type}/${this.params.section}`
+        : `/${this.params.type}`;
+
+      return `${basePath}${this.prevArticle.path}`;
+    },
   },
 };
 </script>

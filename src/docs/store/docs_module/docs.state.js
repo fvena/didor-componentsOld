@@ -5,6 +5,7 @@ const state = {
   articleIndex: 0,
   article: '',
   component: '',
+  params: {},
 };
 
 export default state;
