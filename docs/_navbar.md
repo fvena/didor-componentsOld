@@ -1,4 +1,5 @@
 - [Home](/home)
+
 - [Components](/packages)
 - [Framework](/docs/framework)
 
@@ -6,3 +7,5 @@
 
   - [Web App](/docs/template_web)
   - [Mobile App](/docs/template_mobile)
+
+- [Academia](/docs/academy)

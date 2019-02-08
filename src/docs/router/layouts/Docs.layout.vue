@@ -6,7 +6,7 @@
 
   .docs__content
     //- Header
-    Header.docs__header(@toggleSidebar="toggleSidebar()")
+    Header
       v-runtime-template(:template="headerNav")
 
     router-view
@@ -47,7 +47,7 @@ export default {
    * Get links the first time that component is loaded
    */
   async created() {
-    const params = DocsUtil.getPaths(this.$route.path);
+    const params = DocsUtil.getParams(this.$route.path);
 
     this.getHeaderNav();
     await this.getSidebarNav(params);
@@ -58,8 +58,8 @@ export default {
    * Get links only when route update and the section is different
    */
   async beforeRouteUpdate(routeTo, routeFrom, next) {
-    const fromParams = DocsUtil.getPaths(routeFrom.path);
-    const toParams = DocsUtil.getPaths(routeTo.path);
+    const fromParams = DocsUtil.getParams(routeFrom.path);
+    const toParams = DocsUtil.getParams(routeTo.path);
 
     if (fromParams.section !== toParams.section) {
       await this.getSidebarNav(toParams);
@@ -74,8 +74,6 @@ export default {
 /**
  * Vars
  */
-$header-height: triple($space);
-$header-height-media: double($space);
 $sidebar-width: 240px;
 $sidebar-width-large: 300px;
 

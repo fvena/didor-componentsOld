@@ -1,7 +1,11 @@
+import Vue from 'vue';
+import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
+import path from 'path';
 import docsConfig from '../../../docs/docs.config';
 
-const getPaths = (path) => {
-  const splitPath = path.split('/').filter(item => item !== '');
+const getParams = (routerPath) => {
+  const splitPath = routerPath.split('/').filter(item => item !== '');
   const type = splitPath.shift();
   let section = '';
   let article = '';
@@ -32,9 +36,9 @@ const getPaths = (path) => {
  * @returns {String} - String parsed
  */
 const parseLinks = (links, basePath) => {
-  const path = basePath || '';
+  const pathLink = basePath || '';
   const regex = /<\s*a href="\/(.*?)">(.*?)<\s*\/\s*a>/gi;
-  const parse = links.replace(regex, `<router-link to="${path}/$1">$2</router-link>`);
+  const parse = links.replace(regex, `<router-link to="${pathLink}/$1">$2</router-link>`);
   return parse.replace(/\.md/g, '');
 };
 
@@ -60,8 +64,44 @@ const getListLinks = links => new Promise((resolve) => {
   resolve(list);
 });
 
+/**
+ * Globally register all components, because they will be used in docs.
+ * Components are registered using the PascalCased version of their file name.
+ */
+const loadComponentes = (componentsPath, isDemo = false) => {
+  /*
+   * Get .vue files from the component path
+   */
+  const requireComponent = require.context('../../../packages', true, /[\w-]+\.vue$/);
+
+  /*
+   * For each matching file name:
+   * - Get the component config
+   * - Get the PascalCase version of the component name and Remove the file extension
+   * - Globally register the component
+   */
+  // prettier-ignore
+  requireComponent.keys().forEach((fileName) => {
+    const { prefix } = docsConfig;
+    const componentConfig = requireComponent(fileName);
+    let componentName = '';
+
+    if (path.dirname(fileName).includes('demo') && isDemo) {
+      const componentPath = path.dirname(fileName).split('/');
+      componentName = `Demo${upperFirst(camelCase(componentPath[1]))}`;
+    } else {
+      componentName = `${prefix}${upperFirst(camelCase(path.basename(fileName, '.vue')))}`;
+    }
+
+    console.log(componentName);
+
+    Vue.component(componentName, componentConfig.default || componentConfig);
+  });
+};
+
 export default {
-  getPaths,
+  getParams,
   parseLinks,
   getListLinks,
+  loadComponentes,
 };

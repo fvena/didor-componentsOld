@@ -5,11 +5,14 @@ import store from './store/store';
 import i18n from './locales/i18n';
 import ApiService from './services/api.service';
 import 'nprogress/nprogress.css';
-import '../../packages';
+import UtilDocs from './utils/docs.utils'; // '../../packages';
+import docsConfig from '../../docs/docs.config';
+
 import '../didor/_didor.scss';
 
 // Inicializamos nuesta API
 ApiService.init(process.env.VUE_APP_API_URL, process.env.VUE_APP_API_TIMEOUT);
+UtilDocs.loadComponentes(docsConfig.packagePath);
 
 Vue.config.productionTip = false;
 
