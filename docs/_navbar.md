@@ -1,8 +1,8 @@
 - [Home](/home)
-- [Components](/docs/packages/home.md)
-- [Framework](/docs/framework/home.md)
+- [Components](/packages)
+- [Framework](/docs/framework)
 
 - Templates
 
-  - [Web App](/docs/templates/web/home.md)
-  - [Mobile App](/docs/templates/mobile/home.md)
+  - [Web App](/docs/template_web)
+  - [Mobile App](/docs/template_mobile)

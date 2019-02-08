@@ -6,6 +6,7 @@ import Vue from 'vue';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import path from 'path';
+import docsConfig from '../docs/docs.config';
 
 /*
  * Get .vue files in the current directory and subdirectories
@@ -21,8 +22,9 @@ const requireComponent = require.context('.', true, /[\w-]+\.vue$/);
 // prettier-ignore
 requireComponent.keys().forEach((fileName) => {
   if (!path.dirname(fileName).includes('demo')) {
+    const { prefix } = docsConfig;
     const componentConfig = requireComponent(fileName);
-    const componentName = `Az${upperFirst(camelCase(path.basename(fileName, '.vue')))}`;
+    const componentName = `${prefix}${upperFirst(camelCase(path.basename(fileName, '.vue')))}`;
 
     Vue.component(componentName, componentConfig.default || componentConfig);
   }

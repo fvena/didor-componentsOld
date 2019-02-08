@@ -18,7 +18,7 @@ const SET_ERROR = (state, errorCode) => {
   state.errorCode = errorCode;
 };
 
-const SET_SIDEBAR_STATUS = state => {
+const SET_SIDEBAR_STATUS = (state) => {
   state.sidebarState = !state.sidebarState;
 };
 

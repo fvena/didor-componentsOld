@@ -9,8 +9,6 @@ const HandleError = {
    * @param {Object} error - Error object
    */
   async response(error) {
-    console.log(error);
-    console.log(error.response);
     /*
      * TIMEOUT ERROR
      *

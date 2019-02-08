@@ -19,11 +19,14 @@ const getHeaderNav = async ({ commit }) => {
  *
  * @param {*} param0
  */
-const getSidebarNav = async ({ commit }, section) => {
-  const sidebarPath = `${section}/_sidebar.md`;
+const getSidebarNav = async ({ commit }, params) => {
+  const basePath = params.section ? `./${params.type}/${params.section}` : `./${params.type}`;
+  const baseLinkPath = params.section ? `/${params.type}/${params.section}` : `/${params.type}`;
+
+  const sidebarPath = `${basePath}/_sidebar.md`;
   const sidebarLinks = await MarkdownService.getMarkdown(sidebarPath);
-  const sidebarParse = DocsUtil.parseLinks(sidebarLinks);
-  const articleList = DocsUtil.getListLinks(sidebarLinks);
+  const sidebarParse = DocsUtil.parseLinks(sidebarLinks, baseLinkPath);
+  const articleList = await DocsUtil.getListLinks(sidebarLinks);
 
   commit('SET_SIDEBAR_LINKS', sidebarParse);
   commit('SET_ARTICLES_LIST', articleList);
@@ -34,7 +37,8 @@ const getSidebarNav = async ({ commit }, section) => {
  * @param {*} param0
  */
 const getArticle = async ({ commit, state }, params) => {
-  const { section, article } = params;
+  const { type, section, article } = params;
+  const basePath = section ? `${type}/${section}` : `${type}`;
   let index = 0;
 
   // Check if there is articles in this section
@@ -42,20 +46,22 @@ const getArticle = async ({ commit, state }, params) => {
     // Check if article exist
     if (article) {
       const articleIndex = state.articleList.findIndex(
-        item => item.path === `${section}/${article}`
+        item => item.path === `${section}/${article}`,
       );
       index = articleIndex >= 0 ? articleIndex : 0;
     } else {
-      router.push(`${state.articleList[index].path}`);
+      router.push(`/${basePath}${state.articleList[index].path}`);
       return;
     }
 
-    const articlePath = `${state.articleList[index].path}.md`;
+    const articlePath = `${basePath}${state.articleList[index].path}.md`;
     const articleContent = await MarkdownService.getMarkdown(articlePath);
     const articleParse = articleContent ? `<div>${articleContent}</div>` : '';
+    const component = articleParse ? `Demo${params.component}` : '';
 
     commit('SET_ARTICLE', articleParse);
     commit('SET_ARTICLE_INDEX', index);
+    commit('SET_COMPONENT', component);
   }
 };
 

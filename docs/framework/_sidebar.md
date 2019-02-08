@@ -1,3 +1,3 @@
-- [Framework 1](/docs/framework/home.md)
-- [Framework 2](/docs/framework/home.md)
-- [Framework 3](/docs/framework/home.md)
+- [Framework 1](/home.md)
+- [Framework 2](/home.md)
+- [Framework 3](/home.md)

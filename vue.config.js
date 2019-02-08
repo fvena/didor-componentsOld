@@ -39,12 +39,12 @@ module.exports = {
       },
     },
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.plugin('copy').tap(([pathConfigs]) => {
-      const fromPackages = path.resolve('packages');
-      const fromDocs = path.resolve('docs');
-      const toPackages = `${pathConfigs[0].to}/packages`;
-      const toDocs = `${pathConfigs[0].to}/${docsConfig.basePath}`;
+      const fromPackages = path.resolve(docsConfig.packagePath);
+      const fromDocs = path.resolve(docsConfig.docsPath);
+      const toPackages = `${pathConfigs[0].to}/${docsConfig.packagePath}`;
+      const toDocs = `${pathConfigs[0].to}/${docsConfig.docsPath}`;
 
       const configPackages = {
         from: fromPackages,

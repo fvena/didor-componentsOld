@@ -3,7 +3,7 @@ div
 
   h1 Didor Components
 
-  router-link(:to="{name: 'docs', params: { section: 'packages' }}") Docs
+  router-link(:to="{name: 'packages'}") Packages
   //- h1 Hola Mundo
   //- h2 Hola Mundo
   //- h3 Hola Mundo

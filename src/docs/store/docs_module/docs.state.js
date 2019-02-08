@@ -4,6 +4,7 @@ const state = {
   articleList: [],
   articleIndex: 0,
   article: '',
+  component: '',
 };
 
 export default state;

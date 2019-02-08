@@ -5,8 +5,10 @@
 module.exports = {
   title: 'Didor Docs',
   description: 'Opinionated boilerplate project for an enterprise Vue frontend',
-  basePath: './docs',
+  docsPath: './docs',
+  packagePath: './packages',
   loadNavbar: './docs/_navbar.md',
+  prefix: 'Az',
   languages: false,
   gitRepoLink: 'https://github.com/fvena/didor-components',
 };

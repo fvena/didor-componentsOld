@@ -1,12 +1,16 @@
 <template lang="pug">
 .article(:class="{'article--show-device': deviceShow}")
   .wrapper
-    slot
+    v-runtime-template(:template="article" v-if="article")
+    div(v-else)
+      h1 No se ha encontrado el archivo
     Footer
   Device
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import VRuntimeTemplate from 'v-runtime-template';
 import Footer from '@/components/Footer.component.vue';
 import Device from '@/components/Device.component.vue';
 
@@ -14,12 +18,19 @@ export default {
   components: {
     Footer,
     Device,
+    VRuntimeTemplate,
   },
 
   data() {
     return {
       deviceShow: true,
     };
+  },
+
+  computed: {
+    ...mapGetters({
+      article: 'docsModule/getArticle',
+    }),
   },
 };
 </script>

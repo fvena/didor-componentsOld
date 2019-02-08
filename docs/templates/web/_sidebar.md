@@ -1,3 +1,0 @@
-- [Templates Web 1](/docs/templates/web/home.md)
-- [Templates Web 2](/docs/templates/web/home.md)
-- [Templates Web 3](/docs/templates/web/home.md)

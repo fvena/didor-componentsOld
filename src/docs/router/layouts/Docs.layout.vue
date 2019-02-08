@@ -9,10 +9,7 @@
     Header.docs__header(@toggleSidebar="toggleSidebar()")
       v-runtime-template(:template="headerNav")
 
-    Article
-      v-runtime-template(:template="article" v-if="article")
-      div(v-else)
-        h1 No se ha encontrado el archivo
+    router-view
 
 </template>
 
@@ -22,13 +19,11 @@ import VRuntimeTemplate from 'v-runtime-template';
 import DocsUtil from '@/utils/docs.utils';
 import Sidebar from '@/components/Sidebar.component.vue';
 import Header from '@/components/Header.component.vue';
-import Article from '@/components/Article.component.vue';
 
 export default {
   components: {
     Sidebar,
     Header,
-    Article,
     VRuntimeTemplate,
   },
 
@@ -36,7 +31,6 @@ export default {
     ...mapGetters({
       headerNav: 'docsModule/getHeaderLinks',
       sidebarNav: 'docsModule/getSidebarLinks',
-      article: 'docsModule/getArticle',
       sidebarShow: 'globalModule/getSidebarState',
     }),
   },
@@ -53,24 +47,24 @@ export default {
    * Get links the first time that component is loaded
    */
   async created() {
-    const { section, article } = DocsUtil.getRouteParams(this.$route.path);
+    const params = DocsUtil.getPaths(this.$route.path);
 
     this.getHeaderNav();
-    await this.getSidebarNav(section);
-    await this.getArticle({ section, article });
+    await this.getSidebarNav(params);
+    this.getArticle(params);
   },
 
   /**
    * Get links only when route update and the section is different
    */
   async beforeRouteUpdate(routeTo, routeFrom, next) {
-    const fromSection = DocsUtil.getRouteParams(routeFrom.path).section;
-    const { section, article } = DocsUtil.getRouteParams(routeTo.path);
+    const fromParams = DocsUtil.getPaths(routeFrom.path);
+    const toParams = DocsUtil.getPaths(routeTo.path);
 
-    if (fromSection !== section) {
-      await this.getSidebarNav(section);
+    if (fromParams.section !== toParams.section) {
+      await this.getSidebarNav(toParams);
     }
-    await this.getArticle({ section, article });
+    await this.getArticle(toParams);
     next();
   },
 };

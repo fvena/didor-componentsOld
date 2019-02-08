@@ -1,17 +1,28 @@
-const getRouteParams = path => {
-  const splitPath = path.split('/');
-  const pathLength = splitPath.length;
+import docsConfig from '../../../docs/docs.config';
+
+const getPaths = (path) => {
+  const splitPath = path.split('/').filter(item => item !== '');
+  const type = splitPath.shift();
   let section = '';
   let article = '';
+  let component = '';
 
-  if (pathLength > 3) {
-    article = splitPath.pop();
-    section = splitPath.join('/');
-  } else {
-    section = splitPath.join('/');
+  if (splitPath.length > 0) {
+    if (docsConfig.packagePath === `./${type}`) {
+      article = splitPath.join('/');
+      component = splitPath[splitPath.length - 1];
+    } else {
+      section = splitPath.shift();
+      article = splitPath.length > 0 ? splitPath.join('/') : '';
+    }
   }
 
-  return { section, article };
+  return {
+    type,
+    section,
+    article,
+    component,
+  };
 };
 
 /**
@@ -20,9 +31,10 @@ const getRouteParams = path => {
  * @params  {String} links - String with links
  * @returns {String} - String parsed
  */
-const parseLinks = links => {
+const parseLinks = (links, basePath) => {
+  const path = basePath || '';
   const regex = /<\s*a href="\/(.*?)">(.*?)<\s*\/\s*a>/gi;
-  const parse = links.replace(regex, '<router-link to="/$1">$2</router-link>');
+  const parse = links.replace(regex, `<router-link to="${path}/$1">$2</router-link>`);
   return parse.replace(/\.md/g, '');
 };
 
@@ -32,7 +44,8 @@ const parseLinks = links => {
  * @params  {String} links - String with links
  * @returns {Array} - Array of objects with name and path of the link
  */
-const getListLinks = links => {
+// prettier-ignore
+const getListLinks = links => new Promise((resolve) => {
   const list = [];
   const regex = /<\s*a href="(.*?)">(.*?)<\s*\/\s*a>/gi;
   const parse = links.replace(/\.md/g, '');
@@ -44,11 +57,11 @@ const getListLinks = links => {
     matches = regex.exec(parse);
   }
 
-  return list;
-};
+  resolve(list);
+});
 
 export default {
-  getRouteParams,
+  getPaths,
   parseLinks,
   getListLinks,
 };
