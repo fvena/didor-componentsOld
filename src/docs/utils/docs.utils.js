@@ -89,6 +89,8 @@ const loadComponentes = (componentsPath, isDemo = false) => {
     const componentConfig = requireComponent(fileName);
     let componentName = '';
 
+    if (path.dirname(fileName).includes('demo') && !isDemo) return;
+
     if (path.dirname(fileName).includes('demo') && isDemo) {
       const componentPath = path.dirname(fileName).split('/');
       componentName = `Demo${upperFirst(camelCase(componentPath[1]))}`;

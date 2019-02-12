@@ -1,3 +1,7 @@
+---
+device: true
+---
+
 ## Toast
 
 ### Install

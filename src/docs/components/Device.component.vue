@@ -2,7 +2,6 @@
   .device
     .device__speaker
     .device__screen
-      | {{ demoComponent }}
       iframe(:name="component" src="/demo.html" frameborder="0" v-if="component")
 </template>
 
@@ -29,6 +28,11 @@ export default {
     return {
       component: '',
     };
+  },
+  created() {
+    setTimeout(() => {
+      this.component = this.demoComponent;
+    }, 300);
   },
 };
 </script>

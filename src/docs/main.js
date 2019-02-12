@@ -5,7 +5,7 @@ import store from './store/store';
 import i18n from './locales/i18n';
 import ApiService from './services/api.service';
 import 'nprogress/nprogress.css';
-import UtilDocs from './utils/docs.utils'; // '../../packages';
+import UtilDocs from './utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
 
 import '../didor/_didor.scss';

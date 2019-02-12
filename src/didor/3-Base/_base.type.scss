@@ -150,7 +150,7 @@ pre {
 
   &::after {
     position: absolute;
-    top: 0;
+    top: quarter($space);
     right: 0;
     display: block;
     height: $space;
