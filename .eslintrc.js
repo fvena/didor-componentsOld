@@ -10,6 +10,7 @@ module.exports = {
     'array-element-newline': ['error', 'consistent'],
     'no-param-reassign': 0,
     'no-underscore-dangle': 0,
+    'prefer-destructuring': 0,
     'max-len': [
       'error',
       { code: 100, ignoreStrings: true, ignoreTrailingComments: true, ignoreComments: true },

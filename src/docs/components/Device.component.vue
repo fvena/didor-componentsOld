@@ -62,8 +62,8 @@ $device-screen: rgb(255, 255, 255);
   overflow: hidden;
   background: $device-background;
   border-radius: 20px;
-  box-shadow: 0 0 4px 0 $device-color-a70, 10px 10px 18px 0 $device-color-a40,
-    inset 2px 2px 2px 0 $device-light-a70, inset -1px -1px 2px 0 $device-color-a40;
+  box-shadow: 0 0 4px 0 $device-color-a70, 0 10px 18px 0 $device-color-a40,
+    inset 0 2px 2px 0 $device-light-a70, inset 0 -1px 2px 0 $device-color-a40;
 
   iframe {
     display: block;
@@ -101,7 +101,7 @@ $device-screen: rgb(255, 255, 255);
   background: $device-screen;
   border-top: 1px solid $device-color-a20;
   border-bottom: 1px solid $device-color-a20;
-  box-shadow: inset -1px 0 2px 0 $device-color-a40, inset 2px -1px 2px 0 $device-light-a30;
+  box-shadow: inset 0 0 2px 0 $device-color-a40, inset 0 -1px 2px 0 $device-light-a30;
 }
 
 @include media(large) {

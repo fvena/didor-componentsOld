@@ -1,16 +1,20 @@
-## Button
+---
+device: true
+---
 
-### Install
+# Button
 
-```js
+## Install
+
+```javascript
 import { Button } from 'vant';
 
 Vue.use(Button);
 ```
 
-### Usage
+## Usage
 
-#### Type
+### Type
 
 ```pug
 az-button(type="primary") Primary
@@ -19,34 +23,34 @@ az-button(type="default") Default
 az-button(type="warning") Warning
 ```
 
-#### Plain
+### Plain
 
 ```pug
 az-button(plain type="primary") Primary
 az-button(plain type="danger") Danger
 ```
 
-#### Disabled
+### Disabled
 
 ```pug
 az-button(disabled type="primary") Diabled
 az-button(disabled type="danger") Diabled
 ```
 
-#### Loading
+### Loading
 
 ```pug
 az-button(loading type="primary")
 ```
 
-#### Shape
+### Shape
 
 ```pug
 az-button(square type="primary") Square
 az-button(round type="danger") Round
 ```
 
-#### Size
+### Size
 
 ```pug
 az-button(size="large") Large
@@ -55,7 +59,7 @@ az-button(size="small") Small
 az-button(size="mini") Mini
 ```
 
-### API
+## API
 
 | Attribute   | Description                                | Type      | Default   |
 | ----------- | ------------------------------------------ | --------- | --------- |
@@ -71,7 +75,7 @@ az-button(size="mini") Mini
 | round       | Whether to be round button                 | `Boolean` | `false`   |
 | square      | Whether to be square button                | `Boolean` | `false`   |
 
-### Event
+## Event
 
 | Event | Description                                             | Arguments |
 | ----- | ------------------------------------------------------- | --------- |

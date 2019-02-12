@@ -37,6 +37,9 @@ const getSidebarNav = async ({ commit }, params) => {
  * @param {*} param0
  */
 const getArticle = async ({ commit, state }, params) => {
+  console.log(params);
+  console.log(state.articleList);
+
   const { type, section, article } = params;
   const basePath = section ? `${type}/${section}` : `${type}`;
   let index = 0;
@@ -48,6 +51,7 @@ const getArticle = async ({ commit, state }, params) => {
       const articleIndex = state.articleList.findIndex(
         item => item.path === `${section}/${article}`,
       );
+
       index = articleIndex >= 0 ? articleIndex : 0;
     } else {
       router.push(`/${basePath}${state.articleList[index].path}`);
@@ -55,11 +59,12 @@ const getArticle = async ({ commit, state }, params) => {
     }
 
     const articlePath = `${basePath}${state.articleList[index].path}.md`;
-    const articleContent = await MarkdownService.getMarkdown(articlePath);
-    const articleParse = articleContent ? `<div>${articleContent}</div>` : '';
-    const component = articleParse ? `Demo${params.component}` : '';
+    console.log(articlePath);
+    const articleContent = await MarkdownService.getMarkdownArticle(articlePath);
+    console.log(articleContent);
+    const component = articleContent.markdown ? `Demo${params.component}` : '';
 
-    commit('SET_ARTICLE', articleParse);
+    commit('SET_ARTICLE', articleContent);
     commit('SET_ARTICLE_INDEX', index);
     commit('SET_COMPONENT', component);
     commit('SET_PARAMS', params);

@@ -3,7 +3,7 @@ const state = {
   sidebarLinks: '',
   articleList: [],
   articleIndex: 0,
-  article: '',
+  article: {},
   component: '',
   params: {},
 };

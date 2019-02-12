@@ -132,7 +132,7 @@ pre {
   font-family: $code-font-family;
   font-weight: $code-font-weight;
   line-height: 1.2rem;
-  background-color: var(--color-gray2);
+  background-color: var(--color-gray7);
 }
 
 pre {
@@ -152,11 +152,13 @@ pre {
     position: absolute;
     top: 0;
     right: 0;
+    display: block;
     height: $space;
-    padding: halve($space);
+    padding: 0 halve($space);
     font-size: 0.6rem;
-    font-weight: bold;
-    color: var(--color-gray3);
+    font-weight: $code-font-bold;
+    line-height: $space;
+    color: var(--color-gray4);
     text-align: right;
     text-transform: uppercase;
     letter-spacing: 0.08em;

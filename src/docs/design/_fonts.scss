@@ -2,6 +2,7 @@
  * FONTS
  */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+@import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
 
 $content-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
 $content-font-weight: 400;
@@ -10,8 +11,10 @@ $content-font-bold: 600;
 $heading-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
 $heading-font-weight: 600;
 
-$code-font-family: 'Source Sans Pro', Helvetica Neue, Arial, sans-serif;
-$code-font-weight: 400;
+$code-font-family: 'Fira Code', 'Courier New', Courier, monospace;
+$code-font-slim: 300; // 300, 400
+$code-font-weight: 500; // 300, 400
+$code-font-bold: 700; // 500, 700
 
 $base-line-height: 1.6;
 $modular-scale: 1.175;

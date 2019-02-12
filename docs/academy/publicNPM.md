@@ -1,6 +1,12 @@
+---
+device: false
+---
+
 # Como crear y publicar un módulo NPM
 
 Para crear y publicar un módulo NPM solo es necesario un archivo package.json con las propiedades name y version. En este tutorial añadiremos algunos elementos más para hacerlo más real:
+
+@[toc]
 
 ## Paso 1: Cuenta en npm
 
@@ -28,9 +34,9 @@ Logged in as fvena32 on https://registry.npmjs.org/.
 
 ## Paso 3: Crear un paquete
 
-Primero crearemos un directorio donde guardar nuestro código y una vez dentro crearemos un archivo **[package.json](https://docs.npmjs.com/files/package.json)**. Si sueles utilizar [Node.js](https://en.wikipedia.org/wiki/Node.js) estarás familiarizado con el. Es un archivo [JSON](https://en.wikipedia.org/wiki/JSON) con información de nuestro proyecto. Por ahora nos vamos a centrar en dos de ellos.
+Primero crearemos un directorio donde guardar nuestro código y una vez dentro crearemos un archivo **package.json**. Si sueles utilizar [Node.js](https://en.wikipedia.org/wiki/Node.js) estarás familiarizado con el. Es un archivo [JSON](https://en.wikipedia.org/wiki/JSON) con información de nuestro proyecto. Por ahora nos vamos a centrar en dos de ellos.
 
-> npm incorpora un generador de paquetes que crea y configura nuestro archivo package.json. Para hacer el tutorial más didactico lo haremos a mano, pero en un futuro te recomiendo utilizar el siguiente comando: `npm init`
+> npm incorpora un generador de paquetes que crea y configura nuestro archivo **package.json**. Para hacer el tutorial más didactico lo haremos a mano, pero en un futuro te recomiendo utilizar el siguiente comando: `npm init`
 
 ```bash
 # Creamos un directorio
@@ -57,7 +63,7 @@ En primer lugar hemos añadido el nombre del proyecto, al utilizar **@fvena32/ti
 
 En segundo lugar hemos añadido la versión de nuestro paquete. Todos los paquetes deberían seguir un sistema de versionado semántico **[SemVer](https://semver.org/)**, de esta forma los desarrolladores que utilicen nuestro paquete sabran si pueden actualizarlo de forma segura.
 
-> v.1.3.7 (v.Mayor.Menor.Parche)
+> ##### v.1.3.7 (v.Mayor.Menor.Parche)
 >
 > - **Mayor** - Versión cuando los cambios son incompatibles con versiones anteriores.
 > - **Menor** - Versión cuando añades nueva funcionalidad y es compatible con versiones anteriores.
@@ -65,7 +71,7 @@ En segundo lugar hemos añadido la versión de nuestro paquete. Todos los paquet
 
 Por último publicamos el paquete:
 
-```bash
+```bash{2,5}
 ### Publicar un paquete privado
 npm publish
 
@@ -95,9 +101,11 @@ También recibirás un email indicando que has subido una nueva versión.
 
 Creamos un nuevo repositorio vacio para nuestro proyecto, para este tutorial utilizaré github:
 
+![Crear repositorio](/docs/academy/assets/images/newRepo.png)
+
 Seguimos las indicaciones y realizamos nuestro primer commit:
 
-```bash
+```bash {3,5}
 git init
 git add package.json
 git commit -m "first commit"
@@ -112,29 +120,29 @@ Tanto si vamos a usar nuestro paquete nosotros solos, como si vamos a compartirl
 Creamos el archivo README.md y añadimos el siguiente código.
 
 ````markdown
-    # @fvena/tiny
+# @fvena/tiny
 
-    Removes all spaces from a string.
+Removes all spaces from a string.
 
-    ## Install
+## Install
 
-    ```
-    $ npm install @fvena/tiny
-    ```
+```
+$ npm install @fvena/tiny
+```
 
-    ## Usage
+## Usage
 
-    ```js
-    const tiny = require("@fvena/tiny");
+```js
+const tiny = require('@fvena/tiny');
 
-    tiny("So much space!");
-    //=> "Somuchspace!"
+tiny('So much space!');
+//=> "Somuchspace!"
 
-    tiny(1337);
-    //=> Uncaught TypeError: Tiny wants a string!
-    //    at tiny (<anonymous>:2:41)
-    //    at <anonymous>:1:1
-    ```
+tiny(1337);
+//=> Uncaught TypeError: Tiny wants a string!
+//    at tiny (<anonymous>:2:41)
+//    at <anonymous>:1:1
+```
 ````
 
 ## Paso 6: Badges
