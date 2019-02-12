@@ -1,11 +1,13 @@
-- [Home](/home)
-
-- [Components](/packages)
-- [Framework](/docs/framework)
+- [Components](/packages/home)
+- [Framework](/docs/framework/home)
 
 - Templates
 
-  - [Web App](/docs/template_web)
-  - [Mobile App](/docs/template_mobile)
+  - [Web App](/docs/templates/template_web/home)
+  - [Mobile App](/docs/templates/template_mobile/home)
 
-- [Academia](/docs/academy)
+- Guía de estilo
+
+  - [Markdown](/docs/styleGuide/Markdown/home)
+
+- [Academia](/docs/academy/home)

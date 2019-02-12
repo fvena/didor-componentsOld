@@ -12,12 +12,15 @@ const getParams = (routerPath) => {
   let component = '';
 
   if (splitPath.length > 0) {
+    // If is package
     if (docsConfig.packagePath === `./${type}`) {
       article = splitPath.join('/');
       component = splitPath[splitPath.length - 1];
     } else {
-      section = splitPath.shift();
-      article = splitPath.length > 0 ? splitPath.join('/') : '';
+      // section = splitPath.shift();
+      // article = splitPath.length > 0 ? splitPath.join('/') : '';
+      article = splitPath.pop();
+      section = splitPath.join('/');
     }
   }
 

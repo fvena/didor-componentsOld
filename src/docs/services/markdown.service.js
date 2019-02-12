@@ -48,13 +48,6 @@ const MarkdownService = {
           setTimeout(() => {
             Prism.highlightAll();
           }, 0);
-          // return highlight;
-
-          // if (lang && hljs.getLanguage(lang)) {
-          //   return `<pre class="hljs language-${lang}" data-lang="${lang}"><code>${
-          //     Prism.highlight(lang, str, true).value
-          //   }</code></pre>`;
-          // }
 
           // eslint-disable-next-line
           return `<pre class="line-numbers" data-lang="${language}" data-line="${lines}"><code class="language-${language}">${highlight}</code></pre>`;

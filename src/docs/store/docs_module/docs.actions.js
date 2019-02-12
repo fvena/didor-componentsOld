@@ -37,35 +37,29 @@ const getSidebarNav = async ({ commit }, params) => {
  * @param {*} param0
  */
 const getArticle = async ({ commit, state }, params) => {
-  console.log(params);
-  console.log(state.articleList);
-
   const { type, section, article } = params;
   const basePath = section ? `${type}/${section}` : `${type}`;
-  let index = 0;
+  let articleIndex = -1;
 
   // Check if there is articles in this section
   if (state.articleList.length) {
     // Check if article exist
     if (article) {
-      const articleIndex = state.articleList.findIndex(
-        item => item.path === `${section}/${article}`,
-      );
+      articleIndex = state.articleList.findIndex(item => item.path === `/${article}`);
+    }
 
-      index = articleIndex >= 0 ? articleIndex : 0;
-    } else {
-      router.push(`/${basePath}${state.articleList[index].path}`);
+    if (articleIndex < 0) {
+      articleIndex = 0;
+      router.push(`/${basePath}${state.articleList[articleIndex].path}`);
       return;
     }
 
-    const articlePath = `${basePath}${state.articleList[index].path}.md`;
-    console.log(articlePath);
+    const articlePath = `${basePath}${state.articleList[articleIndex].path}.md`;
     const articleContent = await MarkdownService.getMarkdownArticle(articlePath);
-    console.log(articleContent);
     const component = articleContent.markdown ? `Demo${params.component}` : '';
 
     commit('SET_ARTICLE', articleContent);
-    commit('SET_ARTICLE_INDEX', index);
+    commit('SET_ARTICLE_INDEX', articleIndex);
     commit('SET_COMPONENT', component);
     commit('SET_PARAMS', params);
   }
