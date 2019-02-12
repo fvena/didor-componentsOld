@@ -1,9 +1,11 @@
+<!-- markdownlint-disable MD001-->
+
 # Listas
 
 Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*` o `-` (desordenadas).
 
 ```markdown
-## Listas ordenadas
+### Listas ordenadas
 
 1. Wake up at 6
 2. Eat an apple
@@ -11,7 +13,7 @@ Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*
 4. Take shower
 5. Time to work
 
-## Listas desordenadas
+### Listas desordenadas
 
 - Extended markdown
 - Themes for support
@@ -24,7 +26,7 @@ Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*
 
 ::: demo
 
-## Listas ordenadas
+### Listas ordenadas
 
 1. Wake up at 6
 2. Eat an apple
@@ -32,7 +34,7 @@ Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*
 4. Take shower
 5. Time to work
 
-## Listas desordenadas
+### Listas desordenadas
 
 - Extended markdown
 - Themes for support

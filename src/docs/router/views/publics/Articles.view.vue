@@ -48,6 +48,13 @@ $wrapper-width: 670px;
     display: none;
   }
 
+  .demo {
+    padding: $space $space 0;
+    margin-top: -$space;
+    border: 1px solid var(--color-border);
+    border-radius: $border-radius;
+  }
+
   img {
     border: 1px solid var(--color-gray6);
     border-radius: $border-radius;

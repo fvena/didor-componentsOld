@@ -7,7 +7,6 @@
   - [Tablas](/tables.md)
   - [Código](/codeblocks.md)
   - [Alertas](/alerts.md)
-  - [Collapse](/collapse.md)
   - [Task](/task.md)
   - [Emojis](/emoji.md)
   - [Videos](/videos.md)
