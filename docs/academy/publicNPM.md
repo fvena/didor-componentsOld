@@ -63,11 +63,15 @@ En primer lugar hemos añadido el nombre del proyecto, al utilizar **@fvena32/ti
 
 En segundo lugar hemos añadido la versión de nuestro paquete. Todos los paquetes deberían seguir un sistema de versionado semántico **[SemVer](https://semver.org/)**, de esta forma los desarrolladores que utilicen nuestro paquete sabran si pueden actualizarlo de forma segura.
 
+<!-- markdownlint-disable MD001-->
+
 > ##### v.1.3.7 (v.Mayor.Menor.Parche)
 >
 > - **Mayor** - Versión cuando los cambios son incompatibles con versiones anteriores.
 > - **Menor** - Versión cuando añades nueva funcionalidad y es compatible con versiones anteriores.
 > - **Parche** - Versión cuando se corrijen errores.
+
+<!-- markdownlint-disable MD031-->
 
 Por último publicamos el paquete:
 

@@ -61,6 +61,10 @@ $wrapper-width: 670px;
     color: var(--color-gray4);
   }
 
+  h1 + p code {
+    @include fontsize(epsilon);
+  }
+
   h2 {
     @include fontsize(gamma);
 
@@ -82,23 +86,54 @@ $wrapper-width: 670px;
     @include fontsize(zeta);
   }
 
-  pre {
-    border-radius: $border-radius;
-
-    &::after {
-      right: 2rem;
-    }
-  }
-
   blockquote {
     padding-left: $space;
-    margin-top: double($space);
-    margin-right: 0;
-    margin-bottom: double($space);
-    margin-left: 0;
+    margin: double($space) 0;
     color: var(--color-gray4);
     background-color: var(--color-gray8);
     border-left: 4px solid var(--color-brand);
+  }
+  .tip,
+  .note,
+  .warn {
+    padding: $space $space $space quadruple($space);
+    margin: double($space) 0;
+    border-radius: $border-radius;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    code {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .tip {
+    color: var(--color-accent-darker);
+    background-color: var(--color-accent-lighter);
+
+    code {
+      color: var(--color-accent-dark);
+    }
+  }
+
+  .note {
+    color: var(--color-brand-darker);
+    background-color: var(--color-brand-lighter);
+
+    code {
+      color: var(--color-brand-dark);
+    }
+  }
+
+  .warn {
+    color: var(--color-error-darker);
+    background-color: var(--color-error-lighter);
+
+    code {
+      color: var(--color-error-dark);
+    }
   }
 
   table {
@@ -127,8 +162,197 @@ $wrapper-width: 670px;
     }
   }
 
+  ol {
+    list-style: none;
+    counter-reset: b;
+
+    li {
+      position: relative;
+      padding-left: $space;
+      margin-bottom: quarter($space);
+      margin-left: 0;
+
+      &::before {
+        position: absolute;
+        left: quarter(-$space);
+        width: $space;
+        color: var(--color-gray4);
+        text-align: right;
+        content: counters(b, '.') ' ';
+        counter-increment: b;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: $space;
+      margin-bottom: quarter($space);
+      margin-left: 0;
+
+      &::before {
+        position: absolute;
+        top: 11px;
+        left: 14px;
+        display: block;
+        width: 6px;
+        height: 6px;
+        text-align: right;
+        content: '';
+        background-color: var(--color-gray4);
+        border-radius: 3px;
+      }
+    }
+  }
+
+  /*
+  * The container
+  */
+  .task-list-item {
+    position: relative;
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  /*
+  * Hide the browser's default checkbox
+  */
+  .task-list-item input {
+    position: absolute;
+    top: quarter(-$space);
+    left: quarter(-$space);
+    z-index: 10;
+    width: $space * 1.5;
+    height: $space * 1.5;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  /*
+  * Label Style
+  */
+  .task-list-item label {
+    position: relative;
+    padding-left: $space;
+    margin-bottom: 0;
+    outline: none;
+  }
+
+  /*
+  * Checkbox aspect
+  */
+  .task-list-item label::before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    content: '';
+    background-color: var(--color-gray7);
+    border-radius: 3px;
+    outline: 0;
+    box-shadow: 0 0 0 1px rgba(1, 1, 1, 0.12), 0 1px 2px 0 rgba(1, 1, 1, 0.1);
+    transition: all 0.2s;
+  }
+
+  /*
+  * Checked mark aspect
+  */
+  .task-list-item label::after {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    display: block;
+    width: 8px;
+    height: 12px;
+    content: '';
+    border: solid var(--color-gray4);
+    border-width: 0 3px 3px 0;
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  /*
+  * Checked mark aspect changes
+  */
+  .task-list-item input:checked + label {
+    font-style: italic;
+    color: var(--color-gray4);
+    text-decoration: line-through;
+  }
+
+  .task-list-item input:checked + label::after {
+    opacity: 1;
+  }
+
+  .embed-responsive {
+    height: 390px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray6);
+    border-radius: $border-radius;
+    box-shadow: 0 5px 10px var(--color-gray6);
+  }
+
+  .embed-responsive iframe {
+    width: 100%;
+  }
+
+  pre {
+    border-radius: $border-radius;
+
+    &.hasFile {
+      padding-top: 1.5 * $space;
+
+      &::after,
+      + .toolbar {
+        top: 0.1rem;
+      }
+
+      .line-highlight {
+        margin-top: 1.25rem;
+      }
+
+      .line-numbers-rows {
+        top: 2.4rem;
+      }
+
+      .file {
+        display: block;
+      }
+    }
+
+    &::after {
+      right: 2rem;
+    }
+
+    .file {
+      @include fontsize(theta);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      width: 100%;
+      height: $space;
+      padding: 0 halve($space);
+      font-family: $content-font-family;
+      line-height: $space;
+      color: var(--color-gray2);
+      background-color: var(--color-gray6);
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
   pre[data-lang],
   pre[data-lang] code {
+    position: initial !important;
     font-weight: $code-font-weight;
     color: hsl(198, 17%, 38%);
     background: var(--color-gray7);
@@ -137,7 +361,8 @@ $wrapper-width: 670px;
 
   .line-numbers {
     .line-numbers-rows {
-      top: -0.15rem;
+      top: 0.7rem;
+      left: 0;
       border-right: 1px solid var(--color-border);
 
       > span::before {
@@ -281,7 +506,8 @@ $wrapper-width: 670px;
   }
 
   .language-bash .token.keyword,
-  .language-bash .token.operator {
+  .language-bash .token.operator,
+  .language-markdown .token.keyword {
     color: var(--color-gray2);
   }
 
@@ -341,6 +567,16 @@ $wrapper-width: 670px;
   .article.article--show-device {
     padding-right: $space;
   }
+
+  .article {
+    .embed-responsive {
+      height: 360px;
+    }
+
+    .embed-responsive iframe {
+      height: 360px;
+    }
+  }
 }
 
 @include media(palm) {
@@ -362,6 +598,14 @@ $wrapper-width: 670px;
     h5,
     h6 {
       @include fontsize(zeta);
+    }
+
+    .embed-responsive {
+      height: 300px;
+    }
+
+    .embed-responsive iframe {
+      height: 300px;
     }
   }
   .article.article--show-device {

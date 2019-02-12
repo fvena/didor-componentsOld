@@ -1,6 +1,10 @@
 import MarkdownIt from 'markdown-it';
 import MarkdownToc from 'markdown-it-toc-and-anchor';
 import MarkdownFrontMatter from 'markdown-it-front-matter';
+import MarkdownEmoji from 'markdown-it-emoji';
+import MarkdownCheckbox from 'markdown-it-task-lists';
+import MarkdownVideo from 'markdown-it-video';
+import MarkdownNotes from 'markdown-it-div';
 import Prism from 'prismjs';
 import yaml from 'js-yaml';
 import ApiService from './api.service';
@@ -32,17 +36,16 @@ const MarkdownService = {
         typographer: true,
         quotes: '“”‘’',
         highlight(code, lang) {
-          const languageRegexp = /(.*){(.*)}/;
-          const match = languageRegexp.exec(lang);
-          let language = lang || 'js';
-          let lines = '';
+          const getLanguage = /(\w+)/.exec(lang);
+          const getLines = /\{(.+)\}/.exec(lang);
+          const getFile = /\[(.+)\]/.exec(lang);
 
-          if (match) {
-            language = match[1];
-            lines = match[2];
-          }
+          const language = getLanguage ? getLanguage[1] : 'js';
+          const lines = getLines ? getLines[1] : '';
+          const filename = getFile ? getFile[1] : '';
+          const filenameClass = filename ? 'hasFile' : '';
 
-          const prismLanguage = Prism.languages[language] || Prism.languages.markup;
+          const prismLanguage = Prism.languages[language];
           const highlight = Prism.highlight(code, prismLanguage);
 
           setTimeout(() => {
@@ -50,7 +53,7 @@ const MarkdownService = {
           }, 0);
 
           // eslint-disable-next-line
-          return `<pre class="line-numbers" data-lang="${language}" data-line="${lines}"><code class="language-${language}">${highlight}</code></pre>`;
+          return `<pre class="line-numbers ${filenameClass}" data-lang="${language}" data-line="${lines}"><code class="language-${language}">${highlight}</code><div class="file">${filename}</div></pre>`;
         },
       })
         .use(MarkdownToc, {
@@ -62,6 +65,10 @@ const MarkdownService = {
         .use(MarkdownFrontMatter, (frontMatter) => {
           data = yaml.load(frontMatter);
         })
+        .use(MarkdownEmoji)
+        .use(MarkdownVideo)
+        .use(MarkdownNotes)
+        .use(MarkdownCheckbox, { label: true, labelAfter: true })
         .render(response.data);
 
       return { markdown, data };
