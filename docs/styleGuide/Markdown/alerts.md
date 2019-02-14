@@ -4,6 +4,8 @@
 
 Las alertas ayudan a agregar diferentes tipos de notificaciones para llamar la atención del usuario. Actualmente se soportan trucos, notas y advertencias.
 
+::: customDemo
+
 <!-- prettier-ignore -->
 ```markdown
 ::: tip
@@ -19,11 +21,9 @@ Removing a website from dimer will free the subdomain to be used by anyone else.
 :::
 ```
 
-::: demo
-
 <!-- prettier-ignore -->
 ::: tip
-Dimer only needs markdown files to generate a documentation website. Say goodbye to complex build tools 👋
+Dimer only needs markdown files to generate a documentation website. Say goodbye to complex build tools
 :::
 
 <!-- prettier-ignore -->

@@ -23,6 +23,8 @@ Podemos añadir el nombre del fichero entre corchetes
 
 - `[filename.js]` - Muestra una barra superios con el nombre del archivo
 
+::: customDemo
+
 ````markdown
 ```js{2,5-7}[server.js]
 const http = require('http');
@@ -37,8 +39,6 @@ http
   .listen(3000);
 ```
 ````
-
-::: demo
 
 ```js{2,5-7}[server.js]
 const http = require('http');

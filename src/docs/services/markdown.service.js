@@ -28,6 +28,9 @@ const MarkdownService = {
       const response = await ApiService.get(file);
 
       let data = {};
+      let lastTag = '';
+      let wrapperTag = '';
+
       const markdown = MarkdownIt({
         html: true,
         xhtmlOut: true,
@@ -67,7 +70,51 @@ const MarkdownService = {
         })
         .use(MarkdownEmoji)
         .use(MarkdownVideo)
-        .use(MarkdownNotes)
+        .use(MarkdownNotes, {
+          render(tokens, idx) {
+            let tag = tokens[idx].info.trim();
+            const openTag = tokens[idx].nesting === 1;
+
+            if (!tag) {
+              if (lastTag) {
+                tag = lastTag;
+                lastTag = '';
+              } else if (wrapperTag) {
+                tag = wrapperTag;
+                wrapperTag = '';
+              }
+            } else if (tag === 'demo') {
+              wrapperTag = tag;
+            } else {
+              lastTag = tag;
+            }
+
+            switch (tag) {
+              // Alarms
+              case 'tip':
+              case 'note':
+              case 'warn':
+                if (openTag) {
+                  return `<div>\n<Alarm type="${tag}">\n`;
+                }
+                return '</Alarm>\n</div>\n';
+
+              // Demo
+              case 'demo':
+                if (openTag) {
+                  return '<div>\n<Demo>\n';
+                }
+                return '</Demo>\n</div>\n';
+
+              // Default
+              default:
+                if (openTag) {
+                  return `<div class="${tag}">\n`;
+                }
+                return '</div>\n';
+            }
+          },
+        })
         .use(MarkdownCheckbox, { label: true, labelAfter: true })
         .render(response.data);
 

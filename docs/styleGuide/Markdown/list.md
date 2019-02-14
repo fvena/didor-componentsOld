@@ -4,6 +4,8 @@
 
 Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*` o `-` (desordenadas).
 
+::: customDemo
+
 ```markdown
 ### Listas ordenadas
 
@@ -23,8 +25,6 @@ Las listas se definen mediante números (ordenadas) o mediantes los símbolos `*
   - Mono
 - In built linter
 ```
-
-::: demo
 
 ### Listas ordenadas
 

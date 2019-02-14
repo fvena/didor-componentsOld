@@ -13,12 +13,16 @@ import { mapGetters } from 'vuex';
 import VRuntimeTemplate from 'v-runtime-template';
 import Footer from '@/components/Footer.component.vue';
 import Device from '@/components/Device.component.vue';
+import Alarm from '@/components/Alarm.component.vue';
+import Demo from '@/components/Demo.component.vue';
 
 export default {
   components: {
     Footer,
     Device,
     VRuntimeTemplate,
+    Alarm,
+    Demo,
   },
 
   computed: {
@@ -46,13 +50,6 @@ $wrapper-width: 670px;
 
   .device {
     display: none;
-  }
-
-  .demo {
-    padding: $space $space 0;
-    margin-top: -$space;
-    border: 1px solid var(--color-border);
-    border-radius: $border-radius;
   }
 
   img {
@@ -100,46 +97,20 @@ $wrapper-width: 670px;
     background-color: var(--color-gray8);
     border-left: 4px solid var(--color-brand);
   }
-  .tip,
-  .note,
-  .warn {
-    padding: $space $space $space quadruple($space);
-    margin: double($space) 0;
+
+  .customDemo {
+    padding: 0 $space;
+    border: 1px solid var(--color-border);
     border-radius: $border-radius;
 
-    p:last-of-type {
-      margin-bottom: 0;
+    .code-toolbar {
+      margin-right: -$space;
+      margin-left: -$space;
     }
 
-    code {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-  }
-
-  .tip {
-    color: var(--color-accent-darker);
-    background-color: var(--color-accent-lighter);
-
-    code {
-      color: var(--color-accent-dark);
-    }
-  }
-
-  .note {
-    color: var(--color-brand-darker);
-    background-color: var(--color-brand-lighter);
-
-    code {
-      color: var(--color-brand-dark);
-    }
-  }
-
-  .warn {
-    color: var(--color-error-darker);
-    background-color: var(--color-error-lighter);
-
-    code {
-      color: var(--color-error-dark);
+    pre[data-lang] {
+      border-bottom: 1px solid var(--color-border);
+      border-radius: $border-radius $border-radius 0 0;
     }
   }
 
@@ -370,6 +341,7 @@ $wrapper-width: 670px;
     .line-numbers-rows {
       top: 0.7rem;
       left: 0;
+      background-color: var(--color-gray7);
       border-right: 1px solid var(--color-border);
 
       > span::before {

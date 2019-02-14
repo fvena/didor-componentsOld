@@ -10,3 +10,4 @@
   - [Task](/task.md)
   - [Emojis](/emoji.md)
   - [Videos](/videos.md)
+  - [Demo](/demo.md)

@@ -1,6 +1,8 @@
 <template lang="pug">
   .dynamic-component
-    component(:is="component")
+    //- component(:is="component")
+    //- div(v-html="component")
+    //- | {{ component }}
 </template>
 
 <script>

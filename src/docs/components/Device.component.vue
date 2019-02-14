@@ -7,7 +7,6 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { setTimeout } from 'timers';
 
 export default {
   computed: {

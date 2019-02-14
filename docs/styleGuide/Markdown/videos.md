@@ -4,6 +4,8 @@
 
 Puedes embeber videos de Youtube mediante su url y la etiqueta [video]
 
+::: customDemo
+
 <!-- prettier-ignore -->
 ```markdown
 @[youtube](https://www.youtube.com/watch?v=vrK17taonVY)
@@ -11,8 +13,6 @@ Puedes embeber videos de Youtube mediante su url y la etiqueta [video]
 @[vimeo](https://vimeo.com/19706846)
 @[vimeo](https://player.vimeo.com/video/19706846)
 ```
-
-::: demo
 
 @[youtube](https://www.youtube.com/watch?v=vrK17taonVY)
 
