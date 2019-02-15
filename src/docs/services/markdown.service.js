@@ -28,8 +28,7 @@ const MarkdownService = {
       const response = await ApiService.get(file);
 
       let data = {};
-      let lastTag = '';
-      let wrapperTag = '';
+      const tags = [];
 
       const markdown = MarkdownIt({
         html: true,
@@ -75,18 +74,14 @@ const MarkdownService = {
             let tag = tokens[idx].info.trim();
             const openTag = tokens[idx].nesting === 1;
 
-            if (!tag) {
-              if (lastTag) {
-                tag = lastTag;
-                lastTag = '';
-              } else if (wrapperTag) {
-                tag = wrapperTag;
-                wrapperTag = '';
-              }
-            } else if (tag === 'demo') {
-              wrapperTag = tag;
+            // Check is collapse tag
+            const collapse = tag.match(/^collapse title="(.*)"$/);
+            if (collapse) tag = 'collapse';
+
+            if (tag) {
+              tags.push(tag);
             } else {
-              lastTag = tag;
+              tag = tags.pop();
             }
 
             switch (tag) {
@@ -105,6 +100,20 @@ const MarkdownService = {
                   return '<div>\n<Demo>\n';
                 }
                 return '</Demo>\n</div>\n';
+
+              // Collapse
+              case 'collapse':
+                if (openTag) {
+                  return `<div>\n<Collapse title="${collapse[1]}">\n`;
+                }
+                return '</Collapse>\n</div>\n';
+
+              // Codegroup
+              case 'codegroup':
+                if (openTag) {
+                  return '<div>\n<Codegroup>\n';
+                }
+                return '</Codegroup>\n</div>\n';
 
               // Default
               default:

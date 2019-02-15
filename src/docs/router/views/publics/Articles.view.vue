@@ -15,6 +15,8 @@ import Footer from '@/components/Footer.component.vue';
 import Device from '@/components/Device.component.vue';
 import Alarm from '@/components/Alarm.component.vue';
 import Demo from '@/components/Demo.component.vue';
+import Collapse from '@/components/Collapse.component.vue';
+import Codegroup from '@/components/Codegroup.component.vue';
 
 export default {
   components: {
@@ -23,6 +25,8 @@ export default {
     VRuntimeTemplate,
     Alarm,
     Demo,
+    Collapse,
+    Codegroup,
   },
 
   computed: {
@@ -103,6 +107,7 @@ $wrapper-width: 670px;
     border: 1px solid var(--color-border);
     border-radius: $border-radius;
 
+    .codegroup__files,
     .code-toolbar {
       margin-right: -$space;
       margin-left: -$space;
@@ -282,7 +287,8 @@ $wrapper-width: 670px;
     width: 100%;
   }
 
-  pre {
+  pre[data-lang] {
+    padding-right: halve($space);
     border-radius: $border-radius;
 
     &.hasFile {

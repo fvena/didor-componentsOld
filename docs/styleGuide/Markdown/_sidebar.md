@@ -8,6 +8,7 @@
   - [Código](/codeblocks.md)
   - [Alertas](/alerts.md)
   - [Task](/task.md)
+  - [Desplegables](/collapse.md)
   - [Emojis](/emoji.md)
   - [Videos](/videos.md)
   - [Demo](/demo.md)

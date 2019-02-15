@@ -1,6 +1,13 @@
 <template lang="pug">
-  button.az-button
-    slot
+  button.az-button(
+    @click="handleClick"
+    :disabled="disabled || loading"
+    :autofocus="autofocus"
+    :type="nativeType"
+    :class="classObject")
+    span(v-if="$slots.default")
+      slot
+
   //- button.az-button(
   //-   @click="handleClick"
   //-   :disabled="buttonDisabled || loading"
@@ -29,6 +36,7 @@ export default {
   props: {
     text: String,
     block: Boolean,
+    plain: Boolean,
     ghost: Boolean,
     square: Boolean,
     circle: Boolean,
@@ -39,10 +47,6 @@ export default {
     tag: {
       type: String,
       default: 'button',
-    },
-    type: {
-      type: String,
-      default: 'default',
     },
     size: {
       type: String,
@@ -55,6 +59,21 @@ export default {
     nativeType: {
       type: String,
       default: 'button',
+    },
+  },
+  computed: {
+    classObject() {
+      return [
+        this.type ? `az-button--${this.type}` : '',
+        this.buttonSize ? `az-button--${this.buttonSize}` : '',
+        {
+          'is-disabled': this.buttonDisabled,
+          'is-loading': this.loading,
+          'is-plain': this.plain,
+          'is-round': this.round,
+          'is-circle': this.circle,
+        },
+      ];
     },
   },
   methods: {
