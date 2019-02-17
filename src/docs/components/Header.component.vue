@@ -90,7 +90,7 @@ $sidebar-width-large: 300px;
   outline: none;
   transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) left;
 
-  &:hover {
+  @include hover {
     color: var(--color-brand);
   }
 
@@ -135,14 +135,14 @@ $sidebar-width-large: 300px;
     a {
       color: var(--color-gray3);
 
-      &:hover {
+      @include hover {
         color: var(--color-brand);
       }
 
       &.router-link-active {
         color: var(--color-brand);
 
-        &:hover {
+        @include hover {
           color: var(--color-brand-darker);
         }
       }
@@ -168,8 +168,12 @@ $sidebar-width-large: 300px;
       padding-right: halve($space);
     }
 
-    > li:hover ul {
-      display: block;
+    > li {
+      @include hover {
+        ul {
+          display: block;
+        }
+      }
     }
 
     > li ul {

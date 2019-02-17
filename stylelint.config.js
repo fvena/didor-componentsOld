@@ -30,6 +30,7 @@ module.exports = {
     'no-descending-specificity': null,
     'no-empty-source': null,
     'color-hex-length': 'long',
+    'no-duplicate-selectors': null,
     // ===
     // PRETTIER
     // ===

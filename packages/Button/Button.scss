@@ -1,154 +1,124 @@
 .az-button {
+  /**
+  * Base styles
+  */
+  @include fontsize(eta);
+
   position: relative;
-  box-sizing: border-box;
   display: inline-block;
-  height: 44px;
-  padding: 0;
-  font-size: 16px;
-  line-height: 42px;
+  width: auto;
+  height: 1.5 * $space;
+  padding: 0 1rem;
+  margin: 0;
+  font-weight: $content-font-bold;
+  line-height: 1;
+  color: var(--color-gray2);
   text-align: center;
-  border-radius: 2px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: transparent;
+  border-radius: $border-radius;
+  outline: none;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
+  transition: 0.3s ease-in-out;
 
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    content: ' ';
-    background-color: black;
-    border: inherit;
-    border-color: black;
-    border-radius: inherit; /* inherit parent's border radius */
-    opacity: 0;
-    transform: translate(-50%, -50%);
+  /**
+  * Types
+  * Types + Plain
+  * Types + Ghost
+  */
+  @include buttonType(default);
+  @include buttonType(brand);
+  @include buttonType(success);
+  @include buttonType(warning);
+  @include buttonType(danger);
+
+  /**
+  * Focus
+  */
+  &:focus,
+  &.focus {
+    outline: 0;
   }
 
-  // &:active::before {
-  //   opacity: .15;
-  // }
+  /**
+  * Shape styles
+  */
+  &--square {
+    border-radius: 0;
+  }
 
-  // &--loading,
-  // &--disabled {
-  //   &::before {
-  //     display: none;
-  //   }
-  // }
+  &--circle {
+    border-radius: 50px;
+  }
 
-  // &--default {
-  //   color: @button-default-color;
-  //   background-color: @button-default-background-color;
-  //   border: 1px solid @button-default-border-color;
-  // }
+  /**
+  * Disabled styles
+  */
+  &:disabled:not(&--loading),
+  &--disabled:not(&--loading) {
+    cursor: default;
+    opacity: 0.6;
+  }
 
-  // &--primary {
-  //   color: @button-primary-color;
-  //   background-color: @button-primary-background-color;
-  //   border: 1px solid @button-primary-border-color;
-  // }
+  /**
+  * Block styles
+  */
+  &--block {
+    display: block;
+    width: 100%;
+    margin-bottom: $space;
+  }
 
-  // &--danger {
-  //   color: @button-danger-color;
-  //   background-color: @button-danger-background-color;
-  //   border: 1px solid @button-danger-border-color;
-  // }
+  /**
+  * Sizes styles
+  */
+  &--large {
+    @include fontsize(zeta);
 
-  // &--warning {
-  //   color: @button-warning-color;
-  //   background-color: @button-warning-background-color;
-  //   border: 1px solid @button-warning-border-color;
-  // }
+    height: double($space);
+    padding: 0 2rem;
+    line-height: 1;
 
-  // &--plain {
-  //   background-color: @white;
+    .az-loading {
+      top: 1rem !important;
+    }
+  }
 
-  //   &.van-button--primary {
-  //     color: @button-primary-background-color;
-  //   }
+  &--small {
+    @include fontsize(theta);
 
-  //   &.van-button--danger {
-  //     color: @button-danger-background-color;
-  //   }
+    height: $space;
+    line-height: 1;
 
-  //   &.van-button--warning {
-  //     color: @button-warning-background-color;
-  //   }
-  // }
+    .az-loading {
+      top: 0.35rem !important;
+    }
+  }
 
-  // &--large {
-  //   width: 100%;
-  //   height: 50px;
-  //   line-height: 48px;
-  // }
+  /**
+   * Loading
+   */
+  .az-loading {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    font-size: 0.1em;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    animation-delay: 0.9s;
+  }
 
-  // &--normal {
-  //   padding: 0 15px;
-  //   font-size: 14px;
-  // }
+  &--loading {
+    padding-left: calc(1rem + 2em);
+    animation-delay: 0.6s;
 
-  // &--small {
-  //   height: 30px;
-  //   padding: 0 8px;
-  //   min-width: 60px;
-  //   font-size: 12px;
-  //   line-height: 28px;
-  // }
-
-  // &--loading {
-  //   .van-loading {
-  //     display: inline-block;
-  //   }
-  // }
-
-  // &--mini {
-  //   display: inline-block;
-  //   width: 50px;
-  //   height: 22px;
-  //   line-height: 20px;
-  //   font-size: 10px;
-
-  //   & + .van-button--mini {
-  //     margin-left: 5px;
-  //   }
-  // }
-
-  // &--block {
-  //   width: 100%;
-  //   display: block;
-  // }
-
-  // &--bottom-action {
-  //   width: 100%;
-  //   height: 50px;
-  //   line-height: 50px;
-  //   border: 0;
-  //   border-radius: 0;
-  //   font-size: 16px;
-  //   color: @button-bottom-action-default-color;
-  //   background-color: @button-bottom-action-default-background-color;
-
-  //   &.van-button--primary {
-  //     background-color: @button-bottom-action-primary-background-color;
-  //   }
-  // }
-
-  // &--disabled {
-  //   opacity: .5;
-  // }
-
-  // &--round {
-  //   border-radius: 10em;
-  // }
-
-  // &--square {
-  //   border-radius: 0;
-  // }
-
-  // &__loading-text {
-  //   margin-left: 5px;
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+    .az-loading {
+      font-size: 0.8em;
+      opacity: 1;
+    }
+  }
 }

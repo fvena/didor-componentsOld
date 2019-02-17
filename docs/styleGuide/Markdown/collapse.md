@@ -6,7 +6,6 @@ Puedes añadir contenido colalpasable utilizando la etiqueta [collapse]. Tambié
 
 ::: customDemo
 
-<!-- prettier-ignore -->
 ```markdown
 ::: collapse title="Contact Us"
 
@@ -20,13 +19,10 @@ Dimer only needs markdown files to generate a documentation website. Say goodbye
 ```
 
 ::: collapse title="Contact Us"
-
 You can contact us during weekdays (9am to 5pm) on our toll-free number.
 
 ::: tip
-
 Dimer only needs markdown files to generate a documentation website. Say goodbye to complex build tools
-
 :::
 
 :::

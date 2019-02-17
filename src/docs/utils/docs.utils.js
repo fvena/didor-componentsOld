@@ -87,16 +87,12 @@ const loadComponentes = (componentsPath, isDemo = false) => {
   requireComponent.keys().forEach((fileName) => {
     const { prefix } = docsConfig;
     const componentConfig = requireComponent(fileName);
-    let componentName = '';
+    const name = upperFirst(camelCase(path.basename(fileName, '.vue')));
 
-    if (path.dirname(fileName).includes('demo') && !isDemo) return;
+    // If is demo file and isn't demo project return
+    if (name.includes('Demo') && !isDemo) return;
 
-    if (path.dirname(fileName).includes('demo') && isDemo) {
-      const componentPath = path.dirname(fileName).split('/');
-      componentName = `Demo${upperFirst(camelCase(componentPath[1]))}`;
-    } else {
-      componentName = `${prefix}${upperFirst(camelCase(path.basename(fileName, '.vue')))}`;
-    }
+    const componentName = name.includes('Demo') ? name : `${prefix}${name}`;
 
     console.log(componentName);
 

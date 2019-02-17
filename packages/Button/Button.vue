@@ -5,73 +5,58 @@
     :autofocus="autofocus"
     :type="nativeType"
     :class="classObject")
-    span(v-if="$slots.default")
+    //- Loading spinner
+    az-loading(:type="loadingType")
+    //- i(:class="icon" v-if="icon && !loading")
+    span(v-if="$slots.default && !loading")
       slot
-
-  //- button.az-button(
-  //-   @click="handleClick"
-  //-   :disabled="buttonDisabled || loading"
-  //-   :autofocus="autofocus"
-  //-   :type="nativeType"
-  //-   :class="[
-  //-     type ? 'el-button--' + type : '',
-  //-     buttonSize ? 'el-button--' + buttonSize : '',
-  //-     {
-  //-       'is-disabled': buttonDisabled,
-  //-       'is-loading': loading,
-  //-       'is-plain': plain,
-  //-       'is-round': round,
-  //-       'is-circle': circle
-  //-     }
-  //-   ]")
-  //-   i.az-icon-loading(v-if="loading")
-  //-   i(:class="icon" v-if="icon && !loading")
-  //-   span(v-if="$slots.default")
-  //-     slot
+    span(v-if="loading") Cargando
 </template>
 
 <script>
 export default {
   name: 'AzButton',
   props: {
-    text: String,
-    block: Boolean,
-    plain: Boolean,
-    ghost: Boolean,
-    square: Boolean,
-    circle: Boolean,
-    loading: Boolean,
-    disabled: Boolean,
-    bottomAction: Boolean,
     autofocus: Boolean,
-    tag: {
+    block: Boolean,
+    circle: Boolean,
+    disabled: Boolean,
+    ghost: Boolean,
+    // icon: {
+    //   type: String,
+    //   default: '',
+    // },
+    loading: Boolean,
+    loadingType: String,
+    plain: Boolean,
+    nativeType: {
       type: String,
       default: 'button',
+      validator: value => ['button', 'submit', 'reset'].indexOf(value) !== -1,
     },
     size: {
       type: String,
       default: 'normal',
     },
-    icon: {
+    square: Boolean,
+    type: {
       type: String,
-      default: '',
-    },
-    nativeType: {
-      type: String,
-      default: 'button',
+      default: 'default',
     },
   },
   computed: {
     classObject() {
       return [
         this.type ? `az-button--${this.type}` : '',
-        this.buttonSize ? `az-button--${this.buttonSize}` : '',
+        this.size ? `az-button--${this.size}` : '',
         {
-          'is-disabled': this.buttonDisabled,
-          'is-loading': this.loading,
-          'is-plain': this.plain,
-          'is-round': this.round,
-          'is-circle': this.circle,
+          'az-button--disabled': this.buttonDisabled,
+          'az-button--loading': this.loading,
+          'az-button--block': this.block,
+          'az-button--ghost': this.ghost,
+          'az-button--plain': this.plain,
+          'az-button--square': this.square,
+          'az-button--circle': this.circle,
         },
       ];
     },
@@ -84,4 +69,4 @@ export default {
 };
 </script>
 
-<style src="./Button.scss" lang="scss" scoped></style>
+<style src="./Button.scss" lang="scss"></style>

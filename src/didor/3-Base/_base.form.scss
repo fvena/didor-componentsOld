@@ -42,7 +42,7 @@ input[type='checkbox'] {
 input[disabled] {
   background-color: var(--color-gray5);
 
-  &:hover {
+  @include hover {
     cursor: not-allowed;
   }
 }

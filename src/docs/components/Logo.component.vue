@@ -148,7 +148,13 @@ $logo-margin: $logo-width * 0.13;
   margin-bottom: double($space);
   cursor: pointer;
 
-  &:hover,
+  @include hover {
+    .liquid__path,
+    .liquid__drop {
+      animation-play-state: running;
+    }
+  }
+
   &.animate {
     .liquid__path,
     .liquid__drop {

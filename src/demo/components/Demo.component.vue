@@ -30,7 +30,7 @@ export default {
 
   padding: halve($space) halve($space) 0;
   margin-bottom: halve($space);
-  font-weight: $content-font-family;
+  font-family: $content-font-family;
   font-weight: $content-font-bold;
   color: var(--color-gray2);
   text-transform: uppercase;

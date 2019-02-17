@@ -1,0 +1,48 @@
+@mixin buttonType($type) {
+  &--#{$type} {
+    color: var(--color-gray8);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(var(--color-#{$type}-light), var(--color-#{$type}-dark));
+    background-size: 1px 200%;
+
+    @include hover {
+      background-position: 100px;
+    }
+
+    .az-loading {
+      --color-az-loading: var(--color-gray8) !important;
+    }
+  }
+
+  &--#{$type}#{&}--plain {
+    text-shadow: none;
+    background-color: var(--color-#{$type});
+    background-image: none;
+
+    @include hover {
+      background-color: var(--color-#{$type}-dark);
+    }
+
+    .az-loading {
+      --color-az-loading: var(--color-gray8) !important;
+    }
+  }
+
+  &--#{$type}#{&}--ghost {
+    color: var(--color-#{$type});
+    text-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid;
+    border-color: var(--color-#{$type}-lighter);
+
+    @include hover {
+      color: var(--color-#{$type}-darker);
+      border-color: var(--color-#{$type}-light);
+    }
+
+    .az-loading {
+      --color-az-loading: var(--color-#{$type}) !important;
+    }
+  }
+}

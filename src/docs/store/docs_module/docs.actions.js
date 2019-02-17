@@ -56,7 +56,7 @@ const getArticle = async ({ commit, state }, params) => {
 
     const articlePath = `${basePath}${state.articleList[articleIndex].path}.md`;
     const articleContent = await MarkdownService.getMarkdownArticle(articlePath);
-    const component = articleContent.markdown ? `Demo${params.component}` : '';
+    const component = articleContent.markdown ? `${params.component}Demo` : '';
 
     commit('SET_ARTICLE', articleContent);
     commit('SET_ARTICLE_INDEX', articleIndex);

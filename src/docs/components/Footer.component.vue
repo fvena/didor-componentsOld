@@ -64,13 +64,15 @@ export default {
     transition: all 0.2s;
   }
 
-  &:hover a .pagination-item-label {
-    opacity: 1;
-  }
+  @include hover {
+    a .pagination-item-label {
+      opacity: 1;
+    }
 
-  &:hover a .pagination-item-title {
-    text-decoration: underline;
-    opacity: 1;
+    a .pagination-item-title {
+      text-decoration: underline;
+      opacity: 1;
+    }
   }
 }
 

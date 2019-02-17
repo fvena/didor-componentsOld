@@ -38,10 +38,12 @@ $header-height-media: double($space);
   text-decoration: none;
   cursor: pointer;
   border-bottom: 0;
-}
 
-.github-octo:hover .github-octo__arm {
-  animation: github 0.56s ease-in-out;
+  @include hover {
+    .github-octo__arm {
+      animation: github 0.56s ease-in-out;
+    }
+  }
 }
 
 .github-octo svg {

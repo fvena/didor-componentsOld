@@ -11,7 +11,11 @@ a {
   text-decoration: none;
   transition: color $duration-animation-base, background-color $duration-animation-base;
 
-  &:hover,
+  @include hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+  }
+
   &:active,
   &:focus {
     color: var(--color-link-hover);

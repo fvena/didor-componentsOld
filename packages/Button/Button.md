@@ -4,78 +4,105 @@ device: true
 
 # Button
 
-## Install
+### Instalación
 
 ```javascript
-import { Button } from 'vant';
+import { Button } from 'didor';
 
 Vue.use(Button);
 ```
 
-## Usage
+---
 
-### Type
+### Uso
+
+#### Tipo
 
 ```pug
-az-button(type="primary") Primary
-az-button(type="danger") Danger
-az-button(type="default") Default
+az-button Default
+az-button(type="brand") Brand
+az-button(type="success") Success
 az-button(type="warning") Warning
+az-button(type="danger") Danger
 ```
 
-### Plain
+#### Plain
 
 ```pug
-az-button(plain type="primary") Primary
-az-button(plain type="danger") Danger
+az-button(plain) Default
+az-button(type="brand" plain) Brand
+az-button(type="success" plain) Success
+az-button(type="warning" plain) Warning
+az-button(type="danger" plain) Danger
 ```
 
-### Disabled
+#### Ghost
 
 ```pug
-az-button(disabled type="primary") Diabled
-az-button(disabled type="danger") Diabled
+az-button(ghost) Default
+az-button(type="brand" ghost) Brand
+az-button(type="success" ghost) Success
+az-button(type="warning" ghost) Warning
+az-button(type="danger" ghost) Danger
 ```
 
-### Loading
+#### Forma
 
 ```pug
-az-button(loading type="primary")
+az-button(type="brand") Default
+az-button(type="brand" circle) Circle
+az-button(type="brand" square) Square
 ```
 
-### Shape
+#### Disabled
 
 ```pug
-az-button(square type="primary") Square
-az-button(round type="danger") Round
+az-button(type="brand" disabled) Disabled
+az-button(type="danger" disabled) Disabled
 ```
 
-### Size
+#### Block
 
 ```pug
-az-button(size="large") Large
-az-button(size="normal") Normal
-az-button(size="small") Small
-az-button(size="mini") Mini
+az-button(type="brand" block) Block Brand
+az-button(type="danger" block) Block Danger
 ```
 
-## API
+#### Tamaño
+
+```pug
+az-button(type="brand" size="large") Large
+az-button(type="brand") Default
+az-button(type="brand" size="small") Small
+```
+
+#### Loading
+
+```pug
+az-button(loading) Guardar
+az-button(type="danger" loading size="large") Guardar
+az-button(type="success" loading size="small") Guardar
+az-button(type="warning" loading ghost) Guardar
+```
+
+---
+
+### API
 
 | Attribute   | Description                                | Type      | Default   |
 | ----------- | ------------------------------------------ | --------- | --------- |
-| type        | Can be set to `primary` `warning` `danger` | `String`  | `default` |
-| size        | Can be set to `large` `small` `mini`       | `String`  | `normal`  |
-| text        | Text                                       | `String`  | -         |
-| tag         | Tag                                        | `String`  | `button`  |
-| native-type | Native Type Attribute                      | `String`  | `''`      |
-| plain       | Whether to be plain button                 | `Boolean` | `false`   |
-| disabled    | Whether to disable button                  | `Boolean` | `false`   |
-| loading     | Whether show loading status                | `Boolean` | `false`   |
-| block       | Whether to set display block               | `Boolean` | `false`   |
-| round       | Whether to be round button                 | `Boolean` | `false`   |
-| square      | Whether to be square button                | `Boolean` | `false`   |
+| type        | Tipo de botón, opciones:<br>`default` `brand` `success` `warning` `danger` | `String`  | `default` |
+| plain       | Determinar si es o no un botón plano       | `Boolean` | `false`   |
+| ghost       | Determinar si es o no un botón ghost       | `Boolean` | `false`   |
+| circle      | Determina si los lateras son circulares    | `Boolean` | `false`   |
+| square      | Determina si las esquinas son cuadradas    | `Boolean` | `false`   |
+| block       | Determina si es o no un elemento de bloque | `Boolean` | `false`   |
+| disabled    | Deshabilita el botón                       | `Boolean` | `false`   |
+| size        | Tamaño del botón, opciones:<br>`large` `normal` `small`       | `String`  | `normal`  |
+| autofocus   | Misma función que el atributo nativo **autofocus** | `Boolean` | `false`   |
+| native-type | Misma función que el atributo nativo **type**, opciones:<br> `button` `submit` `reset`                      | `String`  | `button`      |
 
-## Event
+### Event
 
 | Event | Description                                             | Arguments |
 | ----- | ------------------------------------------------------- | --------- |

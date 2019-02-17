@@ -4,13 +4,12 @@
   Sidebar.docs__sidebar
     v-runtime-template(:template="sidebarNav")
 
-  .docs__content
+  .docs__content(ref="docsContent")
     //- Header
     Header
       v-runtime-template(:template="headerNav")
 
     router-view
-
 </template>
 
 <script>
@@ -52,6 +51,10 @@ export default {
     this.getHeaderNav();
     await this.getSidebarNav(params);
     this.getArticle(params);
+  },
+
+  updated() {
+    this.$refs.docsContent.scrollTop = 0;
   },
 
   /**

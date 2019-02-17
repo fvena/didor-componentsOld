@@ -8,7 +8,6 @@ import '../didor/_didor.scss';
 
 Vue.config.productionTip = false;
 Vue.component('Demo', Demo);
-console.log('demo');
 UtilDocs.loadComponentes(docsConfig.packagePath, true);
 
 new Vue({

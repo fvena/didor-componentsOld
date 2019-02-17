@@ -39,14 +39,16 @@ export default {
     &.router-link-active {
       color: var(--color-brand);
 
-      &:hover {
+      @include hover {
         color: var(--color-brand-darker);
       }
     }
   }
 
-  li > p > a:hover {
-    color: var(--color-brand);
+  li > p > a {
+    @include hover {
+      color: var(--color-brand);
+    }
   }
 
   li > a {
@@ -55,14 +57,14 @@ export default {
     display: block;
     color: var(--color-gray3);
 
-    &:hover {
+    @include hover {
       color: var(--color-brand);
     }
 
     &.router-link-active {
       color: var(--color-brand);
 
-      &:hover {
+      @include hover {
         color: var(--color-brand-darker);
       }
     }

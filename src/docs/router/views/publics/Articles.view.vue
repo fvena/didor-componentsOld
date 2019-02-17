@@ -102,6 +102,10 @@ $wrapper-width: 670px;
     border-left: 4px solid var(--color-brand);
   }
 
+  hr {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, var(--color-border) 50%);
+  }
+
   .customDemo {
     padding: 0 $space;
     border: 1px solid var(--color-border);
@@ -142,6 +146,19 @@ $wrapper-width: 670px;
         font-weight: 400;
         color: var(--color-gray3);
       }
+    }
+  }
+
+  .table-cheatsheet {
+    td:nth-of-type(1) {
+      font-weight: $content-font-bold;
+    }
+    td:nth-of-type(2) {
+      @include fontsize(theta);
+
+      font-family: $code-font-family;
+      line-height: 1.2rem;
+      color: var(--color-brand);
     }
   }
 

@@ -24,6 +24,7 @@ html {
   text-size-adjust: 100%; /* [4] */
   -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes /* [5] */
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes /* [5] */
+  scroll-behavior: smooth;
 }
 
 body {

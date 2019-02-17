@@ -10,6 +10,7 @@
   "first-heading-h1": false,
   "header-increment": false,
   "no-bare-urls": false,
+  "no-inline-html": false,
   // ===
   // Prettier overrides
   // ===

@@ -1,3 +1,5 @@
+- [Cheatsheet](/cheatsheet.md)
+
 - Markdown Style Guide
 
   - [Texto](/text.md)
@@ -7,8 +9,9 @@
   - [Tablas](/tables.md)
   - [Código](/codeblocks.md)
   - [Alertas](/alerts.md)
-  - [Task](/task.md)
+  - [Tareas](/task.md)
   - [Desplegables](/collapse.md)
   - [Emojis](/emoji.md)
   - [Videos](/videos.md)
+  - [Tabla de Contenidos](/toc.md)
   - [Demo](/demo.md)
