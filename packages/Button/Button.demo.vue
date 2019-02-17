@@ -42,13 +42,35 @@
     Demo(title="Loading")
       az-button.margin-bottom(type="default" @click="toggleDemo") Toggle Loading
       div
-        az-button(:loading="loading") Guardar
+        az-button(type="danger" :loading="loading" loadingType="square" size="large") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="square") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="square" size="small") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="bars" size="large") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="bars") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="bars" size="small") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="circle" size="large") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="circle") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="circle" size="small") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="blobs" size="large") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="blobs") Guardar
+      div
+        az-button(type="danger" :loading="loading" loadingType="blobs" size="small") Guardar
       div
         az-button(type="danger" :loading="loading" size="large") Guardar
       div
-        az-button(type="success" :loading="loading" size="small") Guardar
+        az-button(type="danger" :loading="loading") Guardar
       div
-        az-button(type="warning" :loading="loading" ghost) Guardar
+        az-button(type="danger" :loading="loading" size="small") Guardar
 </template>
 
 <script>

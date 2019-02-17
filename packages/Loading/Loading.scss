@@ -8,6 +8,7 @@
    * Bars loading
    */
   &--bars {
+    position: relative;
     height: 1.6em;
     text-align: center;
   }
@@ -51,6 +52,7 @@
   $offset: 187;
 
   &--circle {
+    position: relative;
     width: 1.6em;
     height: 1.6em;
   }

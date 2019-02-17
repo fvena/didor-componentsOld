@@ -35,11 +35,19 @@ az-loading(color="var(--color-success)")
 
 #### Size
 
-El tamaño del componente `Loading` depende directamente de su tamaño de fuente:
-
 ```pug
-az-loading(style="font-size: 10px")
-az-loading(style="font-size: 20px")
-az-loading(style="font-size: 30px")
-az-loading(style="font-size: 40px")
+az-loading(size="10px")
+az-loading(size="20px")
+az-loading(size="30px")
+az-loading(size="40px")
 ```
+
+---
+
+### API
+
+| Attribute   | Description                                | Type      | Default   |
+| ----------- | ------------------------------------------ | --------- | --------- |
+| type        | Tipo de loading, opciones:<br>`star` `circle` `success` `bars` `blobs` `square` | `String`  | `star` |
+| color       | Determinar el color del spinner. Acepta:<br> `variales css` `hexadecimal` `nombre`           | `String` | `var(--color-brand)`   |
+| size        | Determinar el tamaño del botón. Acepta valores en:<br>`px` `rem` `em`             | `String` | `1rem`    |

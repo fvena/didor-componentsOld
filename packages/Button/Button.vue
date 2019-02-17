@@ -5,8 +5,9 @@
     :autofocus="autofocus"
     :type="nativeType"
     :class="classObject")
+
     //- Loading spinner
-    az-loading(:type="loadingType")
+    az-loading(:type="loadingType" size=".8em")
     //- i(:class="icon" v-if="icon && !loading")
     span(v-if="$slots.default && !loading")
       slot

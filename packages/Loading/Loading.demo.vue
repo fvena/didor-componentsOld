@@ -21,10 +21,10 @@
       az-loading(color="var(--color-success)")
 
     Demo(title="Size")
-      az-loading(style="font-size: 10px")
-      az-loading(style="font-size: 20px")
-      az-loading(style="font-size: 30px")
-      az-loading(style="font-size: 40px")
+      az-loading(size="10px")
+      az-loading(size="20px")
+      az-loading(size="30px")
+      az-loading(size="40px")
 </template>
 
 <script>

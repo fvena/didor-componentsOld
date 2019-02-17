@@ -1,5 +1,5 @@
 <template lang="pug">
-.az-loading
+.az-loading(:style="{'font-size': size}")
   .az-loading--bars(v-if="type === 'bars'")
     .az-loading__bar
     .az-loading__bar
@@ -44,6 +44,10 @@ export default {
     color: {
       type: String,
       default: 'var(--color-brand)',
+    },
+    size: {
+      type: String,
+      default: '1rem',
     },
   },
   watch: {

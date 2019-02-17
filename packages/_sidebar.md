@@ -9,4 +9,5 @@
   - Basic Components
 
     - [Button](/Button/Button.md)
+    - [Icon](/Icon/Icon.md)
     - [Loading](/Loading/Loading.md)
