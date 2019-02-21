@@ -200,21 +200,6 @@
           .block 5
           .block 6
 
-    Demo(title="Ajuste vertical")
-      .demo__subtitle no match
-      .content.valign
-        az-row
-          .block line 1
-          .block line 1 <br> line 2 <br> line 3
-          .block line 1 <br> line 2
-
-      .demo__subtitle match
-      .content.valign
-        az-row(match)
-          .block line 1
-          .block line 1 <br> line 2 <br> line 3
-          .block line 1 <br> line 2
-
     Demo(title="Separación Horizontal")
       .demo__subtitle none
       .content

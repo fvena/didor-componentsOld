@@ -24,32 +24,6 @@ Para que el componente funcione correctamente, es necesario definir la propiedad
 
 ```pug
 az-row(grid)
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-  az-col(cols="1")
-    .block 1
-
-az-row(grid)
   az-col(cols="3")
     .block 3
   az-col(cols="6")
@@ -82,16 +56,6 @@ az-row(grid)
     .block 3
 ```
 
-#### Auto / Expand
-
-```pug
-az-row(grid)
-  az-col(auto style="width: 100px")
-    .block Auto
-  az-col(expand)
-    .block Expand
-```
-
 #### Responsive
 
 ```pug
@@ -110,6 +74,33 @@ az-row(grid)
     .block 4
   az-col(cols="4" palm="5" offset-palm="2")
     .block 4
+```
+
+#### Nested
+
+```pug
+az-row(grid)
+  az-col(cols="6")
+    .block
+      az-row(grid)
+        az-col(cols="12")
+          .block 12
+        az-col(cols="6")
+          .block 6
+        az-col(cols="6")
+          .block 6
+  az-col(cols="6")
+    .block 4
+```
+
+#### Auto / Expand
+
+```pug
+az-row(grid)
+  az-col(auto style="width: 100px")
+    .block Auto
+  az-col(expand)
+    .block Expand
 ```
 
 

@@ -9,6 +9,8 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/docs/$1',
   },
   snapshotSerializers: ['jest-serializer-vue'],
-  testMatch: ['**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'],
+  testMatch: ['<rootDir>/packages/**/(*.)spec.js'],
   testURL: 'http://localhost/',
 };
+
+// testMatch: ['packages/**/(*.)spec.js'],

@@ -4,12 +4,12 @@
 
   - [Introducción](/docs/intro.md)
 
-- Components
-
-  - Layout
+- Layout
 
     - [Row](/Row/Row.md)
     - [Col](/Col/Col.md)
+
+- Components
 
   - Basic Components
 

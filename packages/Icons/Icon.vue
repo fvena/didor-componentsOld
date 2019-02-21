@@ -1,6 +1,5 @@
 <template lang="pug">
   svg.az-icon(
-    class="className"
     :width="size"
     :height="size"
     :class="classObject"
@@ -51,9 +50,6 @@ export default {
         },
       ];
     },
-  },
-  created() {
-    console.log(this.$refs);
   },
 };
 </script>

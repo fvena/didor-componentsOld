@@ -9,23 +9,23 @@
 export default {
   props: {
     cols: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     palm: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     lap: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     small: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     desk: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     auto: {
@@ -37,23 +37,23 @@ export default {
       default: false,
     },
     offset: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     offsetPalm: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     offsetLap: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     offsetSmall: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
     offsetDesk: {
-      type: Number,
+      type: [String, Number],
       default: null,
     },
   },

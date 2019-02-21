@@ -27,10 +27,6 @@ export default {
       default: '',
       validator: value => ['row', 'row-reverse', 'column', 'column-resverse', ''].indexOf(value) !== -1,
     },
-    match: {
-      type: Boolean,
-      default: false,
-    },
     wrap: {
       type: String,
       default: '',
@@ -68,7 +64,6 @@ export default {
         this.vgutter ? `az-row--vgutter-${this.vgutter}` : '',
         {
           'az-row--inline': this.inline,
-          'az-row--match': this.match,
           'az-row--grid': this.grid,
         },
       ];
