@@ -6,6 +6,11 @@
 
 - Components
 
+  - Layout
+
+    - [Row](/Row/Row.md)
+    - [Col](/Col/Col.md)
+
   - Basic Components
 
     - [Button](/Button/Button.md)

@@ -146,6 +146,11 @@ $wrapper-width: 670px;
         font-weight: 400;
         color: var(--color-gray3);
       }
+
+      &:first-of-type {
+        font-weight: $content-font-bold;
+        white-space: nowrap;
+      }
     }
   }
 

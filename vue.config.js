@@ -1,5 +1,8 @@
 const path = require('path');
-const docsConfig = require('./docs/docs.config');
+
+const title = 'Didor Docs';
+const docsPath = './docs';
+const packagePath = './packages';
 
 module.exports = {
   devServer: {
@@ -20,7 +23,7 @@ module.exports = {
   configureWebpack: {
     // We provide the app's title in Webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
-    name: docsConfig.title,
+    name: title,
     // Set up all the aliases we use in our app.
     resolve: {
       alias: {
@@ -40,11 +43,13 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
+    // config.module.rule('svg').exclude.add(path.resolve(iconPath));
+
     config.plugin('copy').tap(([pathConfigs]) => {
-      const fromPackages = path.resolve(docsConfig.packagePath);
-      const fromDocs = path.resolve(docsConfig.docsPath);
-      const toPackages = `${pathConfigs[0].to}/${docsConfig.packagePath}`;
-      const toDocs = `${pathConfigs[0].to}/${docsConfig.docsPath}`;
+      const fromPackages = path.resolve(packagePath);
+      const fromDocs = path.resolve(docsPath);
+      const toPackages = `${pathConfigs[0].to}/${packagePath}`;
+      const toDocs = `${pathConfigs[0].to}/${docsPath}`;
 
       const configPackages = {
         from: fromPackages,

@@ -2,21 +2,8 @@
   "name": "@didor/components",
   "version": "0.2.0",
   "description": "Tool to develop, document and share your own library of UI components with Vue",
-  "homepage": "https://github.com/fvena/didor-components#readme",
   "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)",
-  "scripts": {
-    "build": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name az ./docs/components/index.js",
-    "commit": "git-cz",
-    "lint": "vue-cli-service lint",
-    "lint:markdownlint": "markdownlint -i CHANGELOG.md",
-    "lint:prettier": "prettier --write --loglevel warn",
-    "lint:stylelint": "stylelint --fix",
-    "release": "standard-version",
-    "serve": "vue-cli-service serve",
-    "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
-  },
+  "homepage": "https://github.com/fvena/didor-components#readme",
   "main": "./dist/az.common.js",
   "files": [
     "dist/*"
@@ -27,6 +14,43 @@
   },
   "bugs": {
     "url": "https://github.com/fvena/didor-components/issues"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "svg": "svg-sprite -sD public/icons --symbol-bust --symbol-sprite 'icons.svg' --symbol-dest '' src/docs/assets/icons/**/*.svg",
+    "build-lib": "vue-cli-service build --target lib --name az ./docs/components/index.js",
+    "commit": "git-cz",
+    "lint:markdownlint": "markdownlint -i CHANGELOG.md",
+    "lint:prettier": "prettier --write --loglevel warn",
+    "lint:stylelint": "stylelint --fix",
+    "release": "standard-version",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "clipboard": "2.0.4",
+    "highlight.js": "9.14.2",
+    "init": "0.1.2",
+    "js-yaml": "3.12.1",
+    "lodash": "4.17.11",
+    "markdown-it": "8.4.2",
+    "markdown-it-div": "1.1.0",
+    "markdown-it-emoji": "1.4.0",
+    "markdown-it-front-matter": "0.1.2",
+    "markdown-it-task-lists": "2.1.1",
+    "markdown-it-toc-and-anchor": "4.2.0",
+    "markdown-it-video": "0.6.3",
+    "nprogress": "0.2.0",
+    "prismjs": "1.15.0",
+    "svg-sprite-loader": "4.1.3",
+    "v-runtime-template": "1.5.2",
+    "vue": "^2.5.21",
+    "vue-i18n": "8.7.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
@@ -57,37 +81,16 @@
     "stylelint-config-recess-order": "2.0.1",
     "stylelint-config-standard": "18.2.0",
     "stylelint-scss": "3.5.1",
+    "svg-sprite": "1.5.0",
     "vue-cli-plugin-pug": "1.0.7",
     "vue-template-compiler": "^2.5.21"
-  },
-  "dependencies": {
-    "axios": "0.18.0",
-    "clipboard": "2.0.4",
-    "highlight.js": "9.14.2",
-    "init": "0.1.2",
-    "js-yaml": "3.12.1",
-    "lodash": "4.17.11",
-    "markdown-it": "8.4.2",
-    "markdown-it-div": "1.1.0",
-    "markdown-it-emoji": "1.4.0",
-    "markdown-it-front-matter": "0.1.2",
-    "markdown-it-task-lists": "2.1.1",
-    "markdown-it-toc-and-anchor": "4.2.0",
-    "markdown-it-video": "0.6.3",
-    "nprogress": "0.2.0",
-    "prismjs": "1.15.0",
-    "v-runtime-template": "1.5.2",
-    "vue": "^2.5.21",
-    "vue-i18n": "8.7.0",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   }
 }

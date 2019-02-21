@@ -7,8 +7,8 @@
     :class="classObject")
 
     //- Loading spinner
-    az-loading(:type="loadingType" size=".8em")
-    //- i(:class="icon" v-if="icon && !loading")
+    az-loading(:type="loadingType" size=".8em" v-if="loading")
+    az-icon(:name="iconName" v-if="iconName && !loading")
     span(v-if="$slots.default && !loading")
       slot
     span(v-if="loading") Cargando
@@ -23,10 +23,10 @@ export default {
     circle: Boolean,
     disabled: Boolean,
     ghost: Boolean,
-    // icon: {
-    //   type: String,
-    //   default: '',
-    // },
+    iconName: {
+      type: String,
+      default: '',
+    },
     loading: Boolean,
     loadingType: String,
     plain: Boolean,

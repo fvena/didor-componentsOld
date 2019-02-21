@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.touch
+  div
     Demo(title="Tipo")
       az-button Default
       az-button(type="brand") Brand
@@ -38,6 +38,11 @@
       az-button(type="brand" size="large") Large
       az-button(type="brand") Default
       az-button(type="brand" size="small") Small
+
+    Demo(title="Icono")
+      az-button(type="brand" iconName="build1") Icon 1
+      az-button(type="brand" iconName="build2") Icon 2
+      az-button(type="brand" iconName="build3") Icon 3
 
     Demo(title="Loading")
       az-button.margin-bottom(type="default" @click="toggleDemo") Toggle Loading

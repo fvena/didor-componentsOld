@@ -2,7 +2,7 @@
 
 // Using CommonJS instead of ES2015+ export, because we also need to
 // provide this object to Webpack in vue.config.js.
-module.exports = {
+export default {
   title: 'Didor Docs',
   description: 'Opinionated boilerplate project for an enterprise Vue frontend',
   docsPath: './docs',
