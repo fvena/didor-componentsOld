@@ -1,0 +1,29 @@
+.az-icon {
+  display: inline-block;
+  color: inherit;
+  vertical-align: middle;
+  fill: currentColor;
+  stroke: none;
+}
+
+.az-icon--stroke {
+  fill: none;
+  stroke: currentColor;
+}
+
+.az-icon--up {
+  /* default */
+  transform: rotate(0deg);
+}
+
+.az-icon--right {
+  transform: rotate(90deg);
+}
+
+.az-icon--down {
+  transform: rotate(180deg);
+}
+
+.az-icon--left {
+  transform: rotate(-90deg);
+}

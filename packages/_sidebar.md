@@ -13,6 +13,6 @@
 
   - Basic Components
 
-    - [Button](/Button/Button.md)
-    - [Icon](/Icon/Icon.md)
+    - [Buttons](/Button/Button.md)
+    - [Icons](/Icons/Icon.md)
     - [Loading](/Loading/Loading.md)
