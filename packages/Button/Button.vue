@@ -9,27 +9,64 @@
     //- Loading spinner
     az-loading(:type="loadingType" size=".8em" v-if="loading")
     az-icon(:name="iconName" v-if="iconName && !loading")
-    span(v-if="$slots.default && !loading")
+    span(v-if="$slots.default && (!loading || loadingIconOnly)")
       slot
-    span(v-if="loading") Cargando
+    span(v-if="loading && !loadingIconOnly") {{ loadingText }}
 </template>
 
 <script>
 export default {
   name: 'AzButton',
   props: {
-    autofocus: Boolean,
-    block: Boolean,
-    circle: Boolean,
-    disabled: Boolean,
-    ghost: Boolean,
+    autofocus: {
+      type: Boolean,
+      default: false,
+    },
+    block: {
+      type: Boolean,
+      default: false,
+    },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    ghost: {
+      type: Boolean,
+      default: false,
+    },
     iconName: {
       type: String,
       default: '',
     },
-    loading: Boolean,
-    loadingType: String,
-    plain: Boolean,
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator: value => ['top', 'right', 'bottom', 'left', ''].indexOf(value) !== -1,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    loadingType: {
+      type: String,
+      default: 'star',
+    },
+    loadingIconOnly: {
+      type: Boolean,
+      default: false,
+    },
+    loadingText: {
+      type: String,
+      default: 'Cargando',
+    },
+    plain: {
+      type: Boolean,
+      default: false,
+    },
     nativeType: {
       type: String,
       default: 'button',
@@ -39,7 +76,10 @@ export default {
       type: String,
       default: 'normal',
     },
-    square: Boolean,
+    square: {
+      type: Boolean,
+      default: false,
+    },
     type: {
       type: String,
       default: 'default',
@@ -50,9 +90,11 @@ export default {
       return [
         this.type ? `az-button--${this.type}` : '',
         this.size ? `az-button--${this.size}` : '',
+        this.iconPosition ? `az-button--icon-${this.iconPosition}` : '',
         {
           'az-button--disabled': this.buttonDisabled,
           'az-button--loading': this.loading,
+          'az-button--loadingIconOnly': this.loadingIconOnly,
           'az-button--block': this.block,
           'az-button--ghost': this.ghost,
           'az-button--plain': this.plain,

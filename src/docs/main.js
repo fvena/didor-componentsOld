@@ -8,7 +8,7 @@ import 'nprogress/nprogress.css';
 import UtilDocs from './utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
 
-import '../didor/_didor.scss';
+import './design/index.scss';
 
 // Inicializamos nuesta API
 ApiService.init(process.env.VUE_APP_API_URL, process.env.VUE_APP_API_TIMEOUT);

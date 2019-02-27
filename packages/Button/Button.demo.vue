@@ -40,42 +40,49 @@
       az-button(type="brand" size="small") Small
 
     Demo(title="Icono")
-      az-button(type="brand" iconName="build1") Icon 1
-      az-button(type="brand" iconName="build2") Icon 2
-      az-button(type="brand" iconName="build3") Icon 3
+      .demo__subtitle Icon and text
+      az-button(type="brand" iconName="palm") Icon 1
+      az-button(type="brand" iconName="lap") Icon 2
+      az-button(type="brand" iconName="desktop") Icon 3
+
+      .demo__subtitle Only Icon
+      az-button(type="brand" iconName="palm")
+      az-button(type="brand" iconName="lap")
+      az-button(type="brand" iconName="desktop")
+
+      .demo__subtitle Icon Position
+      az-button(type="brand" iconName="palm") Default
+      az-button(type="brand" iconName="palm" iconPosition="top") Top
+      az-button(type="brand" iconName="palm" iconPosition="right") Right
+      az-button(type="brand" iconName="palm" iconPosition="bottom") Bottom
 
     Demo(title="Loading")
       az-button.margin-bottom(type="default" @click="toggleDemo") Toggle Loading
+
+      .demo__subtitle Icon and text
       div
-        az-button(type="danger" :loading="loading" loadingType="square" size="large") Guardar
+        az-button(type="brand" :loading="loading" loadingType="square") Guardar
       div
-        az-button(type="danger" :loading="loading" loadingType="square") Guardar
+        az-button(type="brand" :loading="loading" loadingType="bars") Guardar
       div
-        az-button(type="danger" :loading="loading" loadingType="square" size="small") Guardar
+        az-button(type="brand" :loading="loading" loadingType="circle") Guardar
       div
-        az-button(type="danger" :loading="loading" loadingType="bars" size="large") Guardar
+        az-button(type="brand" :loading="loading" loadingType="blobs") Guardar
       div
-        az-button(type="danger" :loading="loading" loadingType="bars") Guardar
+        az-button(type="brand" :loading="loading") Guardar
+
+      .demo__subtitle Only Icon
       div
-        az-button(type="danger" :loading="loading" loadingType="bars" size="small") Guardar
+        az-button(type="brand" :loading="loading" loadingIconOnly) Guardar
       div
-        az-button(type="danger" :loading="loading" loadingType="circle" size="large") Guardar
+        az-button(type="brand" :loading="loading" loadingIconOnly loadingType="square") Guardar
+
+      .demo__subtitle Change text
       div
-        az-button(type="danger" :loading="loading" loadingType="circle") Guardar
+        az-button(:loading="loading" loadingText="Buscando") Buscar
       div
-        az-button(type="danger" :loading="loading" loadingType="circle" size="small") Guardar
-      div
-        az-button(type="danger" :loading="loading" loadingType="blobs" size="large") Guardar
-      div
-        az-button(type="danger" :loading="loading" loadingType="blobs") Guardar
-      div
-        az-button(type="danger" :loading="loading" loadingType="blobs" size="small") Guardar
-      div
-        az-button(type="danger" :loading="loading" size="large") Guardar
-      div
-        az-button(type="danger" :loading="loading") Guardar
-      div
-        az-button(type="danger" :loading="loading" size="small") Guardar
+        az-button(:loading="loading" loadingText="Configurando") Guardar
+
 </template>
 
 <script>

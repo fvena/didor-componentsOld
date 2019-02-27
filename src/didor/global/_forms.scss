@@ -1,0 +1,70 @@
+/**
+ * FORM
+ */
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+label,
+textarea,
+input[type='file'] {
+  display: block;
+}
+
+input {
+  cursor: pointer;
+}
+
+input,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='url'],
+textarea {
+  height: double($space);
+  padding: 0 $space;
+  line-height: double($space);
+  border: 1px solid var(--color-border);
+
+  &:focus {
+    border-color: var(--color-brand);
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &:-moz-placeholder {
+    color: var(--color-gray3);
+    opacity: 1;
+  }
+
+  &[disabled],
+  &[readonly] {
+    cursor: not-allowed;
+    background-color: var(--color-gray5);
+  }
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  position: relative;
+  bottom: 1px;
+  margin-right: halve($space);
+  vertical-align: middle;
+}
+
+input[disabled] {
+  background-color: var(--color-gray5);
+
+  @include hover {
+    cursor: not-allowed;
+  }
+}

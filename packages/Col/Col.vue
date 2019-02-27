@@ -1,5 +1,5 @@
 <template lang="pug">
-.az-col(
+.col(
   :class="classObject"
 )
   slot
@@ -60,19 +60,19 @@ export default {
   computed: {
     classObject() {
       return [
-        this.cols > 0 ? `az-col--${this.cols}` : '',
-        this.palm > 0 ? `az-col--palm${this.palm}` : '',
-        this.lap > 0 ? `az-col--lap${this.lap}` : '',
-        this.small > 0 ? `az-col--small${this.small}` : '',
-        this.desk > 0 ? `az-col--desk${this.desk}` : '',
-        this.offset > 0 ? `az-col--offset-${this.offset}` : '',
-        this.offsetPalm > 0 ? `az-col--offset-palm${this.offsetPalm}` : '',
-        this.offsetLap > 0 ? `az-col--offset-lap${this.offsetLap}` : '',
-        this.offsetSmall > 0 ? `az-col--offset-small${this.offsetSmall}` : '',
-        this.offsetDesk > 0 ? `az-col--offset-desk${this.offsetDesk}` : '',
+        this.cols > 0 ? `col--${this.cols}` : '',
+        this.palm > 0 ? `col--palm${this.palm}` : '',
+        this.lap > 0 ? `col--lap${this.lap}` : '',
+        this.small > 0 ? `col--small${this.small}` : '',
+        this.desk > 0 ? `col--desk${this.desk}` : '',
+        this.offset > 0 ? `col--offset-${this.offset}` : '',
+        this.offsetPalm > 0 ? `col--offset-palm${this.offsetPalm}` : '',
+        this.offsetLap > 0 ? `col--offset-lap${this.offsetLap}` : '',
+        this.offsetSmall > 0 ? `col--offset-small${this.offsetSmall}` : '',
+        this.offsetDesk > 0 ? `col--offset-desk${this.offsetDesk}` : '',
         {
-          'az-col--auto': this.auto,
-          'az-col--expand': this.expand,
+          'col--auto': this.auto,
+          'col--expand': this.expand,
         },
       ];
     },

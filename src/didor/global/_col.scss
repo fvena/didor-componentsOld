@@ -1,0 +1,120 @@
+$grid-columns: 12;
+
+/*
+ * Col Auto Size
+ */
+.col--auto {
+  flex-basis: initial;
+  flex-grow: initial;
+}
+
+/*
+ * Col Expand Size
+ */
+.col--expand {
+  flex: 1;
+  min-width: 1px;
+}
+
+/*
+ * Col Width
+ */
+@for $i from 1 through $grid-columns {
+  .col--#{$i} {
+    flex-basis: round-width($i, $grid-columns);
+    max-width: round-width($i, $grid-columns);
+  }
+}
+
+/*
+ * Col Offset
+ */
+@for $i from 0 through $grid-columns {
+  .col--offset-#{$i} {
+    margin-left: round-width($i, $grid-columns);
+  }
+}
+
+@include media(palm) {
+  /*
+   * Col Width Palm
+   */
+  @for $i from 1 through $grid-columns {
+    .col--palm#{$i} {
+      flex-basis: round-width($i, $grid-columns);
+      max-width: round-width($i, $grid-columns);
+    }
+  }
+
+  /*
+   * Col Offset Palm
+   */
+  @for $i from 0 through $grid-columns {
+    .col--offset-#{$i} {
+      margin-left: round-width($i, $grid-columns);
+    }
+  }
+}
+
+@include media(lap) {
+  /*
+   * Col Width Lap
+   */
+  @for $i from 1 through $grid-columns {
+    .col--lap#{$i} {
+      flex-basis: round-width($i, $grid-columns);
+      max-width: round-width($i, $grid-columns);
+    }
+  }
+
+  /*
+   * Col Offset Lap
+   */
+  @for $i from 0 through $grid-columns {
+    .col--offset-#{$i} {
+      margin-left: round-width($i, $grid-columns);
+    }
+  }
+}
+
+@include media(small) {
+  /*
+   * Col Width Small
+   */
+  @for $i from 1 through $grid-columns {
+    .col--small#{$i} {
+      flex-basis: round-width($i, $grid-columns);
+      max-width: round-width($i, $grid-columns);
+    }
+  }
+
+  /*
+   * Col Offset Small
+   */
+  @for $i from 0 through $grid-columns {
+    .col--offset-#{$i} {
+      margin-left: round-width($i, $grid-columns);
+    }
+  }
+}
+
+@include media(desk) {
+  /*
+   * Col Width Desk
+   */
+  @for $i from 1 through $grid-columns {
+    .col--desk#{$i} {
+      flex-basis: round-width($i, $grid-columns);
+      max-width: round-width($i, $grid-columns);
+    }
+  }
+
+  /*
+   * Col Offset Desk
+   */
+  @for $i from 0 through $grid-columns {
+    .col--offset-#{$i} {
+      margin-left: round-width($i, $grid-columns);
+    }
+  }
+}

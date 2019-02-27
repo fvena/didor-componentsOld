@@ -6,8 +6,11 @@
 
 - Layout
 
+    - [Container](/docs/container.md)
     - [Row](/Row/Row.md)
     - [Col](/Col/Col.md)
+    - [Responsive](/docs/responsive.md)
+    - [Visibility](/docs/visibility.md)
 
 - Components
 

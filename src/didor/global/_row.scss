@@ -1,0 +1,165 @@
+// prettier-ignore
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  /*
+   * Remove pseudo elements created by micro clearfix as precaution
+   */
+  &::before,
+  &::after,
+  &--inline::before,
+  &--inline::after {
+    display: none;
+  }
+
+  /*
+   * Horizontal Align
+   *
+   * Align items along the main axis of the current line of the flex container
+   */
+  &--left { justify-content: flex-start; }
+  &--center { justify-content: center; }
+  &--right { justify-content: flex-end; }
+  &--between { justify-content: space-between; }
+  &--around { justify-content: space-around; }
+  &--evenly { justify-content: space-evenly; }
+
+  /*
+   * Alignment Vertical
+   *
+   * Align items along the cross axis of the current line of the flex container
+   */
+  &--stretch { align-items: stretch; }
+  &--top { align-items: flex-start; }
+  &--middle { align-items: center; }
+  &--bottom { align-items: flex-end; }
+  &--baseline { align-items: baseline; }
+
+  /*
+   * Direction
+   */
+  &--row { flex-direction: row; }
+  &--row-reverse { flex-direction: row-reverse; }
+  &--column { flex-direction: column; }
+  &--column-resverse { flex-direction: column-reverse; }
+
+  /*
+   * Wrap
+   */
+  &--nowrap { flex-wrap: nowrap; }
+  &--wrap { flex-wrap: wrap; }
+  &--wrap-reverse { flex-wrap: wrap-reverse; }
+
+  /*
+   * Justifiment Vertical
+   *
+   * Align itmes within the flex container when there is extra space in the cross-axis
+   * Only works if there is more than one line of flex items
+   */
+  &--wrap-stretch { align-content: stretch; }
+  &--wrap-top { align-content: flex-start; }
+  &--wrap-middle { align-content: center; }
+  &--wrap-bottom { align-content: flex-end; }
+  &--wrap-between { align-content: space-between; }
+  &--wrap-around { align-content: space-around; }
+
+  /*
+   * Gutter Vertical
+   */
+  margin-top: -$space;
+  > * { margin-top: $space; }
+
+  /* None */
+  &--vgutter-none,
+  &--vgutter-none > * {
+    margin-top: 0;
+  }
+
+  /* Small */
+  &--vgutter-small { margin-top: halve(-$space); }
+  &--vgutter-small > * { margin-top: halve($space); }
+
+  /* Large */
+  &--vgutter-large { margin-top: double(-$space); }
+  &--vgutter-large > * { margin-top: double($space); }
+
+  /* Prevent gutter fix */
+  &--wrap-between,
+  &--wrap-between > *,
+  &--wrap-around,
+  &--wrap-around > * {
+    margin-top: 0;
+  }
+
+  /*
+   * Gutter Horizontal
+   */
+  margin-left: -$space;
+  > * { margin-left: $space; }
+
+  /* None */
+  &--hgutter-none,
+  &--hgutter-none > * {
+    margin-left: 0;
+  }
+
+  /* Small */
+  &--hgutter-small { margin-left: halve(-$space); }
+  &--hgutter-small > * { margin-left: halve($space); }
+
+  /* Large */
+  &--hgutter-large { margin-left: double(-$space); }
+  &--hgutter-large > * { margin-left: double($space); }
+
+  /* Prevent gutter fix */
+  &--around,
+  &--around > *,
+  &--evenly,
+  &--evenly > *{
+    margin-left: 0 !important;
+  }
+
+  /*
+   * Grid
+   */
+  &--grid {
+    margin-right: -$space / 2;
+    margin-left: -$space / 2;
+
+    > * {
+      flex: 0 0 auto;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      padding-right: $space / 2;
+      padding-left: $space / 2;
+      margin-left: 0;
+    }
+  }
+
+  &--hgutter-small#{&}--grid {
+    margin-right: -$space / 4;
+    margin-left: -$space / 4;
+  }
+
+  &--hgutter-small#{&}--grid > * {
+    padding-right: $space / 4;
+    padding-left: $space / 4;
+  }
+
+  &--hgutter-large#{&}--grid {
+    margin-right: -$space;
+    margin-left: -$space;
+  }
+  &--hgutter-large#{&}--grid > *  {
+    padding-right: -$space;
+    padding-left: -$space;
+  }
+}

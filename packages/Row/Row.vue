@@ -1,5 +1,5 @@
 <template lang="pug">
-.az-row(
+.row(
   :class="classObject"
 )
   slot
@@ -55,16 +55,16 @@ export default {
   computed: {
     classObject() {
       return [
-        this.align ? `az-row--${this.align}` : '',
-        this.valign ? `az-row--${this.valign}` : '',
-        this.direction ? `az-row--${this.direction}` : '',
-        this.wrap ? `az-row--${this.wrap}` : '',
-        this.vwrap ? `az-row--wrap-${this.vwrap}` : '',
-        this.hgutter ? `az-row--hgutter-${this.hgutter}` : '',
-        this.vgutter ? `az-row--vgutter-${this.vgutter}` : '',
+        this.align ? `row--${this.align}` : '',
+        this.valign ? `row--${this.valign}` : '',
+        this.direction ? `row--${this.direction}` : '',
+        this.wrap ? `row--${this.wrap}` : '',
+        this.vwrap ? `row--wrap-${this.vwrap}` : '',
+        this.hgutter ? `row--hgutter-${this.hgutter}` : '',
+        this.vgutter ? `row--vgutter-${this.vgutter}` : '',
         {
-          'az-row--inline': this.inline,
-          'az-row--grid': this.grid,
+          'row--inline': this.inline,
+          'row--grid': this.grid,
         },
       ];
     },

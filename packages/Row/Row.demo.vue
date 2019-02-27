@@ -81,28 +81,28 @@
 
     Demo(title="Dirección")
       .demo__subtitle row
-      .content.row
+      .content
         az-row(direction="row")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle row-reverse
-      .content.row-reverse
+      .content
         az-row(direction="row-reverse")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle column
-      .content.column
+      .content
         az-row(direction="column")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle column-resverse
-      .content.column-resverse
+      .content
         az-row(direction="column-resverse")
           .block 1
           .block 2
@@ -301,7 +301,7 @@ export default {};
 .valign {
   position: relative;
 
-  .az-row {
+  .row {
     height: 150px;
   }
 
@@ -318,7 +318,7 @@ export default {};
 }
 
 .vwrap {
-  .az-row {
+  .row {
     height: 250px;
   }
 

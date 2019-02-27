@@ -76,13 +76,35 @@ az-button(type="brand") Default
 az-button(type="brand" size="small") Small
 ```
 
+#### Icono
+
+```pug
+az-button(type="brand" iconName="palm") Icon 1
+az-button(type="brand" iconName="lap") Icon 2
+az-button(type="brand" iconName="desktop") Icon 3
+
+az-button(type="brand" iconName="palm")
+az-button(type="brand" iconName="lap")
+az-button(type="brand" iconName="desktop")
+
+az-button(type="brand" iconName="palm")
+az-button(type="brand" iconName="palm" iconPosition="top")
+az-button(type="brand" iconName="palm" iconPosition="right")
+az-button(type="brand" iconName="palm" iconPosition="bottom")
+```
+
 #### Loading
 
 ```pug
 az-button(loading) Guardar
-az-button(type="danger" loading size="large") Guardar
-az-button(type="success" loading size="small") Guardar
-az-button(type="warning" loading ghost) Guardar
+az-button(loading loadingType="square") Guardar
+az-button(loading loadingType="bars") Guardar
+az-button(loading loadingType="circle") Guardar
+
+az-button(loading loadingText="Buscando") Buscar
+az-button(loading loadingText="Configurando") Guardar
+
+az-button(loading loadingIconOnly) Guardar
 ```
 
 ---
@@ -99,6 +121,12 @@ az-button(type="warning" loading ghost) Guardar
 | block       | Determina si es o no un elemento de bloque | `Boolean` | `false`   |
 | disabled    | Deshabilita el botón                       | `Boolean` | `false`   |
 | size        | Tamaño del botón, opciones:<br>`large` `normal` `small`       | `String`  | `normal`  |
+| iconName    | Indica el nombre de un icono               | `String`  | --        |
+| iconPosition | Indica la posición del icono respecto del texto, opciones:<br>`top` `right` `bottom` `left`           | `String`  | `left`        |
+| loading     | Determina si su estado es loading o no     | `Boolean` | `false`   |
+| loadingType | Determina el tipo de icono de loading, opciones:<br>`star` `circle` `success` `bars` `blobs` `square`      | `String`  | `star`   |
+| loadingText | Determina el texto que se mostrará en el estado loading     | `String` | `loading`   |
+| loadingIconOnly | Determina si solo se mostrará el icono de loading, sin texto. | `Boolean` | `false`   |
 | autofocus   | Misma función que el atributo nativo **autofocus** | `Boolean` | `false`   |
 | native-type | Misma función que el atributo nativo **type**, opciones:<br> `button` `submit` `reset`                      | `String`  | `button`      |
 

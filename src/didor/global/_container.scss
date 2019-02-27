@@ -1,0 +1,11 @@
+$container-width: 64rem;
+
+.container {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+
+  &--full {
+    width: 100%;
+  }
+}

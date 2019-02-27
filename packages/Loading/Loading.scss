@@ -9,6 +9,7 @@
    */
   &--bars {
     position: relative;
+    display: inline-block;
     height: 1.6em;
     text-align: center;
   }
@@ -53,6 +54,7 @@
 
   &--circle {
     position: relative;
+    display: inline-block;
     width: 1.6em;
     height: 1.6em;
   }
@@ -101,6 +103,7 @@
    */
   &--star {
     position: relative;
+    display: inline-block;
     width: 1.6em;
     height: 1.6em;
   }
@@ -197,6 +200,7 @@
    */
   &--blobs {
     position: relative;
+    display: inline-block;
     width: 1.6em;
     height: 1.6em;
     margin: 0 0.2em;
@@ -294,6 +298,7 @@
   &--square {
     position: relative;
     top: -0.3em;
+    display: inline-block;
     width: 1.6em;
     height: 1.6em;
     margin: 0 auto;

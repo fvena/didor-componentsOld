@@ -1,0 +1,137 @@
+.responsive {
+  position: relative;
+}
+
+.responsive__table {
+  position: relative;
+  z-index: 2;
+  table-layout: fixed;
+
+  tr {
+    border-bottom: 0 !important;
+  }
+
+  td,
+  th {
+    padding: quarter($space);
+    text-align: center;
+  }
+
+  th {
+    padding-top: $space;
+    font-weight: $content-font-bold;
+    color: var(--color-gray1) !important;
+
+    i[class^='icon-'],
+    i[class*=' icon-'] {
+      display: block;
+      margin-bottom: quarter($space);
+      font-size: 30px;
+      opacity: 0.5;
+
+      &.icon-palm {
+        margin-bottom: calc(#{quarter($space)} + 3px);
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+.responsive.responsive--title {
+  .responsive__background__block {
+    width: calc((100% - 150px) / 5);
+  }
+  .responsive__background__block:first-of-type {
+    width: 150px;
+  }
+  .responsive__block {
+    padding: 0 halve($space);
+  }
+
+  th:first-of-type,
+  td:first-of-type {
+    width: 150px;
+    padding: quarter($space) halve($space);
+    text-align: left;
+  }
+}
+
+.responsive--background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.responsive__background__block {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: var(--color-gray7);
+  border-right: 2px solid var(--color-gray8);
+  border-left: 2px solid var(--color-gray8);
+}
+
+.responsive__block {
+  height: double($space);
+  padding: 0 $space;
+  line-height: double($space);
+  color: var(--color-gray7);
+  text-align: left;
+  background-color: var(--color-brand);
+  border-radius: 4px;
+}
+
+.responsive__block--disabled {
+  background-color: var(--color-gray4);
+}
+
+.responsive__empty {
+  height: 100%;
+}
+
+.point {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #3a5169;
+  border-radius: 5px;
+}
+
+.point.point__fill {
+  background-color: #2badc4;
+  border-color: #2badc4;
+}
+
+@include media(lap) {
+  .responsive__block {
+    padding: 0 halve($space);
+  }
+}
+
+@include media(palm) {
+  .responsive__block {
+    padding: 0 quarter($space);
+    text-align: center;
+  }
+
+  .responsive.responsive--title {
+    .responsive__background__block {
+      width: calc((100% - 80px) / 5);
+    }
+    .responsive__background__block:first-of-type {
+      width: 80px;
+    }
+    .responsive__block {
+      text-indent: -9999px;
+    }
+
+    th:first-of-type,
+    td:first-of-type {
+      width: 80px;
+      line-height: 1.2rem;
+    }
+  }
+}

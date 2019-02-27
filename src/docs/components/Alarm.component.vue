@@ -75,11 +75,11 @@ export default {
 }
 
 .warn {
-  color: var(--color-error-darker);
-  background-color: var(--color-error-lighter);
+  color: var(--color-danger-darker);
+  background-color: var(--color-danger-lighter);
 
   code {
-    color: var(--color-error-dark);
+    color: var(--color-danger-dark);
   }
 }
 </style>

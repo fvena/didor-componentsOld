@@ -4,7 +4,7 @@ import Demo from './components/Demo.component.vue';
 import UtilDocs from '../docs/utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
 
-import '../didor/_didor.scss';
+import '../docs/design/index.scss';
 
 Vue.config.productionTip = false;
 Vue.component('Demo', Demo);
