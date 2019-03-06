@@ -1,5 +1,4 @@
-# Responsive <span class="micro">- Adaptativo</span>
-<div class="lastUpdated">Última actualización {docsify-updated}</div>
+# Responsive
 
 ## Movile o Desktop first
 
@@ -58,11 +57,11 @@ modificarlos en los ajustes.
 <div class="responsive">
   <table class="responsive__table">
     <tr>
-      <th><az-icon name="palm"></az-icon> Palm</th>
-      <th><i class="icon-lap"></i> Lap</th>
-      <th><i class="icon-small"></i> Small</th>
-      <th><i class="icon-desktop"></i> Desk</th>
-      <th><i class="icon-large"></i> Large</th>
+      <th><az-icon name="palm" scale="1.1"></az-icon> Palm</th>
+      <th><az-icon name="lap" scale="1.1"></az-icon> Lap</th>
+      <th><az-icon name="small" scale="1.1"></az-icon> Small</th>
+      <th><az-icon name="desktop" scale="1.1"></az-icon> Desk</th>
+      <th><az-icon name="large" scale="1.1"></az-icon> Large</th>
     </tr>
     <tr>
       <td><div class="responsive__block">palm</div></td>
@@ -101,11 +100,11 @@ modificarlos en los ajustes.
 <div class="responsive">
   <table class="responsive__table">
     <tr>
-      <th><i class="icon-palm"></i> Palm</th>
-      <th><i class="icon-lap"></i> Lap</th>
-      <th><i class="icon-small"></i> Small</th>
-      <th><i class="icon-desktop"></i> Desk</th>
-      <th><i class="icon-large"></i> Large</th>
+      <th><az-icon name="palm" scale="1.1"></az-icon> Palm</th>
+      <th><az-icon name="lap" scale="1.1"></az-icon> Lap</th>
+      <th><az-icon name="small" scale="1.1"></az-icon> Small</th>
+      <th><az-icon name="desktop" scale="1.1"></az-icon> Desk</th>
+      <th><az-icon name="large" scale="1.1"></az-icon> Large</th>
     </tr>
     <tr>
       <td><div class="responsive__block">palm</div></td>

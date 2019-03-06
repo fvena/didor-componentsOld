@@ -20,7 +20,7 @@ $grid-columns: 12;
  * Col Width
  */
 @for $i from 1 through $grid-columns {
-  .col--#{$i} {
+  .col--cols-#{$i} {
     flex-basis: round-width($i, $grid-columns);
     max-width: round-width($i, $grid-columns);
   }
@@ -35,86 +35,27 @@ $grid-columns: 12;
   }
 }
 
-@include media(palm) {
-  /*
-   * Col Width Palm
-   */
-  @for $i from 1 through $grid-columns {
-    .col--palm#{$i} {
-      flex-basis: round-width($i, $grid-columns);
-      max-width: round-width($i, $grid-columns);
-    }
-  }
+@if ($responsive) {
+  @each $breakpoint in $breakpoints {
+    @include media($breakpoint) {
+      /*
+      * Col Width Palm
+      */
+      @for $i from 1 through $grid-columns {
+        .col--#{$breakpoint}--cols-#{$i} {
+          flex-basis: round-width($i, $grid-columns);
+          max-width: round-width($i, $grid-columns);
+        }
+      }
 
-  /*
-   * Col Offset Palm
-   */
-  @for $i from 0 through $grid-columns {
-    .col--offset-#{$i} {
-      margin-left: round-width($i, $grid-columns);
-    }
-  }
-}
-
-@include media(lap) {
-  /*
-   * Col Width Lap
-   */
-  @for $i from 1 through $grid-columns {
-    .col--lap#{$i} {
-      flex-basis: round-width($i, $grid-columns);
-      max-width: round-width($i, $grid-columns);
-    }
-  }
-
-  /*
-   * Col Offset Lap
-   */
-  @for $i from 0 through $grid-columns {
-    .col--offset-#{$i} {
-      margin-left: round-width($i, $grid-columns);
-    }
-  }
-}
-
-@include media(small) {
-  /*
-   * Col Width Small
-   */
-  @for $i from 1 through $grid-columns {
-    .col--small#{$i} {
-      flex-basis: round-width($i, $grid-columns);
-      max-width: round-width($i, $grid-columns);
-    }
-  }
-
-  /*
-   * Col Offset Small
-   */
-  @for $i from 0 through $grid-columns {
-    .col--offset-#{$i} {
-      margin-left: round-width($i, $grid-columns);
-    }
-  }
-}
-
-@include media(desk) {
-  /*
-   * Col Width Desk
-   */
-  @for $i from 1 through $grid-columns {
-    .col--desk#{$i} {
-      flex-basis: round-width($i, $grid-columns);
-      max-width: round-width($i, $grid-columns);
-    }
-  }
-
-  /*
-   * Col Offset Desk
-   */
-  @for $i from 0 through $grid-columns {
-    .col--offset-#{$i} {
-      margin-left: round-width($i, $grid-columns);
+      /*
+      * Col Offset Palm
+      */
+      @for $i from 0 through $grid-columns {
+        .col--#{$breakpoint}--offset-#{$i} {
+          margin-left: round-width($i, $grid-columns);
+        }
+      }
     }
   }
 }

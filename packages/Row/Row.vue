@@ -1,12 +1,14 @@
 <template lang="pug">
 .row(
-  :class="classObject"
-)
+  :class="classObject")
   slot
 </template>
 
 <script>
+import ResponsiveClass from '../mixins/responsiveClass';
+
 export default {
+  mixins: [ResponsiveClass],
   props: {
     inline: {
       type: Boolean,
@@ -22,12 +24,12 @@ export default {
       default: '',
       validator: value => ['stretch', 'top', 'middle', 'bottom', 'baseline', ''].indexOf(value) !== -1,
     },
-    direction: {
+    dir: {
       type: String,
       default: '',
       validator: value => ['row', 'row-reverse', 'column', 'column-resverse', ''].indexOf(value) !== -1,
     },
-    wrap: {
+    hwrap: {
       type: String,
       default: '',
       validator: value => ['nowrap', 'wrap', 'wrap-reverse', ''].indexOf(value) !== -1,
@@ -54,12 +56,16 @@ export default {
   },
   computed: {
     classObject() {
-      return [
-        this.align ? `row--${this.align}` : '',
-        this.valign ? `row--${this.valign}` : '',
-        this.direction ? `row--${this.direction}` : '',
-        this.wrap ? `row--${this.wrap}` : '',
-        this.vwrap ? `row--wrap-${this.vwrap}` : '',
+      const baseClass = 'row';
+      const responsiveProperties = ['dir', 'hgutter', 'vgutter'];
+      const responsiveClass = this.getResponsiveClass(baseClass, responsiveProperties);
+
+      const propertiesClass = [
+        this.align ? `row--align-${this.align}` : '',
+        this.valign ? `row--valign-${this.valign}` : '',
+        this.dir ? `row--dir-${this.dir}` : '',
+        this.hwrap ? `row--hwrap-${this.hwrap}` : '',
+        this.vwrap ? `row--vwrap-${this.vwrap}` : '',
         this.hgutter ? `row--hgutter-${this.hgutter}` : '',
         this.vgutter ? `row--vgutter-${this.vgutter}` : '',
         {
@@ -67,6 +73,8 @@ export default {
           'row--grid': this.grid,
         },
       ];
+
+      return propertiesClass.concat(responsiveClass);
     },
   },
 };

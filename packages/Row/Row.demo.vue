@@ -82,28 +82,28 @@
     Demo(title="Dirección")
       .demo__subtitle row
       .content
-        az-row(direction="row")
+        az-row(dir="row")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle row-reverse
       .content
-        az-row(direction="row-reverse")
+        az-row(dir="row-reverse")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle column
       .content
-        az-row(direction="column")
+        az-row(dir="column")
           .block 1
           .block 2
           .block 3
 
       .demo__subtitle column-resverse
       .content
-        az-row(direction="column-resverse")
+        az-row(dir="column-resverse")
           .block 1
           .block 2
           .block 3
@@ -111,7 +111,7 @@
     Demo(title="Justificación Horizontal")
       .demo__subtitle nowrap
       .content.wrap
-        az-row(wrap="nowrap")
+        az-row(hwrap="nowrap")
           .block 1
           .block 2
           .block 3
@@ -121,7 +121,7 @@
 
       .demo__subtitle wrap
       .content.wrap
-        az-row(wrap="wrap")
+        az-row(hwrap="wrap")
           .block 1
           .block 2
           .block 3
@@ -131,7 +131,7 @@
 
       .demo__subtitle wrap-reverse
       .content.wrap
-        az-row(wrap="wrap-reverse")
+        az-row(hwrap="wrap-reverse")
           .block 1
           .block 2
           .block 3
@@ -142,7 +142,7 @@
     Demo(title="Justificación vertical")
       .demo__subtitle top
       .content.vwrap
-        az-row(wrap="wrap" vwrap="top")
+        az-row(hwrap="wrap" vwrap="top")
           .block 1
           .block 2
           .block 3
@@ -152,7 +152,7 @@
 
       .demo__subtitle middle
       .content.vwrap
-        az-row(wrap="wrap" vwrap="middle")
+        az-row(hwrap="wrap" vwrap="middle")
           .block 1
           .block 2
           .block 3
@@ -162,7 +162,7 @@
 
       .demo__subtitle bottom
       .content.vwrap
-        az-row(wrap="wrap" vwrap="bottom")
+        az-row(hwrap="wrap" vwrap="bottom")
           .block 1
           .block 2
           .block 3
@@ -172,7 +172,7 @@
 
       .demo__subtitle between
       .content.vwrap
-        az-row(wrap="wrap" vwrap="between")
+        az-row(hwrap="wrap" vwrap="between")
           .block 1
           .block 2
           .block 3
@@ -182,7 +182,7 @@
 
       .demo__subtitle around
       .content.vwrap
-        az-row(wrap="wrap" vwrap="around")
+        az-row(hwrap="wrap" vwrap="around")
           .block 1
           .block 2
           .block 3
@@ -192,7 +192,7 @@
 
       .demo__subtitle stretch
       .content.vwrap
-        az-row(wrap="wrap" vwrap="stretch")
+        az-row(hwrap="wrap" vwrap="stretch")
           .block 1
           .block 2
           .block 3
@@ -232,28 +232,38 @@
     Demo(title="Separación Verical")
       .demo__subtitle none
       .content
-        az-row(vgutter="none" direction="column")
+        az-row(vgutter="none" dir="column")
           .block &nbsp;
           .block &nbsp;
           .block &nbsp;
 
       .demo__subtitle small
       .content
-        az-row(vgutter="small" direction="column")
+        az-row(vgutter="small" dir="column")
           .block &nbsp;
           .block &nbsp;
           .block &nbsp;
 
       .demo__subtitle default
       .content
-        az-row( direction="column")
+        az-row(dir="column")
           .block &nbsp;
           .block &nbsp;
           .block &nbsp;
 
       .demo__subtitle large
       .content
-        az-row(vgutter="large" direction="column")
+        az-row(vgutter="large" dir="column")
+          .block &nbsp;
+          .block &nbsp;
+          .block &nbsp;
+
+    Demo(title="Responsive")
+      .content
+        az-row(
+          dir="column"
+          :palm="{dir: 'row', hgutter: 'small'}"
+          :desk="{dir: 'column', hgutter: 'large'}")
           .block &nbsp;
           .block &nbsp;
           .block &nbsp;

@@ -128,25 +128,6 @@
           az-col(cols="1" offset="11")
             .block 1
 
-    Demo(title="Responsive")
-      .content
-        az-row(hgutter="small" vgutter="small" grid)
-          az-col(cols="4" palm="12")
-            .block 4
-          az-col(cols="4" palm="6")
-            .block 4
-          az-col(cols="4" palm="6")
-            .block 4
-
-      .content
-        az-row(hgutter="small" vgutter="small" grid)
-          az-col(cols="4" palm="12")
-            .block 4
-          az-col(cols="4" palm="5")
-            .block 4
-          az-col(cols="4" palm="5" offset-palm="2")
-            .block 4
-
     Demo(title="Nesting")
       .content
         az-row(hgutter="small" vgutter="small" grid)
@@ -169,6 +150,25 @@
             .block Auto
           az-col(expand)
             .block Expand
+
+    Demo(title="Responsive")
+      .content
+        az-row(hgutter="small" vgutter="small" grid)
+          az-col(cols="4" :palm={cols:'12'})
+            .block 4
+          az-col(cols="4" :palm={cols:'6'})
+            .block 4
+          az-col(cols="4" :palm={cols:'6'})
+            .block 4
+
+      .content
+        az-row(hgutter="small" vgutter="small" grid)
+          az-col(cols="4" :palm={cols:'12'})
+            .block 4
+          az-col(cols="4" :palm={cols:'5'})
+            .block 4
+          az-col(cols="4" :palm={cols:'5', offset:'2'})
+            .block 4
 </template>
 
 <script>

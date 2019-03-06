@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import SvgIcon from 'vue-svgicon';
 import App from './App.vue';
 import router from './router/router';
 import store from './store/store';
@@ -7,8 +8,14 @@ import ApiService from './services/api.service';
 import 'nprogress/nprogress.css';
 import UtilDocs from './utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
+import './assets/icons/sprite';
 
 import './design/index.scss';
+
+Vue.use(SvgIcon, {
+  tagName: 'az-icon',
+  classPrefix: 'az-icon',
+});
 
 // Inicializamos nuesta API
 ApiService.init(process.env.VUE_APP_API_URL, process.env.VUE_APP_API_TIMEOUT);

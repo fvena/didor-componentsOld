@@ -1,0 +1,25 @@
+.page-demo {
+  padding: $space 0;
+
+  .page-demo__block {
+    height: 100%;
+    padding: 0.4rem 0.6rem;
+    color: var(--color-gray2);
+    background-color: var(--color-brand);
+    border-radius: 3px;
+  }
+
+  .page-demo__main {
+    height: 300px;
+  }
+
+  .page-demo__aside {
+    width: 150px;
+  }
+
+  @include media(palm) {
+    .page-demo__aside {
+      width: 100%;
+    }
+  }
+}

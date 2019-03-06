@@ -1,8 +1,6 @@
 # Visibilidad
-<div class="lastUpdated">Última actualización {docsify-updated}</div>
 
-Para facilitar un desarrollo adaptable, utiliza las clases `.hidden` y `.visible`
-para ocultar y mostrar elementos según el tamaño de pantalla.
+Para facilitar un desarrollo adaptable, utiliza las clases `.hidden` y `.visible` para ocultar y mostrar elementos según el tamaño de pantalla.
 
 ## Mostrar elementos
 
@@ -12,76 +10,74 @@ debes ocultar el elemento con la clase `.hidden` y luego indicar con la clase
 
 
 ```html
-<div class="hidden tablet-visible">Solo será visible en tamaños tablet</div>
+<div class="hidden visible--tablet">Solo será visible en tamaños tablet</div>
 ```
 
 <div class="responsive responsive--title">
   <table class='responsive__table'>
     <tr>
       <th>&nbsp;</th>
-      <th><i class='icon-palm'></i> Palm</th>
-      <th><i class='icon-lap'></i> Lap</th>
-      <th><i class='icon-small'></i> Small</th>
-      <th><i class='icon-desktop'></i> Desk</th>
-      <th><i class='icon-large'></i> Large</th>
+      <th><az-icon name="palm" scale="1.1"></az-icon> Palm</th>
+      <th><az-icon name="lap" scale="1.1"></az-icon> Lap</th>
+      <th><az-icon name="small" scale="1.1"></az-icon> Small</th>
+      <th><az-icon name="desktop" scale="1.1"></az-icon> Desk</th>
+      <th><az-icon name="large" scale="1.1"></az-icon> Large</th>
     </tr>
     <tr>
       <td><div>.visible</div></td>
       <td colspan='5'><div class='responsive__block'>visible</div></td>
     </tr>
-    <tr><td colspan='6'>&nbsp;</td></tr>
     <tr>
-      <td><div>.palm-visible</div></td>
+      <td><div>.visible--palm</div></td>
       <td><div class='responsive__block'>visible</div></td>
       <td colspan='4'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td><div>.lap-visible</div></td>
+      <td><div>.visible--lap</div></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td><div class='responsive__block'>visible</div></td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td><div>.small-visible</div></td>
+      <td><div>.visible--small</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
       <td><div class='responsive__block'>visible</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td><div>.desk-visible</div></td>
+      <td><div>.visible--desk</div></td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
       <td><div class='responsive__block'>visible</div></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td><div>.large-visible</div></td>
+      <td><div>.visible.-large</div></td>
       <td colspan='4'><div class='responsive__block responsive__block--disabled'></div></span></td>
       <td><div class='responsive__block'>visible</div></td>
     </tr>
-    <tr><td colspan='6'>&nbsp;</td></tr>
     <tr>
-      <td>.tablet-visible</td>
+      <td>.visible--tablet</td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td>.portrait-visible</td>
+      <td>.visible--portrait</td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td>.landscape-visible</td>
+      <td>.visible--landscape</td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.touch-visible</td>
+      <td>.visible--touch</td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td>.screen-visible</td>
+      <td>.visible--screen</td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
     </tr>
@@ -101,76 +97,74 @@ debes ocultar el elemento con la clase `.hidden` y luego indicar con la clase
 ## Ocultar elementos
 
 ```html
-<div class="tablet-hidden">No será visible en tamaños tablet</div>
+<div class="hidden--tablet">No será visible en tamaños tablet</div>
 ```
 
 <div class="responsive responsive--title">
   <table class='responsive__table'>
     <tr>
       <th>&nbsp;</th>
-      <th><i class='icon-palm'></i> Palm</th>
-      <th><i class='icon-lap'></i> Lap</th>
-      <th><i class='icon-small'></i> Small</th>
-      <th><i class='icon-desktop'></i> Desk</th>
-      <th><i class='icon-large'></i> Large</th>
+      <th><az-icon name="palm" scale="1.1"></az-icon> Palm</th>
+      <th><az-icon name="lap" scale="1.1"></az-icon> Lap</th>
+      <th><az-icon name="small" scale="1.1"></az-icon> Small</th>
+      <th><az-icon name="desktop" scale="1.1"></az-icon> Desk</th>
+      <th><az-icon name="large" scale="1.1"></az-icon> Large</th>
     </tr>
     <tr>
       <td>.hidden</td>
       <td colspan='5'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
-    <tr><td colspan='6'>&nbsp;</td></tr>
     <tr>
-      <td>.palm-hidden</td>
+      <td>.hidden--palm</td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='4'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.lap-hidden</td>
+      <td>.hidden--lap</td>
       <td><div class='responsive__block'>visible</div></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.small-hidden</td>
+      <td>.hidden--small</td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.desk-hidden</td>
+      <td>.hidden--desk</td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
       <td><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.large-hidden</td>
+      <td>.hidden--large</td>
       <td colspan='4'><div class='responsive__block'>visible</div></span></td>
       <td><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
-    <tr><td colspan='6'>&nbsp;</td></tr>
     <tr>
-      <td>.tablet-hidden</td>
+      <td>.hidden--tablet</td>
       <td><div class='responsive__block'>visible</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.portrait-hidden</td>
+      <td>.hidden--portrait</td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.landscape-hidden</td>
+      <td>.hidden--landscape</td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>
     <tr>
-      <td>.touch-hidden</td>
+      <td>.hidden--touch</td>
       <td colspan='3'><div class='responsive__block responsive__block--disabled'></div></td>
       <td colspan='2'><div class='responsive__block'>visible</div></td>
     </tr>
     <tr>
-      <td>.screen-hidden</td>
+      <td>.hidden--screen</td>
       <td colspan='3'><div class='responsive__block'>visible</div></td>
       <td colspan='2'><div class='responsive__block responsive__block--disabled'></div></td>
     </tr>

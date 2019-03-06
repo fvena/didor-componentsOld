@@ -1,71 +1,83 @@
 /**
  * LIGHT THEME
  */
+$light-theme: (
+  gray1: hsl(196, 25%, 12%),
+  gray2: hsl(198, 17%, 28%),
+  gray3: hsl(200, 5%, 46%),
+  gray4: hsl(198, 7%, 64%),
+  gray5: hsl(202, 13%, 83%),
+  gray6: hsl(206, 17%, 92%),
+  gray7: hsl(220, 18%, 97%),
+  gray8: hsl(0, 0%, 100%),
+);
+
+/**
+ * DARK THEME
+ */
+$dark-theme: (
+  gray1: hsl(0, 0%, 100%),
+  gray2: hsl(220, 18%, 97%),
+  gray3: hsl(206, 17%, 92%),
+  gray4: hsl(202, 13%, 83%),
+  gray5: hsl(198, 7%, 64%),
+  gray6: hsl(200, 5%, 46%),
+  gray7: hsl(198, 17%, 28%),
+  gray8: hsl(196, 25%, 12%),
+);
+
+/**
+ * THEME
+ */
+$theme: (
+  brand-darker: hsl(190, 90%, 25%),
+  brand-dark: hsl(190, 70%, 35%),
+  brand: hsl(190, 65%, 45%),
+  brand-light: hsl(190, 65%, 65%),
+  brand-lighter: hsl(190, 60%, 85%),
+  brand-a20: hsla(190, 65%, 45%, 0.2),
+  warning-darker: hsl(39, 100%, 35%),
+  warning-dark: hsl(41, 100%, 45%),
+  warning: hsl(41, 100%, 60%),
+  warning-light: hsl(41, 100%, 75%),
+  warning-lighter: hsl(41, 100%, 90%),
+  warning-a20: hsla(41, 100%, 60%, 0.2),
+  success-darker: hsl(94, 80%, 30%),
+  success-dark: hsl(94, 67%, 41%),
+  success: hsl(94, 52%, 50%),
+  success-light: hsl(94, 66%, 70%),
+  success-lighter: hsl(94, 70%, 90%),
+  success-a20: hsla(94, 52%, 52%, 0.2),
+  danger-darker: hsl(6, 100%, 30%),
+  danger-dark: hsl(6, 100%, 45%),
+  danger: hsl(6, 100%, 60%),
+  danger-light: hsl(6, 100%, 75%),
+  danger-lighter: hsl(6, 100%, 90%),
+  danger-a20: hsla(6, 100%, 60%, 0.2),
+);
+
 :root,
 [data-theme='light'] {
-  // gray scale
-  --color-gray1: hsl(196, 25%, 12%);
-  --color-gray2: hsl(198, 17%, 28%);
-  --color-gray3: hsl(200, 5%, 46%);
-  --color-gray4: hsl(198, 7%, 64%);
-  --color-gray5: hsl(202, 13%, 83%);
-  --color-gray6: hsl(206, 17%, 92%);
-  --color-gray7: hsl(220, 18%, 97%);
-  --color-gray8: hsl(0, 0%, 100%);
+  @each $name, $color in $light-theme {
+    --color-#{$name}: #{$color};
+  }
+
+  --color-shadow: 22, 34, 38; // Only values rgb color
 }
 
-/**
-  * DARK THEME
-  */
 [data-theme='dark'] {
-  // gray scale
-  --color-gray1: hsl(0, 0%, 100%);
-  --color-gray2: hsl(220, 18%, 97%);
-  --color-gray3: hsl(206, 17%, 92%);
-  --color-gray4: hsl(202, 13%, 83%);
-  --color-gray5: hsl(198, 7%, 64%);
-  --color-gray6: hsl(200, 5%, 46%);
-  --color-gray7: hsl(198, 17%, 28%);
-  --color-gray8: hsl(196, 25%, 12%);
+  @each $name, $color in $dark-theme {
+    --color-#{$name}: #{$color};
+  }
+
+  --color-shadow: 0, 0, 0; // Only values rgb color
 }
 
-/**
-  * COLORS SETTINGS
-  */
 :root {
-  // brand
-  --color-brand-darker: hsl(190, 90%, 25%);
-  --color-brand-dark: hsl(190, 70%, 35%);
-  --color-brand: hsl(190, 65%, 45%);
-  --color-brand-light: hsl(190, 65%, 65%);
-  --color-brand-lighter: hsl(190, 60%, 85%);
-  --color-brand-a20: hsla(190, 65%, 45%, 0.2);
+  @each $name, $color in $theme {
+    --color-#{$name}: #{$color};
+  }
 
-  // feedback warning
-  --color-warning-darker: hsl(39, 100%, 35%);
-  --color-warning-dark: hsl(41, 100%, 45%);
-  --color-warning: hsl(41, 100%, 60%);
-  --color-warning-light: hsl(41, 100%, 75%);
-  --color-warning-lighter: hsl(41, 100%, 90%);
-  --color-warning-a20: hsla(41, 100%, 60%, 0.2);
-
-  // feedback success
-  --color-success-darker: hsl(94, 80%, 30%);
-  --color-success-dark: hsl(94, 67%, 41%);
-  --color-success: hsl(94, 52%, 50%);
-  --color-success-light: hsl(94, 66%, 70%);
-  --color-success-lighter: hsl(94, 70%, 90%);
-  --color-success-a20: hsla(94, 52%, 52%, 0.2);
-
-  // feedback danger
-  --color-danger-darker: hsl(6, 100%, 30%);
-  --color-danger-dark: hsl(6, 100%, 45%);
-  --color-danger: hsl(6, 100%, 60%);
-  --color-danger-light: hsl(6, 100%, 75%);
-  --color-danger-lighter: hsl(6, 100%, 90%);
-  --color-danger-a20: hsla(6, 100%, 60%, 0.2);
-
-  // default
   --color-default-darker: var(--color-gray2);
   --color-default-dark: var(--color-gray3);
   --color-default: var(--color-gray4);
@@ -73,7 +85,7 @@
   --color-default-lighter: var(--color-gray6);
   --color-default-a20: var(--color-gray6);
 
-  // semantic
+  /* Semantic color */
   --color-content: var(--color-gray2);
   --color-heading: var(--color-gray1);
   --color-background: var(--color-gray8);

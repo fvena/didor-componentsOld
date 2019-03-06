@@ -56,25 +56,6 @@ az-row(grid)
     .block 3
 ```
 
-#### Responsive
-
-```pug
-az-row(grid)
-  az-col(cols="4" palm="12" lap="12")
-    .block 4
-  az-col(cols="4" palm="12" lap="6")
-    .block 4
-  az-col(cols="4" palm="12" lap="6")
-    .block 4
-
-az-row(grid)
-  az-col(cols="4" palm="12")
-    .block 4
-  az-col(cols="4" palm="5")
-    .block 4
-  az-col(cols="4" palm="5" offset-palm="2")
-    .block 4
-```
 
 #### Nested
 
@@ -103,7 +84,25 @@ az-row(grid)
     .block Expand
 ```
 
+#### Responsive
 
+```pug
+az-row(grid)
+  az-col(cols="4" :palm={cols:'12'})
+    .block 4
+  az-col(cols="4" :palm={cols:'6'})
+    .block 4
+  az-col(cols="4" :palm={cols:'6'})
+    .block 4
+
+az-row(grid)
+  az-col(cols="4" :palm={cols:'12'})
+    .block 4
+  az-col(cols="4" :palm={cols:'5'})
+    .block 4
+  az-col(cols="4" :palm={cols:'5', offset:'2'})
+    .block 4
+```
 ---
 
 ### API
@@ -111,14 +110,7 @@ az-row(grid)
 | Attribute   | Description                                | Type      | Default   |
 | ----------- | ------------------------------------------ | --------- | --------- |
 | cols        | Determina el número de columnas que ocupará un elemento | `Number`  | `12` |
-| palm        | Determina el número de columnas que ocupará un elemento en tamaño palm | `Number` | --   |
-| lap         | Determina el número de columnas que ocupará un elemento en tamaño lap | `Number` | --   |
-| small       | Determina el número de columnas que ocupará un elemento en tamaño small | `Number` | --   |
-| desk        | Determina el número de columnas que ocupará un elemento en tamaño desk | `Number` | --   |
 | offset      | Determina el número de columnas de espacio que un elemento dejará a su izquierda | `Number`  | -- |
-| offset-palm | Determina el número de columnas de espacio que un elemento dejará a su izquierda en tamaño palm | `Number` | --   |
-| offset-lap  | Determina el número de columnas de espacio que un elemento dejará a su izquierda en tamaño lap | `Number` | --   |
-| offset-small | Determina el número de columnas de espacio que un elemento dejará a su izquierda en tamaño small | `Number` | --   |
-| offset-desk | Determina el número de columnas de espacio que un elemento dejará a su izquierda en tamaño desk | `Number` | --   |
 | auto        | Hace que un elemento ocupe su anchura por defecto | `Boolean` | `false`   |
 | expand      | Hace que un elemento ocupe todo el espacio que queda libre en una fila | `Boolean` | `false`   |
+| palm<br>lap<br>small<br>desk<br>large  | Permiten modificar algunas propiedades en función del tamaño de la pantalla, las propiedades responsive son:<br>`cols` `offset`             | `Object` | --    |

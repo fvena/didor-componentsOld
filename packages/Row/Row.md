@@ -94,22 +94,22 @@ az-row(valign="stretch")
 Permite definir la dirección en la que se colocarán los elementos dentro del contenedor, vertical u horizontal. También permite invertir el orden en el que se alinearán los elementos.
 
 ```pug
-az-row(direction="row")
+az-row(dir="row")
   .block 1
   .block 2
   .block 3
 
-az-row(direction="row-reverse")
+az-row(dir="row-reverse")
   .block 1
   .block 2
   .block 3
 
-az-row(direction="column")
+az-row(dir="column")
   .block 1
   .block 2
   .block 3
 
-az-row(direction="column-resverse")
+az-row(dir="column-resverse")
   .block 1
   .block 2
   .block 3
@@ -120,7 +120,7 @@ az-row(direction="column-resverse")
 Por defecto, todos los elementos intentarán encajar en una línea modificando su tamaño. Puede cambiar el comportamiento con esta propiedad.
 
 ```pug
-az-row(wrap="nowrap")
+az-row(hwrap="nowrap")
   .block 1
   .block 2
   .block 3
@@ -128,7 +128,7 @@ az-row(wrap="nowrap")
   .block 5
   .block 6
 
-az-row(wrap="wrap")
+az-row(hwrap="wrap")
   .block 1
   .block 2
   .block 3
@@ -136,7 +136,7 @@ az-row(wrap="wrap")
   .block 5
   .block 6
 
-az-row(wrap="wrap-reverse")
+az-row(hwrap="wrap-reverse")
   .block 1
   .block 2
   .block 3
@@ -150,7 +150,7 @@ az-row(wrap="wrap-reverse")
 Permite indicar como se van a distribuir a lo largo del eje verticallos elementos cuando la altura del contenedor es mayor que el espacio que ocupan. **Nota:** esta propiedad solo tiene efecto cuando hay más de una línea de elementos.
 
 ```pug
-az-row(wrap="wrap" vwrap="top")
+az-row(hwrap="wrap" vwrap="top")
   .block 1
   .block 2
   .block 3
@@ -158,22 +158,14 @@ az-row(wrap="wrap" vwrap="top")
   .block 5
   .block 6
 
-az-row(wrap="wrap" vwrap="middle")
+az-row(hwrap="wrap" vwrap="middle")
   .block 1
   .block 2
   .block 3
   .block 4
   .block 5
   .block 6
-az-row(wrap="wrap" vwrap="bottom")
-  .block 1
-  .block 2
-  .block 3
-  .block 4
-  .block 5
-  .block 6
-
-az-row(wrap="wrap" vwrap="between")
+az-row(hwrap="wrap" vwrap="bottom")
   .block 1
   .block 2
   .block 3
@@ -181,7 +173,7 @@ az-row(wrap="wrap" vwrap="between")
   .block 5
   .block 6
 
-az-row(wrap="wrap" vwrap="around")
+az-row(hwrap="wrap" vwrap="between")
   .block 1
   .block 2
   .block 3
@@ -189,7 +181,15 @@ az-row(wrap="wrap" vwrap="around")
   .block 5
   .block 6
 
-az-row(wrap="wrap" vwrap="stretch")
+az-row(hwrap="wrap" vwrap="around")
+  .block 1
+  .block 2
+  .block 3
+  .block 4
+  .block 5
+  .block 6
+
+az-row(hwrap="wrap" vwrap="stretch")
   .block 1
   .block 2
   .block 3
@@ -250,6 +250,25 @@ az-row(vgutter="large")
   .block
 ```
 
+#### Responsive
+
+Permite modificar algunos valores en base al tamaño de pantalla. Existe una propiedad por cada tamaño `palm`, `lap`, `small`, `desk`, `large`, donde le podemos pasar un objeto con las propiedades que son responsive:
+
+- `dir`
+- `hgutter`
+- `vgutter`
+
+
+```pug
+az-row(
+  dir="column"
+  :palm="{dir: 'row', hgutter: 'small'}"
+  :desk="{hgutter: 'large'}")
+  .block
+  .block
+  .block
+```
+
 ---
 
 ### API
@@ -260,8 +279,9 @@ az-row(vgutter="large")
 | grid        | Determina si los componentes hijos se tratarán como un grid      | `Boolean`  | `false` |
 | align       | Determina como se alinearán los elementos hijos horizontalmente. Acepta:<br> `left` `center` `right` `between` `around` `evenly`           | `String` | --   |
 | valign      | Determina como se alinearán los elementos hijos verticalmente. Acepta:<br>`stretch` `top` `middle` `bottom` `baseline`             | `String` | --    |
-| direction   | Determina la dirección de la secuencia de los elementos hijos. Acepta:<br>`row` `row-reverse` `column` `column-resverse`             | `String` | --    |
-| wrap        | Determina como se justificarán los elementos hijos horizontalmente. Acepta:<br>`nowrap` `wrap` `wrap-reverse`             | `String` | --    |
+| dir         | Determina la dirección de la secuencia de los elementos hijos. Acepta:<br>`row` `row-reverse` `column` `column-resverse`             | `String` | --    |
+| hwrap       | Determina como se justificarán los elementos hijos horizontalmente. Acepta:<br>`nowrap` `wrap` `wrap-reverse`             | `String` | --    |
 | vwrap       | Determina como se justificarán los elementos hijos verticalmente. Acepta:<br>`stretch` `top` `middle` `bottom` `between` `around`           | `String` | --    |
 | hgutter      | Determina la separación horizontal entre los elementos hijos. Acepta:<br>`stretch` `none` `small` `default` `large`         | `String` | --    |
 | vgutter      | Determina la separación vertical entre los elementos hijos. Acepta:<br>`stretch` `none` `small` `default` `large`         | `String` | --    |
+| palm<br>lap<br>small<br>desk<br>large  | Permiten modificar algunas propiedades en función del tamaño de la pantalla, las propiedades responsive son:<br>`dir` `hgutter` `vgutter`             | `Object` | --    |

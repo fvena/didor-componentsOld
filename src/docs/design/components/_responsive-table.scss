@@ -5,6 +5,7 @@
 .responsive__table {
   position: relative;
   z-index: 2;
+  margin: $space 0;
   table-layout: fixed;
 
   tr {
@@ -15,24 +16,19 @@
   th {
     padding: quarter($space);
     text-align: center;
+    border-bottom: 0 !important;
   }
 
   th {
     padding-top: $space;
     font-weight: $content-font-bold;
     color: var(--color-gray1) !important;
+    background-color: transparent !important;
 
-    i[class^='icon-'],
-    i[class*=' icon-'] {
+    .az-icon-icon {
       display: block;
-      margin-bottom: quarter($space);
-      font-size: 30px;
-      opacity: 0.5;
-
-      &.icon-palm {
-        margin-bottom: calc(#{quarter($space)} + 3px);
-        font-size: 27px;
-      }
+      margin: 0 auto quarter($space);
+      fill: var(--color-gray4);
     }
   }
 }
@@ -75,9 +71,9 @@
 }
 
 .responsive__block {
-  height: double($space);
-  padding: 0 $space;
-  line-height: double($space);
+  @include fontsize(theta);
+
+  padding: 0 halve($space);
   color: var(--color-gray7);
   text-align: left;
   background-color: var(--color-brand);

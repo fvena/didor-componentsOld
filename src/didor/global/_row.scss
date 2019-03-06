@@ -24,38 +24,49 @@
    *
    * Align items along the main axis of the current line of the flex container
    */
-  &--left { justify-content: flex-start; }
-  &--center { justify-content: center; }
-  &--right { justify-content: flex-end; }
-  &--between { justify-content: space-between; }
-  &--around { justify-content: space-around; }
-  &--evenly { justify-content: space-evenly; }
+  &--align-left { justify-content: flex-start; }
+  &--align-center { justify-content: center; }
+  &--align-right { justify-content: flex-end; }
+  &--align-between { justify-content: space-between; }
+  &--align-around { justify-content: space-around; }
+  &--align-evenly { justify-content: space-evenly; }
 
   /*
    * Alignment Vertical
    *
    * Align items along the cross axis of the current line of the flex container
    */
-  &--stretch { align-items: stretch; }
-  &--top { align-items: flex-start; }
-  &--middle { align-items: center; }
-  &--bottom { align-items: flex-end; }
-  &--baseline { align-items: baseline; }
+  &--valign-stretch { align-items: stretch; }
+  &--valign-top { align-items: flex-start; }
+  &--valign-middle { align-items: center; }
+  &--valign-bottom { align-items: flex-end; }
+  &--valign-baseline { align-items: baseline; }
 
   /*
    * Direction
    */
-  &--row { flex-direction: row; }
-  &--row-reverse { flex-direction: row-reverse; }
-  &--column { flex-direction: column; }
-  &--column-resverse { flex-direction: column-reverse; }
+  &--dir-row { flex-direction: row; }
+  &--dir-row-reverse { flex-direction: row-reverse; }
+  &--dir-column { flex-direction: column; }
+  &--dir-column-resverse { flex-direction: column-reverse; }
+
+  @if ($responsive) {
+    @each $breakpoint in $breakpoints {
+      @include media($breakpoint){
+        &--#{$breakpoint}--dir-row { flex-direction: row; }
+        &--#{$breakpoint}--dir-row-reverse { flex-direction: row-reverse; }
+        &--#{$breakpoint}--dir-column { flex-direction: column; }
+        &--#{$breakpoint}--dir-column-resverse { flex-direction: column-reverse; }
+      }
+    }
+  }
 
   /*
    * Wrap
    */
-  &--nowrap { flex-wrap: nowrap; }
-  &--wrap { flex-wrap: wrap; }
-  &--wrap-reverse { flex-wrap: wrap-reverse; }
+  &--hwrap-nowrap { flex-wrap: nowrap; }
+  &--hwrap-wrap { flex-wrap: wrap; }
+  &--hwrap-wrap-reverse { flex-wrap: wrap-reverse; }
 
   /*
    * Justifiment Vertical
@@ -63,12 +74,12 @@
    * Align itmes within the flex container when there is extra space in the cross-axis
    * Only works if there is more than one line of flex items
    */
-  &--wrap-stretch { align-content: stretch; }
-  &--wrap-top { align-content: flex-start; }
-  &--wrap-middle { align-content: center; }
-  &--wrap-bottom { align-content: flex-end; }
-  &--wrap-between { align-content: space-between; }
-  &--wrap-around { align-content: space-around; }
+  &--vwrap-stretch { align-content: stretch; }
+  &--vwrap-top { align-content: flex-start; }
+  &--vwrap-middle { align-content: center; }
+  &--vwrap-bottom { align-content: flex-end; }
+  &--vwrap-between { align-content: space-between; }
+  &--vwrap-around { align-content: space-around; }
 
   /*
    * Gutter Vertical
@@ -90,11 +101,31 @@
   &--vgutter-large { margin-top: double(-$space); }
   &--vgutter-large > * { margin-top: double($space); }
 
+  @if ($responsive) {
+    @each $breakpoint in $breakpoints {
+      @include media($breakpoint){
+        /* None */
+        &--#{$breakpoint}--vgutter-none,
+        &--#{$breakpoint}--vgutter-none > * {
+          margin-top: 0;
+        }
+
+        /* Small */
+        &--#{$breakpoint}--vgutter-small { margin-top: halve(-$space); }
+        &--#{$breakpoint}--vgutter-small > * { margin-top: halve($space); }
+
+        /* Large */
+        &--#{$breakpoint}--vgutter-large { margin-top: double(-$space); }
+        &--#{$breakpoint}--vgutter-large > * { margin-top: double($space); }
+      }
+    }
+  }
+
   /* Prevent gutter fix */
-  &--wrap-between,
-  &--wrap-between > *,
-  &--wrap-around,
-  &--wrap-around > * {
+  &--vwrap-between,
+  &--vwrap-between > *,
+  &--vwrap-around,
+  &--vwrap-around > * {
     margin-top: 0;
   }
 
@@ -118,11 +149,31 @@
   &--hgutter-large { margin-left: double(-$space); }
   &--hgutter-large > * { margin-left: double($space); }
 
+  @if ($responsive) {
+    @each $breakpoint in $breakpoints {
+      @include media($breakpoint){
+        /* None */
+        &--#{$breakpoint}--hgutter-none,
+        &--#{$breakpoint}--hgutter-none > * {
+          margin-left: 0;
+        }
+
+        /* Small */
+        &--#{$breakpoint}--hgutter-small { margin-left: halve(-$space); }
+        &--#{$breakpoint}--hgutter-small > * { margin-left: halve($space); }
+
+        /* Large */
+        &--#{$breakpoint}--hgutter-large { margin-left: double(-$space); }
+        &--#{$breakpoint}--hgutter-large > * { margin-left: double($space); }
+      }
+    }
+  }
+
   /* Prevent gutter fix */
-  &--around,
-  &--around > *,
-  &--evenly,
-  &--evenly > *{
+  &--align-around,
+  &--align-around > *,
+  &--align-evenly,
+  &--align-evenly > *{
     margin-left: 0 !important;
   }
 
@@ -144,6 +195,16 @@
     }
   }
 
+  &--hgutter-none#{&}--grid {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &--hgutter-none#{&}--grid > * {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   &--hgutter-small#{&}--grid {
     margin-right: -$space / 4;
     margin-left: -$space / 4;
@@ -158,8 +219,29 @@
     margin-right: -$space;
     margin-left: -$space;
   }
+
   &--hgutter-large#{&}--grid > *  {
-    padding-right: -$space;
-    padding-left: -$space;
+    padding-right: $space;
+    padding-left: $space;
+  }
+
+  /*
+   * Nested
+   */
+  & > & {
+    margin-top: 0;
+    margin-left: $space / 2;
+  }
+
+  &--hgutter-none > & { margin-left: 0; }
+  &--hgutter-small > & { margin-left: $space / 4; }
+  &--hgutter-large > & { margin-left: $space; }
+
+
+  /*
+   * Brother
+   */
+  & + & {
+    margin-top: 0;
   }
 }

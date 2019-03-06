@@ -335,7 +335,7 @@ $wrapper-width: 670px;
     }
 
     &::after {
-      right: 2rem;
+      right: 1.6rem;
     }
 
     .file {
@@ -410,6 +410,42 @@ $wrapper-width: 670px;
       background: none;
       border-radius: 0;
       box-shadow: none;
+    }
+
+    .toolbar a.copied {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        right: -2.4rem;
+        padding: 0 0.6rem;
+        color: var(--color-gray3);
+        content: 'Copied!';
+        background-color: var(--color-gray5);
+        border-radius: 3px;
+        opacity: 0;
+        transition: 0.3s all;
+      }
+
+      &.copied--error::after {
+        content: 'Error, try Ctrl + C';
+      }
+
+      &.copied--success::after,
+      &.copied--error::after {
+        right: 2.4rem;
+        opacity: 1;
+      }
+    }
+
+    .toolbar svg {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      color: inherit;
+      vertical-align: -0.2rem;
+      fill: currentColor;
+      stroke: none;
     }
   }
 

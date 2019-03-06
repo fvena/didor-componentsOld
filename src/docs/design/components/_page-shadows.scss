@@ -1,0 +1,42 @@
+.page-shadows {
+  ul {
+    padding: 1em;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    width: 8em;
+    height: 8em;
+    margin: 1em;
+    line-height: 8em;
+    text-align: center;
+    border: 1px solid rgba(var(--color-shadow), 0.1);
+    border-radius: 5px;
+  }
+
+  li.shadow0 {
+    @include shadow(0);
+
+    transition: all 0.3s;
+
+    &:hover {
+      @include shadow(2);
+    }
+  }
+  li.shadow1 {
+    @include shadow(1);
+  }
+  li.shadow2 {
+    @include shadow(2);
+  }
+  li.shadow3 {
+    @include shadow(3);
+  }
+  li.shadow4 {
+    @include shadow(4);
+  }
+  li.shadow5 {
+    @include shadow(5);
+  }
+}
