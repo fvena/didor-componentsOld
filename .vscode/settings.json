@@ -18,8 +18,7 @@
   "files.exclude": {
     "**/*.log": true,
     "**/*.log*": true,
-    "**/coverage": true,
-    "**/node_modules": true
+    "**/coverage": true
   },
   "files.associations": {
     ".markdownlintrc": "jsonc"

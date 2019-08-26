@@ -33,7 +33,7 @@
  * <p class="palm--hidden">
  */
 
-@each $breakpoint, $size in $breakpoints-desk-first {
+@each $breakpoint, $size in $breakpoints {
   @include media($breakpoint) {
     .hidden--#{$breakpoint} {
       display: none !important;

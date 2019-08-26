@@ -83,6 +83,11 @@ $desk: px2em(1600px); // ~100em
  * Indica si se trata de un diseño siguiendo el enfoque Mobile First
  */
 $mobile-first: false;
-
 $responsive: true;
-$breakpoints: 'palm', 'lap', 'small', 'desk', 'large';
+$breakpoints-list: 'palm', 'lap', 'small', 'desk', 'large', 'all';
+
+/**
+ * Print
+ * Indica si el contenido es susceptible de ser imprimido o guardado como pdf
+ */
+$print: false;

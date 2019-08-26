@@ -28,4 +28,5 @@ yarn-error.log*
 *.sw*
 
 # Generate Content
+.dist
 src/docs/assets/icons/sprite

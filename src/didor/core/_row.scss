@@ -51,7 +51,7 @@
   &--dir-column-resverse { flex-direction: column-reverse; }
 
   @if ($responsive) {
-    @each $breakpoint in $breakpoints {
+    @each $breakpoint in $breakpoints-list {
       @include media($breakpoint){
         &--#{$breakpoint}--dir-row { flex-direction: row; }
         &--#{$breakpoint}--dir-row-reverse { flex-direction: row-reverse; }
@@ -102,7 +102,7 @@
   &--vgutter-large > * { margin-top: double($space); }
 
   @if ($responsive) {
-    @each $breakpoint in $breakpoints {
+    @each $breakpoint in $breakpoints-list {
       @include media($breakpoint){
         /* None */
         &--#{$breakpoint}--vgutter-none,
@@ -150,7 +150,7 @@
   &--hgutter-large > * { margin-left: double($space); }
 
   @if ($responsive) {
-    @each $breakpoint in $breakpoints {
+    @each $breakpoint in $breakpoints-list {
       @include media($breakpoint){
         /* None */
         &--#{$breakpoint}--hgutter-none,

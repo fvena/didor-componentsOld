@@ -1,0 +1,227 @@
+//
+// Espaciado
+//
+// Para mantener el ritmo vertical y mantener una proporcinalidad en el diseño,
+// el espaciado se define en base a la altura del texto definida
+//
+
+$space: $base-line-height * 1rem;
+
+//
+// Listado de espacios definidos por defecto
+//
+
+$spacing-map: (
+  'none': 0,
+  'quarter': quarter($space),
+  'halve': halve($space),
+  'simple': $space,
+  'double': double($space),
+  'triple': triple($space),
+  'quadruple': quadruple($space),
+  'quintuple': quintuple($space),
+  'sextuple': sextuple($space),
+) !default;
+
+//
+// Devuelve el nombre del breakpoint para componer el nombre de una clase,
+// cuando se aplica a todos los tamaños de pantalla, no se pone
+//
+@function get-space-sufix($size) {
+  @if $size == 'none' {
+    @return '';
+  } @else if $size == 'simple' {
+    @return '';
+  } @else {
+    @return '-' + $size;
+  }
+}
+
+//
+// CLASES AUXILIARES
+// Modifican los margenes internos y externos de un elemento.
+//
+// Las clases se forman con el siguiente formato:
+//
+// .{none}-{property}-{sides}-{breakpoint}-{size}
+//
+// {none} Indica si el tamaño del margen es 0
+//   - no
+//   - ''
+// {property} Indica el tipo de margen, exterior o interior
+//   - margin
+//   - padding
+// {sides} Indica a que lado afecta
+//   - top, bottom, left, right, x, y.
+//   - Si no se indica ningún lado, se aplica a los cuatro
+// {breakpoint} Indica a que tamaño de pantalla afecta
+//   - palm, lap, small, desk, large
+//   - Si no se indica ningún tamaño de pantalla, se aplica a todos
+// {size} Indica el tamaño del margen
+//   - quarter, halve, double, triple, quadruple, quintuple, sextuple, auto
+//   - Si no se indica ningún tamaño, se aplica el espaciado estandar
+//   - El valor 'auto' solo se aplica a los valores horizontales 'x'
+//
+// Ejemplos:
+//   .margin               // Margen externo de tamaño estandar a los cuatro lados
+//   .margin-top           // Margen externo de tamaño estandar al lado superior
+//   .margin-top-lap       // Margen externo de tamaño estandar al lado superior solo a tamaños de pantalla móviles
+//   .padding-top-double   // Margen interno de tamaño doble al lado superior
+//   .padding-x-triple     // Margen interno de tamaño triple a los lados derecho e izquierdo
+//   .no-margin-bottom     // Quita el margen externo de abajo
+//
+
+@each $breakpoint in $breakpoints-list {
+  @include media($breakpoint) {
+    // Creo la cadena para formar el nombre de la clase
+    // Cuando afecta a todos los tamaños de pantalla, no se pone
+    $breakpoint: get-breakpoint-sufix($breakpoint);
+
+    @each $property in ('margin', 'padding') {
+      @each $size, $length in $spacing-map {
+        // Cuando no hay espaciado, se añade el prefijo indicando que no hay espaciado
+        $none: '';
+
+        @if $size == 'none' {
+          $none: 'no-';
+        }
+
+        // Obtengo la cadena del tamaño para formar el nombre de la clase
+        $size: get-space-sufix($size);
+
+        .#{$none}#{$property}#{$breakpoint}#{$size} {
+          #{$property}: $length !important;
+        }
+
+        .#{$none}#{$property}-top#{$breakpoint}#{$size} {
+          #{$property}-top: $length !important;
+        }
+
+        .#{$none}#{$property}-right#{$breakpoint}#{$size} {
+          #{$property}-right: $length !important;
+        }
+
+        .#{$none}#{$property}-bottom#{$breakpoint}#{$size} {
+          #{$property}-bottom: $length !important;
+        }
+
+        .#{$none}#{$property}-left#{$breakpoint}#{$size} {
+          #{$property}-left: $length !important;
+        }
+
+        .#{$none}#{$property}-x#{$breakpoint}#{$size} {
+          #{$property}-right: $length !important;
+          #{$property}-left: $length !important;
+        }
+
+        .#{$none}#{$property}-y#{$breakpoint}#{$size} {
+          #{$property}-top: $length !important;
+          #{$property}-bottom: $length !important;
+        }
+      }
+    }
+
+    // Auto class
+    .margin-x#{$breakpoint}-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+}
+
+// @each $attr in margin, padding {
+//   .#{$attr} {
+//     #{$attr}: $space !important;
+//   }
+
+//   .#{$attr}-top {
+//     #{$attr}-top: $space !important;
+//   }
+
+//   .#{$attr}-right {
+//     #{$attr}-right: $space !important;
+//   }
+
+//   .#{$attr}-bottom {
+//     #{$attr}-bottom: $space !important;
+//   }
+
+//   .#{$attr}-left {
+//     #{$attr}-left: $space !important;
+//   }
+
+//   .#{$attr}-y {
+//     #{$attr}-top: $space !important;
+//     #{$attr}-bottom: $space !important;
+//   }
+
+//   .#{$attr}-x {
+//     #{$attr}-left: $space !important;
+//     #{$attr}-right: $space !important;
+//   }
+
+//   .no-#{$attr} {
+//     #{$attr}: 0 !important;
+//   }
+
+//   .no-#{$attr}-top {
+//     #{$attr}-top: 0 !important;
+//   }
+
+//   .no-#{$attr}-right {
+//     #{$attr}-right: 0 !important;
+//   }
+
+//   .no-#{$attr}-bottom {
+//     #{$attr}-bottom: 0 !important;
+//   }
+
+//   .no-#{$attr}-left {
+//     #{$attr}-left: 0 !important;
+//   }
+
+//   .no-#{$attr}-y {
+//     #{$attr}-top: 0 !important;
+//     #{$attr}-bottom: 0 !important;
+//   }
+
+//   .no-#{$attr}-x {
+//     #{$attr}-left: 0 !important;
+//     #{$attr}-right: 0 !important;
+//   }
+
+//   .#{$attr}-auto {
+//     #{$attr}-left: auto !important;
+//     #{$attr}-right: auto !important;
+//   }
+
+//   @each $name, $size in $spacing-map {
+//     .#{$attr}--#{$name} {
+//       #{$attr}: #{$size} !important;
+//     }
+
+//     .#{$attr}-top--#{$name} {
+//       #{$attr}-top: #{$size} !important;
+//     }
+
+//     .#{$attr}-right--#{$name} {
+//       #{$attr}-right: #{$size} !important;
+//     }
+
+//     .#{$attr}-bottom--#{$name} {
+//       #{$attr}-bottom: #{$size} !important;
+//     }
+
+//     .#{$attr}-left--#{$name} {
+//       #{$attr}-left: #{$size} !important;
+//     }
+
+//     .#{$attr}-bottom--#{$name} {
+//       #{$attr}-bottom: #{$size} !important;
+//     }
+
+//     .#{$attr}-left--#{$name} {
+//       #{$attr}-left: #{$size} !important;
+//     }
+//   }
+// }

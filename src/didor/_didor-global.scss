@@ -1,25 +1,29 @@
 // Generic
-@import 'global/reset';
-@import 'global/normalize';
+@import 'core/reset';
+@import 'core/normalize';
 
 // Layout
-@import 'global/page';
-@import 'global/container';
-@import 'global/row';
-@import 'global/col';
-@import 'global/spaces';
+@import 'core/page';
+@import 'core/container';
+@import 'core/row';
+@import 'core/col';
+@import 'core/spaces';
 
 // Style
-@import 'global/colors';
-@import 'global/typography';
+@import 'core/colors';
+@import 'core/typography';
+@import 'core/code';
 
 // Base Components
-@import 'global/forms';
-@import 'global/table';
-@import 'global/images';
-@import 'global/list';
-@import 'global/links';
-@import 'global/icons';
+@import 'core/forms';
+@import 'core/table';
+@import 'core/images';
+@import 'core/list';
+@import 'core/links';
+@import 'core/icons';
 
 // Helpers
-@import 'global/visibility';
+@import 'core/visibility';
+
+// Print
+@import 'core/print';
