@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$device-background: var(--color-gray7);
+$device-background: color(gray7);
 $device-color: #9da6aa;
 $device-color-a70: rgba($device-color, 0.8);
 $device-color-a40: rgba($device-color, 0.4);
@@ -46,7 +46,7 @@ $device-light-a70: rgba(255, 255, 255, 0.7);
 $device-light-a30: rgba(255, 255, 255, 0.3);
 $device-screen: rgb(255, 255, 255);
 
-// $device-background: var(--color-gray1);
+// $device-background: color(gray1);
 // $device-color: #3b4c53;
 // $device-color-a70: rgba($device-color, 0.8);
 // $device-color-a40: rgba($device-color, 0.8);
@@ -107,9 +107,9 @@ $device-screen: rgb(255, 255, 255);
   box-shadow: inset 0 0 2px 0 $device-color-a40, inset 0 -1px 2px 0 $device-light-a30;
 }
 
-@include media(large) {
+@include media(screen) {
   .device {
-    right: double($space);
+    right: size(2);
     width: 360px;
     min-width: 360px;
     height: 720px;

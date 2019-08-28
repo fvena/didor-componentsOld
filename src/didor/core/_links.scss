@@ -7,19 +7,19 @@ a img {
 }
 
 a {
-  color: var(--color-link);
-  text-decoration: none;
-  transition: color $duration-animation-base, background-color $duration-animation-base;
+  color: color(link);
+  text-decoration: $link-decoration;
+  transition: color $transition-duration, background-color $transition-duration;
 
   @include hover {
-    color: var(--color-link-hover);
-    text-decoration: none;
+    color: color(link-hover);
+    text-decoration: $link-decoration-hover;
   }
 
   &:active,
   &:focus {
-    color: var(--color-link-hover);
-    text-decoration: none;
+    color: color(link-hover);
+    text-decoration: $link-decoration;
   }
 
   a[disabled] {

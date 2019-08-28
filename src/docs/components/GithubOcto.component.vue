@@ -27,8 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$header-height: triple($space);
-$header-height-media: double($space);
+$header-height: size(3);
+$header-height-media: size(2);
 
 .github-octo {
   position: fixed;
@@ -52,12 +52,12 @@ $header-height-media: double($space);
 }
 
 .github-octo__background {
-  fill: var(--color-brand);
+  fill: color(brand);
 }
 
 .github-octo__arm,
 .github-octo__body {
-  fill: var(--color-gray8);
+  fill: color(white);
 }
 
 @include media(portrait) {

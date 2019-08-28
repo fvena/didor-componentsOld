@@ -10,7 +10,9 @@ debes ocultar el elemento con la clase `.hidden` y luego indicar con la clase
 
 
 ```html
-<div class="hidden visible--tablet">Solo será visible en tamaños tablet</div>
+<div class="hidden visible--tablet">
+  Solo será visible en tamaños tablet
+</div>
 ```
 
 <div class="responsive responsive--title">
@@ -97,7 +99,9 @@ debes ocultar el elemento con la clase `.hidden` y luego indicar con la clase
 ## Ocultar elementos
 
 ```html
-<div class="hidden--tablet">No será visible en tamaños tablet</div>
+<div class="hidden--tablet">
+  No será visible en tamaños tablet
+</div>
 ```
 
 <div class="responsive responsive--title">
@@ -179,3 +183,15 @@ debes ocultar el elemento con la clase `.hidden` y luego indicar con la clase
     <div class="responsive__background__block"></div>
   </div>
 </div>
+
+## Impresión
+
+Podemos mostrar/ocultar elementos especificamente para la impresión:
+
+* `.hidden-print` oculta un elemento cuando se imprime la página.
+* `.visible-print` el elemento solo será visible cuando se imprima la página.
+
+```html
+<div class="hidden-print">No será visible en impresión</div>
+<div class="visible-print">Solo será visible en impresión</div>
+```

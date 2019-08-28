@@ -4,7 +4,8 @@ import camelCase from 'lodash/camelCase';
 import path from 'path';
 import docsConfig from '../../../docs/docs.config';
 
-const getParams = (routerPath) => {
+// eslint-disable-next-line
+const getParams = routerPath => {
   const splitPath = routerPath.split('/').filter(item => item !== '');
   const type = splitPath.shift();
   let section = '';
@@ -93,8 +94,6 @@ const loadComponentes = (componentsPath, isDemo = false) => {
     if (name.includes('Demo') && !isDemo) return;
 
     const componentName = name.includes('Demo') ? name : `${prefix}${name}`;
-
-    console.log(componentName);
 
     Vue.component(componentName, componentConfig.default || componentConfig);
   });

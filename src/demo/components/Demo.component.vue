@@ -26,21 +26,20 @@ export default {
 }
 
 .demo__title {
-  @include fontsize(eta);
-
-  padding: halve($space) halve($space) 0;
-  margin-bottom: halve($space);
-  font-family: $content-font-family;
-  font-weight: $content-font-bold;
-  color: var(--color-gray2);
+  padding: size(1/2) size(1/2) 0;
+  margin-bottom: size(1/2);
+  font-family: font-family(base);
+  font-size: font-size(eta);
+  font-weight: font-weight(bold);
+  color: color(gray2);
   text-transform: uppercase;
 }
 
 .demo__title__wrapper {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid color(border);
 }
 
 .demo__content--padding {
-  padding: 0 halve($space);
+  padding: 0 size(1/2);
 }
 </style>

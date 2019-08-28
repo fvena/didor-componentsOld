@@ -89,7 +89,7 @@ $sidebar-width-large: 300px;
     width: 100%;
     height: 100%;
     content: '';
-    background-color: var(--color-gray8);
+    background-color: color(white);
     opacity: 0.9;
     transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) all;
   }
@@ -108,13 +108,13 @@ $sidebar-width-large: 300px;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: $layer-aside-z-index;
+  z-index: $z-index-aside;
   width: $sidebar-width;
   height: 100vh;
   padding: $space;
   overflow-y: auto;
-  background: var(--color-gray7);
-  border-right: 1px solid var(--color-border);
+  background: color(gray7);
+  border-right: 1px solid color(border);
   transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) all;
 }
 
@@ -127,7 +127,7 @@ $sidebar-width-large: 300px;
   transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) all;
 }
 
-@include media(large) {
+@include media(screen) {
   .docs__content {
     padding-left: $sidebar-width-large;
   }

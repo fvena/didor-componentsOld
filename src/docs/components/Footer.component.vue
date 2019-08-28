@@ -50,9 +50,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: triple($space);
+  margin-top: size(3);
   overflow: hidden;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid color(border);
 }
 
 .pagination-item {
@@ -91,10 +91,9 @@ export default {
 }
 
 .pagination-item-label {
-  @include fontsize(eta);
-
-  margin-bottom: quarter(-$space);
-  color: var(--color-gray4);
+  margin-bottom: -0.2rem;
+  font-size: font-size(eta);
+  color: color(gray4);
   opacity: 1;
 
   > * {
@@ -113,9 +112,8 @@ export default {
 }
 
 .pagination-item-title {
-  @include fontsize(gamma);
-
-  color: var(--color-gray2);
+  font-size: font-size(gamma);
+  color: color(gray2);
   opacity: 1;
 }
 </style>

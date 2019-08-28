@@ -64,15 +64,15 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid color(border);
 }
 
 .collapse__icon {
   position: absolute;
   top: 11px;
-  right: quarter($space);
+  right: size(1/4);
   fill: none;
-  stroke: var(--color-brand);
+  stroke: color(brand);
   stroke-width: 2;
   transition: all 0.4s ease-in-out;
   transform: rotate(0deg);
@@ -84,7 +84,7 @@ export default {
 }
 
 .collapse__content {
-  padding-top: halve($space);
+  padding-top: size(1/2);
 
   p:last-child {
     margin-bottom: 0;

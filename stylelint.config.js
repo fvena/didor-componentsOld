@@ -52,8 +52,8 @@ module.exports = {
     'scss/dollar-variable-no-missing-interpolation': true,
     'scss/double-slash-comment-whitespace-inside': 'always',
     'scss/operator-no-newline-before': true,
-    'scss/operator-no-unspaced': true,
     'scss/selector-no-redundant-nesting-selector': true,
+    'scss/operator-no-unspaced': null,
     // Allow SCSS and CSS module keywords beginning with `@`
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,

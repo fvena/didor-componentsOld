@@ -102,6 +102,6 @@ export default {
 
 <style lang="scss" scoped>
 .az-button {
-  margin: quarter($space);
+  margin: size(1/4);
 }
 </style>

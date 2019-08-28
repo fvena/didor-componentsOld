@@ -44,71 +44,72 @@ export default {
 </script>
 
 <style lang="scss">
-$header-height: triple($space);
-$header-height-media: double($space);
+$header-height: size(3);
+$header-height-media: size(2);
 $wrapper-width: 670px;
 
 .article {
-  padding: double($space) $space;
-  color: var(--color-gray2);
+  padding: size(2) $space;
+  color: color(gray2);
 
   .device {
     display: none;
   }
 
   img {
-    border: 1px solid var(--color-gray6);
+    border: 1px solid color(gray6);
     border-radius: $border-radius;
-    box-shadow: 0 5px 10px var(--color-gray6);
+    box-shadow: 0 5px 10px color(gray6);
   }
 
   h1 + p {
-    @include fontsize(delta);
-
+    font-size: font-size(delta);
     line-height: 1.8rem;
-    color: var(--color-gray4);
+    color: color(gray4);
   }
 
   h1 + p code {
-    @include fontsize(epsilon);
+    font-size: font-size(epsilon);
   }
 
   h2 {
-    @include fontsize(gamma);
-
-    padding-top: double($space);
-    margin-top: triple($space);
-    border-top: 1px solid var(--color-border);
+    padding-top: size(2);
+    margin-top: size(3);
+    font-size: font-size(gamma);
+    border-top: 1px solid color(border);
   }
 
   h3 {
-    @include fontsize(delta);
+    font-size: font-size(delta);
+    line-height: line-height(delta);
   }
 
   h4 {
-    @include fontsize(epsilon);
+    font-size: font-size(epsilon);
+    line-height: line-height(epsilon);
   }
 
   h5,
   h6 {
-    @include fontsize(zeta);
+    font-size: font-size(zeta);
+    line-height: line-height(zeta);
   }
 
   blockquote {
     padding-left: $space;
-    margin: double($space) 0;
-    color: var(--color-gray4);
-    background-color: var(--color-gray8);
-    border-left: 4px solid var(--color-brand);
+    margin: size(2) 0;
+    color: color(gray4);
+    background-color: color(white);
+    border-left: 4px solid color(brand);
   }
 
   hr {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, var(--color-border) 50%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, color(border) 50%);
   }
 
   .customDemo {
     padding: 0 $space;
-    border: 1px solid var(--color-border);
+    border: 1px solid color(border);
     border-radius: $border-radius;
 
     .codegroup__files,
@@ -118,37 +119,35 @@ $wrapper-width: 670px;
     }
 
     pre[data-lang] {
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 1px solid color(border);
       border-radius: $border-radius $border-radius 0 0;
     }
   }
 
   table {
     th {
-      @include fontsize(theta);
-
-      font-weight: $content-font-bold;
-      color: var(--color-gray4);
+      font-size: font-size(theta);
+      font-weight: font-weight(bold);
+      color: color(gray4);
       text-transform: uppercase;
-      background-color: var(--color-gray7);
+      background-color: color(gray7);
     }
 
     td {
-      @include fontsize(eta);
-
-      color: var(--color-gray2);
-      border-bottom: 1px solid var(--color-border);
+      font-size: font-size(eta);
+      color: color(gray2);
+      border-bottom: 1px solid color(border);
 
       code {
         padding: 0.2rem 0.4rem;
-        font-family: $content-font-family;
+        font-family: font-family(base);
         font-size: 0.95em;
         font-weight: 400;
-        color: var(--color-gray3);
+        color: color(gray3);
       }
 
       &:first-of-type {
-        font-weight: $content-font-bold;
+        font-weight: font-weight(bold);
         white-space: nowrap;
       }
     }
@@ -156,14 +155,13 @@ $wrapper-width: 670px;
 
   .table-cheatsheet {
     td:nth-of-type(1) {
-      font-weight: $content-font-bold;
+      font-weight: font-weight(bold);
     }
     td:nth-of-type(2) {
-      @include fontsize(theta);
-
-      font-family: $code-font-family;
+      font-family: font-family(monospace);
+      font-size: font-size(theta);
       line-height: 1.2rem;
-      color: var(--color-brand);
+      color: color(brand);
     }
   }
 
@@ -174,14 +172,14 @@ $wrapper-width: 670px;
     li {
       position: relative;
       padding-left: $space;
-      margin-bottom: quarter($space);
+      margin-bottom: size(1/4);
       margin-left: 0;
 
       &::before {
         position: absolute;
-        left: quarter(-$space);
+        left: size(-1/4);
         width: $space;
-        color: var(--color-gray4);
+        color: color(gray4);
         text-align: right;
         content: counters(b, '.') ' ';
         counter-increment: b;
@@ -195,7 +193,7 @@ $wrapper-width: 670px;
     li {
       position: relative;
       padding-left: $space;
-      margin-bottom: quarter($space);
+      margin-bottom: size(1/4);
       margin-left: 0;
 
       &::before {
@@ -207,7 +205,7 @@ $wrapper-width: 670px;
         height: 6px;
         text-align: right;
         content: '';
-        background-color: var(--color-gray4);
+        background-color: color(gray4);
         border-radius: 3px;
       }
     }
@@ -230,8 +228,8 @@ $wrapper-width: 670px;
   */
   .task-list-item input {
     position: absolute;
-    top: quarter(-$space);
-    left: quarter(-$space);
+    top: size(-1/4);
+    left: size(-1/4);
     z-index: 10;
     width: $space * 1.5;
     height: $space * 1.5;
@@ -260,7 +258,7 @@ $wrapper-width: 670px;
     width: 18px;
     height: 18px;
     content: '';
-    background-color: var(--color-gray7);
+    background-color: color(gray7);
     border-radius: 3px;
     outline: 0;
     box-shadow: 0 0 0 1px rgba(1, 1, 1, 0.12), 0 1px 2px 0 rgba(1, 1, 1, 0.1);
@@ -278,7 +276,7 @@ $wrapper-width: 670px;
     width: 8px;
     height: 12px;
     content: '';
-    border: solid var(--color-gray4);
+    border: solid color(gray4);
     border-width: 0 3px 3px 0;
     opacity: 0;
     transform: rotate(45deg);
@@ -289,7 +287,7 @@ $wrapper-width: 670px;
   */
   .task-list-item input:checked + label {
     font-style: italic;
-    color: var(--color-gray4);
+    color: color(gray4);
     text-decoration: line-through;
   }
 
@@ -300,9 +298,9 @@ $wrapper-width: 670px;
   .embed-responsive {
     height: 390px;
     overflow: hidden;
-    border: 1px solid var(--color-gray6);
+    border: 1px solid color(gray6);
     border-radius: $border-radius;
-    box-shadow: 0 5px 10px var(--color-gray6);
+    box-shadow: 0 5px 10px color(gray6);
   }
 
   .embed-responsive iframe {
@@ -310,7 +308,7 @@ $wrapper-width: 670px;
   }
 
   pre[data-lang] {
-    padding-right: halve($space);
+    padding-right: size(1/2);
     border-radius: $border-radius;
 
     &.hasFile {
@@ -339,19 +337,18 @@ $wrapper-width: 670px;
     }
 
     .file {
-      @include fontsize(theta);
-
       position: absolute;
       top: 0;
       left: 0;
       display: none;
       width: 100%;
       height: $space;
-      padding: 0 halve($space);
-      font-family: $content-font-family;
+      padding: 0 size(1/2);
+      font-family: font-family(base);
+      font-size: font-size(theta);
       line-height: $space;
-      color: var(--color-gray2);
-      background-color: var(--color-gray6);
+      color: color(gray2);
+      background-color: color(gray6);
       border-radius: $border-radius $border-radius 0 0;
     }
   }
@@ -359,9 +356,9 @@ $wrapper-width: 670px;
   pre[data-lang],
   pre[data-lang] code {
     position: initial !important;
-    font-weight: $code-font-weight;
+    font-weight: font-weight(normal);
     color: hsl(198, 17%, 38%);
-    background: var(--color-gray7);
+    background: color(gray7);
     border-radius: $border-radius;
   }
 
@@ -369,25 +366,25 @@ $wrapper-width: 670px;
     .line-numbers-rows {
       top: 0.7rem;
       left: 0;
-      background-color: var(--color-gray7);
-      border-right: 1px solid var(--color-border);
+      background-color: color(gray7);
+      border-right: 1px solid color(border);
 
       > span::before {
-        font-weight: $code-font-slim;
-        color: var(--color-gray4);
+        font-weight: font-weight(light);
+        color: color(gray4);
       }
     }
   }
 
   .line-highlight {
-    background: var(--color-brand);
+    background: color(brand);
     opacity: 0.1;
   }
 
   .code-toolbar {
     .toolbar {
       position: absolute;
-      top: quarter($space);
+      top: size(1/4);
       right: 0;
       opacity: 1;
 
@@ -399,12 +396,12 @@ $wrapper-width: 670px;
     .toolbar a {
       display: block;
       height: $space;
-      padding: 0 halve($space);
-      font-family: $code-font-family;
+      padding: 0 size(1/2);
+      font-family: font-family(monospace);
       font-size: 0.6rem;
-      font-weight: $code-font-bold;
+      font-weight: font-weight(bold);
       line-height: $space;
-      color: var(--color-gray4);
+      color: color(gray4);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       background: none;
@@ -419,9 +416,9 @@ $wrapper-width: 670px;
         position: absolute;
         right: -2.4rem;
         padding: 0 0.6rem;
-        color: var(--color-gray3);
+        color: color(gray3);
         content: 'Copied!';
-        background-color: var(--color-gray5);
+        background-color: color(gray5);
         border-radius: 3px;
         opacity: 0;
         transition: 0.3s all;
@@ -453,7 +450,7 @@ $wrapper-width: 670px;
   .token.comment,
   .token.doctype,
   .token.prolog {
-    color: var(--color-gray4); // #dfeffc
+    color: color(gray4); // #dfeffc
   }
 
   .token.punctuation {
@@ -537,7 +534,7 @@ $wrapper-width: 670px;
 
   .token.bold,
   .token.important {
-    font-weight: $code-font-bold;
+    font-weight: font-weight(bold);
   }
 
   .token.important {
@@ -551,7 +548,7 @@ $wrapper-width: 670px;
   .language-bash .token.keyword,
   .language-bash .token.operator,
   .language-markdown .token.keyword {
-    color: var(--color-gray2);
+    color: color(gray2);
   }
 
   pre > code.highlight {
@@ -561,13 +558,13 @@ $wrapper-width: 670px;
 }
 
 .article.article--show-device {
-  padding-right: calc(320px + #{double($space)});
+  padding-right: calc(320px + #{size(2)});
 
   .device {
     position: fixed;
     top: $header-height;
     right: $space;
-    z-index: $layer-header-z-index;
+    z-index: $z-index-header;
     display: block;
   }
 }
@@ -579,17 +576,16 @@ $wrapper-width: 670px;
 }
 
 .markdownToc {
-  margin-top: triple($space);
-  margin-bottom: triple($space);
+  margin-top: size(3);
+  margin-bottom: size(3);
   list-style: none;
 
   &::before {
-    @include fontsize(epsilon);
-
     display: block;
-    margin-bottom: halve($space);
-    font-weight: $content-font-bold;
-    color: var(--color-gray2);
+    margin-bottom: size(1/2);
+    font-size: font-size(epsilon);
+    font-weight: font-weight(bold);
+    color: color(gray2);
     content: 'Tabla de contenidos';
   }
 
@@ -600,9 +596,9 @@ $wrapper-width: 670px;
   }
 }
 
-@include media(large) {
+@include media(screen) {
   .article.article--show-device {
-    padding-right: calc(360px + #{double($space)});
+    padding-right: calc(360px + #{size(2)});
   }
 }
 
@@ -624,23 +620,25 @@ $wrapper-width: 670px;
 
 @include media(palm) {
   .article {
-    padding: halve($space);
+    padding: size(1/2);
 
     h2 {
-      @include fontsize(delta);
-
       padding-top: $space;
-      margin-top: double($space);
+      margin-top: size(2);
+      font-size: font-size(delta);
+      line-height: line-height(delta);
     }
 
     h3 {
-      @include fontsize(epsilon);
+      font-size: font-size(epsilon);
+      line-height: line-height(epsilon);
     }
 
     h4,
     h5,
     h6 {
-      @include fontsize(zeta);
+      font-size: font-size(zeta);
+      line-height: line-height(zeta);
     }
 
     .embed-responsive {
@@ -652,7 +650,7 @@ $wrapper-width: 670px;
     }
   }
   .article.article--show-device {
-    padding-right: halve($space);
+    padding-right: size(1/2);
   }
 }
 </style>

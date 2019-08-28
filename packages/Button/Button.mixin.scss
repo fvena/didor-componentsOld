@@ -1,8 +1,8 @@
 @mixin buttonType($type) {
   &--#{$type} {
-    color: var(--color-gray8);
+    color: color(white);
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(var(--color-#{$type}-light), var(--color-#{$type}-dark));
+    background-image: linear-gradient(color(#{$type}-light), color(#{$type}-dark));
     background-size: 1px 200%;
 
     @include hover {
@@ -10,39 +10,39 @@
     }
 
     .az-loading {
-      --color-az-loading: var(--color-gray8) !important;
+      --color-az-loading: color(white) !important;
     }
   }
 
   &--#{$type}#{&}--plain {
     text-shadow: none;
-    background-color: var(--color-#{$type});
+    background-color: color(#{$type});
     background-image: none;
 
     @include hover {
-      background-color: var(--color-#{$type}-dark);
+      background-color: color(#{$type}-dark);
     }
 
     .az-loading {
-      --color-az-loading: var(--color-gray8) !important;
+      --color-az-loading: color(white) !important;
     }
   }
 
   &--#{$type}#{&}--ghost {
-    color: var(--color-#{$type});
+    color: color(#{$type});
     text-shadow: none;
     background-color: transparent;
     background-image: none;
     border: 1px solid;
-    border-color: var(--color-#{$type}-lighter);
+    border-color: color(#{$type}-lighter);
 
     @include hover {
-      color: var(--color-#{$type}-darker);
-      border-color: var(--color-#{$type}-light);
+      color: color(#{$type}-darker);
+      border-color: color(#{$type}-light);
     }
 
     .az-loading {
-      --color-az-loading: var(--color-#{$type}) !important;
+      --color-az-loading: color(#{$type}) !important;
     }
   }
 }

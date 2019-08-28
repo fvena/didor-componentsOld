@@ -23,7 +23,8 @@ export default {
       const codeBlocks = this.$el.children;
       const array = [...codeBlocks];
 
-      array.forEach((codeBlock) => {
+      // eslint-disable-next-line
+      array.forEach(codeBlock => {
         if (codeBlock.className === 'codegroup__files') return;
         codeBlock.style.display = 'none';
       });
@@ -31,26 +32,28 @@ export default {
       codeBlocks[index].style.display = 'block';
     },
     getFiles() {
-      return new Promise((resolve) => {
+      // eslint-disable-next-line
+      return new Promise(resolve => {
         const codeBlocks = this.$el.children;
         const array = [...codeBlocks];
 
-        array.forEach((codeBlock) => {
+        // eslint-disable-next-line
+        array.forEach(codeBlock => {
           const blocks = codeBlock.children;
           const arrayBlocks = [...blocks];
 
-          arrayBlocks.forEach((blocksChildren) => {
+          // eslint-disable-next-line
+          arrayBlocks.forEach(blocksChildren => {
             const blockChildren = blocksChildren.children;
             const arrayChildren = [...blockChildren];
 
-            arrayChildren.forEach((item) => {
+            // eslint-disable-next-line
+            arrayChildren.forEach(item => {
               if (item.className !== 'file') return;
               this.files.push(item.innerHTML);
             });
           });
         });
-
-        console.log(this.files);
 
         resolve(true);
       });
@@ -90,27 +93,26 @@ export default {
   }
 }
 .codegroup__files {
-  @include fontsize(theta);
-
   height: $space;
-  padding: 0 halve($space);
-  font-family: $content-font-family;
+  padding: 0 size(1/2);
+  font-family: font-family(base);
+  font-size: font-size(theta);
   line-height: $space;
-  color: var(--color-gray2);
-  background-color: var(--color-gray6);
+  color: color(gray2);
+  background-color: color(gray6);
   border-radius: $border-radius $border-radius 0 0;
 }
 
 .codegroup__file {
   display: inline-block;
-  padding: 0 quarter($space);
-  color: var(--color-gray3);
+  padding: 0 size(1/4);
+  color: color(gray3);
   cursor: pointer;
 
   &.codegroup__file--select {
-    font-weight: $content-font-bold;
-    color: var(--color-gray1);
-    border-bottom: 2px solid var(--color-gray1);
+    font-weight: font-weight(bold);
+    color: color(gray1);
+    border-bottom: 2px solid color(gray1);
   }
 }
 </style>

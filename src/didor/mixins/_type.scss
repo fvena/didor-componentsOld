@@ -2,19 +2,54 @@
  * TYPE MIXIN
  */
 
+//
+// Listado de familias tipográficas
+//
+
+$font-families: (
+  "base": $font-family-base,
+  "heading": $font-family-heading,
+  "monospace": $font-family-monospace
+) !default;
+
+//
+// Listado de tamaños de fuente base por tamaño de pantalla
+//
+
+$root-sizes: (
+  "palm": $root-font-size-palm,
+  "lap": $root-font-size-lap,
+  "small": $root-font-size-small,
+  "desk": $root-font-size-desk,
+  "large": $root-font-size-large
+) !default;
+
+//
+// Listado de pesos tipográficos
+//
+
+$font-weights: (
+  "extralight": $font-weight-extralight,
+  "light": $font-weight-light,
+  "normal": $font-weight-normal,
+  "semibold": $font-weight-semibold,
+  "bold": $font-weight-bold,
+  "black": $font-weight-black
+) !default;
+
 /**
  * TYPOGRAPHY MODULAR SCALE
  */
-$scale-level: (
-  alpha: 5,
-  beta: 4,
-  gamma: 3,
-  delta: 2,
-  epsilon: 1,
-  zeta: 0,
-  eta: -1,
-  theta: -2,
-  iota: -3,
+$font-sizes: (
+  "alpha": 5,
+  "beta": 4,
+  "gamma": 3,
+  "delta": 2,
+  "epsilon": 1,
+  "zeta": 0,
+  "eta": -1,
+  "theta": -2,
+  "iota": -3
 ) !default;
 
 /**
@@ -37,48 +72,91 @@ $scale-level: (
 
   // Si existe tiene el breakpoint base
   @if map-has-key($root-sizes, $base-breakpoints) {
-    font-size: #{map-get($root-sizes, $base-breakpoints) / 16 * 100%};
+    font-size: #{map-get($root-sizes, $base-breakpoints) / 16px * 100%};
   }
 
   // Recorre todos los breakpoint.
   @each $breakpoint, $size in $root-sizes {
     @if $breakpoint != $base-breakpoints {
       @include media($breakpoint) {
-        font-size: #{$size / 16 * 100%};
+        font-size: #{$size / 16px * 100%};
       }
     }
   }
 }
 
-/**
- * FONTSIZE
- *
- * Devuelve el valor en px y rem.
- * Admite un valor númerico o un alias de la escala modular.
- * También genera un media-query con el valor proporcional para cada breakpoint,
- * en base a los tamaños de fuente por defecto $root-sizes. Ejemplo de uso.
- *
- * .header { @include fontsize(14): }
- * .header { @include fontsize(alpha); }
- */
-@mixin fontsize($fontsize) {
-  // Tipo de la variable $fontsize
-  $font-value: type-of($fontsize);
+//
+// Tamaño de fuente
+//
+// Admite un valor númerico o un alias de la escala modular.
+//
 
-  // Si el valor del $fontsize es un número
+@function font-size($size) {
+  // Tipo de la variable $fontsize
+  $font-value: type-of($size);
+
+  // Si el valor del $size es un número
   @if $font-value == number {
-    font-size: #{$fontsize / 16}rem;
-    line-height: #{ceil($fontsize / ($space * 16)) * $space}rem;
+    @return #{$size / 16}rem;
   }
 
-  // Si el valor del $fontsize no es un número y es el alias de la escala modular
+  // Si el valor del $size no es un número y es el alias de la escala modular
   @else {
-    @if map-has-key($scale-level, $fontsize) {
-      $level: map-get($scale-level, $fontsize);
+    @if map-has-key($font-sizes, $size) {
+      $level: map-get($font-sizes, $size);
       $module: pow($modular-scale, $level);
 
-      font-size: #{$module}rem;
-      line-height: #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;
+      @return #{$module}rem;
     }
   }
+}
+
+//
+// Altura de línea
+//
+// Admite un valor númerico o un alias de la escala modular.
+//
+
+@function line-height($height) {
+  // Tipo de la variable $height
+  $font-value: type-of($height);
+
+  // Si el valor del $height es un número
+  @if $font-value == number {
+    @return #{ceil($height / ($space * 16)) * $space}rem;
+  }
+
+  // Si el valor del $height no es un número y es el alias de la escala modular
+  @else {
+    @if map-has-key($font-sizes, $height) {
+      $level: map-get($font-sizes, $height);
+      $module: pow($modular-scale, $level);
+
+      @return #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;
+    }
+  }
+}
+
+//
+// Peso tipográfico
+//
+// Devuele el valor del peso seleccionado
+//
+// .header { font-weight: font-weight(bold); }
+//
+
+@function font-weight($weight) {
+  @return map_get($font-weights, $weight);
+}
+
+//
+// Familia tipográfica
+//
+// Devuele el valor de la familia seleccionada
+//
+// .header { font-family: font-family(heading); }
+//
+
+@function font-family($family) {
+  @return map_get($font-families, $family);
 }

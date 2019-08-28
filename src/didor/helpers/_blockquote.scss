@@ -1,0 +1,23 @@
+.blockquote--bordered {
+  padding-left: $space;
+  border-left: 0.15rem solid color(brand);
+}
+
+.blockquote--left {
+  text-align: left;
+}
+
+.blockquote--center {
+  text-align: center;
+}
+
+.blockquote--right {
+  text-align: right;
+
+  &.blockquote--bordered {
+    padding-right: $space;
+    padding-left: 0;
+    border-right: 0.15rem solid color(brand);
+    border-left: 0;
+  }
+}

@@ -3,133 +3,139 @@
  */
 $type-transparent-color: rgba(0, 0, 0, 0);
 
-// Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
+//
+// Cabeceras
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  font-family: font-family(heading);
   font-style: normal;
-  font-weight: $heading-font-weight;
-  color: var(--color-heading);
+  font-weight: $font-weight-heading;
+  color: color(heading);
 }
 
-// Heading level 1.
-h1,
-.alpha {
-  @include fontsize(alpha);
+h1 {
+  font-size: font-size(alpha);
+  line-height: line-height(alpha);
 }
 
-// Heading level 2.
-h2,
-.beta {
-  @include fontsize(beta);
+h2 {
+  font-size: font-size(beta);
+  line-height: line-height(beta);
 }
 
-// Heading level 3.
-h3,
-.gamma {
-  @include fontsize(gamma);
+h3 {
+  font-size: font-size(gamma);
+  line-height: line-height(gamma);
 }
 
-// Heading level 4.
-h4,
-.delta {
-  @include fontsize(delta);
+h4 {
+  font-size: font-size(delta);
+  line-height: line-height(delta);
 }
 
-// Heading level 5.
-h5,
-.epsilon {
-  @include fontsize(epsilon);
+h5 {
+  font-size: font-size(epsilon);
+  line-height: line-height(epsilon);
 }
 
-// Heading level 6.
-h6,
-.zeta {
-  @include fontsize(zeta);
+h6 {
+  font-size: font-size(zeta);
+  line-height: line-height(zeta);
 }
 
 // Parrafos
 p {
-  @include fontsize(zeta);
+  font-size: font-size(zeta);
 }
 
 // Bold.
 b,
-strong,
-.bold {
-  font-weight: $content-font-bold;
+strong {
+  font-weight: font-weight(bold);
 }
 
 // Italic.
 em,
-i,
-.italic {
+i {
   font-style: italic;
 }
 
-// Caption y texto en linea pequeño.
+// Texto en linea pequeño.
 small,
-.caption {
-  @include fontsize(theta);
-
-  font-family: $heading-font-family;
+.small {
+  font-family: font-family(heading);
+  font-size: font-size(theta);
   font-style: normal;
-  font-weight: $heading-font-weight;
+  font-weight: font-weight(normal);
+  line-height: line-height(theta);
 }
 
-small {
-  line-height: 1rem;
+// Texto resaltado
+mark,
+.mark {
+  padding: size(1/2);
+  color: color(mark);
+  background-color: color(mark-background);
 }
 
+// Caption
 .caption {
-  line-height: $space;
-  color: var(--color-gray3);
+  color: color(caption);
 }
 
-// Mejorando el espacio entre los header y los caption.
 h1 + .caption,
-h2 + .caption,
-h3 + .caption,
-.alpha + .caption,
-.beta + .caption,
-.gamma + .caption {
+.font-size-alpha + .caption {
   margin-top: -$space;
+  font-size: font-size(gamma);
+  line-height: font-size(gamma);
 }
 
-.delta + .caption,
-.epsilon + .caption,
-.zeta + .caption {
-  margin-top: 0;
+h2 + .caption,
+.font-size-beta + .caption {
+  margin-top: -$space;
+  font-size: font-size(delta);
+  line-height: font-size(delta);
+}
+
+h3 + .caption,
+.font-size-gamma + .caption {
+  margin-top: -$space;
+  font-size: font-size(epsilon);
+  line-height: font-size(epsilon);
 }
 
 // Quotes.
-blockquote {
-  @include fontsize(zeta);
-
-  padding: halve($space) 1rem;
-  margin-left: -1rem;
-  font-style: italic;
-  border-left: 0.15rem solid var(--color-brand);
-
-  @include media(palm) {
-    margin-left: 0;
-  }
+blockquote,
+.blockquote {
+  font-size: font-size(zeta);
+  line-height: line-height(zeta);
 
   p:last-of-type {
     margin-bottom: 0;
+  }
+
+  > footer,
+  > .footer {
+    display: block;
+    font-size: font-size(eta);
+    color: color(gray3);
+
+    &::before {
+      content: '\2014 \00A0'; // em dash, nbsp
+    }
   }
 }
 
 // Horizontal rule.
 hr {
-  padding-top: double($space);
-  padding-bottom: double($space);
+  padding-top: size(2);
+  padding-bottom: size(2);
   margin: 0;
-  background-image: linear-gradient(to bottom, $type-transparent-color 50%, var(--color-gray3) 50%);
+  background-image: linear-gradient(to bottom, $type-transparent-color 50%, color(gray3) 50%);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: 100% 0.15rem;

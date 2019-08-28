@@ -28,13 +28,13 @@ input[type='password'],
 input[type='search'],
 input[type='url'],
 textarea {
-  height: double($space);
+  height: size(2);
   padding: 0 $space;
-  line-height: double($space);
-  border: 1px solid var(--color-border);
+  line-height: size(2);
+  border: 1px solid color(border);
 
   &:focus {
-    border-color: var(--color-brand);
+    border-color: color(brand);
     outline: none;
   }
 
@@ -42,14 +42,14 @@ textarea {
   &::-moz-placeholder,
   &:-ms-input-placeholder,
   &:-moz-placeholder {
-    color: var(--color-gray3);
+    color: color(gray3);
     opacity: 1;
   }
 
   &[disabled],
   &[readonly] {
     cursor: not-allowed;
-    background-color: var(--color-gray5);
+    background-color: color(gray5);
   }
 }
 
@@ -57,12 +57,12 @@ input[type='radio'],
 input[type='checkbox'] {
   position: relative;
   bottom: 1px;
-  margin-right: halve($space);
+  margin-right: size(1/2);
   vertical-align: middle;
 }
 
 input[disabled] {
-  background-color: var(--color-gray5);
+  background-color: color(gray5);
 
   @include hover {
     cursor: not-allowed;

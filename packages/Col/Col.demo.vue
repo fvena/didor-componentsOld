@@ -177,25 +177,24 @@ export default {};
 
 <style lang="scss" scoped>
 .content {
-  margin-bottom: halve($space);
+  margin-bottom: size(1/2);
   overflow: hidden;
-  background-color: var(--color-gray6);
+  background-color: color(gray6);
   border-radius: 3px;
 }
 
 .block {
-  @include fontsize(theta);
-
-  font-weight: $content-font-bold;
+  font-size: font-size(theta);
+  font-weight: font-weight(bold);
   color: white;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: var(--color-brand);
+  background-color: color(brand);
   border-radius: 3px;
 
   .block {
-    background-color: var(--color-brand-dark);
+    background-color: color(brand-dark);
   }
 }
 </style>

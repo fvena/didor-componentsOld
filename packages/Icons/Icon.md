@@ -84,7 +84,7 @@ az-icon(name="palm" scale="1.3" color="#c13127")
 
 ```scss
 .icon-brand {
-  fill: var(--color-brand);
+  fill: color(brand);
 }
 ```
 
@@ -100,15 +100,15 @@ az-icon.coffe-brand(name="coffe" scale="1.6")
 ```scss
 .coffe-brand {
   path[pid='0'] {
-    fill: var(--color-brand-dark);
+    fill: color(brand-dark);
   }
 
   rect[pid='1'] {
-    fill: var(--color-brand);
+    fill: color(brand);
   }
 
   path[pid='2'] {
-    fill: var(--color-gray5);
+    fill: color(gray5);
   }
 }
 ```

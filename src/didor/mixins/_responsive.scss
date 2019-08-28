@@ -2,6 +2,8 @@
  * RESPONSIVE MIXIN
  */
 
+$breakpoints-list: "palm", "lap", "small", "desk", "large", "all";
+
 /**
  * Desk First Alias
  *
@@ -9,16 +11,16 @@
  * Puedes cambiarles el nombre, el valor o añadir más puntos.
  */
 $breakpoints: (
-  palm: 'screen and (max-width: #{$palm - 1})',
-  lap: 'screen and (min-width: #{$palm}) and (max-width: #{$lap - 1})',
-  small: 'screen and (min-width: #{$lap}) and (max-width: #{$small - 1})',
-  desk: 'screen and (min-width: #{$small}) and (max-width: #{$desk - 1})',
-  large: 'screen and (min-width: #{$desk})',
-  portrait: 'screen and (max-width: #{$lap - 1})',
-  landscape: 'screen and (min-width: #{$lap})',
-  touch: 'screen and (max-width: #{$small - 1})',
-  screen: 'screen and (min-width: #{$small})',
-  tablet: 'screen and (min-width: #{$palm}) and (max-width: #{$small - 1})',
+  "palm": "screen and (max-width: #{px2em($palm - 1)})",
+  "lap": "screen and (min-width: #{px2em($palm)}) and (max-width: #{px2em($lap - 1)})",
+  "small": "screen and (min-width: #{px2em($lap)}) and (max-width: #{px2em($small - 1)})",
+  "desk": "screen and (min-width: #{px2em($small)}) and (max-width: #{px2em($desk - 1)})",
+  "large": "screen and (min-width: #{px2em($desk)})",
+  "portrait": "screen and (max-width: #{px2em($lap - 1)})",
+  "landscape": "screen and (min-width: #{px2em($lap)})",
+  "touch": "screen and (max-width: #{px2em($small - 1)})",
+  "screen": "screen and (min-width: #{px2em($small)})",
+  "tablet": "screen and (min-width: #{px2em($palm)}) and (max-width: #{px2em($small - 1)})"
 );
 
 /**
@@ -44,7 +46,7 @@ $breakpoints: (
   }
 
   // Si aplica a todos los tamaños no añado nada
-  @else if $media-query == 'all' {
+  @else if $media-query == "all" {
     @content;
   }
 
@@ -60,9 +62,9 @@ $breakpoints: (
 //
 
 @function get-breakpoint-sufix($breakpoint) {
-  @if $breakpoint == 'all' {
-    @return '';
+  @if $breakpoint == "all" {
+    @return "";
   } @else {
-    @return '-' + $breakpoint;
+    @return "-" + $breakpoint;
   }
 }

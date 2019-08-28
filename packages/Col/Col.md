@@ -22,87 +22,121 @@ Para que el componente funcione correctamente, es necesario definir la propiedad
 
 #### Columnas
 
-```pug
-az-row(grid)
-  az-col(cols="3")
-    .block 3
-  az-col(cols="6")
-    .block 6
-  az-col(cols="3")
-    .block 3
+```html
+<az-row grid>
+  <az-col cols="3">
+    <div>3</div>
+  </az-col>
+  <az-col cols="6">
+    <div>6</div>
+  </az-col>
+  <az-col cols="3">
+    <div>3</div>
+  </az-col>
+</az-row>
 
-az-row(grid)
-  az-col(cols="4")
-    .block 4
-  az-col(cols="8")
-    .block 8
+<az-row grid>
+  <az-col cols="4">
+    <div>4</div>
+  </az-col>
+  <az-col cols="8">
+    <div>8</div>
+  </az-col>
+</az-row>
 ```
 
 #### Offset
 
-```pug
-az-row(grid)
-  az-col(cols="4")
-    .block 4
-  az-col(cols="3" offset="5")
-    .block 3
+```html
+<az-row grid>
+  <az-col cols="4">
+    <div>4</div>
+  </az-col>
+  <az-col cols="3" offset="5">
+    <div>3</div>
+  </az-col>
+</az-row>
 
-az-row(grid)
-  az-col(cols="3")
-    .block 3
-  az-col(cols="4" offset="1")
-    .block 4
-  az-col(cols="3" offset="1")
-    .block 3
+<az-row grid>
+  <az-col cols="3">
+    <div>3</div>
+  </az-col>
+  <az-col cols="4" offset="1">
+    <div>4</div>
+  </az-col>
+  <az-col cols="3" offset="1">
+    <div>3</div>
+  </az-col>
+</az-row>
 ```
 
 
 #### Nested
 
-```pug
-az-row(grid)
-  az-col(cols="6")
-    .block
-      az-row(grid)
-        az-col(cols="12")
+```html
+<az-row grid>
+  <az-col cols="6">
+    <div>
+      <az-row grid>
+        <az-col cols="12">
           .block 12
-        az-col(cols="6")
+        </az-col>
+        <az-col cols="6">
           .block 6
-        az-col(cols="6")
+        </az-col>
+        <az-col cols="6">
           .block 6
-  az-col(cols="6")
-    .block 4
+        </az-col>
+      </az-row>
+    </div>
+  </az-col>
+  <az-col cols="6">
+    <div>4</div>
+  </az-col>
+</az-row>
 ```
 
 #### Auto / Expand
 
-```pug
-az-row(grid)
-  az-col(auto style="width: 100px")
-    .block Auto
-  az-col(expand)
-    .block Expand
+```html
+<az-row grid>
+  <az-col auto style="width: 100px">
+    <div>Auto</div>
+  </az-col>
+  <az-col expand>
+    <div>Expand</div>
+  </az-col>
+</az-row>
 ```
 
 #### Responsive
 
-```pug
-az-row(grid)
-  az-col(cols="4" :palm={cols:'12'})
-    .block 4
-  az-col(cols="4" :palm={cols:'6'})
-    .block 4
-  az-col(cols="4" :palm={cols:'6'})
-    .block 4
+```html
+<az-row grid>
+  <az-col cols="4" :palm="{cols:12}">
+    <div>4</div>
+  </az-col>
+  <az-col cols="4" :palm="{cols:6}">
+    <div>4</div>
+  </az-col>
+  <az-col cols="4" :palm="{cols:6}">
+    <div>4</div>
+  </az-col>
+</az-row>
 
-az-row(grid)
-  az-col(cols="4" :palm={cols:'12'})
-    .block 4
-  az-col(cols="4" :palm={cols:'5'})
-    .block 4
-  az-col(cols="4" :palm={cols:'5', offset:'2'})
-    .block 4
+<az-row grid>
+  <az-col cols="4" :palm="{cols:12}">
+    <div>4</div>
+  </az-col>
+  <az-col cols="4" :palm="{cols:5}">
+    <div>4</div>
+  </az-col>
+  <az-col cols="4" :palm="{cols:5, offset:2}">
+    <div>4</div>
+  </az-col>
+</az-row>
 ```
+
 ---
 
 ### API

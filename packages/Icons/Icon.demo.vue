@@ -52,24 +52,24 @@ export default {};
 
 <style lang="scss">
 .az-icon-icon {
-  margin: quarter($space);
+  margin: size(1/4);
 }
 
 .icon-brand {
-  fill: var(--color-brand);
+  fill: color(brand);
 }
 
 .coffe-brand {
   path[pid='0'] {
-    fill: var(--color-brand-dark);
+    fill: color(brand-dark);
   }
 
   rect[pid='1'] {
-    fill: var(--color-brand);
+    fill: color(brand);
   }
 
   path[pid='2'] {
-    fill: var(--color-gray5);
+    fill: color(gray5);
   }
 }
 </style>

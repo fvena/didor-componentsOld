@@ -36,8 +36,8 @@ export default {
 <style lang="scss" scoped>
 .alarm {
   position: relative;
-  padding: $space $space $space quadruple($space);
-  margin: double($space) 0;
+  padding: $space $space $space size(4);
+  margin: size(2) 0;
   border-radius: $border-radius;
 
   p:last-of-type {
@@ -57,29 +57,29 @@ export default {
 }
 
 .tip {
-  color: var(--color-success-darker);
-  background-color: var(--color-success-lighter);
+  color: color(success-darker);
+  background-color: color(success-lighter);
 
   code {
-    color: var(--color-success-dark);
+    color: color(success-dark);
   }
 }
 
 .note {
-  color: var(--color-brand-darker);
-  background-color: var(--color-brand-lighter);
+  color: color(brand-darker);
+  background-color: color(brand-lighter);
 
   code {
-    color: var(--color-brand-dark);
+    color: color(brand-dark);
   }
 }
 
 .warn {
-  color: var(--color-danger-darker);
-  background-color: var(--color-danger-lighter);
+  color: color(danger-darker);
+  background-color: color(danger-lighter);
 
   code {
-    color: var(--color-danger-dark);
+    color: color(danger-dark);
   }
 }
 </style>

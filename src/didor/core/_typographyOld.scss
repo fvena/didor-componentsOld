@@ -36,7 +36,7 @@ body {
 body {
   font-family: var(--font-primary);
   font-size: var(--text-base-size);
-  color: var(--color-contrast-high);
+  color: color(contrast-high);
 }
 
 h1,
@@ -44,7 +44,7 @@ h2,
 h3,
 h4 {
   line-height: var(--heading-line-height);
-  color: var(--color-contrast-higher);
+  color: color(contrast-higher);
 }
 
 // text size
@@ -84,13 +84,13 @@ small {
 // inline text
 a,
 .link {
-  color: var(--color-primary);
+  color: color(primary);
   text-decoration: underline;
 }
 
 mark {
   color: inherit;
-  background-color: var(--color-accent-lighter);
+  background-color: color(accent-lighter);
 }
 
 strong {
@@ -106,7 +106,7 @@ u {
 }
 
 .text--subtle {
-  color: var(--color-contrast-medium);
+  color: color(contrast-medium);
 }
 
 .text-component {
@@ -136,7 +136,7 @@ u {
   ul li,
   ol li {
     line-height: var(--component-body-line-height);
-    color: var(--color-contrast-high);
+    color: color(contrast-high);
   }
 
   ul,
@@ -165,13 +165,13 @@ u {
 
   blockquote {
     padding-left: 1em;
-    border-left: 4px solid var(--color-contrast-low);
+    border-left: 4px solid color(contrast-low);
   }
 
   hr {
     height: 1px;
     margin: calc(var(--space-lg) * var(--text-vspace-multiplier)) auto;
-    background: var(--color-contrast-low);
+    background: color(contrast-low);
   }
 
   > *:first-child {
@@ -195,7 +195,7 @@ u {
 
   figcaption {
     font-size: var(--text-sm);
-    color: var(--color-contrast-medium);
+    color: color(contrast-medium);
     text-align: center;
   }
 }

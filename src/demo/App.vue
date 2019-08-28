@@ -15,12 +15,11 @@ export default {
 
 <style lang="scss">
 .demo__subtitle {
-  @include fontsize(theta);
-
-  margin-bottom: quarter($space);
-  font-family: $content-font-family;
-  font-weight: $content-font-bold;
-  color: var(--color-gray4);
+  margin-bottom: size(1/4);
+  font-family: font-family(base);
+  font-size: font-size(theta);
+  font-weight: font-weight(bold);
+  color: color(gray4);
   text-transform: uppercase;
 }
 </style>

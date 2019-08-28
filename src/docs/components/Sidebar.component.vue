@@ -2,7 +2,8 @@
   .sidebar
     //- Logo
     router-link(:to="{name: 'home'}")
-      Logo
+      //- Logo
+      img.custom-logo(src="/aidoo.svg")
 
     //- Menu
     nav.sidebar__nav
@@ -20,6 +21,13 @@ export default {
 </script>
 
 <style lang="scss">
+.custom-logo {
+  display: block;
+  height: 100px;
+  margin: 0 auto size(2);
+  cursor: pointer;
+}
+
 .sidebar__nav {
   li {
     margin: 0;
@@ -28,68 +36,71 @@ export default {
 
   li > p,
   li > p > a {
-    @include fontsize(eta);
-
     display: block;
     margin-bottom: 0;
-    font-weight: $content-font-bold;
-    color: var(--color-gray2);
+    font-size: font-size(eta);
+    font-weight: font-weight(bold);
+    color: color(gray2);
     text-transform: uppercase;
 
     &.router-link-active {
-      color: var(--color-brand);
+      color: color(brand);
 
       @include hover {
-        color: var(--color-brand-darker);
+        color: color(brand-darker);
       }
     }
   }
 
   li > p > a {
     @include hover {
-      color: var(--color-brand);
+      color: color(brand);
     }
   }
 
   li > a {
-    @include fontsize(eta);
-
     display: block;
-    color: var(--color-gray3);
+    font-size: font-size(eta);
+    color: color(gray3);
 
     @include hover {
-      color: var(--color-brand);
+      color: color(brand);
     }
 
     &.router-link-active {
-      color: var(--color-brand);
+      color: color(brand);
 
       @include hover {
-        color: var(--color-brand-darker);
+        color: color(brand-darker);
       }
     }
   }
 
   li > p > a,
   li > ul {
-    margin-bottom: halve($space);
+    margin-bottom: size(1/2);
   }
 
   li > ul {
-    padding-top: quarter($space);
-    border-top: 1px solid var(--color-border);
+    padding-top: size(1/4);
+    border-top: 1px solid color(border);
   }
 
   li > ul > li > p {
-    @include fontsize(theta);
-
-    color: var(--color-gray4);
+    font-size: font-size(theta);
+    color: color(gray4);
     opacity: 0.7;
   }
 
   li > ul > li > ul {
     padding-top: 0;
     border-top: none;
+  }
+}
+
+@include media(portrait) {
+  .custom-logo {
+    height: 80px;
   }
 }
 </style>

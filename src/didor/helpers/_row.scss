@@ -94,12 +94,12 @@
   }
 
   /* Small */
-  &--vgutter-small { margin-top: halve(-$space); }
-  &--vgutter-small > * { margin-top: halve($space); }
+  &--vgutter-small { margin-top: halve(-1/2); }
+  &--vgutter-small > * { margin-top: size(1/2); }
 
   /* Large */
-  &--vgutter-large { margin-top: double(-$space); }
-  &--vgutter-large > * { margin-top: double($space); }
+  &--vgutter-large { margin-top: size(-2); }
+  &--vgutter-large > * { margin-top: size(2); }
 
   @if ($responsive) {
     @each $breakpoint in $breakpoints-list {
@@ -111,12 +111,12 @@
         }
 
         /* Small */
-        &--#{$breakpoint}--vgutter-small { margin-top: halve(-$space); }
-        &--#{$breakpoint}--vgutter-small > * { margin-top: halve($space); }
+        &--#{$breakpoint}--vgutter-small { margin-top: halve(-1/2); }
+        &--#{$breakpoint}--vgutter-small > * { margin-top: size(1/2); }
 
         /* Large */
-        &--#{$breakpoint}--vgutter-large { margin-top: double(-$space); }
-        &--#{$breakpoint}--vgutter-large > * { margin-top: double($space); }
+        &--#{$breakpoint}--vgutter-large { margin-top: size(-2); }
+        &--#{$breakpoint}--vgutter-large > * { margin-top: size(2); }
       }
     }
   }
@@ -142,12 +142,12 @@
   }
 
   /* Small */
-  &--hgutter-small { margin-left: halve(-$space); }
-  &--hgutter-small > * { margin-left: halve($space); }
+  &--hgutter-small { margin-left: halve(-1/2); }
+  &--hgutter-small > * { margin-left: size(1/2); }
 
   /* Large */
-  &--hgutter-large { margin-left: double(-$space); }
-  &--hgutter-large > * { margin-left: double($space); }
+  &--hgutter-large { margin-left: size(-2); }
+  &--hgutter-large > * { margin-left: size(2); }
 
   @if ($responsive) {
     @each $breakpoint in $breakpoints-list {
@@ -159,12 +159,12 @@
         }
 
         /* Small */
-        &--#{$breakpoint}--hgutter-small { margin-left: halve(-$space); }
-        &--#{$breakpoint}--hgutter-small > * { margin-left: halve($space); }
+        &--#{$breakpoint}--hgutter-small { margin-left: halve(-1/2); }
+        &--#{$breakpoint}--hgutter-small > * { margin-left: size(1/2); }
 
         /* Large */
-        &--#{$breakpoint}--hgutter-large { margin-left: double(-$space); }
-        &--#{$breakpoint}--hgutter-large > * { margin-left: double($space); }
+        &--#{$breakpoint}--hgutter-large { margin-left: size(-2); }
+        &--#{$breakpoint}--hgutter-large > * { margin-left: size(2); }
       }
     }
   }

@@ -22,12 +22,12 @@ dl {
     margin-left: 0;
 
     @include media(palm) {
-      margin-left: halve($space);
+      margin-left: size(1/2);
     }
   }
 
   dt {
-    font-weight: $content-font-weight;
+    font-weight: font-weight(normal);
   }
 
   dd + dt {

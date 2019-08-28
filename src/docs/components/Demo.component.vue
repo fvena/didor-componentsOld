@@ -7,7 +7,7 @@ export default {
       on: {
         load: this.renderChildren,
         resize: () => {
-          console.log('PEPEPEPEPPEPEP');
+          // Resize action
         },
       },
       class: {
@@ -36,16 +36,19 @@ export default {
         // freezing to prevent unnessessary Reactifiation of vNodes
         data: { children: Object.freeze(children) },
         render(h) {
-          return h('div', { style: { overflow: 'hidden' } }, this.children);
+          return h(
+            'div',
+            { class: { 'demo-container': true }, style: { overflow: 'hidden' } },
+            this.children // eslint-disable-line
+          );
         },
         methods: {
           log() {
             const doc = this.$el.ownerDocument;
             const win = doc.defaultView;
             const contentHeight = this.$el.offsetHeight;
-            const paddingIframe = win.frameElement.style.padding;
-            console.log(paddingIframe);
-            win.frameElement.style.height = `${contentHeight}px`;
+            const paddingIframe = 55;
+            win.frameElement.style.height = `${contentHeight + paddingIframe}px`;
           },
         },
         mounted() {
@@ -69,7 +72,7 @@ export default {
       this.iApp = iApp; // cache instance for later updates
     },
     resize() {
-      console.log('=======================================>');
+      // Resize action
     },
   },
 };
@@ -78,9 +81,13 @@ export default {
 <style lang="scss" scoped>
 .demo {
   width: 100%;
-  padding: 0 $space 0;
-  margin-top: -$space;
-  border: 1px solid var(--color-border);
+  padding: 25px;
+  margin: $space 0;
+  border: 1px solid color(border);
   border-radius: $border-radius;
+
+  > * {
+    margin: 0;
+  }
 }
 </style>

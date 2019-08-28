@@ -14,21 +14,21 @@
 
   td,
   th {
-    padding: quarter($space);
+    padding: size(1/4);
     text-align: center;
     border-bottom: 0 !important;
   }
 
   th {
     padding-top: $space;
-    font-weight: $content-font-bold;
-    color: var(--color-gray1) !important;
+    font-weight: font-weight(bold);
+    color: color(gray1) !important;
     background-color: transparent !important;
 
     .az-icon-icon {
       display: block;
-      margin: 0 auto quarter($space);
-      fill: var(--color-gray4);
+      margin: 0 auto size(1/4);
+      fill: color(gray4);
     }
   }
 }
@@ -41,13 +41,13 @@
     width: 150px;
   }
   .responsive__block {
-    padding: 0 halve($space);
+    padding: 0 size(1/2);
   }
 
   th:first-of-type,
   td:first-of-type {
     width: 150px;
-    padding: quarter($space) halve($space);
+    padding: size(1/4) size(1/2);
     text-align: left;
   }
 }
@@ -65,23 +65,22 @@
   float: left;
   width: 20%;
   height: 100%;
-  background-color: var(--color-gray7);
-  border-right: 2px solid var(--color-gray8);
-  border-left: 2px solid var(--color-gray8);
+  background-color: color(gray7);
+  border-right: 2px solid color(white);
+  border-left: 2px solid color(white);
 }
 
 .responsive__block {
-  @include fontsize(theta);
-
-  padding: 0 halve($space);
-  color: var(--color-gray7);
+  padding: 0 size(1/2);
+  font-size: font-size(theta);
+  color: color(gray7);
   text-align: left;
-  background-color: var(--color-brand);
+  background-color: color(brand);
   border-radius: 4px;
 }
 
 .responsive__block--disabled {
-  background-color: var(--color-gray4);
+  background-color: color(gray4);
 }
 
 .responsive__empty {
@@ -103,13 +102,13 @@
 
 @include media(lap) {
   .responsive__block {
-    padding: 0 halve($space);
+    padding: 0 size(1/2);
   }
 }
 
 @include media(palm) {
   .responsive__block {
-    padding: 0 quarter($space);
+    padding: 0 size(1/4);
     text-align: center;
   }
 

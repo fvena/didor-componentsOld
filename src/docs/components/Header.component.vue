@@ -56,8 +56,8 @@ export default {
 </script>
 
 <style lang="scss">
-$header-height: triple($space);
-$header-height-media: double($space);
+$header-height: size(3);
+$header-height-media: size(2);
 $sidebar-width: 240px;
 $sidebar-width-large: 300px;
 
@@ -80,7 +80,7 @@ $sidebar-width-large: 300px;
   top: 0;
   left: $sidebar-width;
   z-index: 10;
-  width: double($space);
+  width: size(2);
   height: $header-height;
   line-height: $header-height;
   text-align: center;
@@ -91,7 +91,7 @@ $sidebar-width-large: 300px;
   transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) left;
 
   @include hover {
-    color: var(--color-brand);
+    color: color(brand);
   }
 
   &::before {
@@ -119,7 +119,7 @@ $sidebar-width-large: 300px;
   width: 18px;
   height: 2px;
   margin-bottom: 4px;
-  background-color: var(--color-brand);
+  background-color: color(brand);
 }
 
 .header__nav {
@@ -133,17 +133,17 @@ $sidebar-width-large: 300px;
     list-style: none;
 
     a {
-      color: var(--color-gray3);
+      color: color(gray3);
 
       @include hover {
-        color: var(--color-brand);
+        color: color(brand);
       }
 
       &.router-link-active {
-        color: var(--color-brand);
+        color: color(brand);
 
         @include hover {
-          color: var(--color-brand-darker);
+          color: color(brand-darker);
         }
       }
     }
@@ -157,15 +157,15 @@ $sidebar-width-large: 300px;
     > li > p,
     > li > a {
       height: $header-height;
-      padding: 0 halve($space);
+      padding: 0 size(1/2);
       line-height: $header-height;
-      color: var(--color-gray3);
+      color: color(gray3);
       cursor: pointer;
     }
 
     > li:last-of-type p,
     > li:last-of-type a {
-      padding-right: halve($space);
+      padding-right: size(1/2);
     }
 
     > li {
@@ -178,37 +178,36 @@ $sidebar-width-large: 300px;
 
     > li ul {
       position: absolute;
-      top: double($space) + quarter($space);
+      top: size(2) + size(1/4);
       right: 0;
-      z-index: $layer-dropdown-z-index;
+      z-index: $z-index-dropdown;
       display: none;
       min-width: 100%;
-      max-height: calc(100vh - #{double($space)});
-      padding: halve($space) 0;
+      max-height: calc(100vh - #{size(2)});
+      padding: size(1/2) 0;
       overflow-y: auto;
       text-align: left;
-      background-color: var(--color-gray8);
-      border: 1px solid var(--color-border);
-      border-bottom-color: var(--color-border);
+      background-color: color(white);
+      border: 1px solid color(border);
+      border-bottom-color: color(border);
       border-radius: $border-radius;
     }
 
     > li ul li {
-      @include fontsize(eta);
-
       min-width: 100%;
+      font-size: font-size(eta);
       white-space: nowrap;
 
       a {
         width: max-content;
-        padding: 0 halve($space);
+        padding: 0 size(1/2);
         cursor: pointer;
       }
     }
   }
 }
 
-@include media(large) {
+@include media(screen) {
   .sidebar-toggle {
     left: $sidebar-width-large;
   }

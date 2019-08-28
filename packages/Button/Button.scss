@@ -4,17 +4,16 @@
   /**
    * Base styles
    */
-  @include fontsize(eta);
-
   position: relative;
   display: inline-flex;
   width: auto;
   height: 1.5 * $space;
   padding: 0 1rem;
   margin: 0;
-  font-weight: $content-font-bold;
+  font-size: font-size(eta);
+  font-weight: font-weight(bold);
   line-height: 1;
-  color: var(--color-gray2);
+  color: color(gray2);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -54,7 +53,7 @@
     align-content: center;
 
     .az-icon-icon + span {
-      margin-left: quarter($space);
+      margin-left: size(1/4);
     }
   }
 
@@ -63,7 +62,7 @@
     align-content: center;
 
     .az-icon-icon + span {
-      margin-right: quarter($space);
+      margin-right: size(1/4);
     }
   }
 
@@ -74,7 +73,7 @@
     padding: 0.5rem 1rem;
 
     .az-icon-icon + span {
-      margin-top: quarter($space);
+      margin-top: size(1/4);
     }
   }
 
@@ -85,7 +84,7 @@
     padding: 0.5rem 1rem;
 
     .az-icon-icon + span {
-      margin-bottom: quarter($space);
+      margin-bottom: size(1/4);
     }
   }
 
@@ -122,10 +121,9 @@
    * Sizes styles
    */
   &--large {
-    @include fontsize(zeta);
-
-    height: double($space);
+    height: size(2);
     padding: 0 2rem;
+    font-size: font-size(zeta);
     line-height: 1;
 
     .az-loading {
@@ -134,9 +132,8 @@
   }
 
   &--small {
-    @include fontsize(theta);
-
     height: $space;
+    font-size: font-size(theta);
     line-height: 1;
 
     .az-loading {
@@ -156,7 +153,7 @@
     }
 
     .az-loading + span {
-      margin-left: halve($space);
+      margin-left: size(1/2);
     }
   }
 

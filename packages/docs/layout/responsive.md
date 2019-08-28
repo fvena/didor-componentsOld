@@ -1,13 +1,13 @@
 # Responsive
 
-## Movile o Desktop first
+<!-- ## Movile o Desktop first
 
 Trabajar con _mobile first_, significa que el sitio web está originalmente optimizado para los dispositivos móviles y que la versión de escritorio es solo una adaptación de la versión móvil y lo mismo se aplica, aunque a la inversa, cuando pensamos en desktop first.
 
 Didor permite trabajar con los dos enfoques, basta con modificar el valor de la variable `$mobile-first` para alternar entre uno y otro.
 
 
-> Por defecto didor está configurado con el enfoque **Desktop First**.
+> Por defecto didor está configurado con el enfoque **Desktop First**. -->
 
 
 ## Tamaños de pantalla
@@ -31,28 +31,12 @@ Nombre         | Tipo                           | Descripción                  
 
 <p class="small">Los valores por defecto, se han elegido agrupando los valores más comunes entre dispositivos, [ref](https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862).</p>
 
-<!-- !> El **valor se debe indicar en `em`**, ya que es la única unidad consitente entre todos los navegadores al utilizarla con los media queries ([ref][9c90596b]).
-
-``` bash
-# Para convertir de `px` a `em`, divida los píxeles entre 16
-# (tamaño de fuente por defecto de los navegadores)
-
-600px  / 16 = 37.50em
-900px  / 16 = 56.25em
-1200px / 16 = 75.00em
-1800px / 16 = 112.50em
-``` -->
-
 [9c90596b]: https://zellwk.com/blog/media-query-units/ "PX, EM or REM Media Queries?"
 [e02d6c98]: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862 "The 100% correct way to do CSS breakpoints"
 
 ## Media Queries
 
-Didor utiliza un mixin para generar los media query de forma sencilla. Este mixin recibe un alias con el rango de tamaños de pantalla que abarca. Por
-defecto se han definido los siguientes alias, en base a los tipos de pantalla definidos, aunque puede añadir más alias o
-modificarlos en los ajustes.
-
-#### Enfoque Desktop first
+Didor utiliza un mixin para generar los media query de forma sencilla. Este mixin recibe un alias con el rango de tamaños de pantalla que abarca. Por defecto se han definido los siguientes alias, en base a los tipos de pantalla definidos, aunque puede añadir más alias o modificarlos en los ajustes.
 
 <div class="responsive">
   <table class="responsive__table">
@@ -68,58 +52,6 @@ modificarlos en los ajustes.
       <td><div class="responsive__block">lap</div></td>
       <td><div class="responsive__block">small</div></td>
       <td><div class="responsive__block">desk</div></td>
-      <td><div class="responsive__block">large</div></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td colspan="2"><div class="responsive__block">tablet</div></td>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2"><div class="responsive__block">portrait</div></td>
-      <td colspan="3"><div class="responsive__block">landscape</div></td>
-    </tr>
-    <tr>
-      <td colspan="3"><div class="responsive__block">touch</div></td>
-      <td colspan="2"><div class="responsive__block">screen</div></td>
-    </tr>
-  </table>
-
-  <div class="responsive--background">
-    <div class="responsive__background__block"></div>
-    <div class="responsive__background__block"></div>
-    <div class="responsive__background__block"></div>
-    <div class="responsive__background__block"></div>
-    <div class="responsive__background__block"></div>
-  </div>
-</div>
-
-
-#### Enfoque Mobile first
-
-<div class="responsive">
-  <table class="responsive__table">
-    <tr>
-      <th><az-icon name="palm" scale="1.1"></az-icon> Palm</th>
-      <th><az-icon name="lap" scale="1.1"></az-icon> Lap</th>
-      <th><az-icon name="small" scale="1.1"></az-icon> Small</th>
-      <th><az-icon name="desktop" scale="1.1"></az-icon> Desk</th>
-      <th><az-icon name="large" scale="1.1"></az-icon> Large</th>
-    </tr>
-    <tr>
-      <td><div class="responsive__block">palm</div></td>
-      <td colspan="4"><div class="responsive__block">lap</div></td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-      <td colspan="3"><div class="responsive__block">small</div></td>
-    </tr>
-    <tr>
-      <td colspan="3">&nbsp;</td>
-      <td colspan="2"><div class="responsive__block">desk</div></td>
-    </tr>
-    <tr>
-      <td colspan="4">&nbsp;</td>
       <td><div class="responsive__block">large</div></td>
     </tr>
     <tr>
