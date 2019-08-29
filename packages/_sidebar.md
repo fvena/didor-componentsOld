@@ -25,12 +25,19 @@
     - Diseño
 
         - [Bordes](/docs/styles/border.md)
+        - [Citas](/docs/styles/blockquote.md)
         - [Clearfix](/docs/styles/clearfix.md)
+        - [Código](/docs/styles/code.md)
         - [Colores](/docs/styles/colors.md)
         - [Float](/docs/styles/float.md)
+        - [Imágenes](/docs/styles/images.md)
+        - [Listados](/docs/styles/list.md)
+        - [Multimedia](/docs/styles/media.md)
         - [Overflow](/docs/styles/overflow.md)
         - [Posicionamiento](/docs/styles/position.md)
+        - [Tablas](/docs/styles/tables.md)
         - [Tamaños](/docs/styles/sizing.md)
+        - [Tipografía](/docs/styles/typography.md)
         - [Espacios](/docs/styles/spacing.md)
         - [Sombras](/docs/styles/shadows.md)
 

@@ -21,3 +21,15 @@
     border-left: 0;
   }
 }
+
+@include media(portrait) {
+  .blockquote--bordered {
+    padding-left: halve();
+  }
+
+  .blockquote--right {
+    &.blockquote--bordered {
+      padding-right: halve();
+    }
+  }
+}

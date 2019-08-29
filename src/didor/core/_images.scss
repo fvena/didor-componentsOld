@@ -13,6 +13,13 @@ img {
   font-style: italic; /* [2] */
   vertical-align: middle; /* [3] */
   -ms-interpolation-mode: bicubic;
+
+  // In Internet Explorer 10, SVG images with .-responsive are
+  // disproportionately sized. This fix improperly sizes other image formats,
+  // so Didor will only apply it to svg extensions
+  &[src$='.svg'] {
+    width: 100% \9;
+  }
 }
 
 /**

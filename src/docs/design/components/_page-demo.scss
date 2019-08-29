@@ -102,6 +102,30 @@
   }
 }
 
+.page--wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .page-block {
+    justify-content: start;
+    width: 200px;
+    color: color(gray-2);
+    background-color: color(gray6);
+  }
+}
+
+.page--shadows {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: double();
+
+  .page-block {
+    margin: simple();
+    color: color(gray1);
+    background-color: color(white);
+  }
+}
+
 .page-block {
   display: flex;
   align-items: center;

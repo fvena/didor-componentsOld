@@ -16,3 +16,7 @@
 .shadow-5 {
   @include shadow(5);
 }
+
+.no-shadow {
+  box-shadow: none;
+}

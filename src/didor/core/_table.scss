@@ -4,30 +4,31 @@
 
 table {
   width: 100%;
+  min-width: 100%;
   margin-bottom: simple();
   border-spacing: 0;
   border-collapse: collapse;
 }
 
-thead {
-  text-align: left;
-}
-
 td,
 th {
   padding: quarter();
+  vertical-align: top;
+  border-bottom: 1px solid transparent;
 }
 
-th {
-  font-family: font-family(heading);
-  font-style: normal;
+thead th {
   font-weight: font-weight(bold);
+  vertical-align: bottom;
+  border-top-color: color(border);
 }
 
-caption,
+tbody + tbody {
+  border-bottom: 1px solid transparent;
+}
+
 th,
-td {
-  font-weight: normal;
-  text-align: left;
-  vertical-align: middle;
+td,
+tbody + tbody {
+  border-bottom-color: color(border);
 }

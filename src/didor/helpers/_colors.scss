@@ -69,12 +69,12 @@ $dark-theme: (
   /* Semantic color */
   --color-content: var(--color-gray2);
   --color-heading: var(--color-gray1);
-  --color-caption: var(--color-gray3);
+  --color-caption: var(--color-gray4);
   --color-background: var(--color-white);
   --color-link: var(--color-brand);
-  --color-link-hover: var(--color-brand-darker);
+  --color-link-hover: var(--color-brand-dark);
   --color-border: var(--color-gray6);
-  --color-mark: var(--color-white);
+  --color-mark: var(--color-content);
   --color-mark-background: var(--color-brand-a20);
 }
 

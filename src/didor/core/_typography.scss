@@ -68,51 +68,71 @@ i {
 small,
 .small {
   font-family: font-family(heading);
-  font-size: font-size(theta);
+  font-size: font-size(eta);
   font-style: normal;
   font-weight: font-weight(normal);
-  line-height: line-height(theta);
+  line-height: line-height(eta);
 }
 
 // Texto resaltado
 mark,
 .mark {
-  padding: halve();
+  padding: quarter();
   color: color(mark);
   background-color: color(mark-background);
 }
 
 // Caption
 .caption {
+  font-family: font-family(base);
+  font-size: font-size(epsilon);
+  font-style: italic;
   color: color(caption);
 }
 
 h1 + .caption,
 .font-size-alpha + .caption {
-  margin-top: simple('-');
-  font-size: font-size(gamma);
-  line-height: font-size(gamma);
+  margin-top: halve();
+  margin-bottom: simple();
+  font-size: font-size(delta);
+  font-style: normal;
+  line-height: line-height(epsilon);
 }
 
 h2 + .caption,
 .font-size-beta + .caption {
-  margin-top: simple('-');
-  font-size: font-size(delta);
-  line-height: font-size(delta);
+  margin-top: halve();
+  margin-bottom: simple();
+  font-size: font-size(epsilon);
+  font-style: normal;
+  line-height: line-height(zeta);
 }
 
 h3 + .caption,
 .font-size-gamma + .caption {
-  margin-top: simple('-');
-  font-size: font-size(epsilon);
-  line-height: font-size(epsilon);
+  margin-bottom: halve();
+  font-size: font-size(zeta);
+  font-style: normal;
+  line-height: line-height(zeta);
+}
+
+// Abbreviations
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 0;
 }
 
 // Quotes.
 blockquote,
 .blockquote {
-  font-size: font-size(zeta);
-  line-height: line-height(zeta);
+  font-size: font-size(epsilon);
+  line-height: line-height(epsilon);
+
+  p {
+    font-size: font-size(epsilon);
+    line-height: line-height(epsilon);
+  }
 
   p:last-of-type {
     margin-bottom: 0;
@@ -122,6 +142,7 @@ blockquote,
   > .footer {
     display: block;
     font-size: font-size(eta);
+    font-style: italic;
     color: color(gray3);
 
     &::before {

@@ -1,0 +1,44 @@
+// Striped Table
+//
+.table--striped {
+  > tr:nth-of-type(odd),
+  tbody > tr:nth-of-type(odd) {
+    th,
+    td {
+      background-color: color(gray7);
+    }
+  }
+}
+
+// hover Table
+//
+.table--hover {
+  tbody tr {
+    th,
+    td {
+      transition: background-color $transition-duration ease;
+    }
+  }
+
+  tbody tr {
+    @include hover {
+      th,
+      td {
+        cursor: pointer;
+        background-color: color(gray6);
+      }
+    }
+  }
+}
+
+.table-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  table {
+    width: auto;
+  }
+}
