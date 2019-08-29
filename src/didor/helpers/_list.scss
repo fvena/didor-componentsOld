@@ -12,10 +12,10 @@
     margin-bottom: 0;
 
     &:not(:last-child) {
-      margin-right: $space;
+      margin-right: simple();
 
       @include media(palm) {
-        margin-right: size(1/2);
+        margin-right: halve();
       }
     }
   }

@@ -145,7 +145,7 @@ $logo-text-width: $logo-width * 1.62;
 $logo-margin: $logo-width * 0.13;
 
 .didor-logo {
-  margin-bottom: size(2);
+  margin-bottom: double();
   cursor: pointer;
 
   @include hover {

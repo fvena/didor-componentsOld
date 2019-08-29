@@ -109,7 +109,7 @@ $device-screen: rgb(255, 255, 255);
 
 @include media(screen) {
   .device {
-    right: size(2);
+    right: double();
     width: 360px;
     min-width: 360px;
     height: 720px;

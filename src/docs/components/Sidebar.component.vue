@@ -24,7 +24,7 @@ export default {
 .custom-logo {
   display: block;
   height: 100px;
-  margin: 0 auto size(2);
+  margin: 0 auto double();
   cursor: pointer;
 }
 
@@ -78,11 +78,11 @@ export default {
 
   li > p > a,
   li > ul {
-    margin-bottom: size(1/2);
+    margin-bottom: halve();
   }
 
   li > ul {
-    padding-top: size(1/4);
+    padding-top: quarter();
     border-top: 1px solid color(border);
   }
 

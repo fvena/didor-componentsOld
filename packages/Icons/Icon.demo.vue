@@ -52,7 +52,7 @@ export default {};
 
 <style lang="scss">
 .az-icon-icon {
-  margin: size(1/4);
+  margin: quarter();
 }
 
 .icon-brand {

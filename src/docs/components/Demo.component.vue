@@ -82,7 +82,7 @@ export default {
 .demo {
   width: 100%;
   padding: 25px;
-  margin: $space 0;
+  margin: simple() 0;
   border: 1px solid color(border);
   border-radius: $border-radius;
 

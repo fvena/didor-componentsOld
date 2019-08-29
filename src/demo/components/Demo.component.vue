@@ -22,12 +22,12 @@ export default {
 
 <style lang="scss" scoped>
 .demo {
-  margin-bottom: $space;
+  margin-bottom: simple();
 }
 
 .demo__title {
-  padding: size(1/2) size(1/2) 0;
-  margin-bottom: size(1/2);
+  padding: halve() halve() 0;
+  margin-bottom: halve();
   font-family: font-family(base);
   font-size: font-size(eta);
   font-weight: font-weight(bold);
@@ -40,6 +40,6 @@ export default {
 }
 
 .demo__content--padding {
-  padding: 0 size(1/2);
+  padding: 0 halve();
 }
 </style>

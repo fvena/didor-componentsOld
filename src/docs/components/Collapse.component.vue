@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 .collapse {
-  margin-bottom: $space;
+  margin-bottom: simple();
 }
 
 .collapse--open {
@@ -57,10 +57,10 @@ export default {
 .collapse__header {
   position: relative;
   width: 100%;
-  height: $space;
-  padding-right: $space;
+  height: simple();
+  padding-right: simple();
   overflow: hidden;
-  line-height: $space;
+  line-height: simple();
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
@@ -70,7 +70,7 @@ export default {
 .collapse__icon {
   position: absolute;
   top: 11px;
-  right: size(1/4);
+  right: quarter();
   fill: none;
   stroke: color(brand);
   stroke-width: 2;
@@ -84,7 +84,7 @@ export default {
 }
 
 .collapse__content {
-  padding-top: size(1/2);
+  padding-top: halve();
 
   p:last-child {
     margin-bottom: 0;

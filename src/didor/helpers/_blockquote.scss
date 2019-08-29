@@ -1,5 +1,5 @@
 .blockquote--bordered {
-  padding-left: $space;
+  padding-left: simple();
   border-left: 0.15rem solid color(brand);
 }
 
@@ -15,7 +15,7 @@
   text-align: right;
 
   &.blockquote--bordered {
-    padding-right: $space;
+    padding-right: simple();
     padding-left: 0;
     border-right: 0.15rem solid color(brand);
     border-left: 0;

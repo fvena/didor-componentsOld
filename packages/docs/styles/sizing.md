@@ -12,14 +12,14 @@ Los valores proporcionales por defecto, respecto del tamaño base definido por l
 
 ::: demo
 <div class="page-size">
-  <div><div class="page-block width-quarter"></div>quarter (1/4x)</div>
-  <div><div class="page-block width-halve"></div>halve (1/2x) </div>
-  <div><div class="page-block width"></div>(x)</div>
-  <div><div class="page-block width-double"></div>double (2x)</div>
-  <div><div class="page-block width-triple"></div>triple (3x)</div>
-  <div><div class="page-block width-quadruple"></div>quadruple (4x)</div>
-  <div><div class="page-block width-quintuple"></div>quintuple (5x)</div>
-  <div><div class="page-block width-sextuple"></div>sextuple (6x)</div>
+  <div><div class="page-block width-quarter"></div>quarter() => 1/4x</div>
+  <div><div class="page-block width-halve"></div>halve() => 1/2x </div>
+  <div><div class="page-block width"></div>simple() => x</div>
+  <div><div class="page-block width-double"></div>double() => 2x</div>
+  <div><div class="page-block width-triple"></div>triple() => 3x</div>
+  <div><div class="page-block width-quadruple"></div>quadruple() => 4x</div>
+  <div><div class="page-block width-quintuple"></div>quintuple() => 5x</div>
+  <div><div class="page-block width-sextuple"></div>sextuple() => 6x</div>
 <div>
 :::
 
@@ -109,7 +109,7 @@ La altura será relativa a su elemento padre.
 <div class="max-vh-100">...</div>
 ```
 
-## Función
+## Funciones
 
 Podemos definir un tamaño o espaciado en nuestros archivos `sass` mediante la función `size(...)`. Esta función nos devolverá el valor indicado multiplicado por nuestro tamaño base.
 
@@ -117,7 +117,7 @@ Admite cualquier valor númerico, incluidos números negativos.
 
 ``` scss
 .elemento1 {
-  width: size(1/4);
+  width: size(1/2);
   height: size(2);
 }
 
@@ -127,5 +127,33 @@ Admite cualquier valor númerico, incluidos números negativos.
 
 .elemento3 {
   margin-top: size(-2);
+}
+```
+
+También existen funciones con los nombres estandarizados, para mejorar la semántica del framework:
+
+``` scss
+quarter()    // 1/4 * $space
+halve()      // 1/2 * $space
+simple()     // $space
+double()     // 2 * $space
+triple()     // 3 * $space
+quadruple()  // 4 * $space
+quintuple()  // 5 * $space
+sextuple()   // 6 * $space
+```
+
+``` scss
+.elemento1 {
+  width: quarter();
+  height: double();
+}
+
+.elemento2 {
+  margin: simple() double();
+}
+
+.elemento3 {
+  margin-top: double('-');
 }
 ```

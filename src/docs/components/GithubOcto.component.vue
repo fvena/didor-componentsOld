@@ -27,8 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$header-height: size(3);
-$header-height-media: size(2);
+$header-height: triple();
+$header-height-media: double();
 
 .github-octo {
   position: fixed;

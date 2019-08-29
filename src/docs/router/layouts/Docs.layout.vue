@@ -111,7 +111,7 @@ $sidebar-width-large: 300px;
   z-index: $z-index-aside;
   width: $sidebar-width;
   height: 100vh;
-  padding: $space;
+  padding: simple();
   overflow-y: auto;
   background: color(gray7);
   border-right: 1px solid color(border);
@@ -133,7 +133,7 @@ $sidebar-width-large: 300px;
   }
   .docs__sidebar {
     width: $sidebar-width-large;
-    padding: $space (1.5 * $space);
+    padding: simple() size(1.5);
   }
 }
 

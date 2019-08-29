@@ -7,7 +7,7 @@
   position: relative;
   display: inline-flex;
   width: auto;
-  height: 1.5 * $space;
+  height: size(1.5);
   padding: 0 1rem;
   margin: 0;
   font-size: font-size(eta);
@@ -53,7 +53,7 @@
     align-content: center;
 
     .az-icon-icon + span {
-      margin-left: size(1/4);
+      margin-left: quarter();
     }
   }
 
@@ -62,7 +62,7 @@
     align-content: center;
 
     .az-icon-icon + span {
-      margin-right: size(1/4);
+      margin-right: quarter();
     }
   }
 
@@ -73,7 +73,7 @@
     padding: 0.5rem 1rem;
 
     .az-icon-icon + span {
-      margin-top: size(1/4);
+      margin-top: quarter();
     }
   }
 
@@ -84,7 +84,7 @@
     padding: 0.5rem 1rem;
 
     .az-icon-icon + span {
-      margin-bottom: size(1/4);
+      margin-bottom: quarter();
     }
   }
 
@@ -114,14 +114,14 @@
   &--block {
     display: block;
     width: 100%;
-    margin-bottom: $space;
+    margin-bottom: simple();
   }
 
   /**
    * Sizes styles
    */
   &--large {
-    height: size(2);
+    height: double();
     padding: 0 2rem;
     font-size: font-size(zeta);
     line-height: 1;
@@ -132,7 +132,7 @@
   }
 
   &--small {
-    height: $space;
+    height: simple();
     font-size: font-size(theta);
     line-height: 1;
 
@@ -153,7 +153,7 @@
     }
 
     .az-loading + span {
-      margin-left: size(1/2);
+      margin-left: halve();
     }
   }
 

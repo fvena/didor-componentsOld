@@ -93,11 +93,11 @@ export default {
   }
 }
 .codegroup__files {
-  height: $space;
-  padding: 0 size(1/2);
+  height: simple();
+  padding: 0 halve();
   font-family: font-family(base);
   font-size: font-size(theta);
-  line-height: $space;
+  line-height: simple();
   color: color(gray2);
   background-color: color(gray6);
   border-radius: $border-radius $border-radius 0 0;
@@ -105,7 +105,7 @@ export default {
 
 .codegroup__file {
   display: inline-block;
-  padding: 0 size(1/4);
+  padding: 0 quarter();
   color: color(gray3);
   cursor: pointer;
 

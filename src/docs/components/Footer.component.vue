@@ -50,13 +50,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: size(3);
+  margin-top: triple();
   overflow: hidden;
   border-top: 1px solid color(border);
 }
 
 .pagination-item {
-  margin-top: $space;
+  margin-top: simple();
 
   &:not(:last-child) a .pagination-item-label,
   &:not(:last-child) a .pagination-item-title {

@@ -5,7 +5,7 @@
 .responsive__table {
   position: relative;
   z-index: 2;
-  margin: $space 0;
+  margin: simple() 0;
   table-layout: fixed;
 
   tr {
@@ -14,20 +14,20 @@
 
   td,
   th {
-    padding: size(1/4);
+    padding: quarter();
     text-align: center;
     border-bottom: 0 !important;
   }
 
   th {
-    padding-top: $space;
+    padding-top: simple();
     font-weight: font-weight(bold);
     color: color(gray1) !important;
     background-color: transparent !important;
 
     .az-icon-icon {
       display: block;
-      margin: 0 auto size(1/4);
+      margin: 0 auto quarter();
       fill: color(gray4);
     }
   }
@@ -41,13 +41,13 @@
     width: 150px;
   }
   .responsive__block {
-    padding: 0 size(1/2);
+    padding: 0 halve();
   }
 
   th:first-of-type,
   td:first-of-type {
     width: 150px;
-    padding: size(1/4) size(1/2);
+    padding: quarter() halve();
     text-align: left;
   }
 }
@@ -71,7 +71,7 @@
 }
 
 .responsive__block {
-  padding: 0 size(1/2);
+  padding: 0 halve();
   font-size: font-size(theta);
   color: color(gray7);
   text-align: left;
@@ -102,13 +102,13 @@
 
 @include media(lap) {
   .responsive__block {
-    padding: 0 size(1/2);
+    padding: 0 halve();
   }
 }
 
 @include media(palm) {
   .responsive__block {
-    padding: 0 size(1/4);
+    padding: 0 quarter();
     text-align: center;
   }
 

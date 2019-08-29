@@ -11,7 +11,7 @@ pre {
 pre {
   position: relative;
   display: block;
-  padding: size(1/2) $space;
+  padding: halve() simple();
   overflow: auto;
   hyphens: none;
   text-align: left;
@@ -29,14 +29,14 @@ pre {
 
   &::after {
     position: absolute;
-    top: size(1/4);
+    top: quarter();
     right: 0;
     display: block;
-    height: $space;
-    padding: 0 size(1/2);
+    height: simple();
+    padding: 0 halve();
     font-size: 0.6rem;
     font-weight: font-weight(bold);
-    line-height: $space;
+    line-height: simple();
     color: color(gray4);
     text-align: right;
     text-transform: uppercase;
@@ -49,7 +49,7 @@ pre {
 :not(pre) > code {
   padding: 0.1rem 0.3rem;
   font-size: 0.8em;
-  line-height: $space;
+  line-height: simple();
   color: color(brand-dark);
   white-space: nowrap;
   border-radius: $border-radius;

@@ -33,6 +33,6 @@ export default {};
 
 <style lang="scss" scoped>
 .az-loading {
-  margin: size(1/2);
+  margin: halve();
 }
 </style>

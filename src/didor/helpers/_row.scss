@@ -95,11 +95,11 @@
 
   /* Small */
   &--vgutter-small { margin-top: halve(-1/2); }
-  &--vgutter-small > * { margin-top: size(1/2); }
+  &--vgutter-small > * { margin-top: halve(); }
 
   /* Large */
-  &--vgutter-large { margin-top: size(-2); }
-  &--vgutter-large > * { margin-top: size(2); }
+  &--vgutter-large { margin-top: double('-'); }
+  &--vgutter-large > * { margin-top: double(); }
 
   @if ($responsive) {
     @each $breakpoint in $breakpoints-list {
@@ -112,11 +112,11 @@
 
         /* Small */
         &--#{$breakpoint}--vgutter-small { margin-top: halve(-1/2); }
-        &--#{$breakpoint}--vgutter-small > * { margin-top: size(1/2); }
+        &--#{$breakpoint}--vgutter-small > * { margin-top: halve(); }
 
         /* Large */
-        &--#{$breakpoint}--vgutter-large { margin-top: size(-2); }
-        &--#{$breakpoint}--vgutter-large > * { margin-top: size(2); }
+        &--#{$breakpoint}--vgutter-large { margin-top: double('-'); }
+        &--#{$breakpoint}--vgutter-large > * { margin-top: double(); }
       }
     }
   }
@@ -143,11 +143,11 @@
 
   /* Small */
   &--hgutter-small { margin-left: halve(-1/2); }
-  &--hgutter-small > * { margin-left: size(1/2); }
+  &--hgutter-small > * { margin-left: halve(); }
 
   /* Large */
-  &--hgutter-large { margin-left: size(-2); }
-  &--hgutter-large > * { margin-left: size(2); }
+  &--hgutter-large { margin-left: double('-'); }
+  &--hgutter-large > * { margin-left: double(); }
 
   @if ($responsive) {
     @each $breakpoint in $breakpoints-list {
@@ -160,11 +160,11 @@
 
         /* Small */
         &--#{$breakpoint}--hgutter-small { margin-left: halve(-1/2); }
-        &--#{$breakpoint}--hgutter-small > * { margin-left: size(1/2); }
+        &--#{$breakpoint}--hgutter-small > * { margin-left: halve(); }
 
         /* Large */
-        &--#{$breakpoint}--hgutter-large { margin-left: size(-2); }
-        &--#{$breakpoint}--hgutter-large > * { margin-left: size(2); }
+        &--#{$breakpoint}--hgutter-large { margin-left: double('-'); }
+        &--#{$breakpoint}--hgutter-large > * { margin-left: double(); }
       }
     }
   }

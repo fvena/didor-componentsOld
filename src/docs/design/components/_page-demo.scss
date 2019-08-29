@@ -46,14 +46,14 @@
 .page--text .page-block {
   justify-content: start;
   width: 100%;
-  height: $space;
+  height: simple();
   text-align: left;
   background-color: transparent;
 }
 
 .page--float .page-block {
   width: auto;
-  height: size(2);
+  height: double();
 }
 
 .page--overflow {
@@ -70,10 +70,10 @@
 .page-size .page-block {
   display: inline-block;
   width: auto;
-  height: size(2);
+  height: double();
   padding: 0;
-  margin-bottom: size(1/2);
-  line-height: size(2);
+  margin-bottom: halve();
+  line-height: double();
   white-space: nowrap;
   vertical-align: middle;
   vertical-align: -webkit-baseline-middle;
@@ -82,11 +82,11 @@
 .page-size-width .page-block {
   display: block;
   width: auto;
-  height: size(2);
-  padding: 0 size(1/2);
+  height: double();
+  padding: 0 halve();
   margin-right: 0;
-  margin-bottom: size(1/2);
-  line-height: size(2);
+  margin-bottom: halve();
+  line-height: double();
   text-align: left;
   white-space: nowrap;
 }
@@ -109,8 +109,8 @@
   width: 130px;
   height: 130px;
   padding: 0.4rem 0.6rem;
-  margin-right: size(1/2);
-  margin-bottom: size(1/2);
+  margin-right: halve();
+  margin-bottom: halve();
   color: color(white);
   text-align: center;
   background-color: color(brand);

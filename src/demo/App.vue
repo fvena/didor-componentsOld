@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 .demo__subtitle {
-  margin-bottom: size(1/4);
+  margin-bottom: quarter();
   font-family: font-family(base);
   font-size: font-size(theta);
   font-weight: font-weight(bold);

@@ -12,7 +12,7 @@ li {
 
 ul > li,
 ol > li {
-  margin-left: $space;
+  margin-left: simple();
 }
 
 // Definition lists.
@@ -22,7 +22,7 @@ dl {
     margin-left: 0;
 
     @include media(palm) {
-      margin-left: size(1/2);
+      margin-left: halve();
     }
   }
 

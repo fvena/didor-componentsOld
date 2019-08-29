@@ -13,13 +13,13 @@ $container-width: (
   margin-left: auto;
 
   @include media(portrait) {
-    padding-right: size(1/2);
-    padding-left: size(1/2);
+    padding-right: halve();
+    padding-left: halve();
   }
 
   @include media(screen) {
-    padding-right: $space;
-    padding-left: $space;
+    padding-right: simple();
+    padding-left: simple();
   }
 }
 

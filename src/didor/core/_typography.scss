@@ -77,7 +77,7 @@ small,
 // Texto resaltado
 mark,
 .mark {
-  padding: size(1/2);
+  padding: halve();
   color: color(mark);
   background-color: color(mark-background);
 }
@@ -89,21 +89,21 @@ mark,
 
 h1 + .caption,
 .font-size-alpha + .caption {
-  margin-top: -$space;
+  margin-top: simple('-');
   font-size: font-size(gamma);
   line-height: font-size(gamma);
 }
 
 h2 + .caption,
 .font-size-beta + .caption {
-  margin-top: -$space;
+  margin-top: simple('-');
   font-size: font-size(delta);
   line-height: font-size(delta);
 }
 
 h3 + .caption,
 .font-size-gamma + .caption {
-  margin-top: -$space;
+  margin-top: simple('-');
   font-size: font-size(epsilon);
   line-height: font-size(epsilon);
 }
@@ -132,8 +132,8 @@ blockquote,
 
 // Horizontal rule.
 hr {
-  padding-top: size(2);
-  padding-bottom: size(2);
+  padding-top: double();
+  padding-bottom: double();
   margin: 0;
   background-image: linear-gradient(to bottom, $type-transparent-color 50%, color(gray3) 50%);
   background-repeat: repeat-x;
@@ -153,5 +153,5 @@ dl,
 table,
 blockquote,
 pre {
-  margin-bottom: $space;
+  margin-bottom: simple();
 }

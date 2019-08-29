@@ -36,8 +36,8 @@ export default {
 <style lang="scss" scoped>
 .alarm {
   position: relative;
-  padding: $space $space $space size(4);
-  margin: size(2) 0;
+  padding: simple() simple() simple() quadruple();
+  margin: double() 0;
   border-radius: $border-radius;
 
   p:last-of-type {

@@ -44,12 +44,12 @@ export default {
 </script>
 
 <style lang="scss">
-$header-height: size(3);
-$header-height-media: size(2);
+$header-height: triple();
+$header-height-media: double();
 $wrapper-width: 670px;
 
 .article {
-  padding: size(2) $space;
+  padding: double() simple();
   color: color(gray2);
 
   .device {
@@ -73,8 +73,8 @@ $wrapper-width: 670px;
   }
 
   h2 {
-    padding-top: size(2);
-    margin-top: size(3);
+    padding-top: double();
+    margin-top: triple();
     font-size: font-size(gamma);
     border-top: 1px solid color(border);
   }
@@ -96,8 +96,8 @@ $wrapper-width: 670px;
   }
 
   blockquote {
-    padding-left: $space;
-    margin: size(2) 0;
+    padding-left: simple();
+    margin: double() 0;
     color: color(gray4);
     background-color: color(white);
     border-left: 4px solid color(brand);
@@ -108,14 +108,14 @@ $wrapper-width: 670px;
   }
 
   .customDemo {
-    padding: 0 $space;
+    padding: 0 simple();
     border: 1px solid color(border);
     border-radius: $border-radius;
 
     .codegroup__files,
     .code-toolbar {
-      margin-right: -$space;
-      margin-left: -$space;
+      margin-right: simple('-');
+      margin-left: simple('-');
     }
 
     pre[data-lang] {
@@ -171,14 +171,14 @@ $wrapper-width: 670px;
 
     li {
       position: relative;
-      padding-left: $space;
-      margin-bottom: size(1/4);
+      padding-left: simple();
+      margin-bottom: quarter();
       margin-left: 0;
 
       &::before {
         position: absolute;
-        left: size(-1/4);
-        width: $space;
+        left: quarter('-');
+        width: simple();
         color: color(gray4);
         text-align: right;
         content: counters(b, '.') ' ';
@@ -192,8 +192,8 @@ $wrapper-width: 670px;
 
     li {
       position: relative;
-      padding-left: $space;
-      margin-bottom: size(1/4);
+      padding-left: simple();
+      margin-bottom: quarter();
       margin-left: 0;
 
       &::before {
@@ -228,11 +228,11 @@ $wrapper-width: 670px;
   */
   .task-list-item input {
     position: absolute;
-    top: size(-1/4);
-    left: size(-1/4);
+    top: quarter('-');
+    left: quarter('-');
     z-index: 10;
-    width: $space * 1.5;
-    height: $space * 1.5;
+    width: size(1.5);
+    height: size(1.5);
     margin: 0;
     cursor: pointer;
     opacity: 0;
@@ -243,7 +243,7 @@ $wrapper-width: 670px;
   */
   .task-list-item label {
     position: relative;
-    padding-left: $space;
+    padding-left: simple();
     margin-bottom: 0;
     outline: none;
   }
@@ -308,11 +308,11 @@ $wrapper-width: 670px;
   }
 
   pre[data-lang] {
-    padding-right: size(1/2);
+    padding-right: halve();
     border-radius: $border-radius;
 
     &.hasFile {
-      padding-top: 1.5 * $space;
+      padding-top: size(1.5);
 
       &::after,
       + .toolbar {
@@ -342,11 +342,11 @@ $wrapper-width: 670px;
       left: 0;
       display: none;
       width: 100%;
-      height: $space;
-      padding: 0 size(1/2);
+      height: simple();
+      padding: 0 halve();
       font-family: font-family(base);
       font-size: font-size(theta);
-      line-height: $space;
+      line-height: simple();
       color: color(gray2);
       background-color: color(gray6);
       border-radius: $border-radius $border-radius 0 0;
@@ -384,7 +384,7 @@ $wrapper-width: 670px;
   .code-toolbar {
     .toolbar {
       position: absolute;
-      top: size(1/4);
+      top: quarter();
       right: 0;
       opacity: 1;
 
@@ -395,12 +395,12 @@ $wrapper-width: 670px;
 
     .toolbar a {
       display: block;
-      height: $space;
-      padding: 0 size(1/2);
+      height: simple();
+      padding: 0 halve();
       font-family: font-family(monospace);
       font-size: 0.6rem;
       font-weight: font-weight(bold);
-      line-height: $space;
+      line-height: simple();
       color: color(gray4);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -558,12 +558,12 @@ $wrapper-width: 670px;
 }
 
 .article.article--show-device {
-  padding-right: calc(320px + #{size(2)});
+  padding-right: calc(320px + #{double()});
 
   .device {
     position: fixed;
     top: $header-height;
-    right: $space;
+    right: simple();
     z-index: $z-index-header;
     display: block;
   }
@@ -576,13 +576,13 @@ $wrapper-width: 670px;
 }
 
 .markdownToc {
-  margin-top: size(3);
-  margin-bottom: size(3);
+  margin-top: triple();
+  margin-bottom: triple();
   list-style: none;
 
   &::before {
     display: block;
-    margin-bottom: size(1/2);
+    margin-bottom: halve();
     font-size: font-size(epsilon);
     font-weight: font-weight(bold);
     color: color(gray2);
@@ -598,13 +598,13 @@ $wrapper-width: 670px;
 
 @include media(screen) {
   .article.article--show-device {
-    padding-right: calc(360px + #{size(2)});
+    padding-right: calc(360px + #{double()});
   }
 }
 
 @include media(portrait) {
   .article.article--show-device {
-    padding-right: $space;
+    padding-right: simple();
   }
 
   .article {
@@ -620,11 +620,11 @@ $wrapper-width: 670px;
 
 @include media(palm) {
   .article {
-    padding: size(1/2);
+    padding: halve();
 
     h2 {
-      padding-top: $space;
-      margin-top: size(2);
+      padding-top: simple();
+      margin-top: double();
       font-size: font-size(delta);
       line-height: line-height(delta);
     }
@@ -650,7 +650,7 @@ $wrapper-width: 670px;
     }
   }
   .article.article--show-device {
-    padding-right: size(1/2);
+    padding-right: halve();
   }
 }
 </style>

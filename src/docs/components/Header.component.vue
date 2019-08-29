@@ -56,8 +56,8 @@ export default {
 </script>
 
 <style lang="scss">
-$header-height: size(3);
-$header-height-media: size(2);
+$header-height: triple();
+$header-height-media: double();
 $sidebar-width: 240px;
 $sidebar-width-large: 300px;
 
@@ -80,7 +80,7 @@ $sidebar-width-large: 300px;
   top: 0;
   left: $sidebar-width;
   z-index: 10;
-  width: size(2);
+  width: double();
   height: $header-height;
   line-height: $header-height;
   text-align: center;
@@ -157,7 +157,7 @@ $sidebar-width-large: 300px;
     > li > p,
     > li > a {
       height: $header-height;
-      padding: 0 size(1/2);
+      padding: 0 halve();
       line-height: $header-height;
       color: color(gray3);
       cursor: pointer;
@@ -165,7 +165,7 @@ $sidebar-width-large: 300px;
 
     > li:last-of-type p,
     > li:last-of-type a {
-      padding-right: size(1/2);
+      padding-right: halve();
     }
 
     > li {
@@ -178,13 +178,13 @@ $sidebar-width-large: 300px;
 
     > li ul {
       position: absolute;
-      top: size(2) + size(1/4);
+      top: double() + quarter();
       right: 0;
       z-index: $z-index-dropdown;
       display: none;
       min-width: 100%;
-      max-height: calc(100vh - #{size(2)});
-      padding: size(1/2) 0;
+      max-height: calc(100vh - #{double()});
+      padding: halve() 0;
       overflow-y: auto;
       text-align: left;
       background-color: color(white);
@@ -200,7 +200,7 @@ $sidebar-width-large: 300px;
 
       a {
         width: max-content;
-        padding: 0 size(1/2);
+        padding: 0 halve();
         cursor: pointer;
       }
     }
