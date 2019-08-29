@@ -14,7 +14,7 @@ module.exports = {
     'prefer-destructuring': 0,
     'max-len': [
       'error',
-      { code: 100, ignoreStrings: true, ignoreTrailingComments: true, ignoreComments: true },
+      { code: 150, ignoreStrings: true, ignoreTrailingComments: true, ignoreComments: true },
     ],
   },
   parserOptions: {

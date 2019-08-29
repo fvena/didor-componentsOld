@@ -48,8 +48,8 @@ textarea {
 
   &[disabled],
   &[readonly] {
+    color: color(gray4);
     cursor: not-allowed;
-    background-color: color(gray5);
   }
 }
 
@@ -59,12 +59,4 @@ input[type='checkbox'] {
   bottom: 1px;
   margin-right: halve();
   vertical-align: middle;
-}
-
-input[disabled] {
-  background-color: color(gray5);
-
-  @include hover {
-    cursor: not-allowed;
-  }
 }

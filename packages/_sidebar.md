@@ -48,3 +48,7 @@
         - [Buttons](/Button/Button.md)
         - [Icons](/Icons/Icon.md)
         - [Loading](/Loading/Loading.md)
+
+    - Formulario
+
+        - [Input](/Input/Input.md)

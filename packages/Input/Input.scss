@@ -1,0 +1,117 @@
+.az-input {
+  position: relative;
+  font-size: font-size(zeta);
+  line-height: simple();
+  color: color(content);
+
+  &__label {
+    flex: none;
+    line-height: simple();
+  }
+
+  &__value {
+    position: relative;
+    flex: 1;
+    // overflow: hidden;
+    vertical-align: middle;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  &__control {
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: color(content);
+    text-align: left;
+    resize: none;
+    background-color: transparent;
+  }
+
+  &__left-icon,
+  &__right-icon,
+  &__password,
+  &__clear {
+    width: simple();
+    height: simple();
+    padding: 0.2rem;
+    margin: 0;
+    color: color(gray4);
+    cursor: pointer;
+  }
+
+  &__left-icon {
+    margin-left: quarter('-');
+    color: color(content);
+  }
+
+  &__right-icon {
+    margin-right: quarter('-');
+    color: color(brand);
+  }
+
+  &__password {
+    margin-right: quarter('-');
+  }
+
+  &__clear {
+    margin-right: quarter();
+  }
+
+  &__error-message {
+    font-size: font-size(eta);
+    color: color(danger);
+  }
+
+  &--required {
+    label::before {
+      position: absolute;
+      left: quarter();
+      font-size: font-size(eta);
+      color: color(danger);
+      content: '*';
+    }
+  }
+
+  &--error {
+    [class$='input__control'] {
+      color: color(danger);
+
+      &::placeholder {
+        color: color(danger);
+      }
+    }
+  }
+}
+
+@include media(palm) {
+  .az-input {
+    display: flex;
+    width: 100%;
+    padding: halve() halve();
+    overflow: hidden;
+    background-color: color(white);
+
+    .az-input__control {
+      height: auto;
+      padding: 0;
+      line-height: simple();
+      border: 0;
+    }
+
+    &:not(:last-child)::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: quarter();
+      pointer-events: none;
+      content: ' ';
+      border-bottom: 1px solid color(border);
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+}
