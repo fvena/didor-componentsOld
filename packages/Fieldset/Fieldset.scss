@@ -1,0 +1,16 @@
+.az-fieldset {
+  margin-bottom: simple();
+}
+
+@include media(palm) {
+  .az-fieldset {
+    &__content {
+      border-top: 1px solid color(border);
+      border-bottom: 1px solid color(border);
+    }
+
+    &__title {
+      padding: quarter() halve();
+    }
+  }
+}

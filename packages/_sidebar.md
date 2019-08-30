@@ -1,54 +1,74 @@
 - Introducción
 
-    - [Guía de Inicio](/docs/intro/started.md)
-    - [Instalación](/docs/intro/installation.md)
-    - [Personalización](/docs/intro/customization.md)
+  - [Guía de Inicio](/docs/intro/started.md)
+  - [Instalación](/docs/intro/installation.md)
+  - [Personalización](/docs/intro/customization.md)
 
 - Utilidades
 
-    - [Variables](/docs/intro/started.md)
-    - [Funciones](/docs/intro/started.md)
-    - [Mixins](/docs/intro/started.md)
-    - [Cheatsheet](/docs/intro/started.md)
+  - [Variables](/docs/intro/started.md)
+  - [Funciones](/docs/intro/started.md)
+  - [Mixins](/docs/intro/started.md)
+  - [Cheatsheet](/docs/intro/started.md)
 
 - Estilos
 
-    - Layout
+  - Layout
 
-        - [Container](/Container/Container.md)
-        - [Row](/Row/Row.md)
-        - [Col](/Col/Col.md)
-        - [Composiciones](/docs/layout/layout.md)
-        - [Responsive](/docs/layout/responsive.md)
-        - [Visibilidad](/docs/layout/visibility.md)
+    - [Container](/Container/Container.md)
+    - [Row](/Row/Row.md)
+    - [Col](/Col/Col.md)
+    - [Composiciones](/docs/layout/layout.md)
+    - [Responsive](/docs/layout/responsive.md)
+    - [Visibilidad](/docs/layout/visibility.md)
 
-    - Diseño
+  - Diseño
 
-        - [Bordes](/docs/styles/border.md)
-        - [Citas](/docs/styles/blockquote.md)
-        - [Clearfix](/docs/styles/clearfix.md)
-        - [Código](/docs/styles/code.md)
-        - [Colores](/docs/styles/colors.md)
-        - [Float](/docs/styles/float.md)
-        - [Imágenes](/docs/styles/images.md)
-        - [Listados](/docs/styles/list.md)
-        - [Multimedia](/docs/styles/media.md)
-        - [Overflow](/docs/styles/overflow.md)
-        - [Posicionamiento](/docs/styles/position.md)
-        - [Tablas](/docs/styles/tables.md)
-        - [Tamaños](/docs/styles/sizing.md)
-        - [Tipografía](/docs/styles/typography.md)
-        - [Espacios](/docs/styles/spacing.md)
-        - [Sombras](/docs/styles/shadows.md)
+    - [Bordes](/docs/styles/border.md)
+    - [Citas](/docs/styles/blockquote.md)
+    - [Clearfix](/docs/styles/clearfix.md)
+    - [Código](/docs/styles/code.md)
+    - [Colores](/docs/styles/colors.md)
+    - [Float](/docs/styles/float.md)
+    - [Imágenes](/docs/styles/images.md)
+    - [Listados](/docs/styles/list.md)
+    - [Multimedia](/docs/styles/media.md)
+    - [Overflow](/docs/styles/overflow.md)
+    - [Posicionamiento](/docs/styles/position.md)
+    - [Tablas](/docs/styles/tables.md)
+    - [Tamaños](/docs/styles/sizing.md)
+    - [Tipografía](/docs/styles/typography.md)
+    - [Espacios](/docs/styles/spacing.md)
+    - [Sombras](/docs/styles/shadows.md)
 
 - Components
 
-    - Básicos
+  - Básicos
 
-        - [Buttons](/Button/Button.md)
-        - [Icons](/Icons/Icon.md)
-        - [Loading](/Loading/Loading.md)
+    - [Buttons](/Button/Button.md)
+    - [Icons](/Icons/Icon.md)
+    - [Loading](/Loading/Loading.md)
+    - [*Image](/Input/Input.md)
 
-    - Formulario
+  - Formulario
 
-        - [Input](/Input/Input.md)
+    - [Fieldset](/Fieldset/Fieldset.md)
+    - [Input](/Input/Input.md)
+    - [Checkbox](/Checkbox/Checkbox.md)
+    - [*Radio](/Input/Input.md)
+    - [*Slider](/Input/Input.md)
+    - [*Switch](/Input/Input.md)
+    - [*DatetimePicker](/Input/Input.md)
+    - [*Picker](/Input/Input.md)
+
+  - Mostrar contenido
+
+    - [*Collapse](/Input/Input.md)
+    - [*Swipe](/Input/Input.md)
+    - [*Dialog](/Input/Input.md)
+    - [*Toast](/Input/Input.md)
+
+  - Navegación
+
+    - [*NavBar](/Input/Input.md)
+    - [*TabBar](/Input/Input.md)

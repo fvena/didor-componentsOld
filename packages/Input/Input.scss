@@ -35,35 +35,57 @@
   &__right-icon,
   &__password,
   &__clear {
-    width: simple();
-    height: simple();
-    padding: 0.2rem;
-    margin: 0;
-    color: color(gray4);
     cursor: pointer;
+
+    svg {
+      width: simple();
+      height: simple();
+      padding: 0 0.1rem 0.1rem;
+      margin: 0;
+      color: color(gray4);
+    }
   }
 
   &__left-icon {
     margin-left: quarter('-');
-    color: color(content);
+
+    svg {
+      color: color(content);
+    }
   }
 
   &__right-icon {
     margin-right: quarter('-');
-    color: color(brand);
+
+    svg {
+      color: color(brand);
+    }
   }
 
   &__password {
     margin-right: quarter('-');
+    svg {
+      color: color(gray5);
+    }
   }
 
   &__clear {
     margin-right: quarter();
+
+    svg {
+      padding: 0.3rem;
+      color: color(gray5);
+    }
   }
 
   &__error-message {
     font-size: font-size(eta);
     color: color(danger);
+  }
+
+  &__info-message {
+    font-size: font-size(eta);
+    color: color(gray4);
   }
 
   &--required {

@@ -1,0 +1,20 @@
+.az-checkbox {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  // &__input {
+  // }
+
+  &__label {
+    margin-left: halve();
+    line-height: simple();
+    color: color(content);
+  }
+
+  &--disabled {
+    [class$='label'] {
+      color: color(gray4);
+    }
+  }
+}

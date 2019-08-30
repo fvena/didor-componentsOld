@@ -1,22 +1,25 @@
 <template lang="pug">
   .az-input(:class="classObject")
-    //- Left Icon
-    az-icon.az-input__left-icon(
-      :name="leftIcon"
-      v-if="leftIcon"
+    //- Left Icon Block
+    .az-input__left-icon(
+      v-if="leftIcon || $slots.leftIcon"
       @click="onClickLeftIcon")
+      slot(name="leftIcon")
+        az-icon(:name="leftIcon")
 
-    //- Label block
+    //- Label Block
     label.az-input__label(
       :style="{width: labelWidth, 'text-align': labelAlign}"
-      v-if="label")
-      | {{ label }}
+      v-if="label || $slots.label")
+      slot(name="label")
+        | {{ label }}
 
     //- Input block
     .az-input__value
       .az-input__body
         //- Input type text
         input.az-input__control(
+          v-bind="$attrs"
           v-if="type!=='textarea'"
           :type="fieldType"
           :value="value"
@@ -31,49 +34,63 @@
 
         //- Input type textarea
         textarea.az-input__control(
+          v-bind="$attrs"
           v-if="type==='textarea'"
-          ref="input"
+          ref="textarea"
           :type="fieldType"
           :value="value"
           :placeholder="placeholder"
           :rows="rows"
           :disabled="disabled"
           :readonly="readonly"
+          :style="{'text-align': inputAlign}"
           @input="onInput"
           @keypress="onKeypress"
           @focus="onFocus"
           @blur="onBlur")
 
         //- Clear button
-        az-icon.az-input__clear(
-          name="palm"
+        .az-input__clear(
           v-if="showClear"
           @click="onClear")
+          az-icon(name="clear")
 
         //- Show Password button
-        az-icon.az-input__password(
-          :name="iconPassword"
+        .az-input__password(
           v-if="showPassword"
           @click="onTogglePassword")
+          az-icon(:name="iconPassword")
 
-        //- Right Icon
-        az-icon.az-input__right-icon(
-          :name="rightIcon"
-          v-if="rightIcon"
+        //- Right Icon Block
+        .az-input__right-icon(
+          v-if="rightIcon || $slots.rightIcon"
           @click="onClickRightIcon")
+          slot(name="rightIcon")
+            az-icon(:name="rightIcon")
 
       //- Error Message
-      .az-input__error-message(v-if="errorMessage")
-        | {{ errorMessage }}
+      .az-input__error-message(
+        v-if="errorMessage || $slots.errorMessage"
+        :style="{'text-align': errorAlign}")
+        slot(name="errorMessage")
+          | {{ errorMessage }}
+
+      //- Info Message
+      .az-input__info-message(
+        v-if="infoMessage || $slots.infoMessage"
+        :style="{'text-align': infoAlign}")
+        slot(name="infoMessage")
+          | {{ infoMessage }}
 </template>
 
 <script>
 export default {
+  inheritAttrs: false,
   data() {
     return {
       focused: false,
       fieldType: this.type,
-      iconPassword: 'palm',
+      iconPassword: 'password',
     };
   },
 
@@ -92,6 +109,16 @@ export default {
       validator: value => ['left', 'center', 'right'].indexOf(value) !== -1,
     },
     inputAlign: {
+      type: String,
+      default: 'left',
+      validator: value => ['left', 'center', 'right'].indexOf(value) !== -1,
+    },
+    errorAlign: {
+      type: String,
+      default: 'left',
+      validator: value => ['left', 'center', 'right'].indexOf(value) !== -1,
+    },
+    infoAlign: {
       type: String,
       default: 'left',
       validator: value => ['left', 'center', 'right'].indexOf(value) !== -1,
@@ -144,6 +171,10 @@ export default {
       default: false,
     },
     errorMessage: {
+      type: String,
+      default: '',
+    },
+    infoMessage: {
       type: String,
       default: '',
     },
@@ -253,7 +284,7 @@ export default {
      */
     onTogglePassword() {
       this.fieldType = this.fieldType === 'text' ? 'password' : 'text';
-      this.iconPassword = this.iconPassword === 'palm' ? 'desktop' : 'palm';
+      this.iconPassword = this.iconPassword === 'password' ? 'password-hide' : 'password';
     },
 
     /**
@@ -278,20 +309,20 @@ export default {
      * Método que actualiza la altura del textarea cuando tiene la propidad autosize
      */
     adjustSize() {
-      const { input } = this.$refs;
+      const { textarea } = this.$refs;
 
-      if (!(this.type === 'textarea' && this.autosize) || !input) {
+      if (!(this.type === 'textarea' && this.autosize) || !textarea) {
         return;
       }
 
-      input.style.height = 'auto';
+      textarea.style.height = 'auto';
 
-      const height = input.scrollHeight;
+      const height = textarea.scrollHeight;
 
       console.log('height', height);
 
       if (height) {
-        input.style.height = `${height}px`;
+        textarea.style.height = `${height}px`;
       }
     },
   },
