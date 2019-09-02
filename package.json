@@ -1,6 +1,6 @@
 {
   "name": "@didor/components",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "Tool to develop, document and share your own library of UI components with Vue",
   "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)",
   "homepage": "https://github.com/fvena/didor-components#readme",
