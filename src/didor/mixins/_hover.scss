@@ -7,7 +7,7 @@
  */
 @mixin hover {
   @media not all and (pointer: coarse) {
-    &:hover {
+    &:hover:not(:disabled) {
       @content;
     }
   }

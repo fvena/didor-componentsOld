@@ -1,48 +1,56 @@
-@mixin buttonType($type) {
-  &--#{$type} {
-    color: color(white);
-    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background-image: radial-gradient(circle at 0% 0%, color(#{$type}-light), color(#{$type}));
-    background-size: 1px 200%;
+@mixin button($color, $background1, $background2, $backgroundHover1, $backgroundHover2) {
+  color: $color;
+  background-image: radial-gradient(circle at 0% 0%, $background1, $background2);
 
-    @include hover {
-      background-position: 100px;
-    }
-
-    .az-loading {
-      --color-az-loading: color(white) !important;
-    }
+  @include hover {
+    background-image: radial-gradient(circle at 0% 0%, $backgroundHover1, $backgroundHover2);
   }
 
-  &--#{$type}#{&}--plain {
-    text-shadow: none;
-    background-color: color(#{$type});
-    background-image: none;
-
-    @include hover {
-      background-color: color(#{$type}-dark);
-    }
-
-    .az-loading {
-      --color-az-loading: color(white) !important;
-    }
+  .az-loading {
+    --color-az-loading: #{$color} !important;
   }
 
-  &--#{$type}#{&}--ghost {
-    color: color(#{$type});
-    text-shadow: none;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid;
-    border-color: color(#{$type}-lighter);
+  &:active {
+    background-image: radial-gradient(circle at 0% 0%, $backgroundHover1, $backgroundHover2);
+  }
+}
 
-    @include hover {
-      color: color(#{$type}-darker);
-      border-color: color(#{$type}-light);
-    }
+@mixin button-plain($color, $background, $backgroundHover) {
+  color: $color !important;
+  background-color: $background;
+  background-image: none !important;
 
-    .az-loading {
-      --color-az-loading: color(#{$type}) !important;
-    }
+  @include hover {
+    background-color: $backgroundHover !important;
+  }
+
+  .az-loading {
+    --color-az-loading: #{$color} !important;
+  }
+
+  &:active {
+    background-color: $backgroundHover !important;
+  }
+}
+
+@mixin button-ghost($color, $border, $colorHover, $borderHover) {
+  color: $color !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: $button-ghost-border-size solid;
+  border-color: $border;
+
+  @include hover {
+    color: $colorHover !important;
+    border-color: $borderHover !important;
+  }
+
+  .az-loading {
+    --color-az-loading: #{$color} !important;
+  }
+
+  &:active:not(:disabled) {
+    color: $colorHover !important;
+    border-color: $borderHover !important;
   }
 }

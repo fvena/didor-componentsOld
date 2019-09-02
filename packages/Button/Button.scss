@@ -1,5 +1,74 @@
 @import './Button.mixin';
 
+// Colores Botones
+$button-default-gradient-color: color(white) !default;
+$button-default-gradient-background1: color(gray3) !default;
+$button-default-gradient-background2: color(gray2) !default;
+$button-default-gradient-background1-hover: color(gray2) !default;
+$button-default-gradient-background2-hover: color(gray1) !default;
+$button-default-plain-color: color(white) !default;
+$button-default-plain-background: color(gray3) !default;
+$button-default-plain-background-hover: color(gray2) !default;
+$button-default-ghost-color: color(gray3) !default;
+$button-default-ghost-border: color(gray4) !default;
+$button-default-ghost-color-hover: color(gray2) !default;
+$button-default-ghost-border-hover: color(gray3) !default;
+
+$button-brand-gradient-color: color(white) !default;
+$button-brand-gradient-background1: color(brand-light) !default;
+$button-brand-gradient-background2: color(brand) !default;
+$button-brand-gradient-background1-hover: color(brand) !default;
+$button-brand-gradient-background2-hover: color(brand-dark) !default;
+$button-brand-plain-color: color(white) !default;
+$button-brand-plain-background: color(brand) !default;
+$button-brand-plain-background-hover: color(brand-dark) !default;
+$button-brand-ghost-color: color(brand) !default;
+$button-brand-ghost-border: color(brand-light) !default;
+$button-brand-ghost-color-hover: color(brand-darker) !default;
+$button-brand-ghost-border-hover: color(brand) !default;
+
+$button-success-gradient-color: color(white) !default;
+$button-success-gradient-background1: color(success-light) !default;
+$button-success-gradient-background2: color(success) !default;
+$button-success-gradient-background1-hover: color(success) !default;
+$button-success-gradient-background2-hover: color(success-dark) !default;
+$button-success-plain-color: color(white) !default;
+$button-success-plain-background: color(success) !default;
+$button-success-plain-background-hover: color(success-darker) !default;
+$button-success-ghost-color: color(success) !default;
+$button-success-ghost-border: color(success-light) !default;
+$button-success-ghost-color-hover: color(success-darker) !default;
+$button-success-ghost-border-hover: color(success) !default;
+
+$button-warning-gradient-color: color(white) !default;
+$button-warning-gradient-background1: color(warning-light) !default;
+$button-warning-gradient-background2: color(warning) !default;
+$button-warning-gradient-background1-hover: color(warning) !default;
+$button-warning-gradient-background2-hover: color(warning-dark) !default;
+$button-warning-plain-color: color(white) !default;
+$button-warning-plain-background: color(warning) !default;
+$button-warning-plain-background-hover: color(warning-darker) !default;
+$button-warning-ghost-color: color(warning) !default;
+$button-warning-ghost-border: color(warning-light) !default;
+$button-warning-ghost-color-hover: color(warning-darker) !default;
+$button-warning-ghost-border-hover: color(warning) !default;
+
+$button-danger-gradient-color: color(white) !default;
+$button-danger-gradient-background1: color(danger-light) !default;
+$button-danger-gradient-background2: color(danger) !default;
+$button-danger-gradient-background1-hover: color(danger) !default;
+$button-danger-gradient-background2-hover: color(danger-dark) !default;
+$button-danger-plain-color: color(white) !default;
+$button-danger-plain-background: color(danger) !default;
+$button-danger-plain-background-hover: color(danger-darker) !default;
+$button-danger-ghost-color: color(danger) !default;
+$button-danger-ghost-border: color(danger-light) !default;
+$button-danger-ghost-color-hover: color(danger-darker) !default;
+$button-danger-ghost-border-hover: color(danger) !default;
+
+// General
+$button-ghost-border-size: 1px;
+
 .az-button {
   /**
    * Base styles
@@ -7,13 +76,12 @@
   position: relative;
   display: inline-flex;
   width: auto;
-  height: size(1.5);
-  padding: 0 1rem;
+  height: double();
+  padding: 0 simple();
   margin: 0;
   font-size: font-size(eta);
   font-weight: font-weight(bold);
   line-height: 1;
-  color: color(gray2);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -24,18 +92,43 @@
   outline: none;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
+
+  @include button(
+    $button-default-gradient-color,
+    $button-default-gradient-background1,
+    $button-default-gradient-background2,
+    $button-default-gradient-background1-hover,
+    $button-default-gradient-background2-hover
+  );
+
+  &--plain {
+    @include button-plain(
+      $button-default-plain-color,
+      $button-default-plain-background,
+      $button-default-plain-background-hover
+    );
+  }
+
+  &--ghost {
+    @include button-ghost(
+      $button-default-ghost-color,
+      $button-default-ghost-border,
+      $button-default-ghost-color-hover,
+      $button-default-ghost-border-hover
+    );
+  }
 
   /**
    * Types
    * Types + Plain
    * Types + Ghost
    */
-  @include buttonType(default);
-  @include buttonType(brand);
-  @include buttonType(success);
-  @include buttonType(warning);
-  @include buttonType(danger);
+  // @include buttonType(default);
+  // @include buttonType(brand);
+  // @include buttonType(success);
+  // @include buttonType(warning);
+  // @include buttonType(danger);
 
   /**
    * Focus
@@ -43,6 +136,10 @@
   &:focus,
   &.focus {
     outline: 0;
+  }
+
+  .az-icon-icon {
+    margin: 0;
   }
 
   /**
@@ -121,8 +218,8 @@
    * Sizes styles
    */
   &--large {
-    height: double();
-    padding: 0 2rem;
+    height: size(2.5);
+    padding: 0 double();
     font-size: font-size(zeta);
     line-height: 1;
 
@@ -132,7 +229,7 @@
   }
 
   &--small {
-    height: simple();
+    height: size(1.5);
     font-size: font-size(theta);
     line-height: 1;
 
@@ -167,5 +264,113 @@
       margin-left: 0;
       opacity: 0;
     }
+  }
+}
+
+.az-button--brand {
+  @include button(
+    $button-brand-gradient-color,
+    $button-brand-gradient-background1,
+    $button-brand-gradient-background2,
+    $button-brand-gradient-background1-hover,
+    $button-brand-gradient-background2-hover
+  );
+
+  &.az-button--plain {
+    @include button-plain(
+      $button-brand-plain-color,
+      $button-brand-plain-background,
+      $button-brand-plain-background-hover
+    );
+  }
+
+  &.az-button--ghost {
+    @include button-ghost(
+      $button-brand-ghost-color,
+      $button-brand-ghost-border,
+      $button-brand-ghost-color-hover,
+      $button-brand-ghost-border-hover
+    );
+  }
+}
+
+.az-button--success {
+  @include button(
+    $button-success-gradient-color,
+    $button-success-gradient-background1,
+    $button-success-gradient-background2,
+    $button-success-gradient-background1-hover,
+    $button-success-gradient-background2-hover
+  );
+
+  &.az-button--plain {
+    @include button-plain(
+      $button-success-plain-color,
+      $button-success-plain-background,
+      $button-success-plain-background-hover
+    );
+  }
+
+  &.az-button--ghost {
+    @include button-ghost(
+      $button-success-ghost-color,
+      $button-success-ghost-border,
+      $button-success-ghost-color-hover,
+      $button-success-ghost-border-hover
+    );
+  }
+}
+
+.az-button--danger {
+  @include button(
+    $button-danger-gradient-color,
+    $button-danger-gradient-background1,
+    $button-danger-gradient-background2,
+    $button-danger-gradient-background1-hover,
+    $button-danger-gradient-background2-hover
+  );
+
+  &.az-button--plain {
+    @include button-plain(
+      $button-danger-plain-color,
+      $button-danger-plain-background,
+      $button-danger-plain-background-hover
+    );
+  }
+
+  &.az-button--ghost {
+    @include button-ghost(
+      $button-danger-ghost-color,
+      $button-danger-ghost-border,
+      $button-danger-ghost-color-hover,
+      $button-danger-ghost-border-hover
+    );
+  }
+}
+
+.az-button--warning {
+  @include button(
+    $button-warning-gradient-color,
+    $button-warning-gradient-background1,
+    $button-warning-gradient-background2,
+    $button-warning-gradient-background1-hover,
+    $button-warning-gradient-background2-hover
+  );
+
+  &.az-button--plain {
+    @include button-plain(
+      $button-warning-plain-color,
+      $button-warning-plain-background,
+      $button-warning-plain-background-hover
+    );
+  }
+
+  &.az-button--ghost {
+    @include button-ghost(
+      $button-warning-ghost-color,
+      $button-warning-ghost-border,
+      $button-warning-ghost-color-hover,
+      $button-warning-ghost-border-hover
+    );
   }
 }

@@ -74,7 +74,7 @@ export default {
     },
     size: {
       type: String,
-      default: 'normal',
+      default: '',
     },
     square: {
       type: Boolean,
@@ -82,7 +82,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'default',
+      default: '',
     },
   },
   computed: {
@@ -90,7 +90,7 @@ export default {
       return [
         this.type ? `az-button--${this.type}` : '',
         this.size ? `az-button--${this.size}` : '',
-        this.iconPosition ? `az-button--icon-${this.iconPosition}` : '',
+        this.iconName && this.iconPosition ? `az-button--icon-${this.iconPosition}` : '',
         {
           'az-button--disabled': this.buttonDisabled,
           'az-button--loading': this.loading,
