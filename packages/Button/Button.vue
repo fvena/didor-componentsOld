@@ -111,5 +111,3 @@ export default {
   },
 };
 </script>
-
-<style src="./Button.scss" lang="scss"></style>
