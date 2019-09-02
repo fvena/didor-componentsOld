@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1530,7 +1530,7 @@ module.exports = document && document.documentElement;
 
 /***/ }),
 
-/***/ "fae3":
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2792,11 +2792,16 @@ var Components = {
   Loading: Loading,
   Row: Row
 };
+var prefix = 'Az';
 Object.keys(Components).forEach(function (name) {
-  external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(name, Components[name]);
+  var componentName = "".concat(prefix).concat(name);
+  external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(componentName, Components[name]);
 });
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
+/* harmony default export */ var packages_0 = (Components);
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (packages_0);
 
 
 

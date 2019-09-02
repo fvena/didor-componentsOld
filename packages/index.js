@@ -21,8 +21,11 @@ const Components = {
   Row,
 };
 
+const prefix = 'Az';
+
 Object.keys(Components).forEach((name) => {
-  Vue.component(name, Components[name]);
+  const componentName = `${prefix}${name}`;
+  Vue.component(componentName, Components[name]);
 });
 
 export default Components;
