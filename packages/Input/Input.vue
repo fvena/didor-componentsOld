@@ -319,8 +319,6 @@ export default {
 
       const height = textarea.scrollHeight;
 
-      console.log('height', height);
-
       if (height) {
         textarea.style.height = `${height}px`;
       }

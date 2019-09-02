@@ -67,15 +67,15 @@ $dark-theme: (
   }
 
   /* Semantic color */
-  --color-content: var(--color-gray2);
-  --color-heading: var(--color-gray1);
-  --color-caption: var(--color-gray4);
-  --color-background: var(--color-white);
-  --color-link: var(--color-brand);
-  --color-link-hover: var(--color-brand-dark);
-  --color-border: var(--color-gray6);
-  --color-mark: var(--color-content);
-  --color-mark-background: var(--color-brand-a20);
+  --color-content: #{$color-content};
+  --color-heading: #{$color-heading};
+  --color-caption: #{$color-caption};
+  --color-background: #{$color-background};
+  --color-link: #{$color-link};
+  --color-link-hover: #{$color-link-hover};
+  --color-border: #{$color-border};
+  --color-mark: #{$color-mark};
+  --color-mark-background: #{$color-mark-background};
 }
 
 :root,
