@@ -1,17 +1,6 @@
 <template lang="pug">
-  .az-checkbox(:class="classObject")
-    //- button(
-    //-   v-if="group"
-    //-   @click="click")
-    //-     | {{checked.includes(value) ? 'X' : 'O'}}
-
-    //- button(
-    //-   v-else
-    //-   @click="$emit('input', !checked)")
-    //-     | {{checked ? 'X' : 'O'}}
-
-    button(@click="onInput") {{isChecked ? 'X' : 'O'}}
-
+  .az-checkbox(:class="classObject" @click="onInput")
+    .az-checkbox__input
     .az-checkbox__label
       slot
 </template>
@@ -28,7 +17,10 @@ export default {
      * Devuelve un listado con las clases que dependen de la configuración
      */
     classObject() {
-      return [this.disabled ? 'az-checkbox--disabled' : ''];
+      return [
+        this.disabled ? 'az-checkbox--disabled' : '',
+        this.isChecked ? 'az-checkbox--checked' : '',
+      ];
     },
 
     isGroup() {
