@@ -1,8 +1,8 @@
 @mixin buttonType($type) {
   &--#{$type} {
     color: color(white);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(color(#{$type}-light), color(#{$type}-dark));
+    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-image: radial-gradient(circle at 0% 0%, color(#{$type}-light), color(#{$type}));
     background-size: 1px 200%;
 
     @include hover {
