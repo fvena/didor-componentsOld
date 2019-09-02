@@ -156,7 +156,7 @@ hr {
   padding-top: double();
   padding-bottom: double();
   margin: 0;
-  background-image: linear-gradient(to bottom, $type-transparent-color 50%, color(gray3) 50%);
+  background-image: linear-gradient(to bottom, $type-transparent-color 50%, color(border) 50%);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: 100% 0.15rem;

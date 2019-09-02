@@ -7,9 +7,9 @@
 //
 
 $font-families: (
-  "base": $font-family-base,
-  "heading": $font-family-heading,
-  "monospace": $font-family-monospace
+  'base': $font-family-base,
+  'heading': $font-family-heading,
+  'monospace': $font-family-monospace,
 ) !default;
 
 //
@@ -17,11 +17,11 @@ $font-families: (
 //
 
 $root-sizes: (
-  "palm": $root-font-size-palm,
-  "lap": $root-font-size-lap,
-  "small": $root-font-size-small,
-  "desk": $root-font-size-desk,
-  "large": $root-font-size-large
+  'palm': $root-font-size-palm,
+  'lap': $root-font-size-lap,
+  'small': $root-font-size-small,
+  'desk': $root-font-size-desk,
+  'large': $root-font-size-large,
 ) !default;
 
 //
@@ -29,27 +29,27 @@ $root-sizes: (
 //
 
 $font-weights: (
-  "extralight": $font-weight-extralight,
-  "light": $font-weight-light,
-  "normal": $font-weight-normal,
-  "semibold": $font-weight-semibold,
-  "bold": $font-weight-bold,
-  "black": $font-weight-black
+  'extralight': $font-weight-extralight,
+  'light': $font-weight-light,
+  'normal': $font-weight-normal,
+  'semibold': $font-weight-semibold,
+  'bold': $font-weight-bold,
+  'black': $font-weight-black,
 ) !default;
 
 /**
  * TYPOGRAPHY MODULAR SCALE
  */
 $font-sizes: (
-  "alpha": 5,
-  "beta": 4,
-  "gamma": 3,
-  "delta": 2,
-  "epsilon": 1,
-  "zeta": 0,
-  "eta": -1,
-  "theta": -2,
-  "iota": -3
+  'alpha': 5,
+  'beta': 4,
+  'gamma': 3,
+  'delta': 2,
+  'epsilon': 1,
+  'zeta': 0,
+  'eta': -1,
+  'theta': -2,
+  'iota': -3,
 ) !default;
 
 /**

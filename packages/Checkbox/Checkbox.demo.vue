@@ -1,9 +1,11 @@
 <template lang="pug">
-  .inputDemo
+  div
     Demo(title="Uso Básico")
       az-checkbox(v-model="checked") Checkbox
 
-      p {{ checked }}
+      p.margin-left.margin-top-halve
+        span.color-gray3 valor:&nbsp;
+        span.color-brand {{ checked }}
 
     Demo(title="Desactivado")
       az-checkbox(v-model="disable1" disabled) Checkbox
@@ -18,7 +20,9 @@
           :value="item")
           | {{ item }}
 
-      p {{ groupResult }}
+      p.margin-left.margin-top-halve
+        span.color-gray3 valor:&nbsp;
+        span.color-brand {{ groupResult }}
 
     Demo(title="Máximo de checkbox seleccionados")
       az-checkbox-group(max-options="2")
@@ -29,7 +33,9 @@
           :value="item")
           | {{ item }}
 
-      p {{ groupMax }}
+      p.margin-left.margin-top-halve
+        span.color-gray3 valor:&nbsp;
+        span.color-brand {{ groupMax }}
 
     Demo.demo--cell.no-margin-bottom(title="Vista modo celda")
       az-checkbox-group(cell)
@@ -40,7 +46,9 @@
           :value="item")
           | {{ item }}
 
-      p {{ groupCell }}
+      p.margin-left.margin-top-halve
+        span.color-gray3 valor:&nbsp;
+        span.color-brand {{ groupCell }}
 </template>
 
 <script>
@@ -59,13 +67,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.inputDemo {
-  min-height: 100vh;
-  background-color: color(gray7);
-
-  .demo--cell .demo__content {
-    padding: 0;
-  }
-}
-</style>
+<style lang="scss"></style>
