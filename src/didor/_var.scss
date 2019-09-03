@@ -134,6 +134,31 @@ $link-decoration: none !default;
 $link-decoration-hover: underline !default;
 
 /**
+ * Estilos de texto
+ */
+$styles-sizes: (
+  'h1': 'alpha',
+  'h2': 'beta',
+  'h3': 'gamma',
+  'h4': 'delta',
+  'h5': 'epsilon',
+  'base': 'zeta',
+  'small1': 'eta',
+  'small2': 'theta',
+) !default;
+
+$styles-weights: (
+  'regular': $font-weight-normal,
+  'medium': $font-weight-bold,
+) !default;
+
+$styles-colors: (
+  'black': color(gray1),
+  'gray': color(gray4),
+  'white': color(white),
+) !default;
+
+/**
  * SPACE AND LAYOUT SETTINGS
  */
 $grid-columns: 12 !default;

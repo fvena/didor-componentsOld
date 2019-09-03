@@ -4,6 +4,7 @@ import Checkbox from './Checkbox/Checkbox.vue';
 import CheckboxGroup from './CheckboxGroup/CheckboxGroup.vue';
 import Col from './Col/Col.vue';
 import Container from './Container/Container.vue';
+import Feedback from './Feedback/Feedback.vue';
 import Fieldset from './Fieldset/Fieldset.vue';
 import Input from './Input/Input.vue';
 import Loading from './Loading/Loading.vue';
@@ -15,6 +16,7 @@ const Components = {
   CheckboxGroup,
   Col,
   Container,
+  Feedback,
   Fieldset,
   Input,
   Loading,

@@ -1,0 +1,286 @@
+$feedbackBackground: color(white);
+$feedbackSuccess: color(success);
+$feedbackSuccessLight: color(success-light);
+$feedbackError: color(danger);
+$feedbackErrorLight: color(danger-light);
+$feedbackBorderColor: color(gray6);
+$feedbackSpinnerColor: color(brand);
+$feedbackSpinnerWidth: 2px;
+$feedbackMarkColor: color(white);
+
+.az-feedback {
+  position: relative;
+  width: 107px;
+  height: 107px;
+  background-color: $feedbackBackground;
+  border: 8px solid $feedbackBorderColor;
+  border-radius: 50%;
+
+  //
+  // Background circles initial state
+  //
+  &::after,
+  &::before {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    display: none;
+    width: 102px;
+    height: 102px;
+    content: '';
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &__spinner {
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    width: 110px;
+    height: 110px;
+
+    svg {
+      display: none;
+      width: 100%;
+      height: 100%;
+      animation: feedback-spinner 1.2s infinite linear;
+    }
+
+    circle {
+      fill: none;
+      stroke: $feedbackSpinnerColor;
+      stroke-dasharray: 65, 250;
+      stroke-width: 8;
+      transition: all 800ms ease;
+    }
+  }
+
+  //
+  // Hide Marks
+  //
+  &__successMark,
+  &__errorMark {
+    display: none;
+  }
+
+  //
+  // Success Mark
+  //
+  &__successMark {
+    &::after {
+      position: absolute;
+      top: 50px;
+      left: 19px;
+      z-index: 1;
+      width: 30px;
+      height: 50px;
+      content: '';
+      border-top: 12px solid $feedbackMarkColor;
+      border-right: 12px solid $feedbackMarkColor;
+      transform: scaleX(-1) rotate(135deg);
+      transform-origin: left top;
+    }
+  }
+
+  //
+  // Error Mark
+  //
+  &__errorMark {
+    &::after,
+    &::before {
+      position: absolute;
+      top: 43px;
+      left: 22px;
+      z-index: 1;
+      width: 50px;
+      height: 10px;
+      content: '';
+      background-color: $feedbackMarkColor;
+      transform-origin: center center;
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+  }
+
+  //
+  // Loading State
+  //
+  &--loading {
+    svg {
+      display: block;
+    }
+  }
+
+  //
+  // Success State
+  //
+  &--success {
+    animation: feedback 1s forwards;
+    animation-delay: 800ms;
+
+    svg {
+      display: block;
+
+      circle {
+        stroke: $feedbackSuccess;
+        stroke-dasharray: 315, 250;
+      }
+    }
+
+    &::after {
+      display: block;
+      background-color: $feedbackSuccess;
+      animation: feedback-after 1s forwards;
+      animation-delay: 800ms;
+    }
+
+    &::before {
+      display: block;
+      background-color: $feedbackSuccessLight;
+      animation: feedback-before 1s forwards;
+      animation-delay: 800ms;
+    }
+
+    .az-feedback__successMark {
+      display: block;
+    }
+  }
+
+  //
+  // Error State
+  //
+  &--error {
+    animation: shake 1s forwards;
+    animation-delay: 800ms;
+
+    svg {
+      display: block;
+
+      circle {
+        stroke: $feedbackError;
+        stroke-dasharray: 315, 250;
+      }
+    }
+
+    &::after {
+      display: block;
+      background-color: $feedbackError;
+      animation: feedback-after 1s forwards;
+      animation-delay: 800ms;
+    }
+
+    &::before {
+      display: block;
+      background-color: $feedbackErrorLight;
+      animation: feedback-before 1s forwards;
+      animation-delay: 800ms;
+    }
+
+    .az-feedback__errorMark {
+      display: block;
+    }
+  }
+}
+
+@keyframes feedback-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes feedback {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes feedback-after {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes feedback-before {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  15% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  61% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

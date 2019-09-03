@@ -114,6 +114,10 @@
   }
 }
 
+:root {
+  --color-shadow-brand: 25, 146, 212; // valor rgb separado por comas
+}
+
 .page--shadows {
   display: flex;
   flex-wrap: wrap;
@@ -123,6 +127,10 @@
     margin: simple();
     color: color(gray1);
     background-color: color(white);
+  }
+
+  .shadow-brand {
+    @include shadow(3, var(--color-shadow-brand));
   }
 }
 

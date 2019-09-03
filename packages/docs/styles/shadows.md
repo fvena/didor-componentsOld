@@ -30,6 +30,26 @@ Para evitar tener que escribir manualmente las sombras cada vez que las necesite
 
 ```scss
 .elemento {
-  @include shadow(0);
+  @include shadow(3);
+}
+```
+
+## Modificar el color
+
+Puedes modificar el color de una sombra por defecto, creando una variable css y pasándosela a la función.
+
+::: demo
+<div class="page--shadows">
+  <div class="page-block shadow-brand">brand</div>
+</div>
+:::
+
+```scss
+:root {
+  --color-shadow-brand: 25, 146, 212; // valor rgb separado por comas
+}
+
+.elemento {
+  @include shadow(3, var(--color-shadow-brand));
 }
 ```

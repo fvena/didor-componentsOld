@@ -48,6 +48,7 @@
     - [Buttons](/Button/Button.md)
     - [Icons](/Icons/Icon.md)
     - [Loading](/Loading/Loading.md)
+    - [Feedback](/Feedback/Feedback.md)
     - [*Image](/Input/Input.md)
 
   - Formulario
