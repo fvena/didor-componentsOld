@@ -99,7 +99,7 @@ $wrapper-width: 670px;
     padding-left: simple();
     margin: double() 0;
     color: color(gray4);
-    background-color: color(white);
+    background-color: #ffffff;
     border-left: 4px solid color(brand);
   }
 

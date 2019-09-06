@@ -187,7 +187,7 @@ $sidebar-width-large: 300px;
       padding: halve() 0;
       overflow-y: auto;
       text-align: left;
-      background-color: color(white);
+      background-color: #ffffff;
       border: 1px solid color(border);
       border-bottom-color: color(border);
       border-radius: $border-radius;

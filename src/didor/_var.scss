@@ -60,7 +60,7 @@ $color-transparent: transparent !default;
 $color-content: color(gray2) !default;
 $color-heading: color(gray1) !default;
 $color-caption: color(gray4) !default;
-$color-background: color(white) !default;
+$color-background: #ffffff !default;
 $color-link: color(brand) !default;
 $color-link-hover: color(brand-dark) !default;
 $color-border: color(gray6) !default;
@@ -155,7 +155,7 @@ $styles-weights: (
 $styles-colors: (
   'black': color(gray1),
   'gray': color(gray4),
-  'white': color(white),
+  'white': #ffffff,
 ) !default;
 
 /**

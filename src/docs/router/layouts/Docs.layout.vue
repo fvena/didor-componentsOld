@@ -89,7 +89,7 @@ $sidebar-width-large: 300px;
     width: 100%;
     height: 100%;
     content: '';
-    background-color: color(white);
+    background-color: #ffffff;
     opacity: 0.9;
     transition: 0.5s cubic-bezier(0.91, 0.06, 0.47, 1.05) all;
   }

@@ -19,7 +19,7 @@ Vue.use(Feedback);
 #### Uso básico
 
 ``` html
-<az-feedback isLoading>
+<az-feedback :isLoading="isLoading" :isSuccess="isSuccess" :isError="isError">
 ```
 
 #### Uso escalas

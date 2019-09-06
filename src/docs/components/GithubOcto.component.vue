@@ -57,7 +57,7 @@ $header-height-media: double();
 
 .github-octo__arm,
 .github-octo__body {
-  fill: color(white);
+  fill: #ffffff;
 }
 
 @include media(portrait) {

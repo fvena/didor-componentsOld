@@ -21,10 +21,10 @@
 export default {
   data() {
     return {
-      isLoading: false,
+      isLoading: true,
       isSuccess: false,
       isError: false,
-      isLoading2: false,
+      isLoading2: true,
       isSuccess2: false,
       isError2: false,
     };

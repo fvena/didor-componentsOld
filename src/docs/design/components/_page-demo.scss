@@ -5,7 +5,7 @@
     justify-content: center;
     height: 100%;
     padding: 0.4rem 0.6rem;
-    color: color(white);
+    color: #ffffff;
     background-color: color(brand);
     border-radius: 3px;
   }
@@ -126,7 +126,7 @@
   .page-block {
     margin: simple();
     color: color(gray1);
-    background-color: color(white);
+    background-color: #ffffff;
   }
 
   .shadow-brand {
@@ -143,7 +143,7 @@
   padding: 0.4rem 0.6rem;
   margin-right: halve();
   margin-bottom: halve();
-  color: color(white);
+  color: #ffffff;
   text-align: center;
   background-color: color(brand);
   border-radius: 5px;

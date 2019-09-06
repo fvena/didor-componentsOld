@@ -1,4 +1,4 @@
-$feedbackBackground: color(white);
+$feedbackBackground: #ffffff;
 $feedbackSuccess: color(success);
 $feedbackSuccessLight: color(success-light);
 $feedbackError: color(danger);
@@ -6,7 +6,7 @@ $feedbackErrorLight: color(danger-light);
 $feedbackBorderColor: color(gray6);
 $feedbackSpinnerColor: color(brand);
 $feedbackSpinnerWidth: 2px;
-$feedbackMarkColor: color(white);
+$feedbackMarkColor: #ffffff;
 
 .az-feedback {
   position: relative;
