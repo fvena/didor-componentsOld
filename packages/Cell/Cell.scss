@@ -6,7 +6,10 @@
 
   &__title {
     flex: none;
+    overflow: hidden;
     line-height: simple();
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__value {
