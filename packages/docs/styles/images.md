@@ -48,12 +48,12 @@ Con la etiqueta HTML `<figure>` podemos añadir pies de foto o la autoría de un
 <figure style="height: 180px">
   <img src="/aidoo-landscape.png">
   <figcaption>Logotipo de la Aidoo</figcaption>
-</div>
+</figure>
 :::
 
 ``` html
 <figure>
   <img src="/aidoo-landscape.png">
   <figcaption>Logotipo de la Aidoo</figcaption>
-</div>
+</figure>
 ```

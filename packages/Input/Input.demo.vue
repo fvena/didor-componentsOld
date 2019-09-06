@@ -79,7 +79,7 @@
     Demo.no-margin-bottom(title="Slots")
       az-fieldset
         az-input(
-          v-mode="slots"
+          v-model="slots"
           placeholder="username")
             template(v-slot:label)
               h5.padding-top-quarter Label slot

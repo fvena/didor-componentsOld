@@ -1,0 +1,87 @@
+$switch-width: double();
+$switch-height: simple();
+$switch-background-color: #ffffff;
+$switch-border: 1px solid rgba(0, 0, 0, 0.1);
+$switch-node-size: simple();
+$switch-node-background-color: #ffffff;
+$switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
+  0 3px 3px 0 rgba(0, 0, 0, 0.05);
+$switch-transition-duration: 300ms;
+$switch-on-background-color: color(brand);
+$switch-disabled-opacity: 0.4;
+
+.az-switch {
+  position: relative;
+  box-sizing: initial;
+  display: inline-block;
+  width: $switch-width;
+  height: $switch-height;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $switch-background-color;
+  border: $switch-border;
+  border-radius: $switch-node-size;
+  transition: background-color $switch-transition-duration;
+
+  &__node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: $switch-node-size;
+    height: $switch-node-size;
+    background-color: $switch-node-background-color;
+    border-radius: 100%;
+    box-shadow: $switch-node-box-shadow;
+    transition: transform $switch-transition-duration;
+  }
+
+  &__loading {
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    line-height: 1;
+  }
+
+  &--on {
+    background-color: $switch-on-background-color;
+
+    .az-switch__node {
+      transform: translateX($switch-width - $switch-node-size);
+    }
+  }
+
+  &--disabled {
+    cursor: initial;
+    opacity: $switch-disabled-opacity;
+  }
+
+  &--small {
+    width: size(1.5);
+    height: size(0.75);
+
+    .az-switch__node {
+      width: size(0.75);
+      height: size(0.75);
+    }
+
+    &.az-switch--on .az-switch__node {
+      transform: translateX(size(1.5) - size(0.75));
+    }
+  }
+
+  &--large {
+    width: size(2.5);
+    height: size(1.25);
+
+    .az-switch__node {
+      width: size(1.25);
+      height: size(1.25);
+    }
+
+    &.az-switch--on .az-switch__node {
+      transform: translateX(size(2.5) - size(1.25));
+    }
+  }
+}

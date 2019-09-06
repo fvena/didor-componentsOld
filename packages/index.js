@@ -1,5 +1,8 @@
 import Vue from 'vue';
+import Avatar from './Avatar/Avatar.vue';
 import Button from './Button/Button.vue';
+import Cell from './Cell/Cell.vue';
+import CellGroup from './CellGroup/CellGroup.vue';
 import Checkbox from './Checkbox/Checkbox.vue';
 import CheckboxGroup from './CheckboxGroup/CheckboxGroup.vue';
 import Col from './Col/Col.vue';
@@ -9,9 +12,13 @@ import Fieldset from './Fieldset/Fieldset.vue';
 import Input from './Input/Input.vue';
 import Loading from './Loading/Loading.vue';
 import Row from './Row/Row.vue';
+import Switch from './Switch/Switch.vue';
 
 const Components = {
+  Avatar,
   Button,
+  Cell,
+  CellGroup,
   Checkbox,
   CheckboxGroup,
   Col,
@@ -21,6 +28,7 @@ const Components = {
   Input,
   Loading,
   Row,
+  Switch,
 };
 
 const prefix = 'Az';

@@ -58,12 +58,15 @@
     - [Checkbox](/Checkbox/Checkbox.md)
     - [*Radio](/Input/Input.md)
     - [*Slider](/Input/Input.md)
-    - [*Switch](/Input/Input.md)
+    - [Switch](/Switch/Switch.md)
     - [*DatetimePicker](/Input/Input.md)
     - [*Picker](/Input/Input.md)
 
   - Mostrar contenido
 
+    - [Avatar](/Avatar/Avatar.md)
+    - [Cell](/Cell/Cell.md)
+    - [CellGroup](/CellGroup/CellGroup.md)
     - [*Collapse](/Input/Input.md)
     - [*Swipe](/Input/Input.md)
     - [*Dialog](/Input/Input.md)

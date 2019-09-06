@@ -13,14 +13,14 @@ Los valores proporcionales por defecto, respecto del tamaño base definido por l
 ::: demo
 <div class="page-size">
   <div><div class="page-block width-quarter"></div>quarter() => 1/4x</div>
-  <div><div class="page-block width-halve"></div>halve() => 1/2x </div>
+  <div><div class="page-block width-halve"></div>halve() => 1/2x</div>
   <div><div class="page-block width"></div>simple() => x</div>
   <div><div class="page-block width-double"></div>double() => 2x</div>
   <div><div class="page-block width-triple"></div>triple() => 3x</div>
   <div><div class="page-block width-quadruple"></div>quadruple() => 4x</div>
   <div><div class="page-block width-quintuple"></div>quintuple() => 5x</div>
   <div><div class="page-block width-sextuple"></div>sextuple() => 6x</div>
-<div>
+</div>
 :::
 
 ``` html
@@ -67,7 +67,7 @@ La anchura será relativa a su elemento padre.
   <div class="page-block max-width-100">Anchura máxima 100%</div>
   <div class="page-block vw-100">Anchura 100% del viewport</div>
   <div class="page-block max-vw-100">Anchura máxima 100% del viewport</div>
-<div>
+</div>
 :::
 
 ``` html

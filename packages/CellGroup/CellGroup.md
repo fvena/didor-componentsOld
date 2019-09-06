@@ -2,14 +2,14 @@
 device: true
 ---
 
-# Fieldset
+# Cell Group
 
 ### Instalación
 
 ```javascript
-import { Fieldset } from 'didor';
+import { CellGroup } from 'didor';
 
-Vue.use(Fieldset);
+Vue.use(CellGroup);
 ```
 
 ---
@@ -19,25 +19,23 @@ Vue.use(Fieldset);
 #### Uso básico
 
 ``` html
-<az-fieldset title="Datos de usuario">
-  <az-input v-model="name" label="Nombre" placeholder="Nombre"/>
-  <az-input v-model="lastName" label="Apellidos" placeholder="Apellidos"/>
-  <az-input v-model="email" label="Email" placeholder="Email"/>
-</az-fieldset>
+<az-cell-group title="Datos de usuario">
+  <az-cell title="Cell title" value="Content"/>
+  <az-cell title="Cell title" value="Content" label="Description"/>
+</az-cell-group>
 ```
 
 #### Uso de slots
 
 ``` html
-<az-fieldset>
+<az-cell-group>
   <template v-slot:title>
     <h4>Slot título</h4>
   </template>
 
-  <az-input v-model="name" label="Nombre" placeholder="Nombre"/>
-  <az-input v-model="lastName" label="Apellidos" placeholder="Apellidos"/>
-  <az-input v-model="email" label="Email" placeholder="Email"/>
-</az-fieldset>
+  <az-cell title="Cell title" value="Content"/>
+  <az-cell title="Cell title" value="Content" label="Description"/>
+</az-cell-group>
 ```
 
 ---

@@ -89,6 +89,10 @@ $wrapper-width: 670px;
     line-height: line-height(epsilon);
   }
 
+  h4 + .code-toolbar {
+    margin-top: halve();
+  }
+
   h5,
   h6 {
     font-size: font-size(zeta);
