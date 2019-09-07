@@ -6,6 +6,7 @@ import UtilDocs from '../docs/utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
 
 import '../docs/assets/icons/sprite';
+import '../../packages/assets/icons/sprite';
 import '../docs/design/index.scss';
 
 Vue.use(SvgIcon, {

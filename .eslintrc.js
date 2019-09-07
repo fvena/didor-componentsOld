@@ -12,10 +12,7 @@ module.exports = {
     'no-param-reassign': 0,
     'no-underscore-dangle': 0,
     'prefer-destructuring': 0,
-    'max-len': [
-      'error',
-      { code: 150, ignoreStrings: true, ignoreTrailingComments: true, ignoreComments: true },
-    ],
+    'max-len': 0,
   },
   parserOptions: {
     parser: 'babel-eslint',

@@ -1,12 +1,12 @@
-$feedbackBackground: #ffffff;
-$feedbackSuccess: color(success);
-$feedbackSuccessLight: color(success-light);
-$feedbackError: color(danger);
-$feedbackErrorLight: color(danger-light);
-$feedbackBorderColor: color(gray6);
-$feedbackSpinnerColor: color(brand);
-$feedbackSpinnerWidth: 2px;
-$feedbackMarkColor: #ffffff;
+$feedbackBackground: #ffffff !default;
+$feedbackSuccess: color(success) !default;
+$feedbackSuccessLight: color(success-light) !default;
+$feedbackError: color(danger) !default;
+$feedbackErrorLight: color(danger-light) !default;
+$feedbackBorderColor: color(gray6) !default;
+$feedbackSpinnerColor: color(brand) !default;
+$feedbackSpinnerWidth: 2px !default;
+$feedbackMarkColor: #ffffff !default;
 
 .az-feedback {
   $rootClass: &;
@@ -14,6 +14,7 @@ $feedbackMarkColor: #ffffff;
   position: relative;
   width: 107px;
   height: 107px;
+  user-select: none;
   background-color: $feedbackBackground;
   border: 8px solid $feedbackBorderColor;
   border-radius: 50%;

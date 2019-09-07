@@ -1,5 +1,5 @@
 <template lang="pug">
-  .az-CheckboxGroup(:class="classObject")
+  .az-checkbox-group(:class="classObject")
     slot
 </template>
 
@@ -19,7 +19,7 @@ export default {
      * Devuelve un listado con las clases que dependen de la configuración
      */
     classObject() {
-      return [this.disabled ? 'az-checkbox--disabled' : ''];
+      return [this.cell ? 'az-checkbox-group--cell' : ''];
     },
   },
 };

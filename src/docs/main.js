@@ -8,6 +8,8 @@ import ApiService from './services/api.service';
 import 'nprogress/nprogress.css';
 import UtilDocs from './utils/docs.utils';
 import docsConfig from '../../docs/docs.config';
+
+import '../../packages/assets/icons/sprite';
 import './assets/icons/sprite';
 
 import './design/index.scss';
