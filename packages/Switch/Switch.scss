@@ -23,7 +23,7 @@ $switch-disabled-opacity: 0.4 !default;
   background-color: $switch-background-color;
   border: $switch-border;
   border-radius: $switch-node-size;
-  transition: background-color $switch-transition-duration;
+  transition: background-color $switch-transition-duration cubic-bezier(0.8, 0, 0.2, 1);
 
   &__node {
     position: absolute;
@@ -35,7 +35,7 @@ $switch-disabled-opacity: 0.4 !default;
     background-color: $switch-node-background-color;
     border-radius: 100%;
     box-shadow: $switch-node-box-shadow;
-    transition: transform $switch-transition-duration;
+    transition: all $switch-transition-duration cubic-bezier(0.8, 0, 0.2, 1);
   }
 
   &__loading {
