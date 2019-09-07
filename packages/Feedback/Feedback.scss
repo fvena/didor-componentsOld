@@ -9,6 +9,8 @@ $feedbackSpinnerWidth: 2px;
 $feedbackMarkColor: #ffffff;
 
 .az-feedback {
+  $rootClass: &;
+
   position: relative;
   width: 107px;
   height: 107px;
@@ -148,7 +150,7 @@ $feedbackMarkColor: #ffffff;
       animation-delay: 800ms;
     }
 
-    .az-feedback__successMark {
+    #{$rootClass}__successMark {
       display: block;
     }
   }
@@ -183,7 +185,7 @@ $feedbackMarkColor: #ffffff;
       animation-delay: 800ms;
     }
 
-    .az-feedback__errorMark {
+    #{$rootClass}__errorMark {
       display: block;
     }
   }

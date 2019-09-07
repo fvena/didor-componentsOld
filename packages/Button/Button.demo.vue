@@ -31,13 +31,13 @@
       az-button(type="success" disabled) Disabled
 
     Demo(title="Block")
-      az-button.no-margin.margin-halve-bottom(type="brand" block) Block Brand
+      az-button.no-margin.margin-bottom-halve(type="brand" block) Block Brand
       az-button.no-margin(type="danger" block) Block Danger
 
     Demo(title="Tamaño")
-      az-button(type="brand" size="large") Large
-      az-button(type="brand") Default
       az-button(type="brand" size="small") Small
+      az-button(type="brand") Default
+      az-button(type="brand" size="large") Large
 
     Demo(title="Icono")
       .demo__subtitle Icon and text
@@ -45,16 +45,19 @@
       az-button(type="brand" iconName="lap") Icon 2
       az-button(type="brand" iconName="desktop") Icon 3
 
-      .demo__subtitle Only Icon
+      .demo__subtitle.margin-top Only Icon
+      az-button(type="brand" iconName="palm" size="small")
       az-button(type="brand" iconName="palm")
-      az-button(type="brand" iconName="lap")
-      az-button(type="brand" iconName="desktop")
+      az-button(type="brand" iconName="palm" size="large")
 
-      .demo__subtitle Icon Position
-      az-button(type="brand" iconName="palm") Default
-      az-button(type="brand" iconName="palm" iconPosition="top") Top
-      az-button(type="brand" iconName="palm" iconPosition="right") Right
-      az-button(type="brand" iconName="palm" iconPosition="bottom") Bottom
+      .demo__subtitle.margin-top Icon Position
+      .padding-x-halve.padding-top
+        az-row(grid)
+          az-button(type="brand" iconName="palm") Default
+          az-button(type="brand" iconName="palm" iconPosition="right") Right
+        az-row(grid)
+          az-button(type="brand" iconName="palm" iconPosition="top") Top
+          az-button(type="brand" iconName="palm" iconPosition="bottom") Bottom
 
     Demo(title="Loading")
       az-button.margin-bottom(type="default" @click="toggleDemo") Toggle Loading

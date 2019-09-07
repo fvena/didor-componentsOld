@@ -1,4 +1,15 @@
-// Colores Botones
+//
+// Estilos para los botones
+//
+
+//
+// Variables
+//
+$button-ghost-border-size: 1px !default;
+$button-font-size: font-size(zeta) !default;
+$button-font-weight: font-weight(bold) !default;
+
+// Valores Default
 $button-default-gradient-color: #ffffff !default;
 $button-default-gradient-background1: color(gray3) !default;
 $button-default-gradient-background2: color(gray2) !default;
@@ -12,6 +23,7 @@ $button-default-ghost-border: color(gray4) !default;
 $button-default-ghost-color-hover: color(gray2) !default;
 $button-default-ghost-border-hover: color(gray3) !default;
 
+// Valores Brand
 $button-brand-gradient-color: #ffffff !default;
 $button-brand-gradient-background1: color(brand-light) !default;
 $button-brand-gradient-background2: color(brand) !default;
@@ -25,6 +37,7 @@ $button-brand-ghost-border: color(brand-light) !default;
 $button-brand-ghost-color-hover: color(brand-darker) !default;
 $button-brand-ghost-border-hover: color(brand) !default;
 
+// Valores Success
 $button-success-gradient-color: #ffffff !default;
 $button-success-gradient-background1: color(success-light) !default;
 $button-success-gradient-background2: color(success) !default;
@@ -38,6 +51,7 @@ $button-success-ghost-border: color(success-light) !default;
 $button-success-ghost-color-hover: color(success-darker) !default;
 $button-success-ghost-border-hover: color(success) !default;
 
+// Valores Warning
 $button-warning-gradient-color: #ffffff !default;
 $button-warning-gradient-background1: color(warning-light) !default;
 $button-warning-gradient-background2: color(warning) !default;
@@ -51,6 +65,7 @@ $button-warning-ghost-border: color(warning-light) !default;
 $button-warning-ghost-color-hover: color(warning-darker) !default;
 $button-warning-ghost-border-hover: color(warning) !default;
 
+// Valores Danger
 $button-danger-gradient-color: #ffffff !default;
 $button-danger-gradient-background1: color(danger-light) !default;
 $button-danger-gradient-background2: color(danger) !default;
@@ -64,17 +79,16 @@ $button-danger-ghost-border: color(danger-light) !default;
 $button-danger-ghost-color-hover: color(danger-darker) !default;
 $button-danger-ghost-border-hover: color(danger) !default;
 
-// General
-$button-ghost-border-size: 1px;
-$button-font-size: font-size(zeta);
-$button-font-weight: font-weight(bold);
-
 .az-button {
-  /**
-   * Base styles
-   */
+  $rootClass: &;
+
+  //
+  // Base Style
+  //
   position: relative;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: double();
   padding: 0 simple();
@@ -94,6 +108,23 @@ $button-font-weight: font-weight(bold);
   -webkit-text-size-adjust: 100%;
   transition: 0.4s ease-in-out;
 
+  //
+  // Click Effect
+  //
+  &:active::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  //
+  // Default Style
+  //
   @include button(
     $button-default-gradient-color,
     $button-default-gradient-background1,
@@ -102,6 +133,9 @@ $button-font-weight: font-weight(bold);
     $button-default-gradient-background2-hover
   );
 
+  //
+  // Plain Style
+  //
   &--plain {
     @include button-plain(
       $button-default-plain-color,
@@ -110,6 +144,9 @@ $button-font-weight: font-weight(bold);
     );
   }
 
+  //
+  // Ghost Style
+  //
   &--ghost {
     @include button-ghost(
       $button-default-ghost-color,
@@ -119,75 +156,68 @@ $button-font-weight: font-weight(bold);
     );
   }
 
-  /**
-   * Types
-   * Types + Plain
-   * Types + Ghost
-   */
-  // @include buttonType(default);
-  // @include buttonType(brand);
-  // @include buttonType(success);
-  // @include buttonType(warning);
-  // @include buttonType(danger);
-
-  /**
-   * Focus
-   */
+  //
+  // Focus
+  //
   &:focus,
   &.focus {
     outline: 0;
   }
 
-  .az-icon-icon {
-    margin: 0;
-  }
+  //
+  // Icon
+  //
+  &--icon {
+    .az-icon {
+      width: 1.5em;
+      height: 1.5em;
+      margin: 0;
 
-  /**
-   * Icon
-   */
-  &--icon-left {
-    flex-direction: row;
-    align-content: center;
-
-    .az-icon-icon + span {
-      margin-left: quarter();
+      + * {
+        margin-left: size(0.3);
+      }
     }
   }
 
   &--icon-right {
     flex-direction: row-reverse;
-    align-content: center;
 
-    .az-icon-icon + span {
-      margin-right: quarter();
+    .az-icon + * {
+      margin-right: size(0.3);
+      margin-left: 0;
     }
   }
 
   &--icon-top {
     flex-direction: column;
-    align-items: center;
     height: auto;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 
-    .az-icon-icon + span {
-      margin-top: quarter();
+    .az-icon + * {
+      margin-top: size(0.3);
+      margin-left: 0;
     }
   }
 
   &--icon-bottom {
     flex-direction: column-reverse;
-    align-items: center;
     height: auto;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 
-    .az-icon-icon + span {
-      margin-bottom: quarter();
+    .az-icon + * {
+      margin-bottom: size(0.3);
+      margin-left: 0;
     }
   }
 
-  /**
-   * Shape styles
-   */
+  &--icon-only {
+    width: double();
+    padding: 0;
+  }
+
+  //
+  // Shapes Style
+  //
   &--square {
     border-radius: 0;
   }
@@ -196,27 +226,27 @@ $button-font-weight: font-weight(bold);
     border-radius: 50px;
   }
 
-  /**
-   * Disabled styles
-   */
+  //
+  // Disabled Style
+  //
   &:disabled:not(&--loading),
   &--disabled:not(&--loading) {
     cursor: default;
     opacity: 0.6;
   }
 
-  /**
-   * Block styles
-   */
+  //
+  // Block Style
+  //
   &--block {
-    display: block;
+    display: flex;
     width: 100%;
     margin-bottom: simple();
   }
 
-  /**
-   * Sizes styles
-   */
+  //
+  // Sizes Style
+  //
   &--large {
     height: size(2.5);
     padding: 0 double();
@@ -225,6 +255,11 @@ $button-font-weight: font-weight(bold);
 
     .az-loading {
       top: 1rem !important;
+    }
+
+    &#{$rootClass}--icon-only {
+      width: size(2.5);
+      padding: 0;
     }
   }
 
@@ -236,14 +271,18 @@ $button-font-weight: font-weight(bold);
     .az-loading {
       top: 0.35rem !important;
     }
+
+    &#{$rootClass}--icon-only {
+      width: size(1.5);
+      padding: 0;
+    }
   }
 
-  /**
-   * Loading
-   */
+  //
+  // Loading Style
+  //
   &--loading {
     flex-direction: row;
-    align-items: center;
 
     .az-loading {
       font-size: 0.8em;
@@ -265,112 +304,115 @@ $button-font-weight: font-weight(bold);
       opacity: 0;
     }
   }
-}
 
-.az-button--brand {
-  @include button(
-    $button-brand-gradient-color,
-    $button-brand-gradient-background1,
-    $button-brand-gradient-background2,
-    $button-brand-gradient-background1-hover,
-    $button-brand-gradient-background2-hover
-  );
-
-  &.az-button--plain {
-    @include button-plain(
-      $button-brand-plain-color,
-      $button-brand-plain-background,
-      $button-brand-plain-background-hover
+  //
+  // Button types
+  //
+  &--brand {
+    @include button(
+      $button-brand-gradient-color,
+      $button-brand-gradient-background1,
+      $button-brand-gradient-background2,
+      $button-brand-gradient-background1-hover,
+      $button-brand-gradient-background2-hover
     );
+
+    &#{$rootClass}--plain {
+      @include button-plain(
+        $button-brand-plain-color,
+        $button-brand-plain-background,
+        $button-brand-plain-background-hover
+      );
+    }
+
+    &#{$rootClass}--ghost {
+      @include button-ghost(
+        $button-brand-ghost-color,
+        $button-brand-ghost-border,
+        $button-brand-ghost-color-hover,
+        $button-brand-ghost-border-hover
+      );
+    }
   }
 
-  &.az-button--ghost {
-    @include button-ghost(
-      $button-brand-ghost-color,
-      $button-brand-ghost-border,
-      $button-brand-ghost-color-hover,
-      $button-brand-ghost-border-hover
+  &--success {
+    @include button(
+      $button-success-gradient-color,
+      $button-success-gradient-background1,
+      $button-success-gradient-background2,
+      $button-success-gradient-background1-hover,
+      $button-success-gradient-background2-hover
     );
-  }
-}
 
-.az-button--success {
-  @include button(
-    $button-success-gradient-color,
-    $button-success-gradient-background1,
-    $button-success-gradient-background2,
-    $button-success-gradient-background1-hover,
-    $button-success-gradient-background2-hover
-  );
+    &#{$rootClass}--plain {
+      @include button-plain(
+        $button-success-plain-color,
+        $button-success-plain-background,
+        $button-success-plain-background-hover
+      );
+    }
 
-  &.az-button--plain {
-    @include button-plain(
-      $button-success-plain-color,
-      $button-success-plain-background,
-      $button-success-plain-background-hover
-    );
-  }
-
-  &.az-button--ghost {
-    @include button-ghost(
-      $button-success-ghost-color,
-      $button-success-ghost-border,
-      $button-success-ghost-color-hover,
-      $button-success-ghost-border-hover
-    );
-  }
-}
-
-.az-button--danger {
-  @include button(
-    $button-danger-gradient-color,
-    $button-danger-gradient-background1,
-    $button-danger-gradient-background2,
-    $button-danger-gradient-background1-hover,
-    $button-danger-gradient-background2-hover
-  );
-
-  &.az-button--plain {
-    @include button-plain(
-      $button-danger-plain-color,
-      $button-danger-plain-background,
-      $button-danger-plain-background-hover
-    );
+    &#{$rootClass}--ghost {
+      @include button-ghost(
+        $button-success-ghost-color,
+        $button-success-ghost-border,
+        $button-success-ghost-color-hover,
+        $button-success-ghost-border-hover
+      );
+    }
   }
 
-  &.az-button--ghost {
-    @include button-ghost(
-      $button-danger-ghost-color,
-      $button-danger-ghost-border,
-      $button-danger-ghost-color-hover,
-      $button-danger-ghost-border-hover
+  &--danger {
+    @include button(
+      $button-danger-gradient-color,
+      $button-danger-gradient-background1,
+      $button-danger-gradient-background2,
+      $button-danger-gradient-background1-hover,
+      $button-danger-gradient-background2-hover
     );
+
+    &#{$rootClass}--plain {
+      @include button-plain(
+        $button-danger-plain-color,
+        $button-danger-plain-background,
+        $button-danger-plain-background-hover
+      );
+    }
+
+    &#{$rootClass}--ghost {
+      @include button-ghost(
+        $button-danger-ghost-color,
+        $button-danger-ghost-border,
+        $button-danger-ghost-color-hover,
+        $button-danger-ghost-border-hover
+      );
+    }
   }
-}
 
-.az-button--warning {
-  @include button(
-    $button-warning-gradient-color,
-    $button-warning-gradient-background1,
-    $button-warning-gradient-background2,
-    $button-warning-gradient-background1-hover,
-    $button-warning-gradient-background2-hover
-  );
-
-  &.az-button--plain {
-    @include button-plain(
-      $button-warning-plain-color,
-      $button-warning-plain-background,
-      $button-warning-plain-background-hover
+  &--warning {
+    @include button(
+      $button-warning-gradient-color,
+      $button-warning-gradient-background1,
+      $button-warning-gradient-background2,
+      $button-warning-gradient-background1-hover,
+      $button-warning-gradient-background2-hover
     );
-  }
 
-  &.az-button--ghost {
-    @include button-ghost(
-      $button-warning-ghost-color,
-      $button-warning-ghost-border,
-      $button-warning-ghost-color-hover,
-      $button-warning-ghost-border-hover
-    );
+    &#{$rootClass}--plain {
+      @include button-plain(
+        $button-warning-plain-color,
+        $button-warning-plain-background,
+        $button-warning-plain-background-hover
+      );
+    }
+
+    &#{$rootClass}--ghost {
+      @include button-ghost(
+        $button-warning-ghost-color,
+        $button-warning-ghost-border,
+        $button-warning-ghost-color-hover,
+        $button-warning-ghost-border-hover
+      );
+    }
   }
 }

@@ -51,7 +51,7 @@ export default {};
 </script>
 
 <style lang="scss">
-.az-icon-icon {
+.az-icon {
   margin: quarter();
 }
 

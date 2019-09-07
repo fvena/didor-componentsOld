@@ -1,4 +1,6 @@
 .az-fieldset {
+  $rootClass: &;
+
   margin-bottom: simple();
 }
 

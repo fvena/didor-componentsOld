@@ -24,8 +24,8 @@
         az-avatar(name="John Doe" size="3rem")
 
     Demo(title="Personalizar colores")
-      az-avatar(name="John Doe" background-color="var(--color-brand)" text-color="var(--color-brand-lighter)" is-link)
-      az-avatar(background-color="var(--color-brand)" text-color="var(--color-brand-lighter)" is-link)
+      az-avatar(name="John Doe" background-color="var(--color-brand)" text-color="var(--color-brand-darker)" is-link)
+      az-avatar(background-color="var(--color-brand)" text-color="var(--color-brand-darker)" is-link)
 
     Demo.no-margin-bottom(title="Personalizar icono")
       az-avatar(icon-name="palm" is-link)
@@ -39,7 +39,7 @@ export default {};
 .avatarDemo {
   min-height: 100vh;
 
-  .avatar {
+  .az-avatar {
     display: inline-block;
     margin-right: simple();
   }

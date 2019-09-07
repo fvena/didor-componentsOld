@@ -79,5 +79,3 @@ export default {
   },
 };
 </script>
-
-<style src="./Row.scss" lang="scss"></style>

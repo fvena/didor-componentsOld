@@ -1,4 +1,6 @@
-.avatar {
+.az-avatar {
+  $rootClass: &;
+
   @include shadow(3);
 
   position: relative;
@@ -32,10 +34,10 @@
     top: 50%;
     left: 50%;
     z-index: 1;
-    width: 0.4em;
-    height: 0.4em;
+    width: 0.9em;
+    height: 0.9em;
     margin: 0 !important;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
   }
 
   &--link {

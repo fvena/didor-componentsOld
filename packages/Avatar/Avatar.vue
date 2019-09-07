@@ -1,8 +1,8 @@
 <template lang="pug">
-  .avatar(@click="onClick" :style="avatarStyle" :class="avatarClass")
-    az-icon.avatar__icon(:name="iconName")
-    .avatar__initials(v-if="name" :style="avatarInitialStyle") {{ initials }}
-    .avatar__image(v-if="src" :style="avatarImageStyle")
+  .az-avatar(@click="onClick" :style="avatarStyle" :class="avatarClass")
+    az-icon.az-avatar__icon(:name="iconName")
+    .az-avatar__initials(v-if="name" :style="avatarInitialStyle") {{ initials }}
+    .az-avatar__image(v-if="src" :style="avatarImageStyle")
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
     },
     iconName: {
       type: String,
-      default: 'user',
+      default: 'user-fill',
     },
     isLink: {
       type: Boolean,
@@ -50,7 +50,7 @@ export default {
     },
 
     avatarClass() {
-      return [this.isLink ? 'avatar--link' : ''];
+      return [this.isLink ? 'az-avatar--link' : ''];
     },
 
     avatarStyle() {

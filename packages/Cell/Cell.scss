@@ -1,4 +1,6 @@
 .az-cell {
+  $rootClass: &;
+
   position: relative;
   font-size: font-size(zeta);
   line-height: simple();

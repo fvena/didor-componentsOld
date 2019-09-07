@@ -44,7 +44,7 @@ export default {
     },
     iconPosition: {
       type: String,
-      default: 'left',
+      default: '',
       validator: value => ['top', 'right', 'bottom', 'left', ''].indexOf(value) !== -1,
     },
     loading: {
@@ -92,6 +92,8 @@ export default {
         this.size ? `az-button--${this.size}` : '',
         this.iconName && this.iconPosition ? `az-button--icon-${this.iconPosition}` : '',
         {
+          'az-button--icon': this.iconName,
+          'az-button--icon-only': !this.$slots.default,
           'az-button--disabled': this.buttonDisabled,
           'az-button--loading': this.loading,
           'az-button--loadingIconOnly': this.loadingIconOnly,

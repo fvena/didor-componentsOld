@@ -1,4 +1,6 @@
 .az-input {
+  $rootClass: &;
+
   position: relative;
   font-size: font-size(zeta);
   line-height: simple();
@@ -120,7 +122,7 @@
     overflow: hidden;
     background-color: #ffffff;
 
-    .az-input__control {
+    &__control {
       height: auto;
       padding: 0;
       line-height: simple();

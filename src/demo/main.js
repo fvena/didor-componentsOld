@@ -10,7 +10,7 @@ import '../docs/design/index.scss';
 
 Vue.use(SvgIcon, {
   tagName: 'az-icon',
-  classPrefix: 'az-icon',
+  classPrefix: 'az',
 });
 
 Vue.config.productionTip = false;

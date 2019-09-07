@@ -14,7 +14,7 @@ import './design/index.scss';
 
 Vue.use(SvgIcon, {
   tagName: 'az-icon',
-  classPrefix: 'az-icon',
+  classPrefix: 'az',
 });
 
 // Inicializamos nuesta API

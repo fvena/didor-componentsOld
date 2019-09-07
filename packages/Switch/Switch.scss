@@ -1,16 +1,18 @@
-$switch-width: double();
-$switch-height: simple();
-$switch-background-color: #ffffff;
-$switch-border: 1px solid rgba(0, 0, 0, 0.1);
-$switch-node-size: simple();
-$switch-node-background-color: #ffffff;
+$switch-width: double() !default;
+$switch-height: simple() !default;
+$switch-background-color: #ffffff !default;
+$switch-border: 1px solid rgba(0, 0, 0, 0.1) !default;
+$switch-node-size: simple() !default;
+$switch-node-background-color: #ffffff !default;
 $switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
-  0 3px 3px 0 rgba(0, 0, 0, 0.05);
-$switch-transition-duration: 300ms;
-$switch-on-background-color: color(brand);
-$switch-disabled-opacity: 0.4;
+  0 3px 3px 0 rgba(0, 0, 0, 0.05) !default;
+$switch-transition-duration: 300ms !default;
+$switch-on-background-color: color(brand) !default;
+$switch-disabled-opacity: 0.4 !default;
 
 .az-switch {
+  $rootClass: &;
+
   position: relative;
   box-sizing: initial;
   display: inline-block;
@@ -47,7 +49,7 @@ $switch-disabled-opacity: 0.4;
   &--on {
     background-color: $switch-on-background-color;
 
-    .az-switch__node {
+    #{$rootClass}__node {
       transform: translateX($switch-width - $switch-node-size);
     }
   }
@@ -61,12 +63,12 @@ $switch-disabled-opacity: 0.4;
     width: size(1.5);
     height: size(0.75);
 
-    .az-switch__node {
+    #{$rootClass}__node {
       width: size(0.75);
       height: size(0.75);
     }
 
-    &.az-switch--on .az-switch__node {
+    &#{$rootClass}--on #{$rootClass}__node {
       transform: translateX(size(1.5) - size(0.75));
     }
   }
@@ -75,12 +77,12 @@ $switch-disabled-opacity: 0.4;
     width: size(2.5);
     height: size(1.25);
 
-    .az-switch__node {
+    #{$rootClass}__node {
       width: size(1.25);
       height: size(1.25);
     }
 
-    &.az-switch--on .az-switch__node {
+    &#{$rootClass}--on #{$rootClass}__node {
       transform: translateX(size(2.5) - size(1.25));
     }
   }

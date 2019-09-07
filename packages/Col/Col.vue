@@ -53,5 +53,3 @@ export default {
   },
 };
 </script>
-
-<style src="./Col.scss" lang="scss"></style>

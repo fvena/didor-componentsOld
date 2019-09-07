@@ -63,11 +63,11 @@ Si queremos tener un feedback cuando hacemos click sobre la imagen.
 <az-avatar
   name="John Doe"
   background-color="var(--color-brand)"
-  text-color="var(--color-brand-lighter)"
+  text-color="var(--color-brand-darker)"
   is-link/>
 <az-avatar
   background-color="var(--color-brand)"
-  text-color="var(--color-brand-lighter)"
+  text-color="var(--color-brand-darker)"
   is-link/>
 ```
 

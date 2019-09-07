@@ -87,10 +87,10 @@ az-button(type="brand" iconName="palm")
 az-button(type="brand" iconName="lap")
 az-button(type="brand" iconName="desktop")
 
-az-button(type="brand" iconName="palm")
-az-button(type="brand" iconName="palm" iconPosition="top")
-az-button(type="brand" iconName="palm" iconPosition="right")
-az-button(type="brand" iconName="palm" iconPosition="bottom")
+az-button(type="brand" iconName="palm") Default
+az-button(type="brand" iconName="palm" iconPosition="top") Right
+az-button(type="brand" iconName="palm" iconPosition="right") Top
+az-button(type="brand" iconName="palm" iconPosition="bottom") Bottom
 ```
 
 #### Loading

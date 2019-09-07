@@ -28,7 +28,7 @@ import './assets/icons/sprite';
 
 Vue.use(SvgIcon, {
   tagName: 'az-icon',
-  classPrefix: 'az-icon',
+  classPrefix: 'az-',
 });
 ```
 

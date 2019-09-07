@@ -1,4 +1,6 @@
 .az-checkbox {
+  $rootClass: &;
+
   display: flex;
   align-items: center;
   overflow: hidden;
