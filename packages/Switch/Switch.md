@@ -96,8 +96,6 @@ export default {
 
 ### Eventos
 
-### Eventos
-
 | Evento | Descripción                                             | Argumento |
 | ------ | ------------------------------------------------------- | --------- |
 | change | Se lanza cuando cambia el valor del switch | -         |

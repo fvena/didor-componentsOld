@@ -1,0 +1,70 @@
+$tabBar-item-text-color: color(gray4);
+$tabBar-item-active-color: color(gray1);
+
+.az-tabBarItem {
+  $rootClass: &;
+
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  flex-basis: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.2rem 0;
+  font-size: font-size(theta);
+  color: $tabBar-item-text-color;
+
+  &__icon {
+    position: relative;
+    display: block;
+    margin: 0;
+
+    &--dot {
+      &::after {
+        position: absolute;
+        top: 0.2rem;
+        right: 0;
+        width: 0.5rem;
+        height: 0.5rem;
+        content: ' ';
+        background-color: color(danger);
+        border-radius: 100%;
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0.2rem;
+    min-width: 1rem;
+    padding: 0 0.2rem;
+    font-size: font-size(theta);
+    font-weight: font-weight(bold);
+    line-height: 0.9rem;
+    color: #ffffff;
+    text-align: center;
+    background-color: color(danger);
+    border-radius: 0.4rem;
+    transform: translateX(50%);
+    transform-origin: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 0.1rem;
+    line-height: 1rem;
+  }
+
+  &--active {
+    color: $tabBar-item-active-color;
+  }
+
+  &--title {
+    padding-bottom: 1rem;
+  }
+}

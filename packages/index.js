@@ -13,6 +13,8 @@ import Input from './Input/Input.vue';
 import Loading from './Loading/Loading.vue';
 import Row from './Row/Row.vue';
 import Switch from './Switch/Switch.vue';
+import TabBar from './TabBar/TabBar.vue';
+import TabBarItem from './TabBarItem/TabBarItem.vue';
 
 const Components = {
   Avatar,
@@ -29,6 +31,8 @@ const Components = {
   Loading,
   Row,
   Switch,
+  TabBar,
+  TabBarItem,
 };
 
 const prefix = 'Az';
