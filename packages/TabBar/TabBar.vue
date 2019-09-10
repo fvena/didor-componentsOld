@@ -51,6 +51,7 @@ export default {
   methods: {
     setActiveItem() {
       this.$children.forEach((item, index) => {
+        if (item.to) return;
         item.active = (item.name || index) === this.value;
       });
     },

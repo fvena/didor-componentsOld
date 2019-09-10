@@ -93,6 +93,7 @@ $button-danger-ghost-border-hover: color(danger) !default;
   height: double();
   padding: 0 simple();
   margin: 0;
+  overflow: hidden;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   line-height: 1;

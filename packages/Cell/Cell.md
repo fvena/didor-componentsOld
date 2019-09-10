@@ -105,5 +105,5 @@ Vue.use(Cell);
 | title | Título del campo |
 | label | Descripción del campo |
 | default | Contenido del campo |
-| left-icon | Botón izquierdo |
-| right-icon | Botón derecho |
+| leftIcon | Botón izquierdo |
+| rightIcon | Botón derecho |

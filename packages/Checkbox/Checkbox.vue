@@ -54,6 +54,8 @@ export default {
      * Evento lanzado cuando se modifica el valor del checkbox
      */
     onInput() {
+      if (this.disabled) return;
+
       if (!this.isGroup) {
         this.$emit('input', !this.checked);
         return;

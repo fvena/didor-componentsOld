@@ -55,7 +55,7 @@ export default {
       if (!this.to || !this.$router || this.$router.name) return false;
 
       const toName = typeof this.to === 'object' ? this.to.name : this.to;
-      const routeName = this.$router.name;
+      const routeName = this.$router.history.current.name;
 
       return toName === routeName;
     },

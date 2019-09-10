@@ -34,19 +34,20 @@ Vue.use(Checkbox);
 Cuando varios checkbox están dentro de un grupo, el valor del grupo es un array con los `value` de cada checkbox.
 
 ``` html
-<az-checkbox-group v-model="sports">
-  <az-checkbox value="swimming">Natación</az-checkbox>
-  <az-checkbox value="cycling">Ciclismo</az-checkbox>
-  <az-checkbox value="running">Carrera</az-checkbox>
+<az-checkbox-group>
+  <az-checkbox v-model="result" value="swimming">Natación</az-checkbox>
+  <az-checkbox v-model="result" value="cycling">Ciclismo</az-checkbox>
+  <az-checkbox v-model="result" value="running">Carrera</az-checkbox>
 </az-checkbox-group>
 ```
 
 Puedes generar un listado de checkbox con un array de valores:
 
 ``` html
-<az-checkbox-group v-model="result">
+<az-checkbox-group>
   <az-checkbox
     v-for="(item, index) in sports"
+    v-model="result"
     :key="index"
     :value="item">
       {{ item }
@@ -70,10 +71,10 @@ export default {
 Cuando varios checkbox están dentro de un grupo, el valor del grupo es un array con los `value` de cada checkbox.
 
 ``` html
-<az-checkbox-group v-model="sports" max="2">
-  <az-checkbox value="swimming">Natación</az-checkbox>
-  <az-checkbox value="cycling">Ciclismo</az-checkbox>
-  <az-checkbox value="running">Carrera</az-checkbox>
+<az-checkbox-group max="2">
+  <az-checkbox v-model="result" value="swimming">Natación</az-checkbox>
+  <az-checkbox v-model="result" value="cycling">Ciclismo</az-checkbox>
+  <az-checkbox v-model="result" value="running">Carrera</az-checkbox>
 </az-checkbox-group>
 ```
 
@@ -82,10 +83,10 @@ Cuando varios checkbox están dentro de un grupo, el valor del grupo es un array
 Modifica su visualización para verse como dentro de una celda
 
 ``` html
-<az-checkbox-group v-model="sports" cell>
-  <az-checkbox value="swimming">Natación</az-checkbox>
-  <az-checkbox value="cycling">Ciclismo</az-checkbox>
-  <az-checkbox value="running">Carrera</az-checkbox>
+<az-checkbox-group cell>
+  <az-checkbox v-model="result" value="swimming">Natación</az-checkbox>
+  <az-checkbox v-model="result" value="cycling">Ciclismo</az-checkbox>
+  <az-checkbox v-model="result" value="running">Carrera</az-checkbox>
 </az-checkbox-group>
 ```
 

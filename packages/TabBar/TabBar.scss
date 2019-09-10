@@ -5,6 +5,7 @@ $tabBar-background-color: #ffffff;
   $rootClass: &;
 
   display: flex;
+  width: 100%;
   height: $tabBar-height;
   background-color: $tabBar-background-color;
 
