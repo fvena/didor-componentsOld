@@ -90,7 +90,7 @@ export default {
     return {
       focused: false,
       fieldType: this.type,
-      iconPassword: 'password',
+      iconPassword: 'password-hide',
     };
   },
 

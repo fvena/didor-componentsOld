@@ -4149,12 +4149,12 @@ var CellGroup_component = normalizeComponent(
 )
 
 /* harmony default export */ var CellGroup = (CellGroup_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Checkbox/Checkbox.vue?vue&type=template&id=279c9056&lang=pug&
-var Checkboxvue_type_template_id_279c9056_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-checkbox",class:_vm.classObject,on:{"click":_vm.onInput}},[_c('div',{staticClass:"az-checkbox__cell"},[_c('svg',{attrs:{"viewBox":"0 0 44 44"}},[_c('path',{attrs:{"d":"M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758","transform":"translate(-2.000000, -2.000000)"}})])]),_vm._m(0),_c('div',{staticClass:"az-checkbox__label"},[_vm._t("default")],2)])}
-var Checkboxvue_type_template_id_279c9056_lang_pug_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-checkbox__input"},[_c('div',{staticClass:"az-checkbox__base"}),_c('div',{staticClass:"az-checkbox__mark"})])}]
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Checkbox/Checkbox.vue?vue&type=template&id=f8d07270&lang=pug&
+var Checkboxvue_type_template_id_f8d07270_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-checkbox",class:_vm.classObject,on:{"click":_vm.onInput}},[_c('div',{staticClass:"az-checkbox__cell"},[_c('svg',{attrs:{"viewBox":"0 0 44 44"}},[_c('path',{attrs:{"d":"M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758","transform":"translate(-2.000000, -2.000000)"}})])]),_vm._m(0),_c('div',{staticClass:"az-checkbox__label"},[_vm._t("default")],2)])}
+var Checkboxvue_type_template_id_f8d07270_lang_pug_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-checkbox__input"},[_c('div',{staticClass:"az-checkbox__base"}),_c('div',{staticClass:"az-checkbox__mark"})])}]
 
 
-// CONCATENATED MODULE: ./packages/Checkbox/Checkbox.vue?vue&type=template&id=279c9056&lang=pug&
+// CONCATENATED MODULE: ./packages/Checkbox/Checkbox.vue?vue&type=template&id=f8d07270&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
 var es7_array_includes = __webpack_require__("6762");
@@ -4216,6 +4216,8 @@ var es6_string_includes = __webpack_require__("2fdb");
      * Evento lanzado cuando se modifica el valor del checkbox
      */
     onInput: function onInput() {
+      if (this.disabled) return;
+
       if (!this.isGroup) {
         this.$emit('input', !this.checked);
         return;
@@ -4255,8 +4257,8 @@ var Checkboxvue_type_style_index_0_lang_scss_ = __webpack_require__("eda5");
 
 var Checkbox_component = normalizeComponent(
   Checkbox_Checkboxvue_type_script_lang_js_,
-  Checkboxvue_type_template_id_279c9056_lang_pug_render,
-  Checkboxvue_type_template_id_279c9056_lang_pug_staticRenderFns,
+  Checkboxvue_type_template_id_f8d07270_lang_pug_render,
+  Checkboxvue_type_template_id_f8d07270_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -5288,12 +5290,12 @@ var Switch_component = normalizeComponent(
 )
 
 /* harmony default export */ var Switch = (Switch_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/TabBar/TabBar.vue?vue&type=template&id=20926edd&lang=pug&
-var TabBarvue_type_template_id_20926edd_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-tabBar",class:_vm.tabBarClass,style:(_vm.tabBarStyle)},[_vm._t("default")],2)}
-var TabBarvue_type_template_id_20926edd_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/TabBar/TabBar.vue?vue&type=template&id=d6879788&lang=pug&
+var TabBarvue_type_template_id_d6879788_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-tabBar",class:_vm.tabBarClass,style:(_vm.tabBarStyle)},[_vm._t("default")],2)}
+var TabBarvue_type_template_id_d6879788_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/TabBar/TabBar.vue?vue&type=template&id=20926edd&lang=pug&
+// CONCATENATED MODULE: ./packages/TabBar/TabBar.vue?vue&type=template&id=d6879788&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.fixed.js
 var es6_string_fixed = __webpack_require__("d263");
@@ -5353,6 +5355,7 @@ var es6_string_fixed = __webpack_require__("d263");
       var _this = this;
 
       this.$children.forEach(function (item, index) {
+        if (item.to) return;
         item.active = (item.name || index) === _this.value;
       });
     },
@@ -5383,8 +5386,8 @@ var TabBarvue_type_style_index_0_lang_scss_ = __webpack_require__("3f4e");
 
 var TabBar_component = normalizeComponent(
   TabBar_TabBarvue_type_script_lang_js_,
-  TabBarvue_type_template_id_20926edd_lang_pug_render,
-  TabBarvue_type_template_id_20926edd_lang_pug_staticRenderFns,
+  TabBarvue_type_template_id_d6879788_lang_pug_render,
+  TabBarvue_type_template_id_d6879788_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -5393,12 +5396,12 @@ var TabBar_component = normalizeComponent(
 )
 
 /* harmony default export */ var TabBar = (TabBar_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/TabBarItem/TabBarItem.vue?vue&type=template&id=3f1e8849&lang=pug&
-var TabBarItemvue_type_template_id_3f1e8849_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-tabBarItem",class:_vm.tabBarItemClass,style:(_vm.tabBarItemStyle),on:{"click":_vm.onClick}},[(_vm.icon)?_c('div',{staticClass:"az-tabBarItem__icon",class:{'az-tabBarItem__icon--dot': _vm.dot && !_vm.info}},[_c('az-icon',{attrs:{"name":_vm.icon,"scale":"1"}}),(_vm.info)?_c('div',{staticClass:"az-tabBarItem__badge"},[_vm._v(_vm._s(_vm.info))]):_vm._e()],1):_vm._e(),(_vm.$slots.default)?_c('div',{staticClass:"az-tabBarItem__title"},[_vm._t("default")],2):_vm._e()])}
-var TabBarItemvue_type_template_id_3f1e8849_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/TabBarItem/TabBarItem.vue?vue&type=template&id=325f8890&lang=pug&
+var TabBarItemvue_type_template_id_325f8890_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-tabBarItem",class:_vm.tabBarItemClass,style:(_vm.tabBarItemStyle),on:{"click":_vm.onClick}},[(_vm.icon)?_c('div',{staticClass:"az-tabBarItem__icon",class:{'az-tabBarItem__icon--dot': _vm.dot && !_vm.info}},[_c('az-icon',{attrs:{"name":_vm.icon,"scale":"1"}}),(_vm.info)?_c('div',{staticClass:"az-tabBarItem__badge"},[_vm._v(_vm._s(_vm.info))]):_vm._e()],1):_vm._e(),(_vm.$slots.default)?_c('div',{staticClass:"az-tabBarItem__title"},[_vm._t("default")],2):_vm._e()])}
+var TabBarItemvue_type_template_id_325f8890_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/TabBarItem/TabBarItem.vue?vue&type=template&id=3f1e8849&lang=pug&
+// CONCATENATED MODULE: ./packages/TabBarItem/TabBarItem.vue?vue&type=template&id=325f8890&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
 var iterator = __webpack_require__("5d58");
@@ -5484,7 +5487,7 @@ function typeof_typeof(obj) {
     routeActive: function routeActive() {
       if (!this.to || !this.$router || this.$router.name) return false;
       var toName = typeof_typeof(this.to) === 'object' ? this.to.name : this.to;
-      var routeName = this.$router.name;
+      var routeName = this.$router.history.current.name;
       return toName === routeName;
     },
     index: function index() {
@@ -5529,8 +5532,8 @@ var TabBarItemvue_type_style_index_0_lang_scss_ = __webpack_require__("9aaf");
 
 var TabBarItem_component = normalizeComponent(
   TabBarItem_TabBarItemvue_type_script_lang_js_,
-  TabBarItemvue_type_template_id_3f1e8849_lang_pug_render,
-  TabBarItemvue_type_template_id_3f1e8849_lang_pug_staticRenderFns,
+  TabBarItemvue_type_template_id_325f8890_lang_pug_render,
+  TabBarItemvue_type_template_id_325f8890_lang_pug_staticRenderFns,
   false,
   null,
   null,
