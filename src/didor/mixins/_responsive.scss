@@ -47,9 +47,11 @@ $breakpoints: (
 
   // Si aplica a los modelos con notch
   @else if $media-query == 'notch' {
+    /* stylelint-disable */
     @supports (padding: max(0)) and (padding: env(safe-area-inset-bottom)) {
       @content;
     }
+    /* stylelint-enable */
   }
 
   // Si aplica a todos los tamaños no añado nada

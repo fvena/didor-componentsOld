@@ -40,3 +40,23 @@
 
   @return $width#{'%'};
 }
+
+/**
+ * Devuelve el valor máximo de varios números
+ *
+ * padding-left: max(2re, 14px);
+ * padding-left: max(#{halve(), env(safe-area-inset-left)}
+ */
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+/**
+ * Devuelve el valor mínimo de varios números
+ *
+ * padding-left: min(2re, 14px);
+ * padding-left: min(#{halve(), env(safe-area-inset-left)}
+ */
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
