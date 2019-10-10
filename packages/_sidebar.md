@@ -69,7 +69,8 @@
     - [CellGroup](/CellGroup/CellGroup.md)
     - [*Collapse](/Input/Input.md)
     - [*Swipe](/Input/Input.md)
-    - [*Dialog](/Input/Input.md)
+    - [Popup](/Popup/Popup.md)
+    - [Dialog](/Dialog/Dialog.md)
     - [*Toast](/Input/Input.md)
 
   - Navegación

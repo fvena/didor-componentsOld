@@ -45,6 +45,13 @@ $breakpoints: (
     }
   }
 
+  // Si aplica a los modelos con notch
+  @else if $media-query == 'notch' {
+    @supports (padding: max(0)) and (padding: env(safe-area-inset-bottom)) {
+      @content;
+    }
+  }
+
   // Si aplica a todos los tamaños no añado nada
   @else if $media-query == 'all' {
     @content;

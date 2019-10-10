@@ -7,10 +7,12 @@ import Checkbox from './Checkbox/Checkbox.vue';
 import CheckboxGroup from './CheckboxGroup/CheckboxGroup.vue';
 import Col from './Col/Col.vue';
 import Container from './Container/Container.vue';
+import Dialog from './Dialog';
 import Feedback from './Feedback/Feedback.vue';
 import Fieldset from './Fieldset/Fieldset.vue';
 import Input from './Input/Input.vue';
 import Loading from './Loading/Loading.vue';
+import Popup from './Popup/Popup.vue';
 import Row from './Row/Row.vue';
 import Switch from './Switch/Switch.vue';
 import TabBar from './TabBar/TabBar.vue';
@@ -25,10 +27,12 @@ const Components = {
   CheckboxGroup,
   Col,
   Container,
+  Dialog,
   Feedback,
   Fieldset,
   Input,
   Loading,
+  Popup,
   Row,
   Switch,
   TabBar,

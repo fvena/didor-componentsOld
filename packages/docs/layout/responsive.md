@@ -96,3 +96,19 @@ La sintáxis para utilizar el mixin es la siguiente:
   }
 }
 ```
+
+## Notch
+
+También existe una versión para incluir estilos específico para dispositivos con notch:
+
+``` scss
+// Mixin media notch
+@include media(notch) {
+  .layout {
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+  }
+}
+```

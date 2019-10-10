@@ -28,6 +28,6 @@ También está disponible como un Mixin de Sass
 
 ``` scss
 .elemento {
-  @include clearfix
+  @include clearfix;
 }
 ```

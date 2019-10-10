@@ -133,14 +133,14 @@ Admite cualquier valor númerico, incluidos números negativos.
 También existen funciones con los nombres estandarizados, para mejorar la semántica del framework:
 
 ``` scss
-quarter()    // 1/4 * $space
-halve()      // 1/2 * $space
-simple()     // $space
-double()     // 2 * $space
-triple()     // 3 * $space
-quadruple()  // 4 * $space
-quintuple()  // 5 * $space
-sextuple()   // 6 * $space
+width: quarter();    // 1/4 * $space
+width: halve();      // 1/2 * $space
+width: simple();     // $space
+width: double();     // 2 * $space
+width: triple();     // 3 * $space
+width: quadruple();  // 4 * $space
+width: quintuple();  // 5 * $space
+width: sextuple();   // 6 * $space
 ```
 
 ``` scss
