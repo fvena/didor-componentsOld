@@ -29,7 +29,7 @@ export default {
   padding: halve() halve() 0;
   margin-bottom: halve();
   font-family: font-family(base);
-  font-size: font-size(eta);
+  font-size: font-size(small1);
   font-weight: font-weight(bold);
   color: color(gray2);
   text-transform: uppercase;

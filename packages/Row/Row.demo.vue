@@ -297,7 +297,7 @@ export default {};
 
 .block {
   width: 100%;
-  font-size: font-size(theta);
+  font-size: font-size(small2);
   font-weight: font-weight(bold);
   color: white;
   text-align: center;

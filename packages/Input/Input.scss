@@ -2,7 +2,7 @@
   $rootClass: &;
 
   position: relative;
-  font-size: font-size(zeta);
+  font-size: font-size(base);
   line-height: simple();
   color: color(content);
 
@@ -84,12 +84,12 @@
   }
 
   &__error-message {
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     color: color(danger);
   }
 
   &__info-message {
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     color: color(gray4);
   }
 
@@ -97,7 +97,7 @@
     label::before {
       position: absolute;
       left: quarter();
-      font-size: font-size(eta);
+      font-size: font-size(small1);
       color: color(danger);
       content: '*';
     }

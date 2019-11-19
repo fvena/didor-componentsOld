@@ -96,7 +96,7 @@ export default {
   height: simple();
   padding: 0 halve();
   font-family: font-family(base);
-  font-size: font-size(theta);
+  font-size: font-size(small2);
   line-height: simple();
   color: color(gray2);
   background-color: color(gray6);

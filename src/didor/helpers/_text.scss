@@ -80,7 +80,7 @@
   @include media($breakpoint) {
     $breakpoint: get-breakpoint-sufix($breakpoint);
 
-    @each $font-size-name, $font-size-value in $font-sizes {
+    @each $font-size-name, $font-size-value in $styles-sizes {
       .font-size#{$breakpoint}-#{$font-size-name} {
         font-size: font-size($font-size-name) !important;
       }
@@ -88,7 +88,7 @@
   }
 }
 
-@each $font-size-name, $font-size-value in $font-sizes {
+@each $font-size-name, $font-size-value in $styles-sizes {
   .line-height-#{$font-size-name} {
     line-height: line-height($font-size-name) !important;
   }

@@ -143,14 +143,14 @@ $link-decoration-hover: underline !default;
  * Estilos de texto
  */
 $styles-sizes: (
-  'h1': 'alpha',
-  'h2': 'beta',
-  'h3': 'gamma',
-  'h4': 'delta',
-  'h5': 'epsilon',
-  'base': 'zeta',
-  'small1': 'eta',
-  'small2': 'theta',
+  'h1': 5,
+  'h2': 4,
+  'h3': 3,
+  'h4': 2,
+  'h5': 1,
+  'base': 0,
+  'small1': -1,
+  'small2': -2,
 ) !default;
 
 $styles-weights: (

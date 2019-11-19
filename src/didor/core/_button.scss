@@ -6,7 +6,7 @@
 // Variables
 //
 $button-ghost-border-size: 1px !default;
-$button-font-size: font-size(zeta) !default;
+$button-font-size: font-size(base) !default;
 $button-font-weight: font-weight(bold) !default;
 
 // Valores Default
@@ -251,7 +251,7 @@ $button-danger-ghost-border-hover: color(danger) !default;
   &--large {
     height: size(2.5);
     padding: 0 double();
-    font-size: font-size(zeta);
+    font-size: font-size(base);
     line-height: 1;
 
     .az-loading {
@@ -266,7 +266,7 @@ $button-danger-ghost-border-hover: color(danger) !default;
 
   &--small {
     height: size(1.5);
-    font-size: font-size(theta);
+    font-size: font-size(small2);
     line-height: 1;
 
     .az-loading {

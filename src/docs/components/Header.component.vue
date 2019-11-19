@@ -195,7 +195,7 @@ $sidebar-width-large: 300px;
 
     > li ul li {
       min-width: 100%;
-      font-size: font-size(eta);
+      font-size: font-size(small1);
       white-space: nowrap;
 
       a {

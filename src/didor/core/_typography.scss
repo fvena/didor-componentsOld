@@ -18,38 +18,38 @@ h6 {
 }
 
 h1 {
-  font-size: font-size(alpha);
-  line-height: line-height(alpha);
+  font-size: font-size(h1);
+  line-height: line-height(h1);
 }
 
 h2 {
-  font-size: font-size(beta);
-  line-height: line-height(beta);
+  font-size: font-size(h2);
+  line-height: line-height(h2);
 }
 
 h3 {
-  font-size: font-size(gamma);
-  line-height: line-height(gamma);
+  font-size: font-size(h3);
+  line-height: line-height(h3);
 }
 
 h4 {
-  font-size: font-size(delta);
-  line-height: line-height(delta);
+  font-size: font-size(h4);
+  line-height: line-height(h4);
 }
 
 h5 {
-  font-size: font-size(epsilon);
-  line-height: line-height(epsilon);
+  font-size: font-size(h5);
+  line-height: line-height(h5);
 }
 
 h6 {
-  font-size: font-size(zeta);
-  line-height: line-height(zeta);
+  font-size: font-size(base);
+  line-height: line-height(base);
 }
 
 // Parrafos
 p {
-  font-size: font-size(zeta);
+  font-size: font-size(base);
 }
 
 // Bold.
@@ -68,10 +68,10 @@ i {
 small,
 .small {
   font-family: font-family(heading);
-  font-size: font-size(eta);
+  font-size: font-size(small1);
   font-style: normal;
   font-weight: font-weight(normal);
-  line-height: line-height(eta);
+  line-height: line-height(small1);
 }
 
 // Texto resaltado
@@ -85,35 +85,35 @@ mark,
 // Caption
 .caption {
   font-family: font-family(base);
-  font-size: font-size(epsilon);
+  font-size: font-size(h5);
   font-style: italic;
   color: color(caption);
 }
 
 h1 + .caption,
-.font-size-alpha + .caption {
+.font-size-h1 + .caption {
   margin-top: halve();
   margin-bottom: simple();
-  font-size: font-size(delta);
+  font-size: font-size(h4);
   font-style: normal;
-  line-height: line-height(epsilon);
+  line-height: line-height(h5);
 }
 
 h2 + .caption,
-.font-size-beta + .caption {
+.font-size-h2 + .caption {
   margin-top: halve();
   margin-bottom: simple();
-  font-size: font-size(epsilon);
+  font-size: font-size(h5);
   font-style: normal;
-  line-height: line-height(zeta);
+  line-height: line-height(base);
 }
 
 h3 + .caption,
-.font-size-gamma + .caption {
+.font-size-h3 + .caption {
   margin-bottom: halve();
-  font-size: font-size(zeta);
+  font-size: font-size(base);
   font-style: normal;
-  line-height: line-height(zeta);
+  line-height: line-height(base);
 }
 
 // Abbreviations
@@ -126,12 +126,12 @@ abbr[data-original-title] {
 // Quotes.
 blockquote,
 .blockquote {
-  font-size: font-size(epsilon);
-  line-height: line-height(epsilon);
+  font-size: font-size(h5);
+  line-height: line-height(h5);
 
   p {
-    font-size: font-size(epsilon);
-    line-height: line-height(epsilon);
+    font-size: font-size(h5);
+    line-height: line-height(h5);
   }
 
   p:last-of-type {
@@ -141,7 +141,7 @@ blockquote,
   > footer,
   > .footer {
     display: block;
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     font-style: italic;
     color: color(gray3);
 

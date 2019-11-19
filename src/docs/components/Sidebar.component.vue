@@ -38,7 +38,7 @@ export default {
   li > p > a {
     display: block;
     margin-bottom: 0;
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     font-weight: font-weight(bold);
     color: color(gray2);
     text-transform: uppercase;
@@ -60,7 +60,7 @@ export default {
 
   li > a {
     display: block;
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     color: color(gray3);
 
     @include hover {
@@ -87,7 +87,7 @@ export default {
   }
 
   li > ul > li > p {
-    font-size: font-size(theta);
+    font-size: font-size(small2);
     color: color(gray4);
     opacity: 0.7;
   }

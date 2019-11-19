@@ -63,30 +63,30 @@ $wrapper-width: 670px;
   }
 
   h1 + p {
-    font-size: font-size(delta);
+    font-size: font-size(h4);
     line-height: 1.8rem;
     color: color(gray4);
   }
 
   h1 + p code {
-    font-size: font-size(epsilon);
+    font-size: font-size(h5);
   }
 
   h2 {
     padding-top: double();
     margin-top: triple();
-    font-size: font-size(gamma);
+    font-size: font-size(h3);
     border-top: 1px solid color(border);
   }
 
   h3 {
-    font-size: font-size(delta);
-    line-height: line-height(delta);
+    font-size: font-size(h4);
+    line-height: line-height(h4);
   }
 
   h4 {
-    font-size: font-size(epsilon);
-    line-height: line-height(epsilon);
+    font-size: font-size(h5);
+    line-height: line-height(h5);
   }
 
   h4 + .code-toolbar {
@@ -95,8 +95,8 @@ $wrapper-width: 670px;
 
   h5,
   h6 {
-    font-size: font-size(zeta);
-    line-height: line-height(zeta);
+    font-size: font-size(base);
+    line-height: line-height(base);
   }
 
   blockquote {
@@ -130,7 +130,7 @@ $wrapper-width: 670px;
 
   table {
     th {
-      font-size: font-size(theta);
+      font-size: font-size(small2);
       font-weight: font-weight(bold);
       color: color(gray4);
       text-transform: uppercase;
@@ -138,7 +138,7 @@ $wrapper-width: 670px;
     }
 
     td {
-      font-size: font-size(eta);
+      font-size: font-size(small1);
       color: color(gray2);
       border-bottom: 1px solid color(border);
 
@@ -163,7 +163,7 @@ $wrapper-width: 670px;
     }
     td:nth-of-type(2) {
       font-family: font-family(monospace);
-      font-size: font-size(theta);
+      font-size: font-size(small2);
       line-height: 1.2rem;
       color: color(brand);
     }
@@ -349,7 +349,7 @@ $wrapper-width: 670px;
       height: simple();
       padding: 0 halve();
       font-family: font-family(base);
-      font-size: font-size(theta);
+      font-size: font-size(small2);
       line-height: simple();
       color: color(gray2);
       background-color: color(gray6);
@@ -587,7 +587,7 @@ $wrapper-width: 670px;
   &::before {
     display: block;
     margin-bottom: halve();
-    font-size: font-size(epsilon);
+    font-size: font-size(h5);
     font-weight: font-weight(bold);
     color: color(gray2);
     content: 'Tabla de contenidos';
@@ -629,20 +629,20 @@ $wrapper-width: 670px;
     h2 {
       padding-top: simple();
       margin-top: double();
-      font-size: font-size(delta);
-      line-height: line-height(delta);
+      font-size: font-size(h4);
+      line-height: line-height(h4);
     }
 
     h3 {
-      font-size: font-size(epsilon);
-      line-height: line-height(epsilon);
+      font-size: font-size(h5);
+      line-height: line-height(h5);
     }
 
     h4,
     h5,
     h6 {
-      font-size: font-size(zeta);
-      line-height: line-height(zeta);
+      font-size: font-size(base);
+      line-height: line-height(base);
     }
 
     .embed-responsive {

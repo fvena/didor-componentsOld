@@ -44,42 +44,41 @@ Didor utiliza una escala tipográfica para configurar los diferentes tamaños de
 
 Para definir los diferentes tamaños se ha establecido la siguiente escala:
 
-* `alpha` - nivel 6
-* `beta` - nivel 5
-* `gamma` - nivel 4
-* `delta` - nivel 3
-* `epsilon` - nivel 2
-* `zeta` - nivel base
-* `eta` - nivel -2
-* `theta` - nivel -3
-* `iota` - nivel -4
+* `h1` - nivel 5
+* `h2` - nivel 4
+* `h3` - nivel 3
+* `h4` - nivel 2
+* `h5` - nivel 1
+* `base` - nivel 0
+* `small1` - nivel -1
+* `small2` - nivel -2
 
 Notación: `.font-size-{breakpoint}-{size-name}`
 
 ::: demo
-<div class="font-size-alpha line-height-alpha">Tamaño alpha (nivel 6)</div>
-<div class="font-size-beta line-height-beta">Tamaño beta (nivel 5)</div>
-<div class="font-size-gamma line-height-gamma">Tamaño gamma (nivel 4)</div>
-<div class="font-size-delta line-height-delta">Tamaño delta (nivel 3)</div>
-<div class="font-size-epsilon line-height-epsilon">Tamaño epsilon (nivel 2)</div>
-<div class="font-size-zeta line-height-zeta">Tamaño zeta (nivel base)</div>
-<div class="font-size-eta line-height-eta">Tamaño eta (nivel -2)</div>
-<div class="font-size-theta line-height-theta">Tamaño theta (nivel -3)</div>
-<div class="font-size-iota line-height-iota">Tamaño iota (nivel -4)</div>
+<div class="font-size-h1 line-height-h1">Tamaño h1 (nivel 5)</div>
+<div class="font-size-h2 line-height-h2">Tamaño h2 (nivel 4)</div>
+<div class="font-size-h3 line-height-h3">Tamaño h3 (nivel 3)</div>
+<div class="font-size-h4 line-height-h4">Tamaño h4 (nivel 2)</div>
+<div class="font-size-h5 line-height-h5">Tamaño h5 (nivel 1)</div>
+<div class="font-size-base line-height-base">Tamaño base (nivel 0)</div>
+<div class="font-size-small1 line-height-small1">Tamaño small1 (nivel -1)</div>
+<div class="font-size-small2 line-height-small2">Tamaño small2 (nivel -2)</div>
+<br>
+<div class="font-size-palm-h2">Tamaño h2 solo en dispostivos móviles</div>
 :::
 
 ``` html
-<div class="font-size-alpha">Tamaño alpha (nivel 6)</div>
-<div class="font-size-beta">Tamaño beta (nivel 5)</div>
-<div class="font-size-gamma">Tamaño gamma (nivel 4)</div>
-<div class="font-size-delta">Tamaño delta (nivel 3)</div>
-<div class="font-size-epsilon">Tamaño epsilon (nivel 2)</div>
-<div class="font-size-zeta">Tamaño zeta (nivel base)</div>
-<div class="font-size-eta">Tamaño eta (nivel -2)</div>
-<div class="font-size-theta">Tamaño theta (nivel -3)</div>
-<div class="font-size-iota">Tamaño iota (nivel -4)</div>
+<div class="font-size-h1">Tamaño h1 (nivel 5)</div>
+<div class="font-size-h2">Tamaño h2 (nivel 4)</div>
+<div class="font-size-h3">Tamaño h3 (nivel 3)</div>
+<div class="font-size-h4">Tamaño h4 (nivel 2)</div>
+<div class="font-size-h5">Tamaño h5 (nivel 1)</div>
+<div class="font-size-base">Tamaño base (nivel base)</div>
+<div class="font-size-small1">Tamaño small1 (nivel -1)</div>
+<div class="font-size-small2">Tamaño small2 (nivel -2)</div>
 
-<div class="font-size-palm-beta">Tamañao nivel 5 solo en dispostivos móviles</div>
+<div class="font-size-palm-h2">Tamaño h2 solo en dispostivos móviles</div>
 ```
 
 ## Apariencia
@@ -264,7 +263,7 @@ La clase `.caption` también sirve para destacar un párrafo.
 ``` scss
 .elemento {
   font-family: font-family(heading);
-  font-size: font-size(beta);
+  font-size: font-size(h2); // font-size(4)
   font-weight: font-weight(bold);
   line-height: line-height(beta);
 }

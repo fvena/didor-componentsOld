@@ -14,7 +14,7 @@ $tabBar-item-active-color: color(gray1);
   justify-content: center;
   height: 100%;
   padding: 0.2rem 0;
-  font-size: font-size(theta);
+  font-size: font-size(small2);
   color: $tabBar-item-text-color;
 
   &__icon {
@@ -42,7 +42,7 @@ $tabBar-item-active-color: color(gray1);
     right: 0.2rem;
     min-width: 1rem;
     padding: 0 0.2rem;
-    font-size: font-size(theta);
+    font-size: font-size(small2);
     font-weight: font-weight(bold);
     line-height: 0.9rem;
     color: #ffffff;

@@ -92,7 +92,7 @@ export default {
 
 .pagination-item-label {
   margin-bottom: -0.2rem;
-  font-size: font-size(eta);
+  font-size: font-size(small1);
   color: color(gray4);
   opacity: 1;
 
@@ -112,7 +112,7 @@ export default {
 }
 
 .pagination-item-title {
-  font-size: font-size(gamma);
+  font-size: font-size(h3);
   color: color(gray2);
   opacity: 1;
 }

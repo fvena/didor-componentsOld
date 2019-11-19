@@ -2,7 +2,7 @@
   $rootClass: &;
 
   position: relative;
-  font-size: font-size(zeta);
+  font-size: font-size(base);
   line-height: simple();
   color: color(content);
 
@@ -23,7 +23,7 @@
   }
 
   &__label {
-    font-size: font-size(eta);
+    font-size: font-size(small1);
     color: color(gray4);
   }
 

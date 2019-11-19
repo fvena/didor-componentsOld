@@ -3,16 +3,6 @@
  */
 
 //
-// Listado de familias tipográficas
-//
-
-$font-families: (
-  'base': $font-family-base,
-  'heading': $font-family-heading,
-  'monospace': $font-family-monospace,
-) !default;
-
-//
 // Listado de tamaños de fuente base por tamaño de pantalla
 //
 
@@ -22,6 +12,16 @@ $root-sizes: (
   'small': $root-font-size-small,
   'desk': $root-font-size-desk,
   'large': $root-font-size-large,
+) !default;
+
+//
+// Listado de familias tipográficas
+//
+
+$font-families: (
+  'base': $font-family-base,
+  'heading': $font-family-heading,
+  'monospace': $font-family-monospace,
 ) !default;
 
 //
@@ -35,21 +35,6 @@ $font-weights: (
   'semibold': $font-weight-semibold,
   'bold': $font-weight-bold,
   'black': $font-weight-black,
-) !default;
-
-/**
- * TYPOGRAPHY MODULAR SCALE
- */
-$font-sizes: (
-  'alpha': 5,
-  'beta': 4,
-  'gamma': 3,
-  'delta': 2,
-  'epsilon': 1,
-  'zeta': 0,
-  'eta': -1,
-  'theta': -2,
-  'iota': -3,
 ) !default;
 
 /**
@@ -102,8 +87,8 @@ $font-sizes: (
 
   // Si el valor del $size no es un número y es el alias de la escala modular
   @else {
-    @if map-has-key($font-sizes, $size) {
-      $level: map-get($font-sizes, $size);
+    @if map-has-key($styles-sizes, $size) {
+      $level: map-get($styles-sizes, $size);
       $module: pow($modular-scale, $level);
 
       @return #{$module}rem;
@@ -128,8 +113,8 @@ $font-sizes: (
 
   // Si el valor del $height no es un número y es el alias de la escala modular
   @else {
-    @if map-has-key($font-sizes, $height) {
-      $level: map-get($font-sizes, $height);
+    @if map-has-key($styles-sizes, $height) {
+      $level: map-get($styles-sizes, $height);
       $module: pow($modular-scale, $level);
 
       @return #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;
