@@ -9,25 +9,59 @@
         az-button(@click="slideDown = true" size="small") slideDown
         az-button(@click="slideUp = true" size="small") slideUp
 
-
-    az-popup(v-model="zoom" @hide="zoom = false")
+    az-popup(v-model="zoom" @hide="zoom = false" bounce)
       | Un modal vue con animación zoom.
-    az-popup(v-model="fade" animation="fade" @hide="fade = false")
+    az-popup(v-model="fade" transition="fade" @hide="fade = false" bounce)
       | Un modal vue con animación fade.
-    az-popup(v-model="flip" animation="flip" @hide="flip = false")
+    az-popup(v-model="flip" transition="flip" @hide="flip = false" bounce)
       | Un modal vue con animación flip.
-    az-popup(v-model="door" animation="door" @hide="door = false")
+    az-popup(v-model="door" transition="door" @hide="door = false" bounce)
       | Un modal vue con animación door.
-    az-popup(v-model="slideDown" animation="slideDown" @hide="slideDown = false")
+    az-popup(v-model="slideDown" transition="slideDown" @hide="slideDown = false" bounce)
       | Un modal vue con animación slideDown.
-    az-popup(v-model="slideUp" animation="slideUp" @hide="slideUp = false")
+    az-popup(v-model="slideUp" transition="slideUp" @hide="slideUp = false" bounce)
       | Un modal vue con animación slideUp.
 
+
+    Demo(title="Posición")
+      az-row
+        az-button(@click="top = true" size="small") top
+        az-button(@click="right = true" size="small") right
+        az-button(@click="bottom = true" size="small") bottom
+        az-button(@click="left = true" size="small") left
+
+    az-popup(v-model="top" @hide="top = false" position="top")
+      | Un modal vue con animación.
+    az-popup(v-model="right" @hide="right = false" position="right")
+      | Un modal vue con animación.
+    az-popup(v-model="bottom" @hide="bottom = false" position="bottom")
+      | Un modal vue con animación.
+    az-popup(v-model="left" @hide="left = false" position="left")
+      | Un modal vue con animación.
+
+    Demo(title="Abrir a pantalla completa")
+      az-row
+        az-button(@click="full = true" size="small") show
+        az-button(@click="fullRight = true" size="small") full right
+
+    az-popup(v-model="full" @hide="full = false" full)
+      | Un modal vue con animación a pantalla completa.
+    az-popup(v-model="fullRight" @hide="fullRight = false" position="right" full)
+      | Un modal vue con animación a pantalla completa.
+
     Demo(title="Cerrar con Esc")
-      az-button(@click="esc = true") show
+      az-button(@click="esc = true" size="small") show
 
     az-popup(v-model="esc" @hide="esc = false" :closeOnEsc="true")
-      | Un modal vue con animación.
+      | Un modal vue con animación y cierre con esc.
+
+    Demo(title="Abrir en el body")
+      az-button(@click="container = true" size="small") show
+
+    az-popup(v-model="container" @hide="container = false" container="body")
+      | Un modal vue con animación y renderizado en el body.
+
+
 </template>
 
 <script>
@@ -41,7 +75,20 @@ export default {
       slideDown: false,
       slideUp: false,
       esc: false,
+      container: false,
+      full: false,
+      top: false,
+      right: false,
+      bottom: false,
+      left: false,
+      fullRight: false,
     };
   },
 };
 </script>
+
+<style lang="scss">
+body {
+  height: 100%;
+}
+</style>

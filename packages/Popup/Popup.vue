@@ -1,18 +1,19 @@
 <template lang="pug">
-  transition(name="az-popup-fade")
+  transition(name="az-popup-none")
     .az-popup(
       v-show="value"
       tabindex="-1"
-      :style="style"
-      :class="[className]"
+      :style="popupStyle"
+      :class="popupClass"
       @keyup.esc="onEsc")
 
       //- Modal Mask
-      .az-popup__mask(v-if="mask" @click="onClickMask")
+      transition(name="az-popup-fade")
+        .az-popup__mask(v-show="mask && value" :style="popupStyle" @click="onClickMask")
 
       //- Modal Body
       transition(:name="`az-popup-${animation}`")
-        .az-popup__dialog(v-show="value" :style="dialogStyle")
+        .az-popup__dialog(v-show="value" :style="dialogStyle" :class="dialogClass")
 
           //- Botón cerrar
           span.az-popup__close(v-if="closeButton" @click="$emit('hide')")
@@ -28,19 +29,11 @@ export default {
       type: Boolean,
       required: true,
     },
-    width: {
-      type: Number,
-      required: false,
-    },
-    height: {
-      type: Number,
-      required: false,
-    },
     duration: {
       type: Number,
       default: 300,
     },
-    animation: {
+    transition: {
       type: String,
       default: 'zoom',
     },
@@ -60,14 +53,30 @@ export default {
       type: Boolean,
       default: true,
     },
-    className: {
-      type: String,
-      default: '',
+    zIndex: {
+      type: Number,
+      default: 100,
     },
-    zIndex: [Number, String],
     lockScroll: {
       type: Boolean,
       default: true,
+    },
+    container: {
+      type: String,
+      required: false,
+    },
+    position: {
+      type: String,
+      default: '',
+      validator: value => ['top', 'right', 'bottom', 'left', ''].indexOf(value) !== -1,
+    },
+    full: {
+      type: Boolean,
+      default: false,
+    },
+    bounce: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -80,24 +89,38 @@ export default {
   watch: {
     value(val) {
       const type = val ? 'open' : 'close';
-      this[type](); // Lanza el evento => this.open() o this.close()
+      this[type](); // Llama al método => this.open() o this.close()
       this.$emit(type); // Emite un evento 'open' o 'close'
     },
   },
 
   computed: {
-    style() {
+    dialogClass() {
+      return [this.position ? `az-popup--${this.position}` : '', this.full ? 'az-popup--full' : ''];
+    },
+
+    popupStyle() {
       return {
         animationDuration: `${this.duration}ms`,
+        'z-index': this.zIndex,
       };
     },
 
     dialogStyle() {
       return {
-        width: '80%',
-        height: '40%',
+        transitionDuration: `${this.duration}ms`,
         animationDuration: `${this.duration}ms`,
+        transitionTimingFunction: this.bounce
+          ? 'cubic-bezier(0.4, 0, 0, 1.5)'
+          : 'cubic-bezier(0.55, 0, 0.1, 1)',
+        animationTimingFunction: this.bounce
+          ? 'cubic-bezier(0.4, 0, 0, 1.5)'
+          : 'cubic-bezier(0.55, 0, 0.1, 1)',
       };
+    },
+
+    animation() {
+      return this.position ? this.position : this.transition;
     },
   },
 
@@ -113,7 +136,7 @@ export default {
       this.opened = true;
 
       if (this.lockScroll) {
-        document.body.classList.add('van-overflow-hidden');
+        document.body.classList.add('az-overflow-hidden');
       }
     },
 
@@ -121,7 +144,7 @@ export default {
       if (!this.opened) return;
 
       if (this.lockScroll) {
-        document.body.classList.remove('van-overflow-hidden');
+        document.body.classList.remove('az-overflow-hidden');
       }
 
       this.opened = false;
@@ -129,6 +152,7 @@ export default {
     },
 
     onEsc() {
+      console.log('esc');
       if (this.value && this.closeOnEsc) {
         this.$emit('hide');
       }
@@ -143,6 +167,15 @@ export default {
   },
 
   mounted() {
+    if (this.container) {
+      const element = document.querySelector(this.container);
+      if (element) {
+        element.appendChild(this.$el);
+      } else {
+        console.error(`az-popup: No se ha encontrado el elemento: ${this.container}`);
+      }
+    }
+
     if (this.value) {
       this.open();
     }
@@ -150,10 +183,6 @@ export default {
 
   beforeDestroy() {
     this.close();
-
-    // if (this.getContainer && this.$parent && this.$parent.$el) {
-    //   this.$parent.$el.appendChild(this.$el);
-    // }
   },
 };
 </script>
