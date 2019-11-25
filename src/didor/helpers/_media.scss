@@ -28,12 +28,12 @@
 
 @include media(palm) {
   .media__body {
-    margin-left: halve();
+    margin-left: half();
   }
 
   .media--right {
     .media__body {
-      margin-right: halve();
+      margin-right: half();
       margin-left: 0;
     }
   }

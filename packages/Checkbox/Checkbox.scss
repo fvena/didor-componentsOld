@@ -24,7 +24,7 @@ $checkboxMarkColor: #ffffff !default;
   &__base {
     width: $checkboxSize;
     height: $checkboxSize;
-    margin-right: halve();
+    margin-right: half();
     cursor: pointer;
     background: $checkboxBackground;
     border: $checkboxBorderWidth solid $checkboxBorderColor;

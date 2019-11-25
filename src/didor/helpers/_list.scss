@@ -15,7 +15,7 @@
       margin-right: simple();
 
       @include media(palm) {
-        margin-right: halve();
+        margin-right: half();
       }
     }
   }

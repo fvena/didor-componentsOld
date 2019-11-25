@@ -20,8 +20,14 @@ npm publish --access=public
 ```
 
 Publicar ssh
+git push airzone
+
 ssh frontend@frontend.airzonesl.es
 password: Fron-2290
+
+cd public_html/airzone-components/
+git fetch origin
+git rebase origin/master
 
 npm run serve &
 

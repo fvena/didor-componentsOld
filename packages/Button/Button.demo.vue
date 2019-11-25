@@ -31,7 +31,7 @@
       az-button(type="success" disabled) Disabled
 
     Demo(title="Block")
-      az-button.no-margin.margin-bottom-halve(type="brand" block) Block Brand
+      az-button.no-margin.margin-bottom-half(type="brand" block) Block Brand
       az-button.no-margin(type="danger" block) Block Danger
 
     Demo(title="Tamaño")
@@ -51,7 +51,7 @@
       az-button(type="brand" iconName="palm" size="large")
 
       .demo__subtitle.margin-top Icon Position
-      .padding-x-halve.padding-top
+      .padding-x-half.padding-top
         az-row(grid)
           az-button(type="brand" iconName="palm") Default
           az-button(type="brand" iconName="palm" iconPosition="right") Right

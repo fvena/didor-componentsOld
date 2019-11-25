@@ -41,13 +41,13 @@
     width: 150px;
   }
   .responsive__block {
-    padding: 0 halve();
+    padding: 0 half();
   }
 
   th:first-of-type,
   td:first-of-type {
     width: 150px;
-    padding: quarter() halve();
+    padding: quarter() half();
     text-align: left;
   }
 }
@@ -71,7 +71,7 @@
 }
 
 .responsive__block {
-  padding: 0 halve();
+  padding: 0 half();
   font-size: font-size(small2);
   color: color(gray7);
   text-align: left;
@@ -102,7 +102,7 @@
 
 @include media(lap) {
   .responsive__block {
-    padding: 0 halve();
+    padding: 0 half();
   }
 }
 

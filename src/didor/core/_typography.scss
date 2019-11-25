@@ -92,7 +92,7 @@ mark,
 
 h1 + .caption,
 .font-size-h1 + .caption {
-  margin-top: halve();
+  margin-top: half();
   margin-bottom: simple();
   font-size: font-size(h4);
   font-style: normal;
@@ -101,7 +101,7 @@ h1 + .caption,
 
 h2 + .caption,
 .font-size-h2 + .caption {
-  margin-top: halve();
+  margin-top: half();
   margin-bottom: simple();
   font-size: font-size(h5);
   font-style: normal;
@@ -110,7 +110,7 @@ h2 + .caption,
 
 h3 + .caption,
 .font-size-h3 + .caption {
-  margin-bottom: halve();
+  margin-bottom: half();
   font-size: font-size(base);
   font-style: normal;
   line-height: line-height(base);

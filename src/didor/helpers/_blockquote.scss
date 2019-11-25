@@ -24,12 +24,12 @@
 
 @include media(portrait) {
   .blockquote--bordered {
-    padding-left: halve();
+    padding-left: half();
   }
 
   .blockquote--right {
     &.blockquote--bordered {
-      padding-right: halve();
+      padding-right: half();
     }
   }
 }

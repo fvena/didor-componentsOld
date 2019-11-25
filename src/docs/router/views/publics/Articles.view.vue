@@ -90,7 +90,7 @@ $wrapper-width: 670px;
   }
 
   h4 + .code-toolbar {
-    margin-top: halve();
+    margin-top: half();
   }
 
   h5,
@@ -312,7 +312,7 @@ $wrapper-width: 670px;
   }
 
   pre[data-lang] {
-    padding-right: halve();
+    padding-right: half();
     border-radius: $border-radius;
 
     &.hasFile {
@@ -347,7 +347,7 @@ $wrapper-width: 670px;
       display: none;
       width: 100%;
       height: simple();
-      padding: 0 halve();
+      padding: 0 half();
       font-family: font-family(base);
       font-size: font-size(small2);
       line-height: simple();
@@ -400,7 +400,7 @@ $wrapper-width: 670px;
     .toolbar a {
       display: block;
       height: simple();
-      padding: 0 halve();
+      padding: 0 half();
       font-family: font-family(monospace);
       font-size: 0.6rem;
       font-weight: font-weight(bold);
@@ -586,7 +586,7 @@ $wrapper-width: 670px;
 
   &::before {
     display: block;
-    margin-bottom: halve();
+    margin-bottom: half();
     font-size: font-size(h5);
     font-weight: font-weight(bold);
     color: color(gray2);
@@ -624,7 +624,7 @@ $wrapper-width: 670px;
 
 @include media(palm) {
   .article {
-    padding: halve();
+    padding: half();
 
     h2 {
       padding-top: simple();
@@ -654,7 +654,7 @@ $wrapper-width: 670px;
     }
   }
   .article.article--show-device {
-    padding-right: halve();
+    padding-right: half();
   }
 }
 </style>

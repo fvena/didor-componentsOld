@@ -94,7 +94,7 @@ export default {
 }
 .codegroup__files {
   height: simple();
-  padding: 0 halve();
+  padding: 0 half();
   font-family: font-family(base);
   font-size: font-size(small2);
   line-height: simple();

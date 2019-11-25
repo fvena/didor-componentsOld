@@ -13,7 +13,7 @@ Los valores proporcionales por defecto, respecto del tamaño base definido por l
 ::: demo
 <div class="page-size">
   <div><div class="page-block width-quarter"></div>quarter() => 1/4x</div>
-  <div><div class="page-block width-halve"></div>halve() => 1/2x</div>
+  <div><div class="page-block width-half"></div>half() => 1/2x</div>
   <div><div class="page-block width"></div>simple() => x</div>
   <div><div class="page-block width-double"></div>double() => 2x</div>
   <div><div class="page-block width-triple"></div>triple() => 3x</div>
@@ -25,7 +25,7 @@ Los valores proporcionales por defecto, respecto del tamaño base definido por l
 
 ``` html
 <div class="width-quarter">...</div>
-<div class="width-halve">...</div>
+<div class="width-half">...</div>
 <div class="width">...</div>
 <div class="width-double">...</div>
 <div class="width-triple">...</div>
@@ -36,7 +36,7 @@ Los valores proporcionales por defecto, respecto del tamaño base definido por l
 
 ``` html
 <div class="height-quarter">...</div>
-<div class="height-halve">...</div>
+<div class="height-half">...</div>
 <div class="height">...</div>
 <div class="height-double">...</div>
 <div class="height-triple">...</div>
@@ -134,7 +134,7 @@ También existen funciones con los nombres estandarizados, para mejorar la semá
 
 ``` scss
 width: quarter();    // 1/4 * $space
-width: halve();      // 1/2 * $space
+width: half();      // 1/2 * $space
 width: simple();     // $space
 width: double();     // 2 * $space
 width: triple();     // 3 * $space

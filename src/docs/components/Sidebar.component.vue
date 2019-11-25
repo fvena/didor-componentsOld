@@ -78,7 +78,7 @@ export default {
 
   li > p > a,
   li > ul {
-    margin-bottom: halve();
+    margin-bottom: half();
   }
 
   li > ul {

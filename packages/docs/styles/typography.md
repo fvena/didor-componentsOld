@@ -7,12 +7,12 @@ La tipografía es uno de los elementos más importantes en el diseño, Didor cue
 Cuando definas las variables Sass, cambia las siguientes variables con tus valores personalizados:
 
 ``` scss
-$font-family-base: 'Source Sans Pro';    //Familia tipográfica base para los contenidos.
-$font-family-heading: 'Source Sans Pro'; //Familia tipográfica para las cabeceras.
-$font-family-monospace: 'Fira Code';     //Familia tipográfica para los textos monoespaciados
-$line-height: 1.6;   //Altura de línea
-$modular-scale: 1.2; //Escala modular
-$letter-spacing: 0;  //Tracking, espacio entre caracteres
+$font-family-base: 'Source Sans Pro';    // Familia tipográfica base para los contenidos.
+$font-family-heading: 'Source Sans Pro'; // Familia tipográfica para las cabeceras.
+$font-family-monospace: 'Fira Code';     // Familia tipográfica para los textos monoespaciados
+$line-height: 1.6;   // Altura de línea
+$modular-scale: 1.2; // Escala modular
+$letter-spacing: 0;  // Tracking, espacio entre caracteres
 ```
 
 También puedes definir los tamaños base de la fuente para cada tamaño de pantalla:
@@ -289,7 +289,7 @@ $styles-colors: (
 Notación: `.{size}-{weight}-{color}`
 
 ::: demo
-<div class="h1-medium-black margin-bottom-halve">.h1-medium-black</div>
+<div class="h1-medium-black margin-bottom-half">.h1-medium-black</div>
 <div class="h2-medium-black margin-bottom-quarter">.h2-medium-black</div>
 <div class="h3-medium-black margin-bottom-quarter">.h3-medium-black</div>
 <div class="h4-medium-black">.h4-medium-black</div>
@@ -299,7 +299,7 @@ Notación: `.{size}-{weight}-{color}`
 <div class="small2-medium-black margin-bottom">.small2-medium-black</div>
 
 
-<div class="h1-regular-black margin-bottom-halve">.h1-regular-black</div>
+<div class="h1-regular-black margin-bottom-half">.h1-regular-black</div>
 <div class="h2-regular-black margin-bottom-quarter">.h2-regular-black</div>
 <div class="h3-regular-black margin-bottom-quarter">.h3-regular-black</div>
 <div class="h4-regular-black">.h4-regular-black</div>
@@ -308,7 +308,7 @@ Notación: `.{size}-{weight}-{color}`
 <div class="small1-regular-black">.small1-regular-black</div>
 <div class="small2-regular-black margin-bottom">.small2-regular-black</div>
 
-<div class="h1-medium-gray margin-bottom-halve">.h1-medium-gray</div>
+<div class="h1-medium-gray margin-bottom-half">.h1-medium-gray</div>
 <div class="h2-medium-gray margin-bottom-quarter">.h2-medium-gray</div>
 <div class="h3-medium-gray margin-bottom-quarter">.h3-medium-gray</div>
 <div class="h4-medium-gray">.h4-medium-gray</div>
@@ -318,7 +318,7 @@ Notación: `.{size}-{weight}-{color}`
 <div class="small2-medium-gray margin-bottom">.small2-medium-gray</div>
 
 
-<div class="h1-regular-gray margin-bottom-halve">.h1-regular-gray</div>
+<div class="h1-regular-gray margin-bottom-half">.h1-regular-gray</div>
 <div class="h2-regular-gray margin-bottom-quarter">.h2-regular-gray</div>
 <div class="h3-regular-gray margin-bottom-quarter">.h3-regular-gray</div>
 <div class="h4-regular-gray">.h4-regular-gray</div>
@@ -328,7 +328,7 @@ Notación: `.{size}-{weight}-{color}`
 <div class="small2-regular-gray margin-bottom">.small2-regular-gray</div>
 
 <div class="background-brand padding margin-top">
-  <div class="h1-medium-white margin-bottom-halve">.h1-medium-white</div>
+  <div class="h1-medium-white margin-bottom-half">.h1-medium-white</div>
   <div class="h2-medium-white margin-bottom-quarter">.h2-medium-white</div>
   <div class="h3-medium-white margin-bottom-quarter">.h3-medium-white</div>
   <div class="h4-medium-white">.h4-medium-white</div>
@@ -338,7 +338,7 @@ Notación: `.{size}-{weight}-{color}`
   <div class="small2-medium-white margin-bottom">.small2-medium-white</div>
 
 
-  <div class="h1-regular-white margin-bottom-halve">.h1-regular-white</div>
+  <div class="h1-regular-white margin-bottom-half">.h1-regular-white</div>
   <div class="h2-regular-white margin-bottom-quarter">.h2-regular-white</div>
   <div class="h3-regular-white margin-bottom-quarter">.h3-regular-white</div>
   <div class="h4-regular-white">.h4-regular-white</div>

@@ -179,7 +179,7 @@ $space: $line-height * 1rem !default;
 $spacing-map: (
   'none': 0,
   'quarter': $space / 4,
-  'halve': $space / 2,
+  'half': $space / 2,
   'simple': $space,
   'double': $space * 2,
   'triple': $space * 3,

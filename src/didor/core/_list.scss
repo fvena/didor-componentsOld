@@ -48,7 +48,7 @@ dl {
     margin-left: 0;
 
     @include media(palm) {
-      margin-left: halve();
+      margin-left: half();
     }
   }
 

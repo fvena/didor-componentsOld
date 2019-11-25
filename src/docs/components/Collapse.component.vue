@@ -84,7 +84,7 @@ export default {
 }
 
 .collapse__content {
-  padding-top: halve();
+  padding-top: half();
 
   p:last-child {
     margin-bottom: 0;

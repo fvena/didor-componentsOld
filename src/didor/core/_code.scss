@@ -11,7 +11,7 @@ pre {
 pre {
   position: relative;
   display: block;
-  padding: halve() simple();
+  padding: half() simple();
   overflow: auto;
   hyphens: none;
   text-align: left;
@@ -33,7 +33,7 @@ pre {
     right: 0;
     display: block;
     height: simple();
-    padding: 0 halve();
+    padding: 0 half();
     font-size: 0.6rem;
     font-weight: font-weight(bold);
     line-height: simple();

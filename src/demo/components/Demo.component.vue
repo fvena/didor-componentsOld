@@ -26,8 +26,8 @@ export default {
 }
 
 .demo__title {
-  padding: halve() halve() 0;
-  margin-bottom: halve();
+  padding: half() half() 0;
+  margin-bottom: half();
   font-family: font-family(base);
   font-size: font-size(small1);
   font-weight: font-weight(bold);
@@ -40,6 +40,6 @@ export default {
 }
 
 .demo__content--padding {
-  padding: 0 halve();
+  padding: 0 half();
 }
 </style>

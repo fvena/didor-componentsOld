@@ -2,7 +2,7 @@
  * Funciones que devuelven un valor entero proporcional. Ejemplo de uso.
  *
  * .foo {
- *   padding: halve(20px);
+ *   padding: half(20px);
  *   margin: double();
  * }
  */
@@ -27,7 +27,7 @@
   @return $value / 3;
 }
 
-@function halve($value: $space) {
+@function half($value: $space) {
   @if $value == '-' {
     $value: -$space;
   }

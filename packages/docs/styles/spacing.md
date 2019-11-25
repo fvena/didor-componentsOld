@@ -36,13 +36,13 @@ Las clases se forman con el siguiente formato
 
 `size` puede ser:
 
-* `quarter`, `halve`, `double`, `triple`, `quadruple`, `quintuple`, `sextuple` y `auto` indica el tamaño del margen.
+* `quarter`, `half`, `double`, `triple`, `quadruple`, `quintuple`, `sextuple` y `auto` indica el tamaño del margen.
 * Si no indicamos nada, se aplica el tamaño estandar 1x.
 * El valor `auto` solo se aplica a los valores horizontales
 
 ```html
 <div class="margin">Margen tamaño base</div>
-<div class="margin-halve">Margen la mitad del tamaño base</div>
+<div class="margin-half">Margen la mitad del tamaño base</div>
 <div class="margin-triple">Margen tres veces el tamaño base</div>
 ```
 
@@ -52,7 +52,7 @@ Las clases se forman con el siguiente formato
 <div class="margin">...</div>
 <div class="margin-top-double">...</div>
 <div class="margin-left-lap">...</div>
-<div class="margin-palm-halve">...</div>
+<div class="margin-palm-half">...</div>
 <div class="margin margin-right-desk-triple">...</div>
 ```
 

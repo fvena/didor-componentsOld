@@ -3,7 +3,7 @@
     Demo(title="Uso Básico")
       az-checkbox(v-model="checked") Checkbox
 
-      p.margin-left.margin-top-halve
+      p.margin-left.margin-top-half
         span.color-gray3 valor:&nbsp;
         span.color-brand {{ checked }}
 
@@ -20,7 +20,7 @@
           :value="item")
           | {{ item }}
 
-      p.margin-left.margin-top-halve
+      p.margin-left.margin-top-half
         span.color-gray3 valor:&nbsp;
         span.color-brand {{ groupResult }}
 
@@ -33,7 +33,7 @@
           :value="item")
           | {{ item }}
 
-      p.margin-left.margin-top-halve
+      p.margin-left.margin-top-half
         span.color-gray3 valor:&nbsp;
         span.color-brand {{ groupMax }}
 
@@ -46,7 +46,7 @@
           :value="item")
           | {{ item }}
 
-      p.margin-left.margin-top-halve
+      p.margin-left.margin-top-half
         span.color-gray3 valor:&nbsp;
         span.color-brand {{ groupCell }}
 </template>

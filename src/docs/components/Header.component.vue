@@ -157,7 +157,7 @@ $sidebar-width-large: 300px;
     > li > p,
     > li > a {
       height: $header-height;
-      padding: 0 halve();
+      padding: 0 half();
       line-height: $header-height;
       color: color(gray3);
       cursor: pointer;
@@ -165,7 +165,7 @@ $sidebar-width-large: 300px;
 
     > li:last-of-type p,
     > li:last-of-type a {
-      padding-right: halve();
+      padding-right: half();
     }
 
     > li {
@@ -184,7 +184,7 @@ $sidebar-width-large: 300px;
       display: none;
       min-width: 100%;
       max-height: calc(100vh - #{double()});
-      padding: halve() 0;
+      padding: half() 0;
       overflow-y: auto;
       text-align: left;
       background-color: #ffffff;
@@ -200,7 +200,7 @@ $sidebar-width-large: 300px;
 
       a {
         width: max-content;
-        padding: 0 halve();
+        padding: 0 half();
         cursor: pointer;
       }
     }

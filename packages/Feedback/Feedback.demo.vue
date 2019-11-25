@@ -4,16 +4,16 @@
       az-feedback(:isLoading="isLoading" :isSuccess="isSuccess" :isError="isError")
 
       .text-center
-        az-button.margin-right-halve(@click="onLoading" size="small") Loading
-        az-button.margin-right-halve(@click="onSuccess" type="success" size="small") Success
+        az-button.margin-right-half(@click="onLoading" size="small") Loading
+        az-button.margin-right-half(@click="onSuccess" type="success" size="small") Success
         az-button(@click="onError" type="danger" size="small") Error
 
     Demo(title="Uso Básico")
       az-feedback(:isLoading="isLoading2" :isSuccess="isSuccess2" :isError="isError2" :scale="1")
 
       .text-center
-        az-button.margin-right-halve(@click="onLoading2" size="small") Loading
-        az-button.margin-right-halve(@click="onSuccess2" type="success" size="small") Success
+        az-button.margin-right-half(@click="onLoading2" size="small") Loading
+        az-button.margin-right-half(@click="onSuccess2" type="success" size="small") Success
         az-button(@click="onError2" type="danger" size="small") Error
 </template>
 

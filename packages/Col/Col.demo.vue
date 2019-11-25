@@ -177,7 +177,7 @@ export default {};
 
 <style lang="scss" scoped>
 .content {
-  margin-bottom: halve();
+  margin-bottom: half();
   overflow: hidden;
   background-color: color(gray6);
   border-radius: 3px;

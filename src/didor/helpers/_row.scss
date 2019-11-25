@@ -94,8 +94,8 @@
   }
 
   /* Small */
-  &--vgutter-small { margin-top: halve(-1/2); }
-  &--vgutter-small > * { margin-top: halve(); }
+  &--vgutter-small { margin-top: half(-1/2); }
+  &--vgutter-small > * { margin-top: half(); }
 
   /* Large */
   &--vgutter-large { margin-top: double('-'); }
@@ -111,8 +111,8 @@
         }
 
         /* Small */
-        &--#{$breakpoint}--vgutter-small { margin-top: halve(-1/2); }
-        &--#{$breakpoint}--vgutter-small > * { margin-top: halve(); }
+        &--#{$breakpoint}--vgutter-small { margin-top: half(-1/2); }
+        &--#{$breakpoint}--vgutter-small > * { margin-top: half(); }
 
         /* Large */
         &--#{$breakpoint}--vgutter-large { margin-top: double('-'); }
@@ -142,8 +142,8 @@
   }
 
   /* Small */
-  &--hgutter-small { margin-left: halve(-1/2); }
-  &--hgutter-small > * { margin-left: halve(); }
+  &--hgutter-small { margin-left: half(-1/2); }
+  &--hgutter-small > * { margin-left: half(); }
 
   /* Large */
   &--hgutter-large { margin-left: double('-'); }
@@ -159,8 +159,8 @@
         }
 
         /* Small */
-        &--#{$breakpoint}--hgutter-small { margin-left: halve(-1/2); }
-        &--#{$breakpoint}--hgutter-small > * { margin-left: halve(); }
+        &--#{$breakpoint}--hgutter-small { margin-left: half(-1/2); }
+        &--#{$breakpoint}--hgutter-small > * { margin-left: half(); }
 
         /* Large */
         &--#{$breakpoint}--hgutter-large { margin-left: double('-'); }
