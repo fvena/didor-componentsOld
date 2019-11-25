@@ -82,7 +82,9 @@ $font-weights: (
 
   // Si el valor del $size es un número
   @if $font-value == number {
-    @return #{$size / 16}rem;
+    $module: pow($modular-scale, $size);
+
+    @return #{$module}rem;
   }
 
   // Si el valor del $size no es un número y es el alias de la escala modular
@@ -102,19 +104,21 @@ $font-weights: (
 // Admite un valor númerico o un alias de la escala modular.
 //
 
-@function line-height($height) {
-  // Tipo de la variable $height
-  $font-value: type-of($height);
+@function line-height($size) {
+  // Tipo de la variable $size
+  $font-value: type-of($size);
 
-  // Si el valor del $height es un número
+  // Si el valor del $size es un número
   @if $font-value == number {
-    @return #{ceil($height / ($space * 16)) * $space}rem;
+    $module: pow($modular-scale, $size);
+
+    @return #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;
   }
 
-  // Si el valor del $height no es un número y es el alias de la escala modular
+  // Si el valor del $size no es un número y es el alias de la escala modular
   @else {
-    @if map-has-key($styles-sizes, $height) {
-      $level: map-get($styles-sizes, $height);
+    @if map-has-key($styles-sizes, $size) {
+      $level: map-get($styles-sizes, $size);
       $module: pow($modular-scale, $level);
 
       @return #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;

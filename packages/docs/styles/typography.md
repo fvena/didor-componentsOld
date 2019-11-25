@@ -258,6 +258,103 @@ La clase `.caption` también sirve para destacar un párrafo.
 <p class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod elementum enim, ac aliquet sem consectetur non. Integer suscipit lacus eu turpis sagittis, sit amet venenatis leo dignissim.</p>
 ```
 
+## Estilos de texto
+
+Una forma de controlar, simplificar y homogeneizar los textos de la aplicación consiste en definir todos los estilos de texto posibles en nuestro sistema de diseño, para ello mediante las siguientes variables podemos definir los tamaños, pesos y colores posibles, de forma que se autogeneren todas las clases con las combinaciones posibles o se puedan extender.
+
+``` scss
+$styles-sizes: (
+  'h1': 5,
+  'h2': 4,
+  'h3': 3,
+  'h4': 2,
+  'h5': 1,
+  'base': 0,
+  'small1': -1,
+  'small2': -2,
+) !default;
+
+$styles-weights: (
+  'regular': $font-weight-normal,
+  'medium': $font-weight-bold,
+) !default;
+
+$styles-colors: (
+  'black': color(gray1),
+  'gray': color(gray4),
+  'white': #ffffff,
+) !default;
+```
+
+Notación: `.{size}-{weight}-{color}`
+
+::: demo
+<div class="h1-medium-black margin-bottom-halve">.h1-medium-black</div>
+<div class="h2-medium-black margin-bottom-quarter">.h2-medium-black</div>
+<div class="h3-medium-black margin-bottom-quarter">.h3-medium-black</div>
+<div class="h4-medium-black">.h4-medium-black</div>
+<div class="h5-medium-black">.h5-medium-black</div>
+<div class="base-medium-black">.base-medium-black</div>
+<div class="small1-medium-black">.mall1-medium-black</div>
+<div class="small2-medium-black margin-bottom">.small2-medium-black</div>
+
+
+<div class="h1-regular-black margin-bottom-halve">.h1-regular-black</div>
+<div class="h2-regular-black margin-bottom-quarter">.h2-regular-black</div>
+<div class="h3-regular-black margin-bottom-quarter">.h3-regular-black</div>
+<div class="h4-regular-black">.h4-regular-black</div>
+<div class="h5-regular-black">.h5-regular-black</div>
+<div class="base-regular-black">.base-regular-black</div>
+<div class="small1-regular-black">.small1-regular-black</div>
+<div class="small2-regular-black margin-bottom">.small2-regular-black</div>
+
+<div class="h1-medium-gray margin-bottom-halve">.h1-medium-gray</div>
+<div class="h2-medium-gray margin-bottom-quarter">.h2-medium-gray</div>
+<div class="h3-medium-gray margin-bottom-quarter">.h3-medium-gray</div>
+<div class="h4-medium-gray">.h4-medium-gray</div>
+<div class="h5-medium-gray">.h5-medium-gray</div>
+<div class="base-medium-gray">.base-medium-gray</div>
+<div class="small1-medium-gray">.small1-medium-gray</div>
+<div class="small2-medium-gray margin-bottom">.small2-medium-gray</div>
+
+
+<div class="h1-regular-gray margin-bottom-halve">.h1-regular-gray</div>
+<div class="h2-regular-gray margin-bottom-quarter">.h2-regular-gray</div>
+<div class="h3-regular-gray margin-bottom-quarter">.h3-regular-gray</div>
+<div class="h4-regular-gray">.h4-regular-gray</div>
+<div class="h5-regular-gray">.h5-regular-gray</div>
+<div class="base-regular-gray">.base-regular-gray</div>
+<div class="small1-regular-gray">.small1-regular-gray</div>
+<div class="small2-regular-gray margin-bottom">.small2-regular-gray</div>
+
+<div class="background-brand padding margin-top">
+  <div class="h1-medium-white margin-bottom-halve">.h1-medium-white</div>
+  <div class="h2-medium-white margin-bottom-quarter">.h2-medium-white</div>
+  <div class="h3-medium-white margin-bottom-quarter">.h3-medium-white</div>
+  <div class="h4-medium-white">.h4-medium-white</div>
+  <div class="h5-medium-white">.h5-medium-white</div>
+  <div class="base-medium-white">.base-medium-white</div>
+  <div class="small1-medium-white">.small1-medium-white</div>
+  <div class="small2-medium-white margin-bottom">.small2-medium-white</div>
+
+
+  <div class="h1-regular-white margin-bottom-halve">.h1-regular-white</div>
+  <div class="h2-regular-white margin-bottom-quarter">.h2-regular-white</div>
+  <div class="h3-regular-white margin-bottom-quarter">.h3-regular-white</div>
+  <div class="h4-regular-white">.h4-regular-white</div>
+  <div class="h5-regular-white">.h5-regular-white</div>
+  <div class="base-regular-white">.base-regular-white</div>
+  <div class="small1-regular-white">.small1-regular-white</div>
+  <div class="small2-regular-white">.small2-regular-white</div>
+</div>
+:::
+
+``` scss
+.myStyle {
+  @extend %base-medium-black;
+}
+```
+
 ## Funciones
 
 ``` scss

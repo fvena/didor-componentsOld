@@ -6284,15 +6284,16 @@ var Loading_component = normalizeComponent(
 )
 
 /* harmony default export */ var Loading = (Loading_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=template&id=f9420850&lang=pug&
-var Popupvue_type_template_id_f9420850_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"az-popup-fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup",class:[_vm.className],style:(_vm.style),attrs:{"tabindex":"-1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.onEsc($event)}}},[(_vm.mask)?_c('div',{staticClass:"az-popup__mask",on:{"click":_vm.onClickMask}}):_vm._e(),_c('transition',{attrs:{"name":("az-popup-" + _vm.animation)}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup__dialog",style:(_vm.dialogStyle)},[(_vm.closeButton)?_c('span',{staticClass:"az-popup__close",on:{"click":function($event){return _vm.$emit('hide')}}}):_vm._e(),_vm._t("default")],2)])],1)])}
-var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=template&id=0a2fca89&lang=pug&
+var Popupvue_type_template_id_0a2fca89_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"az-popup-none"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup",class:_vm.popupClass,style:(_vm.popupStyle),attrs:{"tabindex":"-1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.onEsc($event)}}},[_c('transition',{attrs:{"name":"az-popup-fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.mask && _vm.value),expression:"mask && value"}],staticClass:"az-popup__mask",style:(_vm.popupStyle),on:{"click":_vm.onClickMask}})]),_c('transition',{attrs:{"name":("az-popup-" + _vm.animation)}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup__dialog",class:_vm.dialogClass,style:(_vm.dialogStyle)},[(_vm.closeButton)?_c('span',{staticClass:"az-popup__close",on:{"click":function($event){return _vm.$emit('hide')}}}):_vm._e(),_vm._t("default")],2)])],1)])}
+var Popupvue_type_template_id_0a2fca89_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/Popup/Popup.vue?vue&type=template&id=f9420850&lang=pug&
+// CONCATENATED MODULE: ./packages/Popup/Popup.vue?vue&type=template&id=0a2fca89&lang=pug&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--11-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=script&lang=js&
 
+//
 //
 //
 //
@@ -6322,19 +6323,11 @@ var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
       type: Boolean,
       required: true
     },
-    width: {
-      type: Number,
-      required: false
-    },
-    height: {
-      type: Number,
-      required: false
-    },
     duration: {
       type: Number,
       default: 300
     },
-    animation: {
+    transition: {
       type: String,
       default: 'zoom'
     },
@@ -6354,14 +6347,32 @@ var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
       type: Boolean,
       default: true
     },
-    className: {
-      type: String,
-      default: ''
+    zIndex: {
+      type: Number,
+      default: 100
     },
-    zIndex: [Number, String],
     lockScroll: {
       type: Boolean,
       default: true
+    },
+    container: {
+      type: String,
+      required: false
+    },
+    position: {
+      type: String,
+      default: '',
+      validator: function validator(value) {
+        return ['top', 'right', 'bottom', 'left', ''].indexOf(value) !== -1;
+      }
+    },
+    full: {
+      type: Boolean,
+      default: false
+    },
+    bounce: {
+      type: Boolean,
+      default: false
     }
   },
   data: function data() {
@@ -6372,23 +6383,31 @@ var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
   watch: {
     value: function value(val) {
       var type = val ? 'open' : 'close';
-      this[type](); // Lanza el evento => this.open() o this.close()
+      this[type](); // Llama al método => this.open() o this.close()
 
       this.$emit(type); // Emite un evento 'open' o 'close'
     }
   },
   computed: {
-    style: function style() {
+    dialogClass: function dialogClass() {
+      return [this.position ? "az-popup--".concat(this.position) : '', this.full ? 'az-popup--full' : ''];
+    },
+    popupStyle: function popupStyle() {
       return {
-        animationDuration: "".concat(this.duration, "ms")
+        animationDuration: "".concat(this.duration, "ms"),
+        'z-index': this.zIndex
       };
     },
     dialogStyle: function dialogStyle() {
       return {
-        width: '80%',
-        height: '40%',
-        animationDuration: "".concat(this.duration, "ms")
+        transitionDuration: "".concat(this.duration, "ms"),
+        animationDuration: "".concat(this.duration, "ms"),
+        transitionTimingFunction: this.bounce ? 'cubic-bezier(0.4, 0, 0, 1.5)' : 'cubic-bezier(0.55, 0, 0.1, 1)',
+        animationTimingFunction: this.bounce ? 'cubic-bezier(0.4, 0, 0, 1.5)' : 'cubic-bezier(0.55, 0, 0.1, 1)'
       };
+    },
+    animation: function animation() {
+      return this.position ? this.position : this.transition;
     }
   },
   methods: {
@@ -6401,20 +6420,22 @@ var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
       this.opened = true;
 
       if (this.lockScroll) {
-        document.body.classList.add('van-overflow-hidden');
+        document.body.classList.add('az-overflow-hidden');
       }
     },
     close: function close() {
       if (!this.opened) return;
 
       if (this.lockScroll) {
-        document.body.classList.remove('van-overflow-hidden');
+        document.body.classList.remove('az-overflow-hidden');
       }
 
       this.opened = false;
       this.$emit('input', false);
     },
     onEsc: function onEsc() {
+      console.log('esc');
+
       if (this.value && this.closeOnEsc) {
         this.$emit('hide');
       }
@@ -6428,14 +6449,22 @@ var Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns = []
     }
   },
   mounted: function mounted() {
+    if (this.container) {
+      var element = document.querySelector(this.container);
+
+      if (element) {
+        element.appendChild(this.$el);
+      } else {
+        console.error("az-popup: No se ha encontrado el elemento: ".concat(this.container));
+      }
+    }
+
     if (this.value) {
       this.open();
     }
   },
   beforeDestroy: function beforeDestroy() {
-    this.close(); // if (this.getContainer && this.$parent && this.$parent.$el) {
-    //   this.$parent.$el.appendChild(this.$el);
-    // }
+    this.close();
   }
 });
 // CONCATENATED MODULE: ./packages/Popup/Popup.vue?vue&type=script&lang=js&
@@ -6454,8 +6483,8 @@ var Popupvue_type_style_index_0_lang_scss_ = __webpack_require__("a719");
 
 var Popup_component = normalizeComponent(
   Popup_Popupvue_type_script_lang_js_,
-  Popupvue_type_template_id_f9420850_lang_pug_render,
-  Popupvue_type_template_id_f9420850_lang_pug_staticRenderFns,
+  Popupvue_type_template_id_0a2fca89_lang_pug_render,
+  Popupvue_type_template_id_0a2fca89_lang_pug_staticRenderFns,
   false,
   null,
   null,

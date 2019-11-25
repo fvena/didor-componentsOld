@@ -19,6 +19,17 @@ yarn build-lib
 npm publish --access=public
 ```
 
+Publicar ssh
+ssh frontend@frontend.airzonesl.es
+password: Fron-2290
+
+npm run serve &
+
+http://frontend.airzonesl.es/home
+```
+
+```
+
 ### Run your tests
 ```
 yarn test
