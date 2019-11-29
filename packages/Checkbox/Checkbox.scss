@@ -91,7 +91,7 @@ $checkboxMarkColor: #ffffff !default;
   //
   &--checked {
     #{$rootClass}__base {
-      border: ($checkboxSize / 2) solid color(brand);
+      border: ($checkboxSize / 2 + 0.001) solid color(brand);
     }
 
     #{$rootClass}__mark {
