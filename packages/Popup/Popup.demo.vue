@@ -52,7 +52,7 @@
     Demo(title="Cerrar con Esc")
       az-button(@click="esc = true" size="small") show
 
-    az-popup(v-model="esc" @hide="esc = false" :closeOnEsc="true")
+    az-popup(v-model="esc" @hide="esc = false" closeOnEsc)
       | Un modal vue con animación y cierre con esc.
 
     Demo(title="Abrir en el body")

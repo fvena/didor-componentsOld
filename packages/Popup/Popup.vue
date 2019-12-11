@@ -4,7 +4,6 @@
       v-show="value"
       tabindex="-1"
       :style="popupStyle"
-      :class="popupClass"
       @keyup.esc="onEsc")
 
       //- Modal Mask
@@ -128,11 +127,6 @@ export default {
     open() {
       if (this.opened) return;
 
-      // // cover default zIndex
-      // if (this.zIndex !== undefined) {
-      //   context.zIndex = this.zIndex;
-      // }
-
       this.opened = true;
 
       if (this.lockScroll) {
@@ -152,7 +146,6 @@ export default {
     },
 
     onEsc() {
-      console.log('esc');
       if (this.value && this.closeOnEsc) {
         this.$emit('hide');
       }
