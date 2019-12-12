@@ -4,21 +4,23 @@
       v-show="value"
       tabindex="-1"
       :style="popupStyle"
+      :class="popupClass"
       @keyup.esc="onEsc")
 
       //- Modal Mask
       transition(name="az-popup-fade")
-        .az-popup__mask(v-show="mask && value" :style="popupStyle" @click="onClickMask")
+        .az-popup__mask(v-show="showMask && value" :style="popupStyle" @click="onClickMask")
 
       //- Modal Body
       transition(:name="`az-popup-${animation}`")
-        .az-popup__dialog(v-show="value" :style="dialogStyle" :class="dialogClass")
+        .az-popup__dialog(v-show="value" :style="dialogStyle")
 
           //- Botón cerrar
           span.az-popup__close(v-if="closeButton" @click="$emit('hide')")
 
           //- Contenido
-          slot
+          .az-popup__content
+            slot
 </template>
 
 <script>
@@ -94,7 +96,15 @@ export default {
   },
 
   computed: {
-    dialogClass() {
+    showMask() {
+      return this.mask || this.$DIDOR.mask;
+    },
+
+    showCloseButton() {
+      return this.closeButton || this.$DIDOR.closeButton;
+    },
+
+    popupClass() {
       return [this.position ? `az-popup--${this.position}` : '', this.full ? 'az-popup--full' : ''];
     },
 
@@ -160,12 +170,14 @@ export default {
   },
 
   mounted() {
-    if (this.container) {
-      const element = document.querySelector(this.container);
+    const container = this.container || this.$DIDOR.container || '';
+
+    if (container) {
+      const element = document.querySelector(container);
       if (element) {
         element.appendChild(this.$el);
       } else {
-        console.error(`az-popup: No se ha encontrado el elemento: ${this.container}`);
+        console.error(`az-popup: No se ha encontrado el elemento: ${container}`);
       }
     }
 

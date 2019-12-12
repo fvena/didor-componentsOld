@@ -1,5 +1,9 @@
 .az-overflow-hidden {
   overflow: hidden !important;
+
+  > *:not(.az-popup) {
+    filter: blur(3px) grayscale(50%);
+  }
 }
 
 .az-popup,
@@ -13,57 +17,98 @@
 
 .az-popup {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__mask {
     position: absolute;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
   }
 
   &__dialog {
     @include shadow(3);
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    position: relative;
     z-index: 101;
-    width: 80%;
-    height: 40%;
-    padding: simple();
-    margin: auto;
     background: color(background);
     border-radius: $border-radius;
   }
 
+  &__content {
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  &--top,
+  &--bottom,
+  &--left,
+  &--right,
+  &--full {
+    .az-popup__content {
+      max-width: initial;
+      max-height: initial;
+    }
+  }
+
   &--top {
-    bottom: initial;
-    width: 100%;
-    border-radius: 0 0 $border-radius $border-radius;
+    align-items: flex-start;
+
+    .az-popup__dialog {
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    .az-popup__content {
+      width: 100vw;
+    }
   }
 
   &--bottom {
-    top: initial;
-    width: 100%;
-    border-radius: $border-radius $border-radius 0 0;
+    align-items: flex-end;
+
+    .az-popup__dialog {
+      border-radius: $border-radius $border-radius 0 0;
+    }
+
+    .az-popup__content {
+      width: 100vw;
+    }
   }
 
   &--left {
-    right: initial;
-    height: 100%;
-    border-radius: 0 $border-radius $border-radius 0;
+    justify-content: flex-start;
+
+    .az-popup__dialog {
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    .az-popup__content {
+      height: 100vh;
+    }
   }
 
   &--right {
-    left: initial;
-    height: 100%;
-    border-radius: $border-radius 0 0 $border-radius;
+    justify-content: flex-end;
+
+    .az-popup__dialog {
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+
+    .az-popup__content {
+      height: 100vh;
+    }
   }
 
   &--full {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
+    .az-popup__dialog {
+      border-radius: 0;
+    }
+
+    .az-popup__content {
+      width: 100vw;
+      height: 100vh;
+    }
   }
 }
 
@@ -71,7 +116,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 100;
   width: double();
   height: double();
   cursor: pointer;

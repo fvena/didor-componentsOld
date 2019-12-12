@@ -71,6 +71,58 @@ export default {
 </az-popup>
 ```
 
+#### Superponer modales
+
+Desde dentro de un modal podemos llamar a otro modal que se mostrará por encima.
+
+>El orden en el que se superponen los modales depende del orden en el que se hayan definido en el HTML. Si este orden puede cambiar, te recomiendo que indiques un container (sección siguiente), ya que se irán añadiendo al final de ese container según los vayas instanciando.
+
+``` html
+<az-button @click="modal1 = true">Mostrar modal 1</az-button>
+
+<!-- Modal 1 -->
+<az-popup v-model="modal1" @hide="modal1 = false">
+  | Modal 1
+  <az-button @click="modal2 = true">Mostrar modal 2</az-button>
+</az-popup>
+
+<!-- Modal 2 -->
+<az-popup v-model="modal2" @hide="modal2 = false">
+  | Modal 2
+  <az-button @click="modal3 = true">Mostrar modal 3</az-button>
+</az-popup>
+
+<!-- Modal 3 -->
+<az-popup v-model="modal3" @hide="modal3 = false">
+  | Modal 3
+</az-popup>
+```
+
+#### Anidar modales
+
+Un modal puede contener a su vez otros modales
+
+``` html
+<az-button @click="modal1 = true">Mostrar modal 1</az-button>
+
+<!-- Modal 1 -->
+<az-popup v-model="modal1" @hide="modal1 = false">
+  | Modal 1
+  <az-button @click="modal2 = true">Mostrar modal 2</az-button>
+
+  <!-- Modal 2 -->
+  <az-popup v-model="modal2" @hide="modal2 = false">
+    | Modal 2
+    <az-button @click="modal3 = true">Mostrar modal 3</az-button>
+
+    <!-- Modal 3 -->
+    <az-popup v-model="modal3" @hide="modal3 = false">
+      | Modal 3
+    </az-popup>
+  </az-popup>
+</az-popup>
+```
+
 #### Abrir en el body
 
 ``` html

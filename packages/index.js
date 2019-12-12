@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import Avatar from './Avatar/Avatar.vue';
 import Button from './Button/Button.vue';
 import Cell from './Cell/Cell.vue';
@@ -39,11 +38,24 @@ const Components = {
   TabBarItem,
 };
 
-const prefix = 'Az';
+const install = (Vue, opts = {}) => {
+  const prefix = 'Az';
 
-Object.keys(Components).forEach((name) => {
-  const componentName = `${prefix}${name}`;
-  Vue.component(componentName, Components[name]);
-});
+  Object.keys(Components).forEach((name) => {
+    const componentName = `${prefix}${name}`;
+    Vue.component(componentName, Components[name]);
+  });
 
-export default Components;
+  Vue.prototype.$DIDOR = {
+    container: opts.defaultContainer || '',
+    mask: opts.defaultMask || true,
+    closeButton: opts.defaultCloseButton || true,
+  };
+};
+
+// Automatically install Didor UI if Vue is available globally
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
+export default { install, ...Components };

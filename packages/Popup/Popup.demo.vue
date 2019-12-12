@@ -49,6 +49,85 @@
     az-popup(v-model="fullRight" @hide="fullRight = false" position="right" full)
       | Un modal vue con animación a pantalla completa.
 
+    Demo(title="Varios Modales")
+      az-button(@click="some = true" size="small") Mostrar modal 1
+
+    az-popup(v-model="some" @hide="some = false" bounce)
+      .text-center
+        .margin-bottom-half Modal 1
+        az-button(@click="some1 = true" size="small") Mostrar modal 2
+
+    az-popup(v-model="some1" @hide="some1 = false" bounce)
+      .text-center
+        .margin-bottom-half Modal 2
+        az-button(@click="some2 = true" size="small") Mostrar modal 3
+
+    az-popup(v-model="some2" @hide="some2 = false" bounce)
+      | Modal 3
+
+
+    Demo(title="Modales anidados")
+      az-button(@click="nest = true" size="small") Mostrar modal 1
+
+    az-popup(v-model="nest" @hide="nest = false" bounce)
+      .text-center
+        .margin-bottom-half Modal 1
+        az-button(@click="nest1 = true" size="small") Mostrar modal 2
+
+      az-popup(v-model="nest1" @hide="nest1 = false" bounce)
+        .text-center
+          .margin-bottom-half Modal 2
+          az-button(@click="nest2 = true" size="small") Mostrar modal 3
+
+        az-popup(v-model="nest2" @hide="nest2 = false" bounce)
+          | Modal 3
+
+
+    Demo(title="Scroll")
+      az-button(@click="scroll = true" size="small") show
+
+    az-popup(v-model="scroll" @hide="scroll = false" bounce)
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+      | Un modal vue con animación y scroll. <br>
+
     Demo(title="Cerrar con Esc")
       az-button(@click="esc = true" size="small") show
 
@@ -74,6 +153,13 @@ export default {
       door: false,
       slideDown: false,
       slideUp: false,
+      scroll: false,
+      some: false,
+      some1: false,
+      some2: false,
+      nest: false,
+      nest1: false,
+      nest2: false,
       esc: false,
       container: false,
       full: false,
@@ -90,5 +176,9 @@ export default {
 <style lang="scss">
 body {
   height: 100%;
+}
+
+.az-popup__content {
+  padding: simple();
 }
 </style>
