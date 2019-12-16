@@ -1571,6 +1571,147 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "3c4e":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isMergeableObject = function isMergeableObject(value) {
+	return isNonNullObject(value)
+		&& !isSpecial(value)
+};
+
+function isNonNullObject(value) {
+	return !!value && typeof value === 'object'
+}
+
+function isSpecial(value) {
+	var stringValue = Object.prototype.toString.call(value);
+
+	return stringValue === '[object RegExp]'
+		|| stringValue === '[object Date]'
+		|| isReactElement(value)
+}
+
+// see https://github.com/facebook/react/blob/b5ac963fb791d1298e7f396236383bc955f916c1/src/isomorphic/classic/element/ReactElement.js#L21-L25
+var canUseSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for('react.element') : 0xeac7;
+
+function isReactElement(value) {
+	return value.$$typeof === REACT_ELEMENT_TYPE
+}
+
+function emptyTarget(val) {
+	return Array.isArray(val) ? [] : {}
+}
+
+function cloneUnlessOtherwiseSpecified(value, options) {
+	return (options.clone !== false && options.isMergeableObject(value))
+		? deepmerge(emptyTarget(value), value, options)
+		: value
+}
+
+function defaultArrayMerge(target, source, options) {
+	return target.concat(source).map(function(element) {
+		return cloneUnlessOtherwiseSpecified(element, options)
+	})
+}
+
+function getMergeFunction(key, options) {
+	if (!options.customMerge) {
+		return deepmerge
+	}
+	var customMerge = options.customMerge(key);
+	return typeof customMerge === 'function' ? customMerge : deepmerge
+}
+
+function getEnumerableOwnPropertySymbols(target) {
+	return Object.getOwnPropertySymbols
+		? Object.getOwnPropertySymbols(target).filter(function(symbol) {
+			return target.propertyIsEnumerable(symbol)
+		})
+		: []
+}
+
+function getKeys(target) {
+	return Object.keys(target).concat(getEnumerableOwnPropertySymbols(target))
+}
+
+function propertyIsOnObject(object, property) {
+	try {
+		return property in object
+	} catch(_) {
+		return false
+	}
+}
+
+// Protects from prototype poisoning and unexpected merging up the prototype chain.
+function propertyIsUnsafe(target, key) {
+	return propertyIsOnObject(target, key) // Properties are safe to merge if they don't exist in the target yet,
+		&& !(Object.hasOwnProperty.call(target, key) // unsafe if they exist up the prototype chain,
+			&& Object.propertyIsEnumerable.call(target, key)) // and also unsafe if they're nonenumerable.
+}
+
+function mergeObject(target, source, options) {
+	var destination = {};
+	if (options.isMergeableObject(target)) {
+		getKeys(target).forEach(function(key) {
+			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
+		});
+	}
+	getKeys(source).forEach(function(key) {
+		if (propertyIsUnsafe(target, key)) {
+			return
+		}
+
+		if (propertyIsOnObject(target, key) && options.isMergeableObject(source[key])) {
+			destination[key] = getMergeFunction(key, options)(target[key], source[key], options);
+		} else {
+			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options);
+		}
+	});
+	return destination
+}
+
+function deepmerge(target, source, options) {
+	options = options || {};
+	options.arrayMerge = options.arrayMerge || defaultArrayMerge;
+	options.isMergeableObject = options.isMergeableObject || isMergeableObject;
+	// cloneUnlessOtherwiseSpecified is added to `options` so that custom arrayMerge()
+	// implementations can use it. The caller may not replace it.
+	options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
+
+	var sourceIsArray = Array.isArray(source);
+	var targetIsArray = Array.isArray(target);
+	var sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
+
+	if (!sourceAndTargetTypesMatch) {
+		return cloneUnlessOtherwiseSpecified(source, options)
+	} else if (sourceIsArray) {
+		return options.arrayMerge(target, source, options)
+	} else {
+		return mergeObject(target, source, options)
+	}
+}
+
+deepmerge.all = function deepmergeAll(array, options) {
+	if (!Array.isArray(array)) {
+		throw new Error('first argument should be an array')
+	}
+
+	return array.reduce(function(prev, next) {
+		return deepmerge(prev, next, options)
+	}, {})
+};
+
+var deepmerge_1 = deepmerge;
+
+module.exports = deepmerge_1;
+
+
+/***/ }),
+
 /***/ "3f4e":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4490,6 +4631,26 @@ var es6_object_keys = __webpack_require__("456d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
 
+// EXTERNAL MODULE: ./node_modules/deepmerge/dist/cjs.js
+var cjs = __webpack_require__("3c4e");
+var cjs_default = /*#__PURE__*/__webpack_require__.n(cjs);
+
+// CONCATENATED MODULE: ./packages/defaults.js
+var Default = {
+  popup: {
+    container: null,
+    closeButton: true,
+    closeOnEsc: false,
+    closeOnClickMask: true,
+    lockScroll: true,
+    mask: true,
+    zIndex: 100,
+    duration: 300,
+    transition: 'zoom',
+    bounce: false
+  }
+};
+/* harmony default export */ var defaults = (Default);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Avatar/Avatar.vue?vue&type=template&id=90bd7fbe&lang=pug&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"az-avatar",class:_vm.avatarClass,style:(_vm.avatarStyle),on:{"click":_vm.onClick}},[_c('az-icon',{staticClass:"az-avatar__icon",attrs:{"name":_vm.iconName}}),(_vm.name)?_c('div',{staticClass:"az-avatar__initials",style:(_vm.avatarInitialStyle)},[_vm._v(_vm._s(_vm.initials))]):_vm._e(),(_vm.src)?_c('div',{staticClass:"az-avatar__image",style:(_vm.avatarImageStyle)}):_vm._e()],1)}
 var staticRenderFns = []
@@ -6293,12 +6454,12 @@ var Loading_component = normalizeComponent(
 )
 
 /* harmony default export */ var Loading = (Loading_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=template&id=eeaf15c4&lang=pug&
-var Popupvue_type_template_id_eeaf15c4_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"az-popup-none"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup",class:_vm.popupClass,style:(_vm.popupStyle),attrs:{"tabindex":"-1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.onEsc($event)}}},[_c('transition',{attrs:{"name":"az-popup-fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.showMask && _vm.value),expression:"showMask && value"}],staticClass:"az-popup__mask",style:(_vm.popupStyle),on:{"click":_vm.onClickMask}})]),_c('transition',{attrs:{"name":("az-popup-" + _vm.animation)}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup__dialog",style:(_vm.dialogStyle)},[(_vm.closeButton)?_c('span',{staticClass:"az-popup__close",on:{"click":function($event){return _vm.$emit('hide')}}}):_vm._e(),_c('div',{staticClass:"az-popup__content"},[_vm._t("default")],2)])])],1)])}
-var Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cb268fc2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=template&id=61ae2029&lang=pug&
+var Popupvue_type_template_id_61ae2029_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"az-popup-none"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup",class:_vm.popupClass,style:(_vm.popupStyle),attrs:{"tabindex":"-1"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.onEsc($event)}}},[_c('transition',{attrs:{"name":"az-popup-fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.mask && _vm.value),expression:"mask && value"}],staticClass:"az-popup__mask",style:(_vm.popupStyle),on:{"click":_vm.onClickMask}})]),_c('transition',{attrs:{"name":("az-popup-" + _vm.animation)}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.value),expression:"value"}],staticClass:"az-popup__dialog",style:(_vm.dialogStyle)},[(_vm.closeButton)?_c('span',{staticClass:"az-popup__close",on:{"click":function($event){return _vm.$emit('hide')}}}):_vm._e(),_c('div',{staticClass:"az-popup__content"},[_vm._t("default")],2)])])],1)])}
+var Popupvue_type_template_id_61ae2029_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/Popup/Popup.vue?vue&type=template&id=eeaf15c4&lang=pug&
+// CONCATENATED MODULE: ./packages/Popup/Popup.vue?vue&type=template&id=61ae2029&lang=pug&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--11-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/Popup/Popup.vue?vue&type=script&lang=js&
 
@@ -6335,39 +6496,57 @@ var Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns = []
     },
     duration: {
       type: Number,
-      default: 300
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.duration : 300;
+      }
     },
     transition: {
       type: String,
-      default: 'zoom'
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.transition : 'zoom';
+      }
     },
     mask: {
       type: Boolean,
-      default: true
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.mask : true;
+      }
     },
     closeButton: {
       type: Boolean,
-      default: true
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeButton : true;
+      }
     },
     closeOnEsc: {
       type: Boolean,
-      default: false
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeOnEsc : false;
+      }
     },
     closeOnClickMask: {
       type: Boolean,
-      default: true
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeOnClickMask : false;
+      }
     },
     zIndex: {
       type: Number,
-      default: 100
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.zIndex : 100;
+      }
     },
     lockScroll: {
       type: Boolean,
-      default: true
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.lockScroll : true;
+      }
     },
     container: {
       type: String,
-      required: false
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.container : null;
+      }
     },
     position: {
       type: String,
@@ -6382,7 +6561,9 @@ var Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns = []
     },
     bounce: {
       type: Boolean,
-      default: false
+      default: function _default() {
+        return this.$DIDOR ? this.$DIDOR.popup.bounce : false;
+      }
     }
   },
   data: function data() {
@@ -6399,12 +6580,6 @@ var Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns = []
     }
   },
   computed: {
-    showMask: function showMask() {
-      return this.mask || this.$DIDOR.mask;
-    },
-    showCloseButton: function showCloseButton() {
-      return this.closeButton || this.$DIDOR.closeButton;
-    },
     popupClass: function popupClass() {
       return [this.position ? "az-popup--".concat(this.position) : '', this.full ? 'az-popup--full' : ''];
     },
@@ -6459,15 +6634,16 @@ var Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns = []
     }
   },
   mounted: function mounted() {
-    var container = this.container || this.$DIDOR.container || '';
+    console.log('$DIDOR');
+    console.log(this.$DIDOR);
 
-    if (container) {
-      var element = document.querySelector(container);
+    if (this.container) {
+      var element = document.querySelector(this.container);
 
       if (element) {
         element.appendChild(this.$el);
       } else {
-        console.error("az-popup: No se ha encontrado el elemento: ".concat(container));
+        console.error("az-popup: No se ha encontrado el elemento: ".concat(this.container));
       }
     }
 
@@ -6495,8 +6671,8 @@ var Popupvue_type_style_index_0_lang_scss_ = __webpack_require__("a719");
 
 var Popup_component = normalizeComponent(
   Popup_Popupvue_type_script_lang_js_,
-  Popupvue_type_template_id_eeaf15c4_lang_pug_render,
-  Popupvue_type_template_id_eeaf15c4_lang_pug_staticRenderFns,
+  Popupvue_type_template_id_61ae2029_lang_pug_render,
+  Popupvue_type_template_id_61ae2029_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -6999,6 +7175,8 @@ function packages_objectSpread(target) { for (var i = 1; i < arguments.length; i
 
 
 
+
+
 var Components = {
   Avatar: Avatar,
   Button: Button,
@@ -7020,27 +7198,23 @@ var Components = {
   TabBarItem: TabBarItem
 };
 
-var install = function install(Vue) {
+var packages_install = function install(Vue) {
   var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var prefix = 'Az';
   Object.keys(Components).forEach(function (name) {
     var componentName = "".concat(prefix).concat(name);
     Vue.component(componentName, Components[name]);
   });
-  Vue.prototype.$DIDOR = {
-    container: opts.defaultContainer || '',
-    mask: opts.defaultMask || true,
-    closeButton: opts.defaultCloseButton || true
-  };
+  Vue.prototype.$DIDOR = cjs_default()(defaults, opts);
 }; // Automatically install Didor UI if Vue is available globally
 
 
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+  packages_install(window.Vue);
 }
 
 /* harmony default export */ var packages_0 = (packages_objectSpread({
-  install: install
+  install: packages_install
 }, Components));
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 

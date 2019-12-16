@@ -1,3 +1,6 @@
+import deepmerge from 'deepmerge';
+import Defaults from './defaults';
+
 import Avatar from './Avatar/Avatar.vue';
 import Button from './Button/Button.vue';
 import Cell from './Cell/Cell.vue';
@@ -46,11 +49,7 @@ const install = (Vue, opts = {}) => {
     Vue.component(componentName, Components[name]);
   });
 
-  Vue.prototype.$DIDOR = {
-    container: opts.defaultContainer || '',
-    mask: opts.defaultMask || true,
-    closeButton: opts.defaultCloseButton || true,
-  };
+  Vue.prototype.$DIDOR = deepmerge(Defaults, opts);
 };
 
 // Automatically install Didor UI if Vue is available globally

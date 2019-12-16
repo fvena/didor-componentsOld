@@ -1,9 +1,9 @@
 .az-overflow-hidden {
   overflow: hidden !important;
 
-  > *:not(.az-popup) {
-    filter: blur(3px) grayscale(50%);
-  }
+  // > *:not(.az-popup) {
+  //   filter: blur(3px) grayscale(50%);
+  // }
 }
 
 .az-popup,
@@ -31,6 +31,7 @@
 
     position: relative;
     z-index: 101;
+    overflow: hidden;
     background: color(background);
     border-radius: $border-radius;
   }

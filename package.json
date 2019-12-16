@@ -1,6 +1,6 @@
 {
   "name": "@didor/components",
-  "version": "0.5.4",
+  "version": "0.5.10",
   "description": "Tool to develop, document and share your own library of UI components with Vue",
   "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)",
   "homepage": "https://github.com/fvena/didor-components#readme",
@@ -36,6 +36,7 @@
     "@csstools/normalize.css": "9.0.1",
     "axios": "0.18.1",
     "clipboard": "2.0.4",
+    "deepmerge": "^4.2.2",
     "highlight.js": "9.14.2",
     "init": "0.1.2",
     "js-yaml": "3.13.1",

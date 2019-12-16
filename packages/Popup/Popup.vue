@@ -9,7 +9,7 @@
 
       //- Modal Mask
       transition(name="az-popup-fade")
-        .az-popup__mask(v-show="showMask && value" :style="popupStyle" @click="onClickMask")
+        .az-popup__mask(v-show="mask && value" :style="popupStyle" @click="onClickMask")
 
       //- Modal Body
       transition(:name="`az-popup-${animation}`")
@@ -32,39 +32,57 @@ export default {
     },
     duration: {
       type: Number,
-      default: 300,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.duration : 300;
+      },
     },
     transition: {
       type: String,
-      default: 'zoom',
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.transition : 'zoom';
+      },
     },
     mask: {
       type: Boolean,
-      default: true,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.mask : true;
+      },
     },
     closeButton: {
       type: Boolean,
-      default: true,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeButton : true;
+      },
     },
     closeOnEsc: {
       type: Boolean,
-      default: false,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeOnEsc : false;
+      },
     },
     closeOnClickMask: {
       type: Boolean,
-      default: true,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.closeOnClickMask : false;
+      },
     },
     zIndex: {
       type: Number,
-      default: 100,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.zIndex : 100;
+      },
     },
     lockScroll: {
       type: Boolean,
-      default: true,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.lockScroll : true;
+      },
     },
     container: {
       type: String,
-      required: false,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.container : null;
+      },
     },
     position: {
       type: String,
@@ -77,7 +95,9 @@ export default {
     },
     bounce: {
       type: Boolean,
-      default: false,
+      default() {
+        return this.$DIDOR ? this.$DIDOR.popup.bounce : false;
+      },
     },
   },
 
@@ -96,14 +116,6 @@ export default {
   },
 
   computed: {
-    showMask() {
-      return this.mask || this.$DIDOR.mask;
-    },
-
-    showCloseButton() {
-      return this.closeButton || this.$DIDOR.closeButton;
-    },
-
     popupClass() {
       return [this.position ? `az-popup--${this.position}` : '', this.full ? 'az-popup--full' : ''];
     },
@@ -170,14 +182,14 @@ export default {
   },
 
   mounted() {
-    const container = this.container || this.$DIDOR.container || '';
-
-    if (container) {
-      const element = document.querySelector(container);
+    console.log('$DIDOR');
+    console.log(this.$DIDOR);
+    if (this.container) {
+      const element = document.querySelector(this.container);
       if (element) {
         element.appendChild(this.$el);
       } else {
-        console.error(`az-popup: No se ha encontrado el elemento: ${container}`);
+        console.error(`az-popup: No se ha encontrado el elemento: ${this.container}`);
       }
     }
 
