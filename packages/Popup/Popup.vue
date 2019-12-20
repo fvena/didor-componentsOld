@@ -182,8 +182,6 @@ export default {
   },
 
   mounted() {
-    console.log('$DIDOR');
-    console.log(this.$DIDOR);
     if (this.container) {
       const element = document.querySelector(this.container);
       if (element) {

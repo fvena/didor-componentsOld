@@ -19,6 +19,7 @@ import Row from './Row/Row.vue';
 import Switch from './Switch/Switch.vue';
 import TabBar from './TabBar/TabBar.vue';
 import TabBarItem from './TabBarItem/TabBarItem.vue';
+import Toast from './Toast';
 
 const Components = {
   Avatar,
@@ -50,6 +51,8 @@ const install = (Vue, opts = {}) => {
   });
 
   Vue.prototype.$DIDOR = deepmerge(Defaults, opts);
+
+  Vue.prototype.$toast = Toast;
 };
 
 // Automatically install Didor UI if Vue is available globally
